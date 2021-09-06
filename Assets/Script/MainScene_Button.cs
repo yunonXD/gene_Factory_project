@@ -6,9 +6,14 @@ using UnityEditor.SceneManagement;
 public class MainScene_Button : MonoBehaviour
 {
 
-    public void SceneChange()
+    public void SceneChange_inGame()
     {
         EditorSceneManager.LoadScene("inGameScene");
+    }
+
+    public void SceneChange_gene()
+    {
+        EditorSceneManager.LoadScene("geneMap");
     }
 
     // Start is called before the first frame update
