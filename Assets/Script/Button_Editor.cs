@@ -17,4 +17,10 @@ public class Button_Editor : MonoBehaviour
         SceneManager.LoadScene("geneMap");
     }
 
+    public void SceneChange_BattleSelect()
+    {
+        SceneManager.LoadScene("BattleSelectScene");
+    }
+    
+
 }

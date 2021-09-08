@@ -3,20 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Intro_FadeInOut : MonoBehaviour
-{ 
+public class Intro_FadeInOut : MonoBehaviour{ 
 
     float timer = 0;
 
-        void Update()
-    {
+    void Update(){
 
-        timer += Time.deltaTime;
-        Debug.Log(timer);
-        if (timer > 5)
-        {
+    timer += Time.deltaTime;
+        if (timer > 5){
             SceneManager.LoadScene("IntroScene");
-
         }
     }
 }
