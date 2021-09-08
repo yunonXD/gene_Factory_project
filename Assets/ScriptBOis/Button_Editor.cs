@@ -20,6 +20,7 @@ public class Button_Editor : MonoBehaviour{
 
 
     public void OnApplicationQuit(){
+        Application.Quit();
         Debug.Log("ÇØÄ¡¿ü³ª?");
     }
 
