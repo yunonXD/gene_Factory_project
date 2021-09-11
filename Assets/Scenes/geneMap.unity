@@ -6681,6 +6681,10 @@ PrefabInstance:
       propertyPath: m_RenderMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2565005287500807740, guid: 11526a40b218f144fbe1cd3d1c6d7d51, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2565005287500807741, guid: 11526a40b218f144fbe1cd3d1c6d7d51, type: 3}
       propertyPath: m_UiScaleMode
       value: 1
