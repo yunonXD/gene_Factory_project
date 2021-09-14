@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/geneMap.unity
     guid: 6c337bcf6f8d05b4d9b0fbeff8a13e34
+  - enabled: 1
+    path: Assets/Scenes/BattleScene.unity
+    guid: d86ff9486fae157429b76b028d59e53c
   m_configObjects: {}
