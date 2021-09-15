@@ -7,7 +7,7 @@ public class Map_Icon_button : MonoBehaviour
 {
 
     public GameObject Unlock_Effect7, Unlock_Effect8, Unlock_Effect9; 
-    //이펙트가 캐릭터마다 달라질 수 도 있으니 나눠놓기
+    //이펙트가 캐릭터마다 달라질 수 도 있으니 나눠놓기(이펙트가 스프라이트일수도, 혹은 이펙트(파티클)일 수 도 있다~
 
     
     public Text Point_Check;        //포인트 ( 화면에 표시할 포인트 : 창 불러오기)
@@ -15,48 +15,110 @@ public class Map_Icon_button : MonoBehaviour
 
     //솔직히 배열로 만들어도 괜찮긴한데... 
     public Toggle Bicon1, Bicon2, Bicon3, Bicon4, Bicon5, Bicon6, Bicon7, Bicon8, Bicon9;
-    public Toggle B_Bicon7, B_Bicon8, B_Bicon9;
+    public Toggle B_Bicon1, B_Bicon2, B_Bicon3, B_Bicon4, B_Bicon5, B_Bicon6, B_Bicon7, B_Bicon8, B_Bicon9;
     public Button Unlock_Button;
-    public GameObject  Bicon1Intel, Bicon2Intel, Bicon3Intel, Bicon4Intel, Bicon5Intel,
+    public GameObject BiconNoneIntel, Bicon1Intel, Bicon2Intel, Bicon3Intel, Bicon4Intel, Bicon5Intel,
         Bicon6Intel, Bicon7Intel, Bicon8Intel, Bicon9Intel;
 
     private bool checkbuttonClick = false;      //유전자 지도 우측 하단 해금 버튼을 위한 각 유전자 버튼 누른지 아닌지 확인 유무
     private int Icon_discernment = 0;           //아이콘을 누르면 해당 아이콘에 숫자가 배정됨. 숫자&&포인트 맞으면 언락 이런식으로 구현
 
+
     public void Start()
     {
-        Point_Check.text = "포인트 :" + point;    //화면 우측 상단에 포인트창
+        Point_Check.text = "포인트 :" + point;    //화면 우측 상단에 포인트창(임시)
     }
 
-
-    //<--------------------곧 안쓰일 예정-------------------->
-    public void Bicon1Click()
-    {
-        if (Bicon1.isOn)
+    public void ForCheck1()
+    {        //1~9 번 온이면 각 위치마다 숫자 부여.
+        if (B_Bicon1.isOn)
         {
-            Bicon1Intel.gameObject.SetActive(true);
+            checkbuttonClick = true;
+            if (B_Bicon1.isOn) Icon_discernment = 1;
+            Debug.Log("1");
         }
         else
         {
-            Bicon1Intel.gameObject.SetActive(false);
+            checkbuttonClick = false;
+            if (B_Bicon1.isOn) Icon_discernment = 0;        //숫자를 0을 줘서 포인트 가능해도 언락 안되도록
+            Debug.Log("1-0");
         }
     }
-
-    public void Bicon2Click()
-    {
-        if (Bicon2.isOn){
-            Bicon2Intel.gameObject.SetActive(true);
+    public void ForCheck2() 
+    { 
+        if (B_Bicon2.isOn)
+        {
+            checkbuttonClick = true;
+            if (B_Bicon2.isOn) Icon_discernment = 1;
+            Debug.Log("2");
         }
         else
         {
-            Bicon2Intel.gameObject.SetActive(false);
+            checkbuttonClick = false;
+            if (B_Bicon2.isOn) Icon_discernment = 0;
+            Debug.Log("2-0");
         }
     }
-    //<--------------------곧 안쓰일 예정-------------------->
-
-
-
-
+    public void ForCheck3()
+    {
+        if (B_Bicon3.isOn)
+        {
+            checkbuttonClick = true;
+            if (B_Bicon3.isOn) Icon_discernment = 1;
+            Debug.Log("3");
+        }
+        else
+        {
+            checkbuttonClick = false;
+            if (B_Bicon3.isOn) Icon_discernment = 0;
+            Debug.Log("3-0");
+        }
+    }
+    public void ForCheck4()
+    {
+        if (B_Bicon4.isOn)
+        {
+            checkbuttonClick = true;
+            if (B_Bicon4.isOn) Icon_discernment = 1;
+            Debug.Log("4");
+        }
+        else
+        {
+            checkbuttonClick = false;
+            if (B_Bicon4.isOn) Icon_discernment = 0;
+            Debug.Log("4-0");
+        }
+    }
+    public void ForCheck5()
+    {
+        if (B_Bicon5.isOn)
+        {
+            checkbuttonClick = true;
+            if (B_Bicon5.isOn) Icon_discernment = 1;
+            Debug.Log("5");
+        }
+        else
+        {
+            checkbuttonClick = false;
+            if (B_Bicon5.isOn) Icon_discernment = 0;
+            Debug.Log("5-0");
+        }
+    }
+    public void ForCheck6()
+    {
+        if (B_Bicon6.isOn)
+        {
+            checkbuttonClick = true;
+            if (B_Bicon6.isOn) Icon_discernment = 1;
+            Debug.Log("6");
+        }
+        else
+        {
+            checkbuttonClick = false;
+            if (B_Bicon6.isOn) Icon_discernment = 0;
+            Debug.Log("6-0");
+        }
+    }
     public void ForCheck7(){        //1~9 번 온이면 각 위치마다 숫자 부여.
         if (B_Bicon7.isOn){
             checkbuttonClick = true;
