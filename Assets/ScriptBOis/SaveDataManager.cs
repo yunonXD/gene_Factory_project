@@ -51,6 +51,11 @@ public class SaveDataManager : MonoBehaviour
        
         File.WriteAllText(Application.dataPath + "/SaveData.json", JsonUtility.ToJson(savedata));
     }
+
+    public void StageClear1_2()
+    {
+        Stage1_2 = true;
+    }
 }
      
 
