@@ -217,6 +217,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 787964092}
+        m_TargetAssemblyTypeName: SaveDataManager, Assembly-CSharp
+        m_MethodName: Save
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &12682954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3220,6 +3232,74 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b73af72b5c82771408a9326978e91864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &787964091
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5470410144601381721, guid: d43254814ae8fbf4a8e16643a7e54da5, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470410144601381721, guid: d43254814ae8fbf4a8e16643a7e54da5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.8263626
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470410144601381721, guid: d43254814ae8fbf4a8e16643a7e54da5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -30.506802
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470410144601381721, guid: d43254814ae8fbf4a8e16643a7e54da5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 203.18774
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470410144601381721, guid: d43254814ae8fbf4a8e16643a7e54da5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470410144601381721, guid: d43254814ae8fbf4a8e16643a7e54da5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470410144601381721, guid: d43254814ae8fbf4a8e16643a7e54da5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470410144601381721, guid: d43254814ae8fbf4a8e16643a7e54da5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470410144601381721, guid: d43254814ae8fbf4a8e16643a7e54da5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470410144601381721, guid: d43254814ae8fbf4a8e16643a7e54da5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470410144601381721, guid: d43254814ae8fbf4a8e16643a7e54da5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470410144601381722, guid: d43254814ae8fbf4a8e16643a7e54da5, type: 3}
+      propertyPath: m_Name
+      value: PlayerData
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d43254814ae8fbf4a8e16643a7e54da5, type: 3}
+--- !u!114 &787964092 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5470410144601381720, guid: d43254814ae8fbf4a8e16643a7e54da5, type: 3}
+  m_PrefabInstance: {fileID: 787964091}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b52a5f1a5afce2147bce8b9c7f2901f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &808139663
@@ -10219,7 +10299,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 774.06415, y: -125.18161}
+  m_AnchoredPosition: {x: 774.0642, y: -125.18161}
   m_SizeDelta: {x: 1653.6279, y: 803.85614}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2087808122

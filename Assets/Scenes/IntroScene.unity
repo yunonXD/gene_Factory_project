@@ -812,6 +812,7 @@ GameObject:
   - component: {fileID: 710499047}
   - component: {fileID: 710499046}
   - component: {fileID: 710499048}
+  - component: {fileID: 710499049}
   m_Layer: 0
   m_Name: MainScene_Button
   m_TagString: Untagged
@@ -831,6 +832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eefdd148573b924ea23820b66171b67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Optionpage: {fileID: 0}
 --- !u!4 &710499047
 Transform:
   m_ObjectHideFlags: 0
@@ -861,6 +863,18 @@ MonoBehaviour:
   cursorTexture2: {fileID: 2800000, guid: dedcbfe0f04237f409199317131b5878, type: 3}
   hotSpotIsCenter: 0
   adjustHotSpot: {x: 0, y: 0}
+--- !u!114 &710499049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710499045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cca9f182961e6ad40b4f958980b12a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &817289102
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,6 +1341,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 710499049}
+        m_TargetAssemblyTypeName: NewSaveDataManager, Assembly-CSharp
+        m_MethodName: newGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1438198101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1717,9 +1743,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 710499045}
+      - m_Target: {fileID: 710499046}
         m_TargetAssemblyTypeName: Button_Editor, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: SceneChange_inGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
