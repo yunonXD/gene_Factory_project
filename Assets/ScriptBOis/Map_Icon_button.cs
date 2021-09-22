@@ -5,19 +5,21 @@ using UnityEngine.UI;
 
 public class Map_Icon_button : MonoBehaviour
 {
-    public GameObject Unlock_Effect7, Unlock_Effect8, Unlock_Effect9; 
+    public GameObject Unlock_Effect1, Unlock_Effect2, Unlock_Effect3, Unlock_Effect4,
+        Unlock_Effect5, Unlock_Effect6, Unlock_Effect7, Unlock_Effect8, Unlock_Effect9; 
     //이펙트가 캐릭터마다 달라질 수 도 있으니 나눠놓기(이펙트가 스프라이트일수도, 혹은 이펙트(파티클)일 수 도 있다~
 
     
     public Text Point_Check;        //포인트 ( 화면에 표시할 포인트 : 창 불러오기)
-    int point = 10;                 //포인트 ( 기본 10포인트. 언락시 필요 포인트 3)
+    int point = 99;                 //포인트 ( 기본 10포인트. 언락시 필요 포인트 3)
 
     //솔직히 배열로 만들어도 괜찮긴한데... 
     public Toggle Bicon1, Bicon2, Bicon3, Bicon4, Bicon5, Bicon6, Bicon7, Bicon8, Bicon9;
     public Toggle B_Bicon1, B_Bicon2, B_Bicon3, B_Bicon4, B_Bicon5, B_Bicon6, B_Bicon7, B_Bicon8, B_Bicon9;
     public Button Unlock_Button;
-    public GameObject BiconNoneIntel,Bicon1Intel, Bicon2Intel, Bicon3Intel, Bicon4Intel, Bicon5Intel,
+    public Toggle Bicon1Intel, Bicon2Intel, Bicon3Intel, Bicon4Intel, Bicon5Intel,
         Bicon6Intel, Bicon7Intel, Bicon8Intel, Bicon9Intel;
+    public GameObject BiconNoneIntel;
 
     private bool checkbuttonClick = false;      //유전자 지도 우측 하단 해금 버튼을 위한 각 유전자 버튼 누른지 아닌지 확인 유무
     private int Icon_discernment = 0;           //아이콘을 누르면 해당 아이콘에 숫자가 배정됨. 숫자&&포인트 맞으면 언락 이런식으로 구현
@@ -235,9 +237,6 @@ public class Map_Icon_button : MonoBehaviour
             BiconNoneIntel.gameObject.SetActive(false);
         }
     }
-
-
-
     public void Unlock_ButtonPress()        //위에 ForCheck[] 에서 부여받은 숫자로 해금버튼 활성화
     {
 
@@ -246,12 +245,13 @@ public class Map_Icon_button : MonoBehaviour
 
             // 1~3번 맨 윗줄 1 2 3
             case 1:
-                if (checkbuttonClick == true && point > 3 && LeftgeneChecker == 2)
+                if (checkbuttonClick == true && point > 3 && LeftgeneChecker == 2)     
+                    //해금버튼 On 그리고 왼쪽 유전자 체크버튼(그니까... 중간단계까지 언락 했으면)으로 숫저2라면
                 {
-                    BiconNoneIntel.gameObject.SetActive(false);
-                    B_Bicon1.gameObject.SetActive(false);
-                    Bicon1.gameObject.SetActive(true);
-                    //Unlock_Effect1.SetActive(true);
+                    BiconNoneIntel.gameObject.SetActive(false); //인텔 아이콘 비활성화
+                    B_Bicon1.gameObject.SetActive(false);       //? 스프라이트 비활성화
+                    Bicon1.gameObject.SetActive(true);          //캐릭터 얼굴 스프라이트 활성화
+                    Unlock_Effect1.SetActive(true);             //이팩트 활성화 (자동 destroy)
 
                     point = point - 3;
                     Point_Check.text = "포인트 :" + point;
@@ -263,7 +263,7 @@ public class Map_Icon_button : MonoBehaviour
                     BiconNoneIntel.gameObject.SetActive(false);
                     B_Bicon2.gameObject.SetActive(false);
                     Bicon2.gameObject.SetActive(true);
-                    //Unlock_Effect1.SetActive(true);
+                    Unlock_Effect2.SetActive(true);
 
                     point = point - 3;
                     Point_Check.text = "포인트 :" + point;
@@ -273,9 +273,9 @@ public class Map_Icon_button : MonoBehaviour
                 if (checkbuttonClick == true && point > 3 && RightgeneChecker == 2)
                 {
                     BiconNoneIntel.gameObject.SetActive(false);
-                    B_Bicon1.gameObject.SetActive(false);
-                    Bicon1.gameObject.SetActive(true);
-                    //Unlock_Effect1.SetActive(true);
+                    B_Bicon3.gameObject.SetActive(false);
+                    Bicon3.gameObject.SetActive(true);
+                    Unlock_Effect3.SetActive(true);
 
                     point = point - 3;
                     Point_Check.text = "포인트 :" + point;
@@ -289,7 +289,7 @@ public class Map_Icon_button : MonoBehaviour
                     BiconNoneIntel.gameObject.SetActive(false);
                     B_Bicon4.gameObject.SetActive(false);
                     Bicon4.gameObject.SetActive(true);
-                    //Unlock_Effect4.SetActive(true);
+                    Unlock_Effect4.SetActive(true);
 
                     LeftgeneChecker = 2;
 
@@ -309,7 +309,7 @@ public class Map_Icon_button : MonoBehaviour
                     BiconNoneIntel.gameObject.SetActive(false);
                     B_Bicon5.gameObject.SetActive(false);
                     Bicon5.gameObject.SetActive(true);
-                    //Unlock_Effect5.SetActive(true);
+                    Unlock_Effect5.SetActive(true);
 
                     MiddlegeneChecker = 2;
 
@@ -329,7 +329,7 @@ public class Map_Icon_button : MonoBehaviour
                     BiconNoneIntel.gameObject.SetActive(false);
                     B_Bicon6.gameObject.SetActive(false);
                     Bicon6.gameObject.SetActive(true);
-                    //Unlock_Effect6.SetActive(true);
+                    Unlock_Effect6.SetActive(true);
 
                     RightgeneChecker = 2;
 
@@ -352,7 +352,7 @@ public class Map_Icon_button : MonoBehaviour
                     BiconNoneIntel.gameObject.SetActive(false);
                     B_Bicon7.gameObject.SetActive(false);
                     Bicon7.gameObject.SetActive(true);
-                    //Unlock_Effect7.SetActive(true);
+                    Unlock_Effect7.SetActive(true);
 
                     LeftgeneChecker = 1;
 
@@ -372,7 +372,7 @@ public class Map_Icon_button : MonoBehaviour
                     BiconNoneIntel.gameObject.SetActive(false);
                     B_Bicon8.gameObject.SetActive(false);
                     Bicon8.gameObject.SetActive(true);
-                    //Unlock_Effect8.SetActive(true);
+                    Unlock_Effect8.SetActive(true);
 
                     MiddlegeneChecker = 1;
 
@@ -392,7 +392,7 @@ public class Map_Icon_button : MonoBehaviour
                     BiconNoneIntel.gameObject.SetActive(false);
                     B_Bicon9.gameObject.SetActive(false);
                     Bicon9.gameObject.SetActive(true);
-                    //Unlock_Effect9.SetActive(true);
+                    Unlock_Effect9.SetActive(true);
 
                     RightgeneChecker = 1;
 
@@ -407,6 +407,282 @@ public class Map_Icon_button : MonoBehaviour
                 break;
         }
 
+    }
+
+    public void IntelChecker1()
+    {
+        if (Bicon1.isOn)
+        {
+            Bicon1Intel.gameObject.SetActive(true);
+
+            Bicon2.isOn = false;
+            Bicon3.isOn = false;
+            Bicon4.isOn = false;
+            Bicon5.isOn = false;
+            Bicon6.isOn = false;
+            Bicon7.isOn = false;
+            Bicon8.isOn = false;
+            Bicon9.isOn = false;
+
+            Bicon2Intel.isOn = false;
+            Bicon3Intel.isOn = false;
+            Bicon4Intel.isOn = false;
+            Bicon5Intel.isOn = false;
+            Bicon6Intel.isOn = false;
+            Bicon7Intel.isOn = false;
+            Bicon8Intel.isOn = false;
+            Bicon9Intel.isOn = false;
+        }
+        else
+        {
+            Bicon1Intel.gameObject.SetActive(false);
+        }
+    }
+    public void IntelChecker2()
+    {
+        if (Bicon2.isOn)
+        {
+            Bicon2Intel.gameObject.SetActive(true);
+
+            Bicon1.isOn = false;
+            Bicon3.isOn = false;
+            Bicon4.isOn = false;
+            Bicon5.isOn = false;
+            Bicon6.isOn = false;
+            Bicon7.isOn = false;
+            Bicon8.isOn = false;
+            Bicon9.isOn = false;
+
+
+            Bicon1Intel.isOn = false;
+            Bicon3Intel.isOn = false;
+            Bicon4Intel.isOn = false;
+            Bicon5Intel.isOn = false;
+            Bicon6Intel.isOn = false;
+            Bicon7Intel.isOn = false;
+            Bicon8Intel.isOn = false;
+            Bicon9Intel.isOn = false;
+        }
+        else
+        {
+            Bicon2Intel.gameObject.SetActive(false);
+        }
+    }
+    public void IntelChecker3()
+    {
+        if (Bicon3.isOn)
+        {
+            Bicon3Intel.gameObject.SetActive(true);
+
+            Bicon1.isOn = false;
+            Bicon2.isOn = false;
+            Bicon4.isOn = false;
+            Bicon5.isOn = false;
+            Bicon6.isOn = false;
+            Bicon7.isOn = false;
+            Bicon8.isOn = false;
+            Bicon9.isOn = false;
+
+
+            Bicon1Intel.isOn = false;
+            Bicon2Intel.isOn = false;
+            Bicon4Intel.isOn = false;
+            Bicon5Intel.isOn = false;
+            Bicon6Intel.isOn = false;
+            Bicon7Intel.isOn = false;
+            Bicon8Intel.isOn = false;
+            Bicon9Intel.isOn = false;
+        }
+        else
+        {
+            Bicon3Intel.gameObject.SetActive(false);
+        }
+    }
+
+    public void IntelChecker4()
+    {
+        if (Bicon4.isOn)
+        {
+            Bicon4Intel.gameObject.SetActive(true);
+
+            Bicon1.isOn = false;
+            Bicon2.isOn = false;
+            Bicon3.isOn = false;
+            Bicon5.isOn = false;
+            Bicon6.isOn = false;
+            Bicon7.isOn = false;
+            Bicon8.isOn = false;
+            Bicon9.isOn = false;
+
+
+            Bicon1Intel.isOn = false;
+            Bicon2Intel.isOn = false;
+            Bicon3Intel.isOn = false;
+            Bicon5Intel.isOn = false;
+            Bicon6Intel.isOn = false;
+            Bicon7Intel.isOn = false;
+            Bicon8Intel.isOn = false;
+            Bicon9Intel.isOn = false;
+        }
+        else
+        {
+            Bicon4Intel.gameObject.SetActive(false);
+        }
+    }
+
+    public void IntelChecker5()
+    {
+        if (Bicon5.isOn)
+        {
+            Bicon5Intel.gameObject.SetActive(true);
+
+            Bicon1.isOn = false;
+            Bicon2.isOn = false;
+            Bicon3.isOn = false;
+            Bicon4.isOn = false;
+            Bicon6.isOn = false;
+            Bicon7.isOn = false;
+            Bicon8.isOn = false;
+            Bicon9.isOn = false;
+
+
+            Bicon1Intel.isOn = false;
+            Bicon2Intel.isOn = false;
+            Bicon3Intel.isOn = false;
+            Bicon4Intel.isOn = false;
+            Bicon6Intel.isOn = false;
+            Bicon7Intel.isOn = false;
+            Bicon8Intel.isOn = false;
+            Bicon9Intel.isOn = false;
+        }
+        else
+        {
+            Bicon5Intel.gameObject.SetActive(false);
+        }
+    }
+
+    public void IntelChecker6()
+    {
+        if (Bicon6.isOn)
+        {
+            Bicon6Intel.gameObject.SetActive(true);
+
+            Bicon1.isOn = false;
+            Bicon2.isOn = false;
+            Bicon3.isOn = false;
+            Bicon4.isOn = false;
+            Bicon5.isOn = false;
+            Bicon7.isOn = false;
+            Bicon8.isOn = false;
+            Bicon9.isOn = false;
+
+
+            Bicon1Intel.isOn = false;
+            Bicon2Intel.isOn = false;
+            Bicon3Intel.isOn = false;
+            Bicon4Intel.isOn = false;
+            Bicon5Intel.isOn = false;
+            Bicon7Intel.isOn = false;
+            Bicon8Intel.isOn = false;
+            Bicon9Intel.isOn = false;
+        }
+        else
+        {
+            Bicon6Intel.gameObject.SetActive(false);
+        }
+    }
+
+    public void IntelChecker7()
+    {
+        if (Bicon7.isOn)
+        {
+            Bicon7Intel.gameObject.SetActive(true);
+
+            Bicon1.isOn = false;
+            Bicon2.isOn = false;
+            Bicon3.isOn = false;
+            Bicon4.isOn = false;
+            Bicon5.isOn = false;
+            Bicon6.isOn = false;
+            Bicon8.isOn = false;
+            Bicon9.isOn = false;
+
+
+            Bicon1Intel.isOn = false;
+            Bicon2Intel.isOn = false;
+            Bicon3Intel.isOn = false;
+            Bicon4Intel.isOn = false;
+            Bicon5Intel.isOn = false;
+            Bicon6Intel.isOn = false;
+            Bicon8Intel.isOn = false;
+            Bicon9Intel.isOn = false;
+        }
+        else
+        {
+            Bicon7Intel.gameObject.SetActive(false);
+        }
+    }
+
+    public void IntelChecker8()
+    {
+        if (Bicon8.isOn)
+        {
+            Bicon8Intel.gameObject.SetActive(true);
+
+            Bicon1.isOn = false;
+            Bicon2.isOn = false;
+            Bicon3.isOn = false;
+            Bicon4.isOn = false;
+            Bicon5.isOn = false;
+            Bicon6.isOn = false;
+            Bicon7.isOn = false;
+            Bicon9.isOn = false;
+
+
+            Bicon1Intel.isOn = false;
+            Bicon2Intel.isOn = false;
+            Bicon3Intel.isOn = false;
+            Bicon4Intel.isOn = false;
+            Bicon5Intel.isOn = false;
+            Bicon6Intel.isOn = false;
+            Bicon7Intel.isOn = false;
+            Bicon9Intel.isOn = false;
+        }
+        else
+        {
+            Bicon8Intel.gameObject.SetActive(false);
+        }
+    }
+
+    public void IntelChecker9()
+    {
+        if (Bicon9.isOn)
+        {
+            Bicon9Intel.gameObject.SetActive(true);
+
+            Bicon1.isOn = false;
+            Bicon2.isOn = false;
+            Bicon3.isOn = false;
+            Bicon4.isOn = false;
+            Bicon5.isOn = false;
+            Bicon6.isOn = false;
+            Bicon7.isOn = false;
+            Bicon8.isOn = false;
+
+
+            Bicon1Intel.isOn = false;
+            Bicon2Intel.isOn = false;
+            Bicon3Intel.isOn = false;
+            Bicon4Intel.isOn = false;
+            Bicon5Intel.isOn = false;
+            Bicon6Intel.isOn = false;
+            Bicon7Intel.isOn = false;
+            Bicon8Intel.isOn = false;
+        }
+        else
+        {
+            Bicon9Intel.gameObject.SetActive(false);
+        }
     }
 
 }
