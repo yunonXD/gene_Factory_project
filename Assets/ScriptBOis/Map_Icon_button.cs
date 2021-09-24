@@ -6,19 +6,36 @@ using UnityEngine.UI;
 public class Map_Icon_button : MonoBehaviour
 {
     public GameObject Unlock_Effect1, Unlock_Effect2, Unlock_Effect3, Unlock_Effect4,
-        Unlock_Effect5, Unlock_Effect6, Unlock_Effect7, Unlock_Effect8, Unlock_Effect9; 
-    //이펙트가 캐릭터마다 달라질 수 도 있으니 나눠놓기(이펙트가 스프라이트일수도, 혹은 이펙트(파티클)일 수 도 있다~
+        Unlock_Effect5, Unlock_Effect6, Unlock_Effect7, Unlock_Effect8, Unlock_Effect9;
+    //이펙트가 캐릭터마다 달라질 수도 있으니 나눠놓기(이펙트가 스프라이트일수도, 혹은 이펙트(파티클)일 수 도 있다~
+    [Space]
 
-    
-    public Text Point_Check;        //포인트 ( 화면에 표시할 포인트 : 창 불러오기)
-    int point = 99;                 //포인트 ( 기본 10포인트. 언락시 필요 포인트 3)
+    public Text Gene_Name, Gene_Intel, Gene_State, Point_Check;
+    public GameObject Gene_Intel_Text;
+
+    //Gene_Intel_Text부분 유전자 이름,정보, 세부사항 
+    //포인트 ( 화면에 표시할 포인트 : 창 불러오기) 
+    [Space]
+
+    int point = 99;
+    //포인트 ( 기본 10포인트. 언락시 필요 포인트 3)
+
 
     //솔직히 배열로 만들어도 괜찮긴한데... 
-    public Toggle Bicon1, Bicon2, Bicon3, Bicon4, Bicon5, Bicon6, Bicon7, Bicon8, Bicon9;
-    public Toggle B_Bicon1, B_Bicon2, B_Bicon3, B_Bicon4, B_Bicon5, B_Bicon6, B_Bicon7, B_Bicon8, B_Bicon9;
-    public Button Unlock_Button;
+    public Toggle Bicon1, Bicon2, Bicon3, Bicon4, Bicon5, Bicon6, Bicon7, Bicon8, Bicon9;   //활성화된 몬스터 아이콘
+
+    public Toggle B_Bicon1, B_Bicon2, B_Bicon3, B_Bicon4, B_Bicon5, B_Bicon6, B_Bicon7, B_Bicon8, B_Bicon9; //언락안된 아이콘
+
+    [Space]
+    public Button Unlock_Button;        //우측 하단 언락 버튼
+
     public Toggle Bicon1Intel, Bicon2Intel, Bicon3Intel, Bicon4Intel, Bicon5Intel,
-        Bicon6Intel, Bicon7Intel, Bicon8Intel, Bicon9Intel;
+        Bicon6Intel, Bicon7Intel, Bicon8Intel, Bicon9Intel;     //언락시 클릭하면 나오는 작은 찹업창
+
+    public Toggle Bicon1IntelSus, Bicon2IntelSus, Bicon3IntelSus, Bicon4IntelSus, Bicon5IntelSus,
+        Bicon6IntelSus, Bicon7IntelSus, Bicon8IntelSus, Bicon9IntelSus; //작은 팝업창 클릭시 나오는 좌측 정보창
+
+    [Space]
     public GameObject BiconNoneIntel;
 
     private bool checkbuttonClick = false;      //유전자 지도 우측 하단 해금 버튼을 위한 각 유전자 버튼 누른지 아닌지 확인 유무
@@ -34,6 +51,9 @@ public class Map_Icon_button : MonoBehaviour
         Debug.Log(NoneIntelVector);
         Point_Check.text = "포인트 :" + point;    //화면 우측 상단에 포인트창(임시)
     }
+
+    //--------------------------------------언락안된버튼들----------------------//
+
 
     public void ForCheck1()
     {        //1~9 번 온이면 각 위치마다 숫자 부여.
@@ -237,6 +257,11 @@ public class Map_Icon_button : MonoBehaviour
             BiconNoneIntel.gameObject.SetActive(false);
         }
     }
+
+
+    //--------------------------------------언락버튼----------------------//
+
+
     public void Unlock_ButtonPress()        //위에 ForCheck[] 에서 부여받은 숫자로 해금버튼 활성화
     {
 
@@ -409,6 +434,9 @@ public class Map_Icon_button : MonoBehaviour
 
     }
 
+
+
+    //--------------------------------------큰 아이콘 클릭시 열려있는 다른 인텔창 닫기 버튼----------------------//
     public void IntelChecker1()
     {
         if (Bicon1.isOn)
@@ -424,6 +452,8 @@ public class Map_Icon_button : MonoBehaviour
             Bicon8.isOn = false;
             Bicon9.isOn = false;
 
+            //GameObject.Find("Gene_Intel_Text").SetActive(false);
+
             Bicon2Intel.isOn = false;
             Bicon3Intel.isOn = false;
             Bicon4Intel.isOn = false;
@@ -436,6 +466,8 @@ public class Map_Icon_button : MonoBehaviour
         else
         {
             Bicon1Intel.gameObject.SetActive(false);
+            Bicon1Intel.isOn = false;
+
         }
     }
     public void IntelChecker2()
@@ -466,6 +498,7 @@ public class Map_Icon_button : MonoBehaviour
         else
         {
             Bicon2Intel.gameObject.SetActive(false);
+            Bicon2Intel.isOn = false;
         }
     }
     public void IntelChecker3()
@@ -496,6 +529,7 @@ public class Map_Icon_button : MonoBehaviour
         else
         {
             Bicon3Intel.gameObject.SetActive(false);
+            Bicon3Intel.isOn = false;
         }
     }
 
@@ -527,6 +561,7 @@ public class Map_Icon_button : MonoBehaviour
         else
         {
             Bicon4Intel.gameObject.SetActive(false);
+            Bicon4Intel.isOn = false;
         }
     }
 
@@ -558,6 +593,7 @@ public class Map_Icon_button : MonoBehaviour
         else
         {
             Bicon5Intel.gameObject.SetActive(false);
+            Bicon5Intel.isOn = false;
         }
     }
 
@@ -589,6 +625,7 @@ public class Map_Icon_button : MonoBehaviour
         else
         {
             Bicon6Intel.gameObject.SetActive(false);
+            Bicon6Intel.isOn = false;
         }
     }
 
@@ -620,6 +657,7 @@ public class Map_Icon_button : MonoBehaviour
         else
         {
             Bicon7Intel.gameObject.SetActive(false);
+            Bicon7Intel.isOn = false;
         }
     }
 
@@ -651,6 +689,7 @@ public class Map_Icon_button : MonoBehaviour
         else
         {
             Bicon8Intel.gameObject.SetActive(false);
+            Bicon8Intel.isOn = false;
         }
     }
 
@@ -682,6 +721,217 @@ public class Map_Icon_button : MonoBehaviour
         else
         {
             Bicon9Intel.gameObject.SetActive(false);
+            Bicon9Intel.isOn = false;
+        }
+    }
+
+
+    //--------------------------------------정보창 클릭시 왼쪽에 나오는 큰 정보창 및 이름 세부사항 버튼----------------------//
+
+    public void IntelForSus1()
+    {
+        if (Bicon1Intel.isOn)
+        {
+            Bicon1IntelSus.gameObject.SetActive(true);
+
+            Gene_Intel_Text.gameObject.SetActive(true);
+
+            Gene_Name.text = "1번";
+
+            Gene_Intel.text = "1번 정보";
+
+            Gene_State.text = "1 상태";
+
+        }
+        else
+        {
+            Bicon1IntelSus.gameObject.SetActive(false);
+            Gene_Intel_Text.gameObject.SetActive(false);
+
+        }
+    }
+
+    public void IntelForSus2()
+    {
+        if (Bicon2Intel.isOn)
+        {
+            Bicon2IntelSus.gameObject.SetActive(true);
+
+            Gene_Intel_Text.gameObject.SetActive(true);
+
+            Gene_Name.text = "2번";
+
+            Gene_Intel.text = "2번 정보";
+
+            Gene_State.text = "2 상태";
+
+        }
+        else
+        {
+            Bicon2IntelSus.gameObject.SetActive(false);
+            Gene_Intel_Text.gameObject.SetActive(false);
+
+        }
+    }
+
+    public void IntelForSus3()
+    {
+        if (Bicon3Intel.isOn)
+        {
+            Bicon3IntelSus.gameObject.SetActive(true);
+
+            Gene_Intel_Text.gameObject.SetActive(true);
+
+            Gene_Name.text = "3번";
+
+            Gene_Intel.text = "3번 정보";
+
+            Gene_State.text = "3 상태";
+
+        }
+        else
+        {
+            Bicon3IntelSus.gameObject.SetActive(false);
+            Gene_Intel_Text.gameObject.SetActive(false);
+
+        }
+    }
+
+    public void IntelForSus4()
+    {
+        if (Bicon4Intel.isOn)
+        {
+            Bicon4IntelSus.gameObject.SetActive(true);
+
+            Gene_Intel_Text.gameObject.SetActive(true);
+
+            Gene_Name.text = "4번";
+
+            Gene_Intel.text = "4번 정보";
+
+            Gene_State.text = "4 상태";
+
+        }
+        else
+        {
+            Bicon4IntelSus.gameObject.SetActive(false);
+            Gene_Intel_Text.gameObject.SetActive(false);
+
+        }
+    }
+
+    public void IntelForSus5()
+    {
+        if (Bicon5Intel.isOn)
+        {
+            Bicon5IntelSus.gameObject.SetActive(true);
+
+            Gene_Intel_Text.gameObject.SetActive(true);
+
+            Gene_Name.text = "5번";
+
+            Gene_Intel.text = "5번 정보";
+
+            Gene_State.text = "5 상태";
+
+        }
+        else
+        {
+            Bicon5IntelSus.gameObject.SetActive(false);
+            Gene_Intel_Text.gameObject.SetActive(false);
+
+        }
+    }
+
+    public void IntelForSus6()
+    {
+        if (Bicon6Intel.isOn)
+        {
+            Bicon6IntelSus.gameObject.SetActive(true);
+
+            Gene_Intel_Text.gameObject.SetActive(true);
+
+            Gene_Name.text = "6번";
+
+            Gene_Intel.text = "6번 정보";
+
+            Gene_State.text = "6 상태";
+
+        }
+        else
+        {
+            Bicon6IntelSus.gameObject.SetActive(false);
+            Gene_Intel_Text.gameObject.SetActive(false);
+
+        }
+    }
+
+    public void IntelForSus7()
+    {
+        if (Bicon7Intel.isOn)
+        {
+            Bicon7IntelSus.gameObject.SetActive(true);
+
+            Gene_Intel_Text.gameObject.SetActive(true);
+
+            Gene_Name.text = "7번";
+
+            Gene_Intel.text = "7번 정보";
+
+            Gene_State.text = "7 상태";
+
+        }
+        else
+        {
+            Bicon7IntelSus.gameObject.SetActive(false);
+            Gene_Intel_Text.gameObject.SetActive(false);
+
+        }
+    }
+
+    public void IntelForSus8()
+    {
+        if (Bicon8Intel.isOn)
+        {
+            Bicon8IntelSus.gameObject.SetActive(true);
+
+            Gene_Intel_Text.gameObject.SetActive(true);
+
+            Gene_Name.text = "8번";
+
+            Gene_Intel.text = "8번 정보";
+
+            Gene_State.text = "8 상태";
+
+        }
+        else
+        {
+            Bicon8IntelSus.gameObject.SetActive(false);
+            Gene_Intel_Text.gameObject.SetActive(false);
+
+        }
+    }
+
+    public void IntelForSus9()
+    {
+        if (Bicon9Intel.isOn)
+        {
+            Bicon9IntelSus.gameObject.SetActive(true);
+
+            Gene_Intel_Text.gameObject.SetActive(true);
+
+            Gene_Name.text = "9번";
+
+            Gene_Intel.text = "9번 정보";
+
+            Gene_State.text = "9 상태";
+
+        }
+        else
+        {
+            Bicon9IntelSus.gameObject.SetActive(false);
+            Gene_Intel_Text.gameObject.SetActive(false);
+
         }
     }
 
