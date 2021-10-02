@@ -49,8 +49,18 @@ public class Map_Icon_button : MonoBehaviour
     public GameObject[] BiconNoneIntel;
 
 
+    [Header("==작은 유전자==")]
+    public Toggle[] Small_Icon;
+
+    [Header("==언락된 작은 유전자==")]
+    public GameObject[] Unlock_Small_Icon;
+
+    //Sprite[] sprites = Resources.LoadAll<Sprite>("Sprites/Gene_Resource/GMAP_mini_1");
+
     private bool checkbuttonClick = false;      //유전자 지도 우측 하단 해금 버튼을 위한 각 유전자 버튼 누른지 아닌지 확인 유무
     private int Icon_discernment = 0;           //아이콘을 누르면 해당 아이콘에 숫자가 배정됨. 숫자&&포인트 맞으면 언락 이런식으로 구현
+
+
     private int LeftgeneChecker = 0;            //왼쪽줄 유전자 언락 유무(아래부터 차근차근 언락
     private int MiddlegeneChecker = 0;          //가운데줄 유전자 언락 유무(아래부터 차근차근 언락
     private int RightgeneChecker = 0;           //오른쪽줄 유전자 언락 유무(아래부터 차근차근 언락
@@ -222,9 +232,11 @@ public class Map_Icon_button : MonoBehaviour
             BiconNoneIntel[5].gameObject.SetActive(false);
         }
     }
-    public void ForCheck7() {        //1~9 번 온이면 각 위치마다 숫자 부여.
+    public void ForCheck7()
+    {        //1~9 번 온이면 각 위치마다 숫자 부여.
 
-        if (No_Unlock_B_Icon[6].isOn) {
+        if (No_Unlock_B_Icon[6].isOn)
+        {
             checkbuttonClick = true;
             Icon_discernment = 7;
             //Bicon7Intel.gameObject.SetActive(true); //언락 안되어있을시 나오는 정보창 아직 구현 안함
@@ -240,7 +252,8 @@ public class Map_Icon_button : MonoBehaviour
             //NoneIntelVector.y = -374.6f;
             //BiconNoneIntel.transform.localPosition = NoneIntelVector;
         }
-        else {
+        else
+        {
             checkbuttonClick = false;
             Icon_discernment = 0;        //숫자를 0을 줘서 포인트 가능해도 언락 안되도록
             Debug.Log("7-0");
@@ -248,7 +261,8 @@ public class Map_Icon_button : MonoBehaviour
             BiconNoneIntel[6].gameObject.SetActive(false);
         }
     }
-    public void ForCheck8() {
+    public void ForCheck8()
+    {
         if (No_Unlock_B_Icon[7])
         {
             checkbuttonClick = true;
@@ -264,7 +278,8 @@ public class Map_Icon_button : MonoBehaviour
             //NoneIntelVector.y = -374.6f;
             //BiconNoneIntel.transform.localPosition = NoneIntelVector;
         }
-        else {
+        else
+        {
             checkbuttonClick = false;
             Icon_discernment = 0;
             Debug.Log("8-0");
@@ -272,8 +287,10 @@ public class Map_Icon_button : MonoBehaviour
             BiconNoneIntel[7].gameObject.SetActive(false);
         }
     }
-    public void ForCheck9() {
-        if (No_Unlock_B_Icon[8].isOn) {
+    public void ForCheck9()
+    {
+        if (No_Unlock_B_Icon[8].isOn)
+        {
             checkbuttonClick = true;
             Icon_discernment = 9;
             Debug.Log("9");
@@ -287,7 +304,8 @@ public class Map_Icon_button : MonoBehaviour
             //NoneIntelVector.y = -374.6f;
             //BiconNoneIntel.transform.localPosition = NoneIntelVector;
         }
-        else {
+        else
+        {
             Icon_discernment = 0;
             checkbuttonClick = false;
             Debug.Log("9-0");
@@ -346,6 +364,7 @@ public class Map_Icon_button : MonoBehaviour
                     Point_Check.text = "포인트 :" + point;
                     checkbuttonClick = false;
                 }
+
                 break;
 
             //4~5번 가운대줄 4 5 6
@@ -363,11 +382,6 @@ public class Map_Icon_button : MonoBehaviour
                     Point_Check.text = "포인트 :" + point;
                     checkbuttonClick = false;
                 }
-                else
-                {
-                    Debug.Log("포인트부족");
-                    return;
-                }
                 break;
 
             case 5:
@@ -384,12 +398,6 @@ public class Map_Icon_button : MonoBehaviour
                     Point_Check.text = "포인트 :" + point;
                     checkbuttonClick = false;
                 }
-                else
-                {
-                    Debug.Log("포인트부족");
-                    return;
-                }
-
                 break;
             case 6:
                 if (checkbuttonClick == true && point > 3 && RightgeneChecker == 1)
@@ -405,13 +413,6 @@ public class Map_Icon_button : MonoBehaviour
                     Point_Check.text = "포인트 :" + point;
                     checkbuttonClick = false;
                 }
-                else
-                {
-                    Debug.Log("포인트부족");
-                    return;
-                }
-
-
                 break;
 
             // 7~ 9번 맨 아래줄  7 8 9
@@ -433,11 +434,6 @@ public class Map_Icon_button : MonoBehaviour
                     Point_Check.text = "포인트 :" + point;
                     checkbuttonClick = false;
                 }
-                else
-                {
-                    Debug.Log("포인트부족");
-                    return;
-                }
                 break;
 
             case 8:
@@ -453,11 +449,6 @@ public class Map_Icon_button : MonoBehaviour
                     point = point - 2;
                     Point_Check.text = "포인트 :" + point;
                     checkbuttonClick = false;
-                }
-                else
-                {
-                    Debug.Log("포인트부족");
-                    return;
                 }
                 break;
 
@@ -475,17 +466,127 @@ public class Map_Icon_button : MonoBehaviour
                     Point_Check.text = "포인트 :" + point;
                     checkbuttonClick = false;
                 }
-                else
+                break;
+
+            case 10:
+                if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[3].gameObject.activeSelf == true)
                 {
-                    Debug.Log("포인트부족");
-                    return;
+                    Small_Icon[0].gameObject.SetActive(false);
+                    Unlock_Small_Icon[0].gameObject.SetActive(true);
+
+
+
+                    point = point - 1;
+                    Point_Check.text = "포인트 :" + point;
+                    checkbuttonClick = false;
                 }
                 break;
+
+            case 11:
+                if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[3].gameObject.activeSelf == true && Unlock_B_Icon[4].gameObject.activeSelf == true)
+                {
+                    Small_Icon[1].gameObject.SetActive(false);
+                    Unlock_Small_Icon[1].gameObject.SetActive(true);
+
+
+
+                    point = point - 1;
+                    Point_Check.text = "포인트 :" + point;
+                    checkbuttonClick = false;
+                }
+                break;
+
+            case 12:
+                if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[4].gameObject.activeSelf == true && Unlock_B_Icon[5].gameObject.activeSelf == true)
+                {
+                    Small_Icon[2].gameObject.SetActive(false);
+                    Unlock_Small_Icon[2].gameObject.SetActive(true);
+
+
+
+                    point = point - 1;
+                    Point_Check.text = "포인트 :" + point;
+                    checkbuttonClick = false;
+                }
+                break;
+
+            case 13:
+                if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[5].gameObject.activeSelf == true)
+                {
+                    Small_Icon[3].gameObject.SetActive(false);
+                    Unlock_Small_Icon[3].gameObject.SetActive(true);
+
+
+
+                    point = point - 1;
+                    Point_Check.text = "포인트 :" + point;
+                    checkbuttonClick = false;
+                }
+                break;
+
+            case 14:
+                if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[6].gameObject.activeSelf == true)
+                {
+                    Small_Icon[4].gameObject.SetActive(false);
+                    Unlock_Small_Icon[4].gameObject.SetActive(true);
+
+
+
+                    point = point - 1;
+                    Point_Check.text = "포인트 :" + point;
+                    checkbuttonClick = false;
+                }
+                break;
+
+
+            case 15:
+                if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[6].gameObject.activeSelf == true && Unlock_B_Icon[7].gameObject.activeSelf == true)
+                {
+                    Small_Icon[5].gameObject.SetActive(false);
+                    Unlock_Small_Icon[5].gameObject.SetActive(true);
+
+
+
+                    point = point - 1;
+                    Point_Check.text = "포인트 :" + point;
+                    checkbuttonClick = false;
+                }
+                break;
+
+
+            case 16:
+                if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[7].gameObject.activeSelf == true && Unlock_B_Icon[8].gameObject.activeSelf == true)
+                {
+                    Small_Icon[6].gameObject.SetActive(false);
+                    Unlock_Small_Icon[6].gameObject.SetActive(true);
+
+
+
+                    point = point - 1;
+                    Point_Check.text = "포인트 :" + point;
+                    checkbuttonClick = false;
+                }
+                break;
+
+            case 17:
+                if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[8].gameObject.activeSelf == true)
+                {
+                    Small_Icon[7].gameObject.SetActive(false);
+                    Unlock_Small_Icon[7].gameObject.SetActive(true);
+
+
+
+                    point = point - 1;
+                    Point_Check.text = "포인트 :" + point;
+                    checkbuttonClick = false;
+                }
+                break;
+
         }
 
     }
 
-    // ----------------------------- 언락시 스크린 나오는거 -----------------------------
+    // ----------------------------- 언락시 스크린 나오는거 ----------------------------- 프로토타입. 하나만 구현
     IEnumerator WaitForUnlock_Screen(int checker)
     {
         yield return new WaitForSeconds(0.7f);
@@ -984,4 +1085,162 @@ public class Map_Icon_button : MonoBehaviour
         }
     }
 
+
+
+
+    //--------------------------------------작은 아이콘 해금 버튼----------------------//
+
+
+    public void Small_Unlocker1()
+    {
+        if (Small_Icon[0].isOn)
+        {
+            checkbuttonClick = true;
+            Icon_discernment = 10;
+            Debug.Log("S_1");
+
+
+        }
+        else
+        {
+            checkbuttonClick = false;
+            Icon_discernment = 0;
+            Debug.Log("S0_1");
+
+        }
+    }
+    public void Small_Unlocker2()
+    {
+        if (Small_Icon[1].isOn)
+        {
+            checkbuttonClick = true;
+            Icon_discernment = 11;
+            Debug.Log("S_2");
+
+
+
+        }
+        else
+        {
+            checkbuttonClick = false;
+            Icon_discernment = 0;
+            Debug.Log("S0_2");
+
+        }
+    }
+    public void Small_Unlocker3()
+    {
+        if (Small_Icon[2].isOn)
+        {
+            checkbuttonClick = true;
+            Icon_discernment = 12;
+            Debug.Log("S_3");
+
+
+        }
+        else
+        {
+            checkbuttonClick = false;
+            Icon_discernment = 0;
+            Debug.Log("S0_3");
+
+        }
+    }
+
+    public void Small_Unlocker4()
+    {
+        if (Small_Icon[3].isOn)
+        {
+            checkbuttonClick = true;
+            Icon_discernment = 13;
+            Debug.Log("S_4");
+
+
+        }
+        else
+        {
+            checkbuttonClick = false;
+            Icon_discernment = 0;
+            Debug.Log("S0_4");
+
+        }
+    }
+    public void Small_Unlocker5()
+    {
+        if (Small_Icon[4].isOn)
+        {
+            checkbuttonClick = true;
+            Icon_discernment = 14;
+            Debug.Log("S_5");
+
+
+        }
+        else
+        {
+            checkbuttonClick = false;
+            Icon_discernment = 0;
+            Debug.Log("S0_5");
+
+        }
+    }
+
+    public void Small_Unlocker6()
+    {
+        if (Small_Icon[5].isOn)
+        {
+            checkbuttonClick = true;
+            Icon_discernment = 15;
+            Debug.Log("S_6");
+
+
+
+        }
+        else
+        {
+            checkbuttonClick = false;
+            Icon_discernment = 0;
+            Debug.Log("S0_6");
+
+        }
+    }
+
+
+    public void Small_Unlocker7()
+    {
+        if (Small_Icon[6].isOn)
+        {
+            checkbuttonClick = true;
+            Icon_discernment = 16;
+            Debug.Log("S_7");
+
+  
+
+        }
+        else
+        {
+            checkbuttonClick = false;
+            Icon_discernment = 0;
+            Debug.Log("S0_7");
+
+        }
+    }
+
+    public void Small_Unlocker8()
+    {
+        if (Small_Icon[7].isOn)
+        {
+            checkbuttonClick = true;
+            Icon_discernment = 17;
+            Debug.Log("S_8");
+
+
+        }
+        else
+        {
+            checkbuttonClick = false;
+            Icon_discernment = 0;
+            Debug.Log("S0_8");
+
+        }
+    }
 }
