@@ -263,7 +263,7 @@ public class Map_Icon_button : MonoBehaviour
     }
     public void ForCheck8()
     {
-        if (No_Unlock_B_Icon[7])
+        if (No_Unlock_B_Icon[7].isOn)
         {
             checkbuttonClick = true;
             Icon_discernment = 8;
@@ -333,6 +333,7 @@ public class Map_Icon_button : MonoBehaviour
 
                     Unlock_Effect[0].SetActive(true);             //이팩트 활성화 (자동 destroy)
 
+                    StartCoroutine(WaitForUnlock_Screen(0));        //언락시 나오는 언락했어요! 스크린. 코루틴 
 
                     point = point - 5;
                     Point_Check.text = "포인트 :" + point;
@@ -347,6 +348,8 @@ public class Map_Icon_button : MonoBehaviour
                     Unlock_B_Icon[1].gameObject.SetActive(true);
                     Unlock_Effect[1].SetActive(true);
 
+                    StartCoroutine(WaitForUnlock_Screen(1));
+
                     point = point - 5;
                     Point_Check.text = "포인트 :" + point;
                     checkbuttonClick = false;
@@ -359,6 +362,8 @@ public class Map_Icon_button : MonoBehaviour
                     No_Unlock_B_Icon[2].gameObject.SetActive(false);
                     Unlock_B_Icon[2].gameObject.SetActive(true);
                     Unlock_Effect[2].SetActive(true);
+
+                    StartCoroutine(WaitForUnlock_Screen(2));
 
                     point = point - 5;
                     Point_Check.text = "포인트 :" + point;
@@ -376,6 +381,8 @@ public class Map_Icon_button : MonoBehaviour
                     Unlock_B_Icon[3].gameObject.SetActive(true);
                     Unlock_Effect[3].SetActive(true);
 
+                    StartCoroutine(WaitForUnlock_Screen(3));
+
                     LeftgeneChecker = 2;
 
                     point = point - 3;
@@ -392,6 +399,8 @@ public class Map_Icon_button : MonoBehaviour
                     Unlock_B_Icon[4].gameObject.SetActive(true);
                     Unlock_Effect[4].SetActive(true);
 
+                    StartCoroutine(WaitForUnlock_Screen(4));
+
                     MiddlegeneChecker = 2;
 
                     point = point - 3;
@@ -406,6 +415,8 @@ public class Map_Icon_button : MonoBehaviour
                     No_Unlock_B_Icon[5].gameObject.SetActive(false);
                     Unlock_B_Icon[5].gameObject.SetActive(true);
                     Unlock_Effect[5].SetActive(true);
+
+                    StartCoroutine(WaitForUnlock_Screen(5));
 
                     RightgeneChecker = 2;
 
@@ -444,6 +455,8 @@ public class Map_Icon_button : MonoBehaviour
                     Unlock_B_Icon[7].gameObject.SetActive(true);
                     Unlock_Effect[7].SetActive(true);
 
+                    StartCoroutine(WaitForUnlock_Screen(7));
+
                     MiddlegeneChecker = 1;
 
                     point = point - 2;
@@ -459,6 +472,8 @@ public class Map_Icon_button : MonoBehaviour
                     No_Unlock_B_Icon[8].gameObject.SetActive(false);
                     Unlock_B_Icon[8].gameObject.SetActive(true);
                     Unlock_Effect[8].SetActive(true);
+
+                    StartCoroutine(WaitForUnlock_Screen(8));
 
                     RightgeneChecker = 1;
 
@@ -917,7 +932,7 @@ public class Map_Icon_button : MonoBehaviour
 
             Gene_Intel_Text.gameObject.SetActive(true);
 
-            Gene_Name.text = "2번";
+            Gene_Name.text = "탕그리스";
 
             Gene_Intel.text = "2번 정보";
 
@@ -983,7 +998,7 @@ public class Map_Icon_button : MonoBehaviour
 
             Gene_Intel_Text.gameObject.SetActive(true);
 
-            Gene_Name.text = "5번";
+            Gene_Name.text = "만티코어";
 
             Gene_Intel.text = "5번 정보";
 
@@ -1071,7 +1086,7 @@ public class Map_Icon_button : MonoBehaviour
 
             Gene_Intel_Text.gameObject.SetActive(true);
 
-            Gene_Name.text = "9번";
+            Gene_Name.text = "프랑";
 
             Gene_Intel.text = "9번 정보";
 

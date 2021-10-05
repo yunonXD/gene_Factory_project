@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Num_1
+  - Num_2
+  - Num_3
+  - Num_4
+  - Num_5
+  - Num_6
+  - Num_7
+  - Num_8
+  - Num_9
+  - Num_0
   layers:
   - Default
   - TransparentFX
