@@ -12,13 +12,26 @@ public class NewSaveDataManager : MonoBehaviour
     {
         Data data = new Data();
 
-        data.name = "이선동";
-        data.stage1_1 = false;
-        data.stage1_2 = false;
-        data.gryphon = false;
-        data.point = 10;
+        data.Name = "이선동";
+        data.Stage1_1 = false ;
+        data.Stage1_2 = false;
+        data.Stage1_3 = false;
+        data.Stage1_4 = false;
+        data.Stage2_1 = false;
+        data.Stage2_2 = false;
+        data.Stage2_3 = false;
+        data.Stage2_4 = false;
+        data.Creature_Mush = false;
+        data.Creature_ConRabbit = false;
+        data.Creature_Fran = false;
+        data.Creature_Nymph = false;
+        data.Creature_Manticore = false;
+        data.Creature_Temp_1 = false;
+        data.Creature_Mobidic = false;
+        data.Creature_TangGreece = false;
+        data.Creature_Temp_2 = false;
+        data.ResearchPoint = 0;
 
-     
 
         File.WriteAllText(Application.dataPath + "/SaveData.json", JsonUtility.ToJson(data));
         Debug.Log("세이브 데이터 생성");

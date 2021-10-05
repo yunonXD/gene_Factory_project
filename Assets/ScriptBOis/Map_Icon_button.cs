@@ -9,6 +9,9 @@ using UnityEngine.UI;
 
 public class Map_Icon_button : MonoBehaviour
 {
+
+    public GameObject PlayerData; //플레이어 데이터
+
     [Header("==언락 이펙트==")]
     public GameObject[] Unlock_Effect;
     //이펙트가 캐릭터마다 달라질 수도 있으니 나눠놓기(이펙트가 스프라이트일수도, 혹은 이펙트(파티클)일 수 도 있다~
@@ -242,9 +245,9 @@ public class Map_Icon_button : MonoBehaviour
             //Bicon7Intel.gameObject.SetActive(true); //언락 안되어있을시 나오는 정보창 아직 구현 안함
             Debug.Log("7");
 
+
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Mush = true;
             BiconNoneIntel[6].gameObject.SetActive(true);
-
-
 
             //BiconNoneIntel.gameObject.SetActive(true); // -267.8 , -374.6, 0.0
             //Vector3 NoneIntelVector = BiconNoneIntel.transform.localPosition;
