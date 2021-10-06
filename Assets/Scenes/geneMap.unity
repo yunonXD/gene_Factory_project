@@ -5254,6 +5254,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5470410144601381720, guid: d43254814ae8fbf4a8e16643a7e54da5, type: 3}
+      propertyPath: _Creature_Mush
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470410144601381720, guid: d43254814ae8fbf4a8e16643a7e54da5, type: 3}
       propertyPath: _ResearchPoint
       value: 30
       objectReference: {fileID: 0}
@@ -12705,7 +12709,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1714381784
 RectTransform:
   m_ObjectHideFlags: 0

@@ -205,7 +205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 59133672}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1124300382}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &59133672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -579,7 +591,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 178643203}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2093611736}
+        m_TargetAssemblyTypeName: Button_Editor, Assembly-CSharp
+        m_MethodName: Stage1_2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &178643203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -713,7 +737,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 187344857}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2093611736}
+        m_TargetAssemblyTypeName: Button_Editor, Assembly-CSharp
+        m_MethodName: Stage2_4
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &187344857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -847,7 +883,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 286788057}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2093611736}
+        m_TargetAssemblyTypeName: Button_Editor, Assembly-CSharp
+        m_MethodName: Stage1_4
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &286788057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -981,7 +1029,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 292353037}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2093611736}
+        m_TargetAssemblyTypeName: Button_Editor, Assembly-CSharp
+        m_MethodName: Stage2_3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &292353037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1601,7 +1661,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1144340554}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2093611736}
+        m_TargetAssemblyTypeName: Button_Editor, Assembly-CSharp
+        m_MethodName: Stage1_1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1144340554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2206,7 +2278,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1764500393}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2093611736}
+        m_TargetAssemblyTypeName: Button_Editor, Assembly-CSharp
+        m_MethodName: SelectBattle_Button
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1764500393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2496,7 +2580,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1957678137}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2093611736}
+        m_TargetAssemblyTypeName: Button_Editor, Assembly-CSharp
+        m_MethodName: Stage2_1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1957678137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2630,7 +2726,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1991367500}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2093611736}
+        m_TargetAssemblyTypeName: Button_Editor, Assembly-CSharp
+        m_MethodName: Stage1_3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1991367500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2744,6 +2852,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Optionpage: {fileID: 1336158742}
   PlayerData: {fileID: 1601656276}
+  SelectVictim: {fileID: 1124300382}
+  Stage:
+  - {fileID: 1144340553}
+  - {fileID: 178643202}
+  - {fileID: 1991367499}
+  - {fileID: 286788056}
+  - {fileID: 1957678136}
+  - {fileID: 2098742084}
+  - {fileID: 292353036}
+  - {fileID: 187344856}
 --- !u!1 &2098742082
 GameObject:
   m_ObjectHideFlags: 0
@@ -2826,7 +2944,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2098742085}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2093611736}
+        m_TargetAssemblyTypeName: Button_Editor, Assembly-CSharp
+        m_MethodName: Stage2_2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2098742085
 MonoBehaviour:
   m_ObjectHideFlags: 0
