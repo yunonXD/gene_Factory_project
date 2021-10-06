@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 //using UnityEditor;
-
-//해야하는거 - 이펙트 위치 수정, no information 창 팝업 수정 , 언락시 팝업창 생성하기
-
 
 public class Map_Icon_button : MonoBehaviour
 {
+
+    public GameObject PlayerData; //플레이어 데이터
+
     [Header("==언락 이펙트==")]
     public GameObject[] Unlock_Effect;
     //이펙트가 캐릭터마다 달라질 수도 있으니 나눠놓기(이펙트가 스프라이트일수도, 혹은 이펙트(파티클)일 수 도 있다~
@@ -25,8 +26,10 @@ public class Map_Icon_button : MonoBehaviour
     //Gene_Intel_Text부분 유전자 이름,정보, 세부사항 
     //포인트 ( 화면에 표시할 포인트 : 창 불러오기) 
 
-    int point = 99;
-    //포인트 ( 기본 30포인트. 언락시 필요 포인트 3)
+
+    
+    int point = 0;
+    //포인트
 
     [Header("==언락 안된 큰 아이콘==")]
     public Toggle[] No_Unlock_B_Icon;
@@ -70,13 +73,102 @@ public class Map_Icon_button : MonoBehaviour
     {
         //Vector3 NoneIntelVector = BiconNoneIntel.transform.localPosition;
         //Debug.Log(NoneIntelVector);
-        Point_Check.text = "포인트 :" + point;    //화면 우측 상단에 포인트창(임시)
+        //string str2 = File.ReadAllText(Application.dataPath + "/SaveData.json");
+        //Data playerData = JsonUtility.FromJson<Data>(str2);
+
+        
+
     }
+
+    public void Update()
+    {
+        point = PlayerData.GetComponent<SaveDataManager>()._ResearchPoint;
+        Point_Check.text = "포인트 :" + point;    //화면 우측 상단에 포인트창(임시)
+
+        if (PlayerData.GetComponent<SaveDataManager>()._Creature_Mush == true)        //머쉬 불러오기
+        {
+            BiconNoneIntel[6].gameObject.SetActive(false);
+            No_Unlock_B_Icon[6].gameObject.SetActive(false);
+            Unlock_B_Icon[6].gameObject.SetActive(true);
+            LeftgeneChecker = 1;
+        }
+
+        if (PlayerData.GetComponent<SaveDataManager>()._Creature_ConRabbit == true)       //콘래빗 불러오기
+        {
+            BiconNoneIntel[7].gameObject.SetActive(false);
+            No_Unlock_B_Icon[7].gameObject.SetActive(false);
+            Unlock_B_Icon[7].gameObject.SetActive(true);
+            MiddlegeneChecker = 1;
+        }
+
+        if (PlayerData.GetComponent<SaveDataManager>()._Creature_Fran == true)        //프랑 쿨러오기
+        {
+            BiconNoneIntel[8].gameObject.SetActive(false);
+            No_Unlock_B_Icon[8].gameObject.SetActive(false);
+            Unlock_B_Icon[8].gameObject.SetActive(true);
+            RightgeneChecker = 1;
+        }
+
+
+        if (PlayerData.GetComponent<SaveDataManager>()._Creature_Nymph == true)       //님프 쿨러오기
+        {
+            BiconNoneIntel[3].gameObject.SetActive(false);
+            No_Unlock_B_Icon[3].gameObject.SetActive(false);
+            Unlock_B_Icon[3].gameObject.SetActive(true);
+            LeftgeneChecker = 2;
+        }
+
+
+        if (PlayerData.GetComponent<SaveDataManager>()._Creature_Manticore == true)       //멘티코어 쿨러오기
+        {
+            BiconNoneIntel[4].gameObject.SetActive(false);
+            No_Unlock_B_Icon[4].gameObject.SetActive(false);
+            Unlock_B_Icon[4].gameObject.SetActive(true);
+            MiddlegeneChecker = 2;
+        }
+
+        if (PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_1 == true)      //6번 미정(기획서상 6번)
+        {
+            BiconNoneIntel[5].gameObject.SetActive(false);
+            No_Unlock_B_Icon[5].gameObject.SetActive(false);
+            Unlock_B_Icon[5].gameObject.SetActive(true);
+            RightgeneChecker = 2;
+        }
+
+        if (PlayerData.GetComponent<SaveDataManager>()._Creature_Mobidic == true)     //모비딕 쿨러오기
+        {
+            BiconNoneIntel[0].gameObject.SetActive(false);
+            No_Unlock_B_Icon[0].gameObject.SetActive(false);
+            Unlock_B_Icon[0].gameObject.SetActive(true);
+        }
+
+        if (PlayerData.GetComponent<SaveDataManager>()._Creature_TangGreece == true)      //탕그리드 쿨러오기
+        {
+            BiconNoneIntel[1].gameObject.SetActive(false);
+            No_Unlock_B_Icon[1].gameObject.SetActive(false);
+            Unlock_B_Icon[1].gameObject.SetActive(true);
+        }
+
+        if (PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_2 == true)           //3번 미정(기획서상 3번)
+        {
+            BiconNoneIntel[2].gameObject.SetActive(false);
+            No_Unlock_B_Icon[2].gameObject.SetActive(false);
+            Unlock_B_Icon[2].gameObject.SetActive(true);
+        }
+    }
+
+
+    public void PointSaver()
+    {
+        PlayerData.GetComponent<SaveDataManager>()._ResearchPoint = point;
+        Debug.Log(PlayerData.GetComponent<SaveDataManager>()._ResearchPoint + "포인트이만큼 세이브");
+    }
+
 
     //--------------------------------------언락안된버튼들----------------------//
 
 
-    public void ForCheck1()
+    public void ForCheck1()     //모비딕
     {        //1~9 번 온이면 각 위치마다 숫자 부여.
         if (No_Unlock_B_Icon[0].isOn)
         {
@@ -102,7 +194,7 @@ public class Map_Icon_button : MonoBehaviour
             BiconNoneIntel[0].gameObject.SetActive(false);
         }
     }
-    public void ForCheck2()
+    public void ForCheck2()     //탕그리스
     {
         if (No_Unlock_B_Icon[1].isOn)
         {
@@ -128,7 +220,7 @@ public class Map_Icon_button : MonoBehaviour
             BiconNoneIntel[1].gameObject.SetActive(false);
         }
     }
-    public void ForCheck3()
+    public void ForCheck3()     //??
     {
         if (No_Unlock_B_Icon[2].isOn)
         {
@@ -154,7 +246,7 @@ public class Map_Icon_button : MonoBehaviour
             BiconNoneIntel[2].gameObject.SetActive(false);
         }
     }
-    public void ForCheck4()
+    public void ForCheck4()     //님프
     {
         if (No_Unlock_B_Icon[3].isOn)
         {
@@ -180,7 +272,7 @@ public class Map_Icon_button : MonoBehaviour
             BiconNoneIntel[3].gameObject.SetActive(false);
         }
     }
-    public void ForCheck5()
+    public void ForCheck5()     //??
     {
         if (No_Unlock_B_Icon[4].isOn)
         {
@@ -206,7 +298,7 @@ public class Map_Icon_button : MonoBehaviour
             BiconNoneIntel[4].gameObject.SetActive(false);
         }
     }
-    public void ForCheck6()
+    public void ForCheck6()     //??
     {
         if (No_Unlock_B_Icon[5].isOn)
         {
@@ -232,7 +324,7 @@ public class Map_Icon_button : MonoBehaviour
             BiconNoneIntel[5].gameObject.SetActive(false);
         }
     }
-    public void ForCheck7()
+    public void ForCheck7()     //머쉬
     {        //1~9 번 온이면 각 위치마다 숫자 부여.
 
         if (No_Unlock_B_Icon[6].isOn)
@@ -242,9 +334,8 @@ public class Map_Icon_button : MonoBehaviour
             //Bicon7Intel.gameObject.SetActive(true); //언락 안되어있을시 나오는 정보창 아직 구현 안함
             Debug.Log("7");
 
+
             BiconNoneIntel[6].gameObject.SetActive(true);
-
-
 
             //BiconNoneIntel.gameObject.SetActive(true); // -267.8 , -374.6, 0.0
             //Vector3 NoneIntelVector = BiconNoneIntel.transform.localPosition;
@@ -261,9 +352,9 @@ public class Map_Icon_button : MonoBehaviour
             BiconNoneIntel[6].gameObject.SetActive(false);
         }
     }
-    public void ForCheck8()
+    public void ForCheck8()     //콘래빗
     {
-        if (No_Unlock_B_Icon[7])
+        if (No_Unlock_B_Icon[7].isOn)
         {
             checkbuttonClick = true;
             Icon_discernment = 8;
@@ -287,7 +378,7 @@ public class Map_Icon_button : MonoBehaviour
             BiconNoneIntel[7].gameObject.SetActive(false);
         }
     }
-    public void ForCheck9()
+    public void ForCheck9()     //프랑
     {
         if (No_Unlock_B_Icon[8].isOn)
         {
@@ -323,105 +414,142 @@ public class Map_Icon_button : MonoBehaviour
         {
 
             // 1~3번 맨 윗줄 1 2 3
-            case 1:
+            case 1:     //모디빅
                 if (checkbuttonClick == true && point > 3 && LeftgeneChecker == 2)
                 //해금버튼 On 그리고 왼쪽 유전자 체크버튼(그니까... 중간단계까지 언락 했으면)으로 숫저2라면
                 {
-                    BiconNoneIntel[0].gameObject.SetActive(false); //인텔 아이콘 비활성화
-                    No_Unlock_B_Icon[0].gameObject.SetActive(false);       //? 스프라이트 비활성화
-                    Unlock_B_Icon[0].gameObject.SetActive(true);          //캐릭터 얼굴 스프라이트 활성화
+                    BiconNoneIntel[0].gameObject.SetActive(false);          //인텔 아이콘 비활성화
+                    No_Unlock_B_Icon[0].gameObject.SetActive(false);        //? 스프라이트 비활성화
+                    Unlock_B_Icon[0].gameObject.SetActive(true);            //캐릭터 얼굴 스프라이트 활성화
 
-                    Unlock_Effect[0].SetActive(true);             //이팩트 활성화 (자동 destroy)
+                    PlayerData.GetComponent<SaveDataManager>()._Creature_Mobidic = true;        //세이브 데이터 연동. 모디빅 set false -> true
 
+                    Unlock_Effect[0].SetActive(true);                       //이팩트 활성화 (자동 destroy)
+
+                    StartCoroutine(WaitForUnlock_Screen(0));                //언락시 나오는 언락했어요! 스크린. 코루틴 
 
                     point = point - 5;
                     Point_Check.text = "포인트 :" + point;
+                    PointSaver();
                     checkbuttonClick = false;
                 }
                 break;
-            case 2:
+            case 2:     //탕그리스
                 if (checkbuttonClick == true && point > 3 && MiddlegeneChecker == 2)
                 {
                     BiconNoneIntel[1].gameObject.SetActive(false);
                     No_Unlock_B_Icon[1].gameObject.SetActive(false);
                     Unlock_B_Icon[1].gameObject.SetActive(true);
+
+                    PlayerData.GetComponent<SaveDataManager>()._Creature_TangGreece = true;
+
                     Unlock_Effect[1].SetActive(true);
 
+                    StartCoroutine(WaitForUnlock_Screen(1));
+
                     point = point - 5;
-                    Point_Check.text = "포인트 :" + point;
+                    Point_Check.text = "포인트 :"+ point;
+                    PointSaver();
                     checkbuttonClick = false;
                 }
                 break;
-            case 3:
+            case 3:     //??
                 if (checkbuttonClick == true && point > 3 && RightgeneChecker == 2)
                 {
                     BiconNoneIntel[2].gameObject.SetActive(false);
                     No_Unlock_B_Icon[2].gameObject.SetActive(false);
                     Unlock_B_Icon[2].gameObject.SetActive(true);
+
+                    PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_2 = true;
+
                     Unlock_Effect[2].SetActive(true);
+
+                    StartCoroutine(WaitForUnlock_Screen(2));
 
                     point = point - 5;
                     Point_Check.text = "포인트 :" + point;
+                    PointSaver();
                     checkbuttonClick = false;
                 }
 
                 break;
 
             //4~5번 가운대줄 4 5 6
-            case 4:
+            case 4:     //님프
                 if (checkbuttonClick == true && point > 3 && LeftgeneChecker == 1)
                 {
                     BiconNoneIntel[3].gameObject.SetActive(false);
                     No_Unlock_B_Icon[3].gameObject.SetActive(false);
                     Unlock_B_Icon[3].gameObject.SetActive(true);
+
+                    PlayerData.GetComponent<SaveDataManager>()._Creature_Nymph = true;
+
                     Unlock_Effect[3].SetActive(true);
+
+                    StartCoroutine(WaitForUnlock_Screen(3));
 
                     LeftgeneChecker = 2;
 
                     point = point - 3;
                     Point_Check.text = "포인트 :" + point;
+                    PointSaver();
                     checkbuttonClick = false;
                 }
                 break;
 
-            case 5:
+            case 5:     //만티코어
                 if (checkbuttonClick == true && point > 3 && MiddlegeneChecker == 1)
                 {
                     BiconNoneIntel[4].gameObject.SetActive(false);
                     No_Unlock_B_Icon[4].gameObject.SetActive(false);
                     Unlock_B_Icon[4].gameObject.SetActive(true);
+
+                    PlayerData.GetComponent<SaveDataManager>()._Creature_Manticore = true;
+
                     Unlock_Effect[4].SetActive(true);
+
+                    StartCoroutine(WaitForUnlock_Screen(4));
 
                     MiddlegeneChecker = 2;
 
                     point = point - 3;
                     Point_Check.text = "포인트 :" + point;
+                    PointSaver();
                     checkbuttonClick = false;
                 }
                 break;
-            case 6:
+            case 6:     //??
                 if (checkbuttonClick == true && point > 3 && RightgeneChecker == 1)
                 {
                     BiconNoneIntel[5].gameObject.SetActive(false);
                     No_Unlock_B_Icon[5].gameObject.SetActive(false);
                     Unlock_B_Icon[5].gameObject.SetActive(true);
+
+                    PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_1 = true;
+
                     Unlock_Effect[5].SetActive(true);
+
+                    StartCoroutine(WaitForUnlock_Screen(5));
 
                     RightgeneChecker = 2;
 
                     point = point - 3;
                     Point_Check.text = "포인트 :" + point;
+                    PointSaver();
                     checkbuttonClick = false;
                 }
                 break;
 
             // 7~ 9번 맨 아래줄  7 8 9
-            case 7:
+            case 7:     //머쉬
                 if (checkbuttonClick == true && point > 3)
                 {
                     BiconNoneIntel[6].gameObject.SetActive(false);
                     No_Unlock_B_Icon[6].gameObject.SetActive(false);
                     Unlock_B_Icon[6].gameObject.SetActive(true);
+
+                    PlayerData.GetComponent<SaveDataManager>()._Creature_Mush = true;
+
                     Unlock_Effect[6].SetActive(true);
 
                     StartCoroutine(WaitForUnlock_Screen(6));
@@ -432,38 +560,51 @@ public class Map_Icon_button : MonoBehaviour
 
                     point = point - 2;
                     Point_Check.text = "포인트 :" + point;
+                    PointSaver();
                     checkbuttonClick = false;
                 }
                 break;
 
-            case 8:
+            case 8:     //콘래빗
                 if (checkbuttonClick == true && point > 3)
                 {
                     BiconNoneIntel[7].gameObject.SetActive(false);
                     No_Unlock_B_Icon[7].gameObject.SetActive(false);
                     Unlock_B_Icon[7].gameObject.SetActive(true);
+
+                    PlayerData.GetComponent<SaveDataManager>()._Creature_ConRabbit = true;
+
                     Unlock_Effect[7].SetActive(true);
+
+                    StartCoroutine(WaitForUnlock_Screen(7));
 
                     MiddlegeneChecker = 1;
 
                     point = point - 2;
                     Point_Check.text = "포인트 :" + point;
+                    PointSaver();
                     checkbuttonClick = false;
                 }
                 break;
 
-            case 9:
+            case 9:     //프랑
                 if (checkbuttonClick == true && point > 3)
                 {
                     BiconNoneIntel[8].gameObject.SetActive(false);
                     No_Unlock_B_Icon[8].gameObject.SetActive(false);
                     Unlock_B_Icon[8].gameObject.SetActive(true);
+
+                    PlayerData.GetComponent<SaveDataManager>()._Creature_Fran = true;
+
                     Unlock_Effect[8].SetActive(true);
+
+                    StartCoroutine(WaitForUnlock_Screen(8));
 
                     RightgeneChecker = 1;
 
                     point = point - 2;
                     Point_Check.text = "포인트 :" + point;
+                    PointSaver();
                     checkbuttonClick = false;
                 }
                 break;
@@ -478,6 +619,7 @@ public class Map_Icon_button : MonoBehaviour
 
                     point = point - 1;
                     Point_Check.text = "포인트 :" + point;
+                    PointSaver();
                     checkbuttonClick = false;
                 }
                 break;
@@ -492,6 +634,7 @@ public class Map_Icon_button : MonoBehaviour
 
                     point = point - 1;
                     Point_Check.text = "포인트 :" + point;
+                    PointSaver();
                     checkbuttonClick = false;
                 }
                 break;
@@ -506,6 +649,7 @@ public class Map_Icon_button : MonoBehaviour
 
                     point = point - 1;
                     Point_Check.text = "포인트 :" + point;
+                    PointSaver();
                     checkbuttonClick = false;
                 }
                 break;
@@ -520,6 +664,7 @@ public class Map_Icon_button : MonoBehaviour
 
                     point = point - 1;
                     Point_Check.text = "포인트 :" + point;
+                    PointSaver();
                     checkbuttonClick = false;
                 }
                 break;
@@ -534,6 +679,7 @@ public class Map_Icon_button : MonoBehaviour
 
                     point = point - 1;
                     Point_Check.text = "포인트 :" + point;
+                    PointSaver();
                     checkbuttonClick = false;
                 }
                 break;
@@ -549,6 +695,7 @@ public class Map_Icon_button : MonoBehaviour
 
                     point = point - 1;
                     Point_Check.text = "포인트 :" + point;
+                    PointSaver();
                     checkbuttonClick = false;
                 }
                 break;
@@ -564,6 +711,7 @@ public class Map_Icon_button : MonoBehaviour
 
                     point = point - 1;
                     Point_Check.text = "포인트 :" + point;
+                    PointSaver();
                     checkbuttonClick = false;
                 }
                 break;
@@ -578,6 +726,7 @@ public class Map_Icon_button : MonoBehaviour
 
                     point = point - 1;
                     Point_Check.text = "포인트 :" + point;
+                    PointSaver();
                     checkbuttonClick = false;
                 }
                 break;
@@ -917,7 +1066,7 @@ public class Map_Icon_button : MonoBehaviour
 
             Gene_Intel_Text.gameObject.SetActive(true);
 
-            Gene_Name.text = "2번";
+            Gene_Name.text = "탕그리스";
 
             Gene_Intel.text = "2번 정보";
 
@@ -983,7 +1132,7 @@ public class Map_Icon_button : MonoBehaviour
 
             Gene_Intel_Text.gameObject.SetActive(true);
 
-            Gene_Name.text = "5번";
+            Gene_Name.text = "만티코어";
 
             Gene_Intel.text = "5번 정보";
 
@@ -1071,7 +1220,7 @@ public class Map_Icon_button : MonoBehaviour
 
             Gene_Intel_Text.gameObject.SetActive(true);
 
-            Gene_Name.text = "9번";
+            Gene_Name.text = "프랑";
 
             Gene_Intel.text = "9번 정보";
 

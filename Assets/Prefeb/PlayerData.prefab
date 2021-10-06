@@ -43,7 +43,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52a5f1a5afce2147bce8b9c7f2901f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 
-  Stage1_1: 0
-  Stage1_2: 0
-  Gryphon: 0
+  _Name: 
+  _Stage1_1: 0
+  _Stage1_2: 0
+  _Stage1_3: 0
+  _Stage1_4: 0
+  _Stage2_1: 0
+  _Stage2_2: 0
+  _Stage2_3: 0
+  _Stage2_4: 0
+  _Creature_Mush: 0
+  _Creature_ConRabbit: 0
+  _Creature_Fran: 0
+  _Creature_Nymph: 0
+  _Creature_Manticore: 0
+  _Creature_Temp_1: 0
+  _Creature_Mobidic: 0
+  _Creature_TangGreece: 0
+  _Creature_Temp_2: 0
+  _ResearchPoint: 30

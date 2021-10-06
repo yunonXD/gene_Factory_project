@@ -41,7 +41,6 @@ ExportedObj/
  
 *.booproj
 
-*.log
  
  
  
@@ -72,9 +71,3 @@ GraphicsSettings.asset
 ProjectSettings.asset
  
 ProjectVersion.txt
-
-*.log
-*.log
-*.log
-*.log
-*.log

@@ -1886,6 +1886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Optionpage: {fileID: 371991112}
+  PlayerData: {fileID: 0}
 --- !u!1 &2143049826
 GameObject:
   m_ObjectHideFlags: 0
@@ -1972,6 +1973,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5470410144601381720, guid: d43254814ae8fbf4a8e16643a7e54da5, type: 3}
+      propertyPath: _Name
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5470410144601381721, guid: d43254814ae8fbf4a8e16643a7e54da5, type: 3}
       propertyPath: m_RootOrder
       value: 6
