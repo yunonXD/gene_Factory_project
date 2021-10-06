@@ -26,6 +26,14 @@ public class Data
     public bool Creature_Mobidic;
     public bool Creature_TangGreece;
     public bool Creature_Temp_2;
+    public bool Gene_Between_1;
+    public bool Gene_Between_2;
+    public bool Gene_Between_3;
+    public bool Gene_Between_4;
+    public bool Gene_Between_5;
+    public bool Gene_Between_6;
+    public bool Gene_Between_7;
+    public bool Gene_Between_8;
     public int ResearchPoint;
 
 }
@@ -52,6 +60,14 @@ public class SaveDataManager : MonoBehaviour
     public bool _Creature_Mobidic;
     public bool _Creature_TangGreece;
     public bool _Creature_Temp_2;
+    public bool _Gene_Between1;
+    public bool _Gene_Between2;
+    public bool _Gene_Between3;
+    public bool _Gene_Between4;
+    public bool _Gene_Between5;
+    public bool _Gene_Between6;
+    public bool _Gene_Between7;
+    public bool _Gene_Between8;
     public int _ResearchPoint;
 
     void Start()
@@ -78,8 +94,16 @@ public class SaveDataManager : MonoBehaviour
         _Creature_TangGreece = playerData.Creature_TangGreece;
         _Creature_Temp_2 = playerData.Creature_Temp_2;
         _ResearchPoint = playerData.ResearchPoint;
+        _Gene_Between1 = playerData.Gene_Between_1;
+        _Gene_Between2 = playerData.Gene_Between_2;
+        _Gene_Between3 = playerData.Gene_Between_3;
+        _Gene_Between4 = playerData.Gene_Between_4;
+        _Gene_Between5 = playerData.Gene_Between_5;
+        _Gene_Between6 = playerData.Gene_Between_6;
+        _Gene_Between7 = playerData.Gene_Between_7;
+        _Gene_Between8 = playerData.Gene_Between_8;
 
-}
+    }
 
     public void Save()
     {
@@ -104,6 +128,14 @@ public class SaveDataManager : MonoBehaviour
         savedata.Creature_TangGreece = _Creature_TangGreece;
         savedata.Creature_Temp_2 = _Creature_Temp_2;
         savedata.ResearchPoint = _ResearchPoint;
+        savedata.Gene_Between_1 = _Gene_Between1;
+        savedata.Gene_Between_2 = _Gene_Between2;
+        savedata.Gene_Between_3 = _Gene_Between3;
+        savedata.Gene_Between_4 = _Gene_Between4;
+        savedata.Gene_Between_5 = _Gene_Between5;
+        savedata.Gene_Between_6 = _Gene_Between6;
+        savedata.Gene_Between_7 = _Gene_Between7;
+        savedata.Gene_Between_8 = _Gene_Between8;
 
         File.WriteAllText(Application.dataPath + "/SaveData.json", JsonUtility.ToJson(savedata));
     }

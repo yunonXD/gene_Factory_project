@@ -30,6 +30,14 @@ public class NewSaveDataManager : MonoBehaviour
         data.Creature_Mobidic = false;
         data.Creature_TangGreece = false;
         data.Creature_Temp_2 = false;
+        data.Gene_Between_1 = false;
+        data.Gene_Between_2 = false;
+        data.Gene_Between_3 = false;
+        data.Gene_Between_4 = false;
+        data.Gene_Between_5 = false;
+        data.Gene_Between_6 = false;
+        data.Gene_Between_7 = false;
+        data.Gene_Between_8 = false;
         data.ResearchPoint = 0;
 
 
