@@ -155,6 +155,67 @@ public class Map_Icon_button : MonoBehaviour
             No_Unlock_B_Icon[2].gameObject.SetActive(false);
             Unlock_B_Icon[2].gameObject.SetActive(true);
         }
+
+        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between1 == true){         
+                  //번호 1번 작은 유전자 불러오기
+            Small_Icon[0].gameObject.SetActive(false);
+            Unlock_Small_Icon[0].gameObject.SetActive(true);
+
+        }
+
+        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 == true)
+        {         //번호 2번 작은 유전자 불러오기
+            Small_Icon[1].gameObject.SetActive(false);
+            Unlock_Small_Icon[1].gameObject.SetActive(true);
+
+        }
+
+        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between3 == true)
+        {         //번호 3번 작은 유전자 불러오기
+            Small_Icon[2].gameObject.SetActive(false);
+            Unlock_Small_Icon[2].gameObject.SetActive(true);
+
+        }
+
+
+        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between4 == true)
+        {         //번호 4번 작은 유전자 불러오기
+            Small_Icon[3].gameObject.SetActive(false);
+            Unlock_Small_Icon[3].gameObject.SetActive(true);
+
+        }
+
+
+        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between5 == true)
+        {         //번호 5번 작은 유전자 불러오기
+            Small_Icon[4].gameObject.SetActive(false);
+            Unlock_Small_Icon[4].gameObject.SetActive(true);
+
+        }
+
+        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between6 == true)
+        {         //번호 6번 작은 유전자 불러오기
+            Small_Icon[5].gameObject.SetActive(false);
+            Unlock_Small_Icon[5].gameObject.SetActive(true);
+
+        }
+        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between7 == true)
+        {         //번호 7번 작은 유전자 불러오기
+            Small_Icon[6].gameObject.SetActive(false);
+            Unlock_Small_Icon[6].gameObject.SetActive(true);
+
+        }
+        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between8 == true)
+        {         //번호 8번 작은 유전자 불러오기
+            Small_Icon[7].gameObject.SetActive(false);
+            Unlock_Small_Icon[7].gameObject.SetActive(true);
+
+        }
+
+
+
+
+
     }
 
 
@@ -615,7 +676,7 @@ public class Map_Icon_button : MonoBehaviour
                     Small_Icon[0].gameObject.SetActive(false);
                     Unlock_Small_Icon[0].gameObject.SetActive(true);
 
-
+                    PlayerData.GetComponent<SaveDataManager>()._Gene_Between1 = true;
 
                     point = point - 1;
                     Point_Check.text = "포인트 :" + point;
@@ -630,7 +691,7 @@ public class Map_Icon_button : MonoBehaviour
                     Small_Icon[1].gameObject.SetActive(false);
                     Unlock_Small_Icon[1].gameObject.SetActive(true);
 
-
+                    PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 = true;
 
                     point = point - 1;
                     Point_Check.text = "포인트 :" + point;
@@ -645,7 +706,7 @@ public class Map_Icon_button : MonoBehaviour
                     Small_Icon[2].gameObject.SetActive(false);
                     Unlock_Small_Icon[2].gameObject.SetActive(true);
 
-
+                    PlayerData.GetComponent<SaveDataManager>()._Gene_Between3 = true;
 
                     point = point - 1;
                     Point_Check.text = "포인트 :" + point;
@@ -660,7 +721,7 @@ public class Map_Icon_button : MonoBehaviour
                     Small_Icon[3].gameObject.SetActive(false);
                     Unlock_Small_Icon[3].gameObject.SetActive(true);
 
-
+                    PlayerData.GetComponent<SaveDataManager>()._Gene_Between4 = true;
 
                     point = point - 1;
                     Point_Check.text = "포인트 :" + point;
@@ -675,7 +736,7 @@ public class Map_Icon_button : MonoBehaviour
                     Small_Icon[4].gameObject.SetActive(false);
                     Unlock_Small_Icon[4].gameObject.SetActive(true);
 
-
+                    PlayerData.GetComponent<SaveDataManager>()._Gene_Between5 = true;
 
                     point = point - 1;
                     Point_Check.text = "포인트 :" + point;
@@ -691,7 +752,7 @@ public class Map_Icon_button : MonoBehaviour
                     Small_Icon[5].gameObject.SetActive(false);
                     Unlock_Small_Icon[5].gameObject.SetActive(true);
 
-
+                    PlayerData.GetComponent<SaveDataManager>()._Gene_Between6 = true;
 
                     point = point - 1;
                     Point_Check.text = "포인트 :" + point;
@@ -707,7 +768,7 @@ public class Map_Icon_button : MonoBehaviour
                     Small_Icon[6].gameObject.SetActive(false);
                     Unlock_Small_Icon[6].gameObject.SetActive(true);
 
-
+                    PlayerData.GetComponent<SaveDataManager>()._Gene_Between7 = true;
 
                     point = point - 1;
                     Point_Check.text = "포인트 :" + point;
@@ -722,7 +783,7 @@ public class Map_Icon_button : MonoBehaviour
                     Small_Icon[7].gameObject.SetActive(false);
                     Unlock_Small_Icon[7].gameObject.SetActive(true);
 
-
+                    PlayerData.GetComponent<SaveDataManager>()._Gene_Between8 = true;
 
                     point = point - 1;
                     Point_Check.text = "포인트 :" + point;
