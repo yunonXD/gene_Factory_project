@@ -36,7 +36,7 @@ public class Button_Editor : MonoBehaviour{
 
     public void SceneChange_Title()         //타이틀창
     {
-        SceneManager.LoadScene("IntroScene");
+        SceneManager.LoadScene("FirstScene");
     }
 
 

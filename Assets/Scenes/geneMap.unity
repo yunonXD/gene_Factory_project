@@ -2014,6 +2014,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Optionpage: {fileID: 740826221}
   PlayerData: {fileID: 449335078}
+  SelectVictim: {fileID: 0}
+  Stage: []
 --- !u!4 &230973775
 Transform:
   m_ObjectHideFlags: 0
@@ -5255,7 +5257,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5470410144601381720, guid: d43254814ae8fbf4a8e16643a7e54da5, type: 3}
       propertyPath: _Creature_Mush
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5470410144601381720, guid: d43254814ae8fbf4a8e16643a7e54da5, type: 3}
       propertyPath: _ResearchPoint
@@ -12709,7 +12711,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1714381784
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16452,6 +16454,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: OptionCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2565005287500807743, guid: 11526a40b218f144fbe1cd3d1c6d7d51, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565005287682056531, guid: 11526a40b218f144fbe1cd3d1c6d7d51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2565005287682056531, guid: 11526a40b218f144fbe1cd3d1c6d7d51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -16459,6 +16469,10 @@ PrefabInstance:
     - target: {fileID: 2565005287682056531, guid: 11526a40b218f144fbe1cd3d1c6d7d51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OptionSetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565005287682056531, guid: 11526a40b218f144fbe1cd3d1c6d7d51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Button_Editor, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2565005288144372173, guid: 11526a40b218f144fbe1cd3d1c6d7d51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

@@ -1855,7 +1855,7 @@ PrefabInstance:
     - target: {fileID: 2565005287500807740, guid: 11526a40b218f144fbe1cd3d1c6d7d51, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 963194227}
     - target: {fileID: 2565005287500807740, guid: 11526a40b218f144fbe1cd3d1c6d7d51, type: 3}
       propertyPath: m_RenderMode
       value: 1
@@ -1885,12 +1885,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2565005287682056531, guid: 11526a40b218f144fbe1cd3d1c6d7d51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565005287682056531, guid: 11526a40b218f144fbe1cd3d1c6d7d51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2093611736}
     - target: {fileID: 2565005287682056531, guid: 11526a40b218f144fbe1cd3d1c6d7d51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OptionSetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565005287682056531, guid: 11526a40b218f144fbe1cd3d1c6d7d51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Button_Editor, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2565005288144372173, guid: 11526a40b218f144fbe1cd3d1c6d7d51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

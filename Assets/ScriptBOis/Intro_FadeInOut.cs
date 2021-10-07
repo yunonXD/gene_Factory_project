@@ -11,7 +11,7 @@ public class Intro_FadeInOut : MonoBehaviour{
 
     timer += Time.deltaTime;
         if (timer > 5){
-            SceneManager.LoadScene("IntroScene");
+            SceneManager.LoadScene("FirstScene");
         }
     }
 }
