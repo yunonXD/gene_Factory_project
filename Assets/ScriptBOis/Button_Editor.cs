@@ -39,6 +39,11 @@ public class Button_Editor : MonoBehaviour{
         SceneManager.LoadScene("FirstScene");
     }
 
+    public void SceneChange_Memor_gene()    //기억 저장소
+    {
+        SceneManager.LoadScene("RecordMemoryScene");
+    }
+
 
 
 
