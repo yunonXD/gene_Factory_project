@@ -130,8 +130,6 @@ public class Button_Editor : MonoBehaviour{
         }
     }
 
-
-
     public void Stage1_2()
     {
         if (Stage[1]==true)

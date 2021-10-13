@@ -11,8 +11,9 @@ public class Gene_Memory_Store : MonoBehaviour
     public Sprite[] Gene_BigIntel_Screen;   //기록 클릭하면 나오는 오른쪽에 큰 사진 스프라이트
 
     [Header("==텍스트==")]
+    public Text Top_Title;                  //맨 위에 스토리 제목
     public Text Day_Log;                    //우측 정보 기록 시일
-    public Text Gene_Intel;                 //아래 설명
+    public Text Cut_SceneText;                 //아래 설명
     public Text ForStoryText;               //스토리 진행시 나오는 대화창 텍스트
 
     public GameObject IntelPage;            //오른쪽에 사진있고 인텔 창 나오는거
@@ -84,8 +85,9 @@ public class Gene_Memory_Store : MonoBehaviour
                 IntelPage.gameObject.SetActive(true);
 
             //스프라이트 변경
+            Top_Title.text = "버섯이 많은날";
             Day_Log.text = "정보 기록 시일 2210.00.23";
-            Gene_Intel.text = "버섯이 옷을 버섯? 엌ㅋㅋㅋㅋㅋㅋㅋㅋ... 미안 ";
+            Cut_SceneText.text = "버섯이 옷을 버섯? 엌ㅋㅋㅋㅋㅋㅋㅋㅋ... 미안 ";
 
         }
     }
@@ -94,6 +96,10 @@ public class Gene_Memory_Store : MonoBehaviour
         if (Gene_Memory_noUnlock[1] == true && PlayerData.GetComponent<SaveDataManager>()._Creature_ConRabbit == true)
         {
             IntelPage.gameObject.SetActive(true);
+
+            Top_Title.text = "토끼가 많은 날";
+            Day_Log.text = "정보 기록 시일 2210.00.24";
+            Cut_SceneText.text = "야 토껴! ";
         }
     }
 
@@ -102,6 +108,10 @@ public class Gene_Memory_Store : MonoBehaviour
         if (Gene_Memory_noUnlock[2] == true && PlayerData.GetComponent<SaveDataManager>()._Creature_Fran == true)
         {
             IntelPage.gameObject.SetActive(true);
+
+            Top_Title.text = "프랑이 많은 날";
+            Day_Log.text = "정보 기록 시일 2210.00.25";
+            Cut_SceneText.text = "프랑프랑프랑프랑 ";
         }
     }
     public void Gene_Button_4()
@@ -109,6 +119,10 @@ public class Gene_Memory_Store : MonoBehaviour
         if (Gene_Memory_noUnlock[3] == true && PlayerData.GetComponent<SaveDataManager>()._Creature_Nymph == true)
         {
             IntelPage.gameObject.SetActive(true);
+
+            Top_Title.text = "님프가 많은 날";
+            Day_Log.text = "정보 기록 시일 2210.00.26";
+            Cut_SceneText.text = "님? 프?? ";
         }
     }
     public void Gene_Button_5()
@@ -116,6 +130,10 @@ public class Gene_Memory_Store : MonoBehaviour
         if (Gene_Memory_noUnlock[4] == true && PlayerData.GetComponent<SaveDataManager>()._Creature_Manticore == true)
         {
             IntelPage.gameObject.SetActive(true);
+
+            Top_Title.text = "거신이 많은 날";
+            Day_Log.text = "정보 기록 시일 2210.00.27";
+            Cut_SceneText.text = "안녕 난 멘티코어야 ";
         }
     }
     public void Gene_Button_6()
@@ -123,6 +141,10 @@ public class Gene_Memory_Store : MonoBehaviour
         if (Gene_Memory_noUnlock[5] == true && PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_1 == true)
         {
             IntelPage.gameObject.SetActive(true);
+
+            Top_Title.text = "이름 미정????";
+            Day_Log.text = "정보 기록 시일 2210.00.28";
+            Cut_SceneText.text = " 안녕 난 아직 미정이야 나에게 이름을 주세요 ";
         }
     }
     public void Gene_Button_7()
@@ -130,6 +152,10 @@ public class Gene_Memory_Store : MonoBehaviour
         if (Gene_Memory_noUnlock[6] == true && PlayerData.GetComponent<SaveDataManager>()._Creature_Mobidic == true)
         {
             IntelPage.gameObject.SetActive(true);
+
+            Top_Title.text = "모디빅이 많은 날";
+            Day_Log.text = "정보 기록 시일 2210.00.29";
+            Cut_SceneText.text = " 모디빅? 디빅? De BIg?  ";
         }
     }
     public void Gene_Button_8()
@@ -137,6 +163,10 @@ public class Gene_Memory_Store : MonoBehaviour
         if (Gene_Memory_noUnlock[7] == true && PlayerData.GetComponent<SaveDataManager>()._Creature_TangGreece == true)
         {
             IntelPage.gameObject.SetActive(true);
+
+            Top_Title.text = "탕드리드가 많은 날";
+            Day_Log.text = "정보 기록 시일 2210.00.30";
+            Cut_SceneText.text = " 탕! 악 그리드 ㅠㅠ ";
         }
     }
     public void Gene_Button_9()
@@ -144,6 +174,10 @@ public class Gene_Memory_Store : MonoBehaviour
         if (Gene_Memory_noUnlock[8] == true && PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_2 == true)
         {
             IntelPage.gameObject.SetActive(true);
+
+            Top_Title.text = "이름 미정2";
+            Day_Log.text = "정보 기록 시일 2210.00.31";
+            Cut_SceneText.text = "저는 이름 강도에요. 이름을 주세요. ";
         }
     }
 
