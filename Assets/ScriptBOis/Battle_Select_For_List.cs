@@ -275,19 +275,27 @@ public class Battle_Select_For_List : MonoBehaviour
 
     public void Gene_List_Mush()
     {
+
         if (Gene_Select[0].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_Mush == true)
         {
-            //전투창에서 유전자를 선택하면
-            //그리고 해당 유전자가 활성화 되어있는 것이라면
-            Gene_Select[0].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[0];
-            //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
-            SelectGene = 1;
+            if (Gene_Select[0].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_Mush == true)
+            {
+                //전투창에서 유전자를 선택하면
+                //그리고 해당 유전자가 활성화 되어있는 것이라면
+                Gene_Select[0].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[0];
+                //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
+                SelectGene = 1;
+            }
+            else
+            {
+                Gene_Select[0].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[0];
+                //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
+                SelectGene = 0;
+            }
         }
         else
         {
-            Gene_Select[0].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[0];
-            //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
-            SelectGene = 0;
+
         }
     }
 
@@ -295,18 +303,22 @@ public class Battle_Select_For_List : MonoBehaviour
     {
         if (Gene_Select[1].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_ConRabbit == true)
         {
-            //전투창에서 유전자를 선택하면
-            //그리고 해당 유전자가 활성화 되어있는 것이라면
-            Gene_Select[1].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[1];
-            //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
-            SelectGene = 2;
+            if (Gene_Select[1].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_ConRabbit == true)
+            {
+                //전투창에서 유전자를 선택하면
+                //그리고 해당 유전자가 활성화 되어있는 것이라면
+                Gene_Select[1].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[1];
+                //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
+                SelectGene = 2;
+            }
+            else
+            {
+                Gene_Select[1].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[1];
+                //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
+                SelectGene = 0;
+            }
         }
-        else
-        {
-            Gene_Select[1].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[1];
-            //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
-            SelectGene = 0;
-        }
+        else { }
 
 
 
@@ -318,17 +330,24 @@ public class Battle_Select_For_List : MonoBehaviour
     {
         if (Gene_Select[2].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_Fran == true)
         {
-            //전투창에서 유전자를 선택하면
-            //그리고 해당 유전자가 활성화 되어있는 것이라면
-            Gene_Select[2].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[2];
-            //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
-            SelectGene = 3;
+            if (Gene_Select[2].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_Fran == true)
+            {
+                //전투창에서 유전자를 선택하면
+                //그리고 해당 유전자가 활성화 되어있는 것이라면
+                Gene_Select[2].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[2];
+                //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
+                SelectGene = 3;
+            }
+            else
+            {
+                Gene_Select[2].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[2];
+                //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
+                SelectGene = 0;
+            }
         }
         else
         {
-            Gene_Select[2].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[2];
-            //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
-            SelectGene = 0;
+
         }
 
 
@@ -341,17 +360,24 @@ public class Battle_Select_For_List : MonoBehaviour
     {
         if (Gene_Select[3].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_Nymph == true)
         {
-            //전투창에서 유전자를 선택하면
-            //그리고 해당 유전자가 활성화 되어있는 것이라면
-            Gene_Select[3].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[3];
-            //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
-            SelectGene = 4;
+            if (Gene_Select[3].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_Nymph == true)
+            {
+                //전투창에서 유전자를 선택하면
+                //그리고 해당 유전자가 활성화 되어있는 것이라면
+                Gene_Select[3].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[3];
+                //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
+                SelectGene = 4;
+            }
+            else
+            {
+                Gene_Select[3].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[3];
+                //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
+                SelectGene = 0;
+            }
         }
         else
         {
-            Gene_Select[3].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[3];
-            //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
-            SelectGene = 0;
+
         }
     }
 
@@ -359,17 +385,24 @@ public class Battle_Select_For_List : MonoBehaviour
     {
         if (Gene_Select[4].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_Manticore == true)
         {
-            //전투창에서 유전자를 선택하면
-            //그리고 해당 유전자가 활성화 되어있는 것이라면
-            Gene_Select[4].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[4];
-            //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
-            SelectGene = 5;
+            if (Gene_Select[4].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_Manticore == true)
+            {
+                //전투창에서 유전자를 선택하면
+                //그리고 해당 유전자가 활성화 되어있는 것이라면
+                Gene_Select[4].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[4];
+                //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
+                SelectGene = 5;
+            }
+            else
+            {
+                Gene_Select[4].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[4];
+                //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
+                SelectGene = 0;
+            }
         }
         else
         {
-            Gene_Select[4].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[4];
-            //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
-            SelectGene = 0;
+
         }
     }
 
@@ -377,17 +410,24 @@ public class Battle_Select_For_List : MonoBehaviour
     {
         if (Gene_Select[5].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_1 == true)
         {
-            //전투창에서 유전자를 선택하면
-            //그리고 해당 유전자가 활성화 되어있는 것이라면
-            Gene_Select[5].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[5];
-            //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
-            SelectGene = 6;
+            if (Gene_Select[5].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_1 == true)
+            {
+                //전투창에서 유전자를 선택하면
+                //그리고 해당 유전자가 활성화 되어있는 것이라면
+                Gene_Select[5].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[5];
+                //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
+                SelectGene = 6;
+            }
+            else
+            {
+                Gene_Select[5].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[5];
+                //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
+                SelectGene = 0;
+            }
         }
         else
         {
-            Gene_Select[5].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[5];
-            //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
-            SelectGene = 0;
+
         }
     }
 
@@ -395,35 +435,50 @@ public class Battle_Select_For_List : MonoBehaviour
     {
         if (Gene_Select[6].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_Mobidic == true)
         {
-            //전투창에서 유전자를 선택하면
-            //그리고 해당 유전자가 활성화 되어있는 것이라면
-            Gene_Select[6].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[6];
-            //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
-            SelectGene = 7;
+            if (Gene_Select[6].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_Mobidic == true)
+            {
+                //전투창에서 유전자를 선택하면
+                //그리고 해당 유전자가 활성화 되어있는 것이라면
+                Gene_Select[6].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[6];
+                //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
+                SelectGene = 7;
+            }
+            else
+            {
+                Gene_Select[6].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[6];
+                //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
+                SelectGene = 0;
+            }
         }
         else
         {
-            Gene_Select[6].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[6];
-            //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
-            SelectGene = 0;
+
         }
+
     }
 
     public void Gene_List_TangGreece()
     {
         if (Gene_Select[7].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_TangGreece == true)
         {
-            //전투창에서 유전자를 선택하면
-            //그리고 해당 유전자가 활성화 되어있는 것이라면
-            Gene_Select[7].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[7];
-            //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
-            SelectGene = 8;
+            if (Gene_Select[7].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_TangGreece == true)
+            {
+                //전투창에서 유전자를 선택하면
+                //그리고 해당 유전자가 활성화 되어있는 것이라면
+                Gene_Select[7].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[7];
+                //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
+                SelectGene = 8;
+            }
+            else
+            {
+                Gene_Select[7].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[7];
+                //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
+                SelectGene = 0;
+            }
         }
         else
         {
-            Gene_Select[7].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[7];
-            //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
-            SelectGene = 0;
+
         }
     }
 
@@ -431,18 +486,22 @@ public class Battle_Select_For_List : MonoBehaviour
     {
         if (Gene_Select[8].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_2 == true)
         {
-            //전투창에서 유전자를 선택하면
-            //그리고 해당 유전자가 활성화 되어있는 것이라면
-            Gene_Select[8].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[8];
-            //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
-            SelectGene = 9;
+            if (Gene_Select[8].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_2 == true)
+            {
+                //전투창에서 유전자를 선택하면
+                //그리고 해당 유전자가 활성화 되어있는 것이라면
+                Gene_Select[8].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[8];
+                //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
+                SelectGene = 9;
+            }
+            else
+            {
+                Gene_Select[8].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[8];
+                //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
+                SelectGene = 0;
+            }
         }
-        else
-        {
-            Gene_Select[8].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[8];
-            //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
-            SelectGene = 0;
+        else { }
         }
-    }
 
-}
+    }
