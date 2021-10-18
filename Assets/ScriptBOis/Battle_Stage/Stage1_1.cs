@@ -23,6 +23,7 @@ public class Stage1_1 : MonoBehaviour
     private bool SkillAttack = false;       //스킬공격여부
     private bool isdead = false;
     public Camera MainCamera;
+
     public GameObject EnemyDamageText;
     public GameObject PlayerDamageText;
     public GameObject Skilleffect;
@@ -210,6 +211,7 @@ public class Stage1_1 : MonoBehaviour
         PlayerDamageText.GetComponent<DamageScript>().damage(1, 0); // 스킬계수
         isdead = true;
 
+        Invoke("StageClear", 1.0f);
         Invoke("CameraReset", 1f);
         Invoke("StageClear", 1.0f);
 
@@ -252,6 +254,10 @@ public class Stage1_1 : MonoBehaviour
         EnemyDamageText.GetComponent<DamageScript>().Reset();
     }
 
+    void SkilleffectOff()
+    {
+        Skilleffect.gameObject.SetActive(false);
+    }
 
 
 }

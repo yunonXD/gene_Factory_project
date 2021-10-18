@@ -4142,7 +4142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialog: {fileID: 8921276507497561668}
-  BlockScreen_1: {fileID: 0}
+  BlockScreen_1: {fileID: 969551171}
   Checker: {fileID: 785988285}
   For_Story: {fileID: 8921276507135019956}
   SelectVictim: {fileID: 1124300382}

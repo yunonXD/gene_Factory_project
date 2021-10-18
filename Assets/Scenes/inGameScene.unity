@@ -1386,8 +1386,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Optionpage: {fileID: 371991112}
   PlayerData: {fileID: 0}
-  SelectVictim: {fileID: 0}
-  Stage: []
 --- !u!1001 &5470410146446751963
 PrefabInstance:
   m_ObjectHideFlags: 0

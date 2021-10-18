@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/For_Tutorial/FirstScene_Tutorial.unity
+    guid: 52088ab1e667417419081128995062ef
+  - enabled: 1
     path: Assets/Scenes/mainScene.unity
     guid: 8ef7c05d54c06044486f5b5126688b9f
   - enabled: 1
@@ -26,9 +29,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BattleScene1_0.unity
     guid: d86ff9486fae157429b76b028d59e53c
-  - enabled: 1
-    path: Assets/Scenes/For_Tutorial/FirstScene_Tutorial.unity
-    guid: 52088ab1e667417419081128995062ef
   - enabled: 1
     path: Assets/Scenes/For_Tutorial/inGameScene_Tutorial_FORMOVE.unity
     guid: fe92b025189b8a547a8c590b195b4078

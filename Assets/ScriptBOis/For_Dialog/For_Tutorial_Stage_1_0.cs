@@ -16,7 +16,9 @@ public class For_Tutorial_Stage_1_0 : MonoBehaviour
     public GameObject For_Story;
 
     public Button SKILL;
+
     public Image skill_Amount;
+    public Image skill_Amount_Dummy;
     public GameObject MissionClear;
     
 
@@ -70,15 +72,26 @@ public class For_Tutorial_Stage_1_0 : MonoBehaviour
 
             case 5:
                 {
+                    dialog.text = "공격/피격시 25퍼센트의 스킬게이지를 획득하고 " +
+                        "\n 100퍼센트가 될시 스킬아이콘이 활성화 됩니다.";
+
+                }
+                break;
+
+            case 6:
+                {
                     Checker.gameObject.SetActive(false);
                     BlackScrean.gameObject.SetActive(true);
                     Arrow.gameObject.SetActive(true);
                     dialog.text = "스킬 버튼을 누를 시 해당 실험체의 스킬이 실행됩니다.";
+                    skill_Amount_Dummy.gameObject.SetActive(true);
 
                     skill_Amount.fillAmount = 1;
                     SKILL.gameObject.SetActive(true);
                     if (SkillChecker == true)
                     {
+                        SKILL.gameObject.SetActive(false);
+                        skill_Amount_Dummy.gameObject.SetActive(false);
                         BlackScrean.gameObject.SetActive(false);
                         Arrow.gameObject.SetActive(false);
                         For_Story.gameObject.SetActive(false);

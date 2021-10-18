@@ -33,6 +33,16 @@ public class Stage1_0 : MonoBehaviour
     private bool CameraRoundR = false;
     private bool CameraRoundL = false;
 
+    public float ShakeAmount;
+    float ShakeTime;
+    Vector3 initialPosition;
+
+    public void VibrateForTime(float time)
+    {
+        ShakeTime = time;
+    }
+
+
 
     // public GameObject boss;
 
@@ -52,7 +62,7 @@ public class Stage1_0 : MonoBehaviour
             OrderAttack = false;
         }
 
-
+        initialPosition = new Vector3(-0.8f, 1f, -13f);
     }
 
 
@@ -63,11 +73,15 @@ public class Stage1_0 : MonoBehaviour
         if (CameraRoundR == true)
         {
             MainCamera.transform.eulerAngles = MainCamera.transform.eulerAngles + Vector3.forward * 0.01f;
+            //MainCamera.GetComponent<CameraShake>().AttackCameraShake(0.005f, 0.3f);
+            //Debug.Log("카메라 흔들기 0.08f, 0.3f");
         }
 
         if (CameraRoundL == true)
         {
             MainCamera.transform.eulerAngles = MainCamera.transform.eulerAngles + Vector3.forward * -0.01f;
+            //MainCamera.GetComponent<CameraShake>().AttackCameraShake(0.005f, 0.3f);
+            //Debug.Log("카메라 흔들기 0.08f, 0.3f");
         }
 
 
@@ -93,6 +107,8 @@ public class Stage1_0 : MonoBehaviour
                 if (SkillAttack == true)
                 {
                     SkiilAttack();
+                    MainCamera.GetComponent<CameraShake>().AttackCameraShake(0.6f, 0.4f);
+                    Debug.Log("카메라 흔들기 0.05f, 0.3f");
                     Invoke("ResetDamageText", 1.5f);
                 }
                 else
@@ -109,6 +125,7 @@ public class Stage1_0 : MonoBehaviour
             else if (OrderAttack == false)
             {
                 EnemyAttack();
+                MainCamera.GetComponent<CameraShake>().AttackCameraShake(0.5f, 0.4f);
                 CameraRoundL = true;
                 Invoke("ResetDamageText", 1.0f);
                 OrderAttack = true;
@@ -210,8 +227,10 @@ public class Stage1_0 : MonoBehaviour
         PlayerDamageText.GetComponent<DamageScript>().damage(1, 0); // 스킬계수
         isdead = true;
 
+        Invoke("SkilleffectOff", 1f);
         Invoke("CameraReset", 1f);
         Invoke("StageClear", 1.0f);
+        
 
     }
 
@@ -247,11 +266,15 @@ public class Stage1_0 : MonoBehaviour
     }
 
     void ResetDamageText()
-    {
+    { 
         PlayerDamageText.GetComponent<DamageScript>().Reset();
         EnemyDamageText.GetComponent<DamageScript>().Reset();
     }
 
+    void SkilleffectOff()
+    {
+        Skilleffect.gameObject.SetActive(false);
+    }
 
 
 }
