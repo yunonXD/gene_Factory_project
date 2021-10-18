@@ -5195,9 +5195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Optionpage: {fileID: 371991112}
-  PlayerData: {fileID: 0}
-  SelectVictim: {fileID: 0}
-  Stage: []
+  PlayerData: {fileID: 675337703}
 --- !u!114 &2093611737
 MonoBehaviour:
   m_ObjectHideFlags: 0

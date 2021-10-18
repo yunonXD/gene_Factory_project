@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: 8ef7c05d54c06044486f5b5126688b9f
   - enabled: 1
     path: Assets/Scenes/FirstScene.unity
-    guid: 52088ab1e667417419081128995062ef
+    guid: 858d3c491fdfdc54b8e19ef03a8be7b7
   - enabled: 1
     path: Assets/Scenes/inGameScene.unity
     guid: 0bb9955f24c057142a4c830186e03a5e
@@ -26,4 +26,31 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BattleScene1_0.unity
     guid: d86ff9486fae157429b76b028d59e53c
+  - enabled: 1
+    path: Assets/Scenes/For_Tutorial/FirstScene_Tutorial.unity
+    guid: 52088ab1e667417419081128995062ef
+  - enabled: 1
+    path: Assets/Scenes/For_Tutorial/inGameScene_Tutorial_FORMOVE.unity
+    guid: fe92b025189b8a547a8c590b195b4078
+  - enabled: 1
+    path: Assets/Scenes/For_Tutorial/geneMap_Tutorial.unity
+    guid: 32434939146dd3c47b7053c81dbf662d
+  - enabled: 1
+    path: Assets/Scenes/For_Tutorial/BattleSelectScene_Tutorial.unity
+    guid: 1bd93ce02928acc47b7083078bbd31ab
+  - enabled: 1
+    path: Assets/Scenes/For_Tutorial/inGameScene_FOR_Tutorial.unity
+    guid: 87a3cbaa0ddf8584faff8301590ce8fc
+  - enabled: 1
+    path: Assets/Scenes/For_Tutorial/BattleScene1_0_For_Tutorial.unity
+    guid: 36c2e618f19a9ea409f68bbea86238d4
+  - enabled: 1
+    path: Assets/Scenes/For_Tutorial/inGameScene_For_Memory.unity
+    guid: 00450d6f6d11b3742afb25ea94a7e3f4
+  - enabled: 1
+    path: Assets/Scenes/For_Tutorial/RecordMemoryScene_For_Tutorial.unity
+    guid: 3ca82f14e9a528041b0b89ef16c0c86b
+  - enabled: 1
+    path: Assets/Scenes/For_Tutorial/inGameScene_For_Final_Tutorial.unity
+    guid: aac6614e8ac9b4a45aafd538a9a98bd8
   m_configObjects: {}

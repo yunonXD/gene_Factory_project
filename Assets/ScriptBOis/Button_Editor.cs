@@ -51,6 +51,60 @@ public class Button_Editor : MonoBehaviour{
     }
 
 
+    /// <summary>
+    /// 여긴 튜토리얼용 버튼임!!! 시전 종료후 삭제할 수 있으니 주의할것!
+    /// </summary>
+
+
+    public void SceneChange_inGameScene_Tutorial()
+    {
+        SceneManager.LoadScene("inGameScene_FOR_Tutorial");
+    }
+
+    public void SceneChange_geneMap_Tutorial()
+    {
+        SceneManager.LoadScene("geneMap_Tutorial");
+    }
+
+    public void SceneChange_inGameScene_Tutorial_FORMOVE()
+    {
+        SceneManager.LoadScene("inGameScene_Tutorial_FORMOVE");
+    }
+
+    public void SceneChange_BattleSelect_Tutorial()
+    {
+        SceneManager.LoadScene("BattleSelectScene_Tutorial");
+    }
+
+    public void SceneChange_Battle_1_0_Tutorial()
+    {
+        if(PlayerData.GetComponent<SaveDataManager>()._Creature_Mush == true)
+        {
+            SceneManager.LoadScene("BattleScene1_0_For_Tutorial"); //혹시 스타트부터 누르는 무지성 클릭 예외처리
+        }
+
+    }
+
+    public void SceneChange_Gene_Memory_Tutorial()
+    {
+        SceneManager.LoadScene("RecordMemoryScene_For_Tutorial");
+    }
+
+    public void SceneChenge_inGameScene_For_Final_Tutorial()
+    {
+        SceneManager.LoadScene("inGameScene_For_Final_Tutorial");
+    }
+
+
+
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+
+
+
     void Update()       //ESC 누를시 옵션창 활성화 / 비활성화
     {
         if (Input.GetKeyDown(KeyCode.Escape))

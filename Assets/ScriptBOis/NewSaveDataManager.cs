@@ -38,7 +38,7 @@ public class NewSaveDataManager : MonoBehaviour
         data.Gene_Between_6 = false;
         data.Gene_Between_7 = false;
         data.Gene_Between_8 = false;
-        data.ResearchPoint = 0;
+        data.ResearchPoint = 10;            //새로운 세이브 파일 포인트 잠시 10으로 늘릴게요! by 윤종우
 
 
         File.WriteAllText(Application.dataPath + "/SaveData.json", JsonUtility.ToJson(data));
