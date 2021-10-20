@@ -56,10 +56,11 @@ public class For_Tutorial_Stage_1_0 : MonoBehaviour
             case 4:
                 {
 
-                    BlackScrean.gameObject.SetActive(false);
+                    
                     dialog.text = "전투는 기본적으로 순서에 따라 차례대로 공격을 진행합니다.";
+                   
+                    BlackScrean.gameObject.SetActive(false);
                     Time.timeScale = 1;
-
                     waitgene += Time.deltaTime;
                     if (waitgene >= 5)
                     {
@@ -81,6 +82,7 @@ public class For_Tutorial_Stage_1_0 : MonoBehaviour
 
             case 6:
                 {
+                    Time.timeScale = 0;
                     Checker.gameObject.SetActive(false);
                     BlackScrean.gameObject.SetActive(true);
                     Arrow.gameObject.SetActive(true);
