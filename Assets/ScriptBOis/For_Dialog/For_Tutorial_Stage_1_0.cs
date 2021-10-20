@@ -72,6 +72,7 @@ public class For_Tutorial_Stage_1_0 : MonoBehaviour
 
             case 5:
                 {
+                    Time.timeScale = 1;
                     dialog.text = "공격/피격시 25퍼센트의 스킬게이지를 획득하고 " +
                         "\n 100퍼센트가 될시 스킬아이콘이 활성화 됩니다.";
 
