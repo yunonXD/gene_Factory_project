@@ -8,6 +8,7 @@ public class Button_Editor : MonoBehaviour{
 
     public GameObject Optionpage;
     public GameObject PlayerData;
+    private bool isPause = false;
 
 
     public void SceneChange_inGame(){       //인게임씬
@@ -44,7 +45,11 @@ public class Button_Editor : MonoBehaviour{
     {
         //Debug.Log("옵션창 테스트");
         Optionpage.SetActive(false);
+        isPause = false;
     }
+
+
+
 
     public void OnApplicationQuit(){        //게임종료
         Application.Quit();
@@ -109,7 +114,19 @@ public class Button_Editor : MonoBehaviour{
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Optionpage.SetActive(true);
+            if (isPause == false)
+            {
+                Optionpage.SetActive(true);
+                isPause = true;
+                return;
+            }
+            if(isPause == true)
+            {
+                Optionpage.SetActive(false);
+                isPause = false;
+                return;
+
+            }
         }
 
     }
