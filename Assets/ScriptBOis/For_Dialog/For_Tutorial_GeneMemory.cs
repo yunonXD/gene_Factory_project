@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class For_Tutorial_GeneMemory : MonoBehaviour
 {
+
     private bool ClickCheck = false;
     private int Clicker_Check = 0;      // 버튼 클릭 횟수로 판단 함. 시간 없어서 이렇게 만들어야함.
     public Text dialog;

@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using FMODUnity;
 
 public class Button_Editor : MonoBehaviour{
 
+    [SerializeField]
+    [EventRef]
+    public string soundEvent_ForESC = null;
     public GameObject Optionpage;
     public GameObject PlayerData;
     private bool isPause = false;
@@ -116,12 +120,14 @@ public class Button_Editor : MonoBehaviour{
         {
             if (isPause == false)
             {
+                PlaySoundEvent_ESC();
                 Optionpage.SetActive(true);
                 isPause = true;
                 return;
             }
             if(isPause == true)
             {
+                PlaySoundEvent_ESC();
                 Optionpage.SetActive(false);
                 isPause = false;
                 return;
@@ -131,6 +137,14 @@ public class Button_Editor : MonoBehaviour{
 
     }
 
+
+    public void PlaySoundEvent_ESC()
+    {
+        if (soundEvent_ForESC != null)
+        {
+            RuntimeManager.PlayOneShot(soundEvent_ForESC);
+        }
+    }
 
 
 

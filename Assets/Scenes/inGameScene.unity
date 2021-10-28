@@ -319,6 +319,7 @@ GameObject:
   - component: {fileID: 241506086}
   - component: {fileID: 241506085}
   - component: {fileID: 241506084}
+  - component: {fileID: 241506088}
   - component: {fileID: 241506087}
   m_Layer: 5
   m_Name: RecordMemory
@@ -402,6 +403,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 241506088}
+        m_TargetAssemblyTypeName: PlayFModUI, Assembly-CSharp
+        m_MethodName: PlaySoundEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &241506085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,6 +466,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AlphaThread: 0.2
+--- !u!114 &241506088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241506082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1523041fb88f8a84190ab5a25c1c40b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEvent: event:/SFX/UI/Normal_Panal_Click
 --- !u!1001 &371991111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -959,7 +985,6 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
-  - component: {fileID: 963194226}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -967,14 +992,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &963194226
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -1044,6 +1061,7 @@ GameObject:
   - component: {fileID: 1784239213}
   - component: {fileID: 1784239212}
   - component: {fileID: 1784239211}
+  - component: {fileID: 1784239215}
   - component: {fileID: 1784239214}
   m_Layer: 5
   m_Name: GeneMap
@@ -1127,6 +1145,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 241506088}
+        m_TargetAssemblyTypeName: PlayFModUI, Assembly-CSharp
+        m_MethodName: PlaySoundEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1784239212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1178,6 +1208,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AlphaThread: 0.2
+--- !u!114 &1784239215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784239209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1523041fb88f8a84190ab5a25c1c40b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEvent: event:/SFX/UI/Normal_Panal_Click
 --- !u!1 &2048203861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,6 +1233,7 @@ GameObject:
   - component: {fileID: 2048203865}
   - component: {fileID: 2048203864}
   - component: {fileID: 2048203863}
+  - component: {fileID: 2048203867}
   - component: {fileID: 2048203866}
   m_Layer: 5
   m_Name: IsolationWall
@@ -1273,6 +1317,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 241506088}
+        m_TargetAssemblyTypeName: PlayFModUI, Assembly-CSharp
+        m_MethodName: PlaySoundEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2048203864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1324,6 +1380,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AlphaThread: 0.1
+--- !u!114 &2048203867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048203861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1523041fb88f8a84190ab5a25c1c40b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEvent: event:/SFX/UI/Normal_Panal_Click
 --- !u!1 &2093611733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,6 +1453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eefdd148573b924ea23820b66171b67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundEvent_ForESC: event:/SFX/UI/Normal_Button_Click
   Optionpage: {fileID: 371991112}
   PlayerData: {fileID: 0}
 --- !u!1001 &5470410146446751963

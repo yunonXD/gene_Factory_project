@@ -2,9 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using FMODUnity;
 
 public class Gene_Memory_Store : MonoBehaviour
 {
+    [SerializeField]
+    [EventRef]
+    public string soundEvent_ForMemory_Unkown = null;
+    [EventRef]
+    public string soundEvent_ForMemory_keypad = null;
+
     public GameObject PlayerData;
     public Button[] Gene_Memory_noUnlock;   //배열. 언락 시켜도 이름은 똑같음 
     public Sprite[] Gene_Unlock_Sprite;     //언락되어있는 스프라이트
@@ -82,7 +89,8 @@ public class Gene_Memory_Store : MonoBehaviour
     {
         if (Gene_Memory_noUnlock[0] == true && PlayerData.GetComponent<SaveDataManager>()._Creature_Mush == true)
         {
-                IntelPage.gameObject.SetActive(true);
+            PlaySoundEvent_keypad();
+            IntelPage.gameObject.SetActive(true);
 
             //스프라이트 변경
             Top_Title.text = "버섯이 많은날";
@@ -90,9 +98,14 @@ public class Gene_Memory_Store : MonoBehaviour
             Cut_SceneText.text = "버섯이 옷을 버섯? 엌ㅋㅋㅋㅋㅋㅋㅋㅋ... 미안 ";
 
         }
+        else
+        {
+            PlaySoundEvent_Unkown();
+        }
     }
     public void Gene_Button_2()
     {
+        PlaySoundEvent_keypad();
         if (Gene_Memory_noUnlock[1] == true && PlayerData.GetComponent<SaveDataManager>()._Creature_ConRabbit == true)
         {
             IntelPage.gameObject.SetActive(true);
@@ -101,89 +114,149 @@ public class Gene_Memory_Store : MonoBehaviour
             Day_Log.text = "정보 기록 시일 2210.00.24";
             Cut_SceneText.text = "야 토껴! ";
         }
+        else
+        {
+            PlaySoundEvent_Unkown();
+        }
     }
 
     public void Gene_Button_3()
     {
+
         if (Gene_Memory_noUnlock[2] == true && PlayerData.GetComponent<SaveDataManager>()._Creature_Fran == true)
         {
+            PlaySoundEvent_keypad();
             IntelPage.gameObject.SetActive(true);
 
             Top_Title.text = "프랑이 많은 날";
             Day_Log.text = "정보 기록 시일 2210.00.25";
             Cut_SceneText.text = "프랑프랑프랑프랑 ";
         }
+        else
+        {
+            PlaySoundEvent_Unkown();
+        }
     }
     public void Gene_Button_4()
     {
+        
         if (Gene_Memory_noUnlock[3] == true && PlayerData.GetComponent<SaveDataManager>()._Creature_Nymph == true)
         {
+            PlaySoundEvent_keypad();
             IntelPage.gameObject.SetActive(true);
 
             Top_Title.text = "님프가 많은 날";
             Day_Log.text = "정보 기록 시일 2210.00.26";
             Cut_SceneText.text = "님? 프?? ";
         }
+        else
+        {
+            PlaySoundEvent_Unkown();
+        }
     }
     public void Gene_Button_5()
     {
+
         if (Gene_Memory_noUnlock[4] == true && PlayerData.GetComponent<SaveDataManager>()._Creature_Manticore == true)
         {
+            PlaySoundEvent_keypad();
             IntelPage.gameObject.SetActive(true);
 
             Top_Title.text = "거신이 많은 날";
             Day_Log.text = "정보 기록 시일 2210.00.27";
             Cut_SceneText.text = "안녕 난 멘티코어야 ";
         }
+        else
+        {
+            PlaySoundEvent_Unkown();
+        }
     }
     public void Gene_Button_6()
     {
+
         if (Gene_Memory_noUnlock[5] == true && PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_1 == true)
         {
+            PlaySoundEvent_keypad();
             IntelPage.gameObject.SetActive(true);
 
             Top_Title.text = "이름 미정????";
             Day_Log.text = "정보 기록 시일 2210.00.28";
             Cut_SceneText.text = " 안녕 난 아직 미정이야 나에게 이름을 주세요 ";
         }
+        else
+        {
+            PlaySoundEvent_Unkown();
+        }
     }
     public void Gene_Button_7()
     {
+
         if (Gene_Memory_noUnlock[6] == true && PlayerData.GetComponent<SaveDataManager>()._Creature_Mobidic == true)
         {
+            PlaySoundEvent_keypad();
             IntelPage.gameObject.SetActive(true);
 
             Top_Title.text = "모디빅이 많은 날";
             Day_Log.text = "정보 기록 시일 2210.00.29";
             Cut_SceneText.text = " 모디빅? 디빅? De BIg?  ";
         }
+        else
+        {
+            PlaySoundEvent_Unkown();
+        }
     }
     public void Gene_Button_8()
     {
+
         if (Gene_Memory_noUnlock[7] == true && PlayerData.GetComponent<SaveDataManager>()._Creature_TangGreece == true)
         {
+            PlaySoundEvent_keypad();
             IntelPage.gameObject.SetActive(true);
 
             Top_Title.text = "탕드리드가 많은 날";
             Day_Log.text = "정보 기록 시일 2210.00.30";
             Cut_SceneText.text = " 탕! 악 그리드 ㅠㅠ ";
         }
+        else
+        {
+            PlaySoundEvent_Unkown();
+        }
     }
     public void Gene_Button_9()
     {
+
         if (Gene_Memory_noUnlock[8] == true && PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_2 == true)
         {
+            PlaySoundEvent_keypad();
             IntelPage.gameObject.SetActive(true);
 
             Top_Title.text = "이름 미정2";
             Day_Log.text = "정보 기록 시일 2210.00.31";
             Cut_SceneText.text = "저는 이름 강도에요. 이름을 주세요. ";
         }
+        else
+        {
+            PlaySoundEvent_Unkown();
+        }
     }
 
 
 
+    public void PlaySoundEvent_Unkown()
+    {
+        if (soundEvent_ForMemory_Unkown != null)
+        {
+            RuntimeManager.PlayOneShot(soundEvent_ForMemory_Unkown);
+        }
+    }
 
+    public void PlaySoundEvent_keypad()
+    {
+        if (soundEvent_ForMemory_keypad != null)
+        {
+            RuntimeManager.PlayOneShot(soundEvent_ForMemory_keypad);
+        }
+    }
 
 
 }
