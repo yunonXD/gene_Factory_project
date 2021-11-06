@@ -7,16 +7,13 @@ using FMODUnity;
 
 public class Button_Editor : MonoBehaviour{
 
-    [SerializeField]
-    [EventRef]
-    public string soundEvent_ForESC = null;
+
     public GameObject Optionpage;
     public GameObject PlayerData;
     private bool isPause = false;
 
 
     public void SceneChange_inGame(){       //인게임씬
-
         SceneManager.LoadScene("inGameScene");
     }
 
@@ -113,21 +110,22 @@ public class Button_Editor : MonoBehaviour{
 
 
 
-
     void Update()       //ESC 누를시 옵션창 활성화 / 비활성화
     {
+        
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPause == false)
             {
-                PlaySoundEvent_ESC();
+                PlayFModUI.instance.NbuttonClick();
                 Optionpage.SetActive(true);
                 isPause = true;
                 return;
             }
             if(isPause == true)
             {
-                PlaySoundEvent_ESC();
+                PlayFModUI.instance.NbuttonClick();
                 Optionpage.SetActive(false);
                 isPause = false;
                 return;
@@ -137,15 +135,11 @@ public class Button_Editor : MonoBehaviour{
 
     }
 
-
-    public void PlaySoundEvent_ESC()
+    private void Start()
     {
-        if (soundEvent_ForESC != null)
-        {
-            RuntimeManager.PlayOneShot(soundEvent_ForESC);
-        }
-    }
 
+
+    }
 
 
 }

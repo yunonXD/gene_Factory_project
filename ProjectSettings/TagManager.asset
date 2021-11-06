@@ -14,6 +14,7 @@ TagManager:
   - Num_8
   - Num_9
   - Num_0
+  - ESC
   layers:
   - Default
   - TransparentFX

@@ -8,14 +8,6 @@ using FMODUnity;
 public class Battle_Select_For_List : MonoBehaviour
 {
 
-    [EventRef]
-    public string soundEvent_ForBattleS_Click = null;
-    [EventRef]
-    public string soundEvent_ForBattleS_keypad = null;
-    [EventRef]
-    public string soundEvent_ForBattleS_Unkown = null;
-
-
 
     //마지막 스테이지 클리어 유무 => 세이브 데이터 활용 필요
     private int StageSelect = 0;                //스테이지 선택 유무
@@ -27,7 +19,6 @@ public class Battle_Select_For_List : MonoBehaviour
     public Toggle[] Gene_Select;                //캐릭터 선택 리스트
     public Sprite[] Gene_List_Sprite;           //리스트 언락되면 바뀔 스프라이트
     public Sprite[] Gene_Select_Sprite;           //리스트 선택되면 바뀔 스프라이트
-
 
 
     void Start()
@@ -76,16 +67,46 @@ public class Battle_Select_For_List : MonoBehaviour
     void Update()
     {
 
+        if(PlayerData.GetComponent<SaveDataManager>()._Stage1_4 == true)        //1_4 가 튜툐리얼임!!
+        {
+            Stage[0].gameObject.SetActive(false);
+        }
+        if (PlayerData.GetComponent<SaveDataManager>()._Stage1_1 == true)
+        {
+            Stage[1].gameObject.SetActive(false);
+        }
+        if (PlayerData.GetComponent<SaveDataManager>()._Stage1_2 == true)
+        {
+            Stage[2].gameObject.SetActive(false);
+        }
+        if (PlayerData.GetComponent<SaveDataManager>()._Stage1_3 == true)
+        {
+            Stage[3].gameObject.SetActive(false);
+        }
+        if (PlayerData.GetComponent<SaveDataManager>()._Stage2_1 == true)
+        {
+            Stage[4].gameObject.SetActive(false);
+        }
+        if (PlayerData.GetComponent<SaveDataManager>()._Stage2_2 == true)
+        {
+            Stage[5].gameObject.SetActive(false);
+        }
+        if (PlayerData.GetComponent<SaveDataManager>()._Stage2_3 == true)
+        {
+            Stage[6].gameObject.SetActive(false);
+        }
+
+
+
 
     }
+
 
 
     public void SelectBattle_Button()       //시작버튼 각 버튼마다 다른 스테이지 할당
     {
         switch (StageSelect)
         {
-
-
             case 100:           //이거 튜토리얼임!!!
                 if (PlayerData.GetComponent<SaveDataManager>()._Creature_Mush == true)
                 {
@@ -115,15 +136,8 @@ public class Battle_Select_For_List : MonoBehaviour
                 }
                 break;
 
+
             case 4:
-                if (PlayerData.GetComponent<SaveDataManager>()._Stage1_4 == true)
-                {
-                    SceneManager.LoadScene("BattleScene1_4");
-
-                }
-                break;
-
-            case 5:
                 if (PlayerData.GetComponent<SaveDataManager>()._Stage2_1 == true)
                 {
                     SceneManager.LoadScene("BattleScene2_1");
@@ -131,26 +145,20 @@ public class Battle_Select_For_List : MonoBehaviour
                 }
                 break;
 
-            case 6:
+            case 5:
                 if (PlayerData.GetComponent<SaveDataManager>()._Stage2_2 == true)
                 {
                     SceneManager.LoadScene("BattleScene2_2");
                 }
                 break;
 
-            case 7:
+            case 6:
                 if (PlayerData.GetComponent<SaveDataManager>()._Stage2_3 == true)
                 {
                     SceneManager.LoadScene("BattleScene2_3");
                 }
                 break;
 
-            case 8:
-                if (PlayerData.GetComponent<SaveDataManager>()._Stage2_4 == true)
-                {
-                    SceneManager.LoadScene("BattleScene2_4");
-                }
-                break;
 
 
         }
@@ -159,8 +167,9 @@ public class Battle_Select_For_List : MonoBehaviour
 
     public void Stage1_0()
     {
-        if (Stage[0] == true)
+        if (PlayerData.GetComponent<SaveDataManager>()._Creature_Mush == true)
         {
+            PlayFModUI.instance.NbuttonClick();
             StageSelect = 100;
             SelectVictim.gameObject.SetActive(true);
         }
@@ -169,14 +178,16 @@ public class Battle_Select_For_List : MonoBehaviour
 
     public void Stage1_1()
     {
-        if (Stage[0] == true)
+        if (Stage[3] == true)           //4번 1_4 스테이지가 튜토리얼 확인 스테이지
         {
-            PlaySoundEvent_Click();
-            StageSelect = 1;
-            SelectVictim.gameObject.SetActive(true);
+            if (PlayerData.GetComponent<SaveDataManager>()._Stage1_4 == true)
+            {
+                PlayFModUI.instance.NbuttonClick();
+                StageSelect = 1;
+                SelectVictim.gameObject.SetActive(true);
+            }
         }
-
-
+        PlayFModUI.instance.NUnknownClick();
     }
 
     public void Stage1_2()
@@ -185,12 +196,12 @@ public class Battle_Select_For_List : MonoBehaviour
         {
             if (PlayerData.GetComponent<SaveDataManager>()._Stage1_2 == true)
             {
-                PlaySoundEvent_Click();
+                PlayFModUI.instance.NbuttonClick();
                 StageSelect = 2;
                 SelectVictim.gameObject.SetActive(true);
             }
         }
-        PlaySoundEvent_Unkown();
+        PlayFModUI.instance.NUnknownClick();
     }
 
     public void Stage1_3()
@@ -199,27 +210,27 @@ public class Battle_Select_For_List : MonoBehaviour
         {
             if (PlayerData.GetComponent<SaveDataManager>()._Stage1_3 == true)
             {
-                PlaySoundEvent_Click();
+                PlayFModUI.instance.NbuttonClick();
                 StageSelect = 3;
                 SelectVictim.gameObject.SetActive(true);
             }
         }
-        PlaySoundEvent_Unkown();
+        PlayFModUI.instance.NUnknownClick();
     }
 
-    public void Stage1_4()
-    {
-        if (Stage[3] == true)
-        {
-            if (PlayerData.GetComponent<SaveDataManager>()._Stage1_4 == true)
-            {
-                PlaySoundEvent_Click();
-                StageSelect = 4;
-                SelectVictim.gameObject.SetActive(true);
-            }
-        }
-        PlaySoundEvent_Unkown();
-    }
+    //public void Stage1_4()
+    //{
+    //    if (Stage[3] == true)
+    //    {
+    //        if (PlayerData.GetComponent<SaveDataManager>()._Stage1_4 == true)
+    //        {
+    //            PlayFModUI.instance.NbuttonClick();
+    //            StageSelect = 4;
+    //            SelectVictim.gameObject.SetActive(true);
+    //        }
+    //    }
+    //    PlayFModUI.instance.NUnknownClick();
+    //}
 
     public void Stage2_1()
     {
@@ -227,12 +238,12 @@ public class Battle_Select_For_List : MonoBehaviour
         {
             if (PlayerData.GetComponent<SaveDataManager>()._Stage2_1 == true)
             {
-                PlaySoundEvent_Click();
+                PlayFModUI.instance.NbuttonClick();
                 StageSelect = 5;
                 SelectVictim.gameObject.SetActive(true);
             }
         }
-        PlaySoundEvent_Unkown();
+        PlayFModUI.instance.NUnknownClick();
     }
 
     public void Stage2_2()
@@ -242,13 +253,13 @@ public class Battle_Select_For_List : MonoBehaviour
 
             if (PlayerData.GetComponent<SaveDataManager>()._Stage2_2 == true)
             {
-                PlaySoundEvent_Click();
+                PlayFModUI.instance.NbuttonClick();
                 StageSelect = 6;
                 SelectVictim.gameObject.SetActive(true);
             }
 
         }
-        PlaySoundEvent_Unkown();
+        PlayFModUI.instance.NUnknownClick();
     }
 
     public void Stage2_3()
@@ -257,29 +268,25 @@ public class Battle_Select_For_List : MonoBehaviour
         {
             if (PlayerData.GetComponent<SaveDataManager>()._Stage2_3 == true)
             {
-                PlaySoundEvent_Click();
                 StageSelect = 7;
                 SelectVictim.gameObject.SetActive(true);
             }
         }
-        PlaySoundEvent_Unkown();
-
+        PlayFModUI.instance.NUnknownClick();
     }
 
-    public void Stage2_4()
-    {
-        if (Stage[7] == true)
-        {
-            if (PlayerData.GetComponent<SaveDataManager>()._Stage2_4 == true)
-            {
-                PlaySoundEvent_Click();
-                StageSelect = 8;
-                SelectVictim.gameObject.SetActive(true);
-            }
-        }
-        PlaySoundEvent_Unkown();
+    //public void Stage2_4()
+    //{
+    //    if (Stage[7] == true)
+    //    {
+    //        if (PlayerData.GetComponent<SaveDataManager>()._Stage2_4 == true)
+    //        {
+    //            StageSelect = 8;
+    //            SelectVictim.gameObject.SetActive(true);
+    //        }
+    //    }
 
-    }
+    //}
 
 
     public void Gene_List_Mush()
@@ -289,7 +296,7 @@ public class Battle_Select_For_List : MonoBehaviour
         {
             if (Gene_Select[0].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_Mush == true )
             {
-                PlaySoundEvent_keypad();
+                PlayFModUI.instance.NKeypadMouse();
                 //전투창에서 유전자를 선택하면
                 //그리고 해당 유전자가 활성화 되어있는 것이라면
                 Gene_Select[0].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[0];
@@ -305,7 +312,7 @@ public class Battle_Select_For_List : MonoBehaviour
         }
         else
         {
-            PlaySoundEvent_Unkown();
+            PlayFModUI.instance.NUnknownClick();
         }
     }
 
@@ -315,7 +322,7 @@ public class Battle_Select_For_List : MonoBehaviour
         {
             if (Gene_Select[1].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_ConRabbit == true)
             {
-                PlaySoundEvent_keypad();
+                PlayFModUI.instance.NKeypadMouse();
                 //전투창에서 유전자를 선택하면
                 //그리고 해당 유전자가 활성화 되어있는 것이라면
                 Gene_Select[1].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[1];
@@ -330,7 +337,7 @@ public class Battle_Select_For_List : MonoBehaviour
             }
         }
         else {
-            PlaySoundEvent_Unkown();
+            PlayFModUI.instance.NUnknownClick();
         }
     }
 
@@ -340,7 +347,7 @@ public class Battle_Select_For_List : MonoBehaviour
         {
             if (Gene_Select[2].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_Fran == true)
             {
-                PlaySoundEvent_keypad();
+                PlayFModUI.instance.NKeypadMouse();
                 //전투창에서 유전자를 선택하면
                 //그리고 해당 유전자가 활성화 되어있는 것이라면
                 Gene_Select[2].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[2];
@@ -356,7 +363,7 @@ public class Battle_Select_For_List : MonoBehaviour
         }
         else
         {
-            PlaySoundEvent_Unkown();
+            PlayFModUI.instance.NUnknownClick();
         }
     }
 
@@ -366,7 +373,7 @@ public class Battle_Select_For_List : MonoBehaviour
         {
             if (Gene_Select[3].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_Nymph == true)
             {
-                PlaySoundEvent_keypad();
+                PlayFModUI.instance.NKeypadMouse();
                 //전투창에서 유전자를 선택하면
                 //그리고 해당 유전자가 활성화 되어있는 것이라면
                 Gene_Select[3].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[3];
@@ -382,7 +389,7 @@ public class Battle_Select_For_List : MonoBehaviour
         }
         else
         {
-            PlaySoundEvent_Unkown();
+            PlayFModUI.instance.NUnknownClick();
         }
     }
 
@@ -392,7 +399,7 @@ public class Battle_Select_For_List : MonoBehaviour
         {
             if (Gene_Select[4].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_Manticore == true)
             {
-                PlaySoundEvent_keypad();
+                PlayFModUI.instance.NKeypadMouse();
                 //전투창에서 유전자를 선택하면
                 //그리고 해당 유전자가 활성화 되어있는 것이라면
                 Gene_Select[4].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[4];
@@ -408,7 +415,7 @@ public class Battle_Select_For_List : MonoBehaviour
         }
         else
         {
-            PlaySoundEvent_Unkown();
+            PlayFModUI.instance.NUnknownClick();
         }
     }
 
@@ -416,28 +423,29 @@ public class Battle_Select_For_List : MonoBehaviour
     {
         if (PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_1 == true)
         {
-            if (Gene_Select[5].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_1 == true)
-            {
-                PlaySoundEvent_keypad();
-                //전투창에서 유전자를 선택하면
-                //그리고 해당 유전자가 활성화 되어있는 것이라면
-                Gene_Select[5].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[5];
-                //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
-                SelectGene = 6;
-            }
-            else if (Gene_Select[5].isOn == false)
-            {
-                PlaySoundEvent_Unkown();
-                Gene_Select[5].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[5];
-                //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
-                SelectGene = 0;
-            }
-        }
-        else
-        {
-            PlaySoundEvent_Unkown();
-        }
-    }
+            PlayFModUI.instance.NUnknownClick();
+            //    if (Gene_Select[5].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_1 == true)
+            //    {
+            //        PlayFModUI.instance.NUnknownClick();
+            //        //전투창에서 유전자를 선택하면
+            //        //그리고 해당 유전자가 활성화 되어있는 것이라면
+            //        //Gene_Select[5].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[5];
+            //        //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
+            //        //SelectGene = 6;
+            //    }
+            //    else if (Gene_Select[5].isOn == false)
+            //    {
+            //        PlayFModUI.instance.NUnknownClick();
+            //        //Gene_Select[5].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[5];
+            //        //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
+            //        //SelectGene = 0;
+            //    }
+            //}
+            //else
+            //{
+            //    PlayFModUI.instance.NUnknownClick();
+         }
+     }
 
     public void Gene_List_Mobidic()
     {
@@ -445,7 +453,7 @@ public class Battle_Select_For_List : MonoBehaviour
         {
             if (Gene_Select[6].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_Mobidic == true)
             {
-                PlaySoundEvent_keypad();
+                PlayFModUI.instance.NKeypadMouse();
                 //전투창에서 유전자를 선택하면
                 //그리고 해당 유전자가 활성화 되어있는 것이라면
                 Gene_Select[6].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[6];
@@ -461,7 +469,7 @@ public class Battle_Select_For_List : MonoBehaviour
         }
         else
         {
-            PlaySoundEvent_Unkown();
+            PlayFModUI.instance.NUnknownClick();
         }
 
     }
@@ -472,7 +480,7 @@ public class Battle_Select_For_List : MonoBehaviour
         {
             if (Gene_Select[7].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_TangGreece == true)
             {
-                PlaySoundEvent_keypad();
+                PlayFModUI.instance.NKeypadMouse();
                 //전투창에서 유전자를 선택하면
                 //그리고 해당 유전자가 활성화 되어있는 것이라면
                 Gene_Select[7].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[7];
@@ -488,65 +496,36 @@ public class Battle_Select_For_List : MonoBehaviour
         }
         else
         {
-            PlaySoundEvent_Unkown();
+            PlayFModUI.instance.NUnknownClick();
         }
     }
 
     public void Gene_List_Temp_2()
     {
-        if (PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_2 == true)
-        {
-            if (Gene_Select[8].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_2 == true)
-            {
-                PlaySoundEvent_keypad();
-                //전투창에서 유전자를 선택하면
-                //그리고 해당 유전자가 활성화 되어있는 것이라면
-                Gene_Select[8].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[8];
-                //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
-                SelectGene = 9;
-            }
-            else if (Gene_Select[8].isOn == false)
-            {
-                Gene_Select[8].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[8];
-                //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
-                SelectGene = 0;
-            }
-        }
-        else {
-            PlaySoundEvent_Unkown(); 
-        }
+        PlayFModUI.instance.NUnknownClick();
 
-        }
+        //if (PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_2 == true)
+        //{
+        //    if (Gene_Select[8].isOn && PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_2 == true)
+        //    {
+        //        PlaySoundEvent_keypad();
+        //        //전투창에서 유전자를 선택하면
+        //        //그리고 해당 유전자가 활성화 되어있는 것이라면
+        //        Gene_Select[8].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[8];
+        //        //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
+        //        SelectGene = 9;
+        //    }
+        //    else if (Gene_Select[8].isOn == false)
+        //    {
+        //        Gene_Select[8].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[8];
+        //        //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
+        //        SelectGene = 0;
+        //    }
+        //}
+        //else {
+        //    PlaySoundEvent_Unkown(); 
+        //}
 
-
-    public void PlaySoundEvent_Click()
-    {
-        if (soundEvent_ForBattleS_Click != null)
-        {
-            RuntimeManager.PlayOneShot(soundEvent_ForBattleS_Click);
-        }
     }
-
-    public void PlaySoundEvent_keypad()
-    {
-        if (soundEvent_ForBattleS_keypad != null)
-        {
-            RuntimeManager.PlayOneShot(soundEvent_ForBattleS_keypad);
-        }
-    }
-
-
-    public void PlaySoundEvent_Unkown()
-    {
-        if (soundEvent_ForBattleS_Unkown != null)
-        {
-            RuntimeManager.PlayOneShot(soundEvent_ForBattleS_Unkown);
-        }
-    }
-
-
-
-
-
 
 }

@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using FMODUnity;
 //using UnityEditor;
 
 public class Map_Icon_button : MonoBehaviour
 {
+
+
+
 
     public GameObject PlayerData; //플레이어 데이터
 
@@ -52,11 +56,11 @@ public class Map_Icon_button : MonoBehaviour
     public GameObject[] BiconNoneIntel;
 
 
-    [Header("==작은 유전자==")]
-    public Toggle[] Small_Icon;
+    //[Header("==작은 유전자==")]
+    //public Toggle[] Small_Icon;
 
-    [Header("==언락된 작은 유전자==")]
-    public GameObject[] Unlock_Small_Icon;
+    //[Header("==언락된 작은 유전자==")]
+    //public GameObject[] Unlock_Small_Icon;
 
     //Sprite[] sprites = Resources.LoadAll<Sprite>("Sprites/Gene_Resource/GMAP_mini_1");
 
@@ -75,13 +79,13 @@ public class Map_Icon_button : MonoBehaviour
         //Debug.Log(NoneIntelVector);
         //string str2 = File.ReadAllText(Application.dataPath + "/SaveData.json");
         //Data playerData = JsonUtility.FromJson<Data>(str2);
-
-        
+        //PlayFModUI.instance.PlayBGM_Static();
 
     }
 
     public void Update()
     {
+
         point = PlayerData.GetComponent<SaveDataManager>()._ResearchPoint;
         Point_Check.text = "포인트 :" + point;    //화면 우측 상단에 포인트창(임시)
 
@@ -156,61 +160,61 @@ public class Map_Icon_button : MonoBehaviour
             Unlock_B_Icon[2].gameObject.SetActive(true);
         }
 
-        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between1 == true){         
-                  //번호 1번 작은 유전자 불러오기
-            Small_Icon[0].gameObject.SetActive(false);
-            Unlock_Small_Icon[0].gameObject.SetActive(true);
+        //if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between1 == true){         
+        //          //번호 1번 작은 유전자 불러오기
+        //    Small_Icon[0].gameObject.SetActive(false);
+        //    Unlock_Small_Icon[0].gameObject.SetActive(true);
 
-        }
+        //}
 
-        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 == true)
-        {         //번호 2번 작은 유전자 불러오기
-            Small_Icon[1].gameObject.SetActive(false);
-            Unlock_Small_Icon[1].gameObject.SetActive(true);
+        //if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 == true)
+        //{         //번호 2번 작은 유전자 불러오기
+        //    Small_Icon[1].gameObject.SetActive(false);
+        //    Unlock_Small_Icon[1].gameObject.SetActive(true);
 
-        }
+        //}
 
-        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between3 == true)
-        {         //번호 3번 작은 유전자 불러오기
-            Small_Icon[2].gameObject.SetActive(false);
-            Unlock_Small_Icon[2].gameObject.SetActive(true);
+        //if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between3 == true)
+        //{         //번호 3번 작은 유전자 불러오기
+        //    Small_Icon[2].gameObject.SetActive(false);
+        //    Unlock_Small_Icon[2].gameObject.SetActive(true);
 
-        }
-
-
-        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between4 == true)
-        {         //번호 4번 작은 유전자 불러오기
-            Small_Icon[3].gameObject.SetActive(false);
-            Unlock_Small_Icon[3].gameObject.SetActive(true);
-
-        }
+        //}
 
 
-        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between5 == true)
-        {         //번호 5번 작은 유전자 불러오기
-            Small_Icon[4].gameObject.SetActive(false);
-            Unlock_Small_Icon[4].gameObject.SetActive(true);
+        //if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between4 == true)
+        //{         //번호 4번 작은 유전자 불러오기
+        //    Small_Icon[3].gameObject.SetActive(false);
+        //    Unlock_Small_Icon[3].gameObject.SetActive(true);
 
-        }
+        //}
 
-        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between6 == true)
-        {         //번호 6번 작은 유전자 불러오기
-            Small_Icon[5].gameObject.SetActive(false);
-            Unlock_Small_Icon[5].gameObject.SetActive(true);
 
-        }
-        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between7 == true)
-        {         //번호 7번 작은 유전자 불러오기
-            Small_Icon[6].gameObject.SetActive(false);
-            Unlock_Small_Icon[6].gameObject.SetActive(true);
+        //if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between5 == true)
+        //{         //번호 5번 작은 유전자 불러오기
+        //    Small_Icon[4].gameObject.SetActive(false);
+        //    Unlock_Small_Icon[4].gameObject.SetActive(true);
 
-        }
-        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between8 == true)
-        {         //번호 8번 작은 유전자 불러오기
-            Small_Icon[7].gameObject.SetActive(false);
-            Unlock_Small_Icon[7].gameObject.SetActive(true);
+        //}
 
-        }
+        //if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between6 == true)
+        //{         //번호 6번 작은 유전자 불러오기
+        //    Small_Icon[5].gameObject.SetActive(false);
+        //    Unlock_Small_Icon[5].gameObject.SetActive(true);
+
+        //}
+        //if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between7 == true)
+        //{         //번호 7번 작은 유전자 불러오기
+        //    Small_Icon[6].gameObject.SetActive(false);
+        //    Unlock_Small_Icon[6].gameObject.SetActive(true);
+
+        //}
+        //if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between8 == true)
+        //{         //번호 8번 작은 유전자 불러오기
+        //    Small_Icon[7].gameObject.SetActive(false);
+        //    Unlock_Small_Icon[7].gameObject.SetActive(true);
+
+        //}
 
 
 
@@ -479,6 +483,9 @@ public class Map_Icon_button : MonoBehaviour
                 if (checkbuttonClick == true && point > 3 && LeftgeneChecker == 2)
                 //해금버튼 On 그리고 왼쪽 유전자 체크버튼(그니까... 중간단계까지 언락 했으면)으로 숫저2라면
                 {
+                    PlayFModUI.instance.Play_Unlock_Effect();
+                    PlayFModUI.instance.GeneDocument();
+
                     BiconNoneIntel[0].gameObject.SetActive(false);          //인텔 아이콘 비활성화
                     No_Unlock_B_Icon[0].gameObject.SetActive(false);        //? 스프라이트 비활성화
                     Unlock_B_Icon[0].gameObject.SetActive(true);            //캐릭터 얼굴 스프라이트 활성화
@@ -498,6 +505,10 @@ public class Map_Icon_button : MonoBehaviour
             case 2:     //탕그리스
                 if (checkbuttonClick == true && point > 3 && MiddlegeneChecker == 2)
                 {
+
+                    PlayFModUI.instance.Play_Unlock_Effect();
+                    PlayFModUI.instance.GeneDocument();
+
                     BiconNoneIntel[1].gameObject.SetActive(false);
                     No_Unlock_B_Icon[1].gameObject.SetActive(false);
                     Unlock_B_Icon[1].gameObject.SetActive(true);
@@ -517,6 +528,9 @@ public class Map_Icon_button : MonoBehaviour
             case 3:     //??
                 if (checkbuttonClick == true && point > 3 && RightgeneChecker == 2)
                 {
+
+                    PlayFModUI.instance.Play_Unlock_Effect();
+                    PlayFModUI.instance.GeneDocument();
                     BiconNoneIntel[2].gameObject.SetActive(false);
                     No_Unlock_B_Icon[2].gameObject.SetActive(false);
                     Unlock_B_Icon[2].gameObject.SetActive(true);
@@ -539,6 +553,8 @@ public class Map_Icon_button : MonoBehaviour
             case 4:     //님프
                 if (checkbuttonClick == true && point > 3 && LeftgeneChecker == 1)
                 {
+                    PlayFModUI.instance.Play_Unlock_Effect();
+                    PlayFModUI.instance.GeneDocument();
                     BiconNoneIntel[3].gameObject.SetActive(false);
                     No_Unlock_B_Icon[3].gameObject.SetActive(false);
                     Unlock_B_Icon[3].gameObject.SetActive(true);
@@ -561,6 +577,8 @@ public class Map_Icon_button : MonoBehaviour
             case 5:     //만티코어
                 if (checkbuttonClick == true && point > 3 && MiddlegeneChecker == 1)
                 {
+                    PlayFModUI.instance.Play_Unlock_Effect();
+                    PlayFModUI.instance.GeneDocument();
                     BiconNoneIntel[4].gameObject.SetActive(false);
                     No_Unlock_B_Icon[4].gameObject.SetActive(false);
                     Unlock_B_Icon[4].gameObject.SetActive(true);
@@ -582,6 +600,8 @@ public class Map_Icon_button : MonoBehaviour
             case 6:     //??
                 if (checkbuttonClick == true && point > 3 && RightgeneChecker == 1)
                 {
+                    PlayFModUI.instance.Play_Unlock_Effect();
+                    PlayFModUI.instance.GeneDocument();
                     BiconNoneIntel[5].gameObject.SetActive(false);
                     No_Unlock_B_Icon[5].gameObject.SetActive(false);
                     Unlock_B_Icon[5].gameObject.SetActive(true);
@@ -605,6 +625,8 @@ public class Map_Icon_button : MonoBehaviour
             case 7:     //머쉬
                 if (checkbuttonClick == true && point > 3)
                 {
+                    PlayFModUI.instance.Play_Unlock_Effect();
+                    PlayFModUI.instance.GeneDocument();
                     BiconNoneIntel[6].gameObject.SetActive(false);
                     No_Unlock_B_Icon[6].gameObject.SetActive(false);
                     Unlock_B_Icon[6].gameObject.SetActive(true);
@@ -629,6 +651,8 @@ public class Map_Icon_button : MonoBehaviour
             case 8:     //콘래빗
                 if (checkbuttonClick == true && point > 3)
                 {
+                    PlayFModUI.instance.Play_Unlock_Effect();
+                    PlayFModUI.instance.GeneDocument();
                     BiconNoneIntel[7].gameObject.SetActive(false);
                     No_Unlock_B_Icon[7].gameObject.SetActive(false);
                     Unlock_B_Icon[7].gameObject.SetActive(true);
@@ -651,6 +675,8 @@ public class Map_Icon_button : MonoBehaviour
             case 9:     //프랑
                 if (checkbuttonClick == true && point > 3)
                 {
+                    PlayFModUI.instance.Play_Unlock_Effect();
+                    PlayFModUI.instance.GeneDocument();
                     BiconNoneIntel[8].gameObject.SetActive(false);
                     No_Unlock_B_Icon[8].gameObject.SetActive(false);
                     Unlock_B_Icon[8].gameObject.SetActive(true);
@@ -670,127 +696,127 @@ public class Map_Icon_button : MonoBehaviour
                 }
                 break;
 
-            case 10:
-                if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[3].gameObject.activeSelf == true)
-                {
-                    Small_Icon[0].gameObject.SetActive(false);
-                    Unlock_Small_Icon[0].gameObject.SetActive(true);
+            //case 10:
+            //    if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[3].gameObject.activeSelf == true)
+            //    {
+            //        //Small_Icon[0].gameObject.SetActive(false);
+            //        //Unlock_Small_Icon[0].gameObject.SetActive(true);
 
-                    PlayerData.GetComponent<SaveDataManager>()._Gene_Between1 = true;
+            //        PlayerData.GetComponent<SaveDataManager>()._Gene_Between1 = true;
 
-                    point = point - 1;
-                    Point_Check.text = "포인트 :" + point;
-                    PointSaver();
-                    checkbuttonClick = false;
-                }
-                break;
+            //        point = point - 1;
+            //        Point_Check.text = "포인트 :" + point;
+            //        PointSaver();
+            //        checkbuttonClick = false;
+            //    }
+            //    break;
 
-            case 11:
-                if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[3].gameObject.activeSelf == true && Unlock_B_Icon[4].gameObject.activeSelf == true)
-                {
-                    Small_Icon[1].gameObject.SetActive(false);
-                    Unlock_Small_Icon[1].gameObject.SetActive(true);
+            //case 11:
+            //    if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[3].gameObject.activeSelf == true && Unlock_B_Icon[4].gameObject.activeSelf == true)
+            //    {
+            //        //Small_Icon[1].gameObject.SetActive(false);
+            //        //Unlock_Small_Icon[1].gameObject.SetActive(true);
 
-                    PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 = true;
+            //        PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 = true;
 
-                    point = point - 1;
-                    Point_Check.text = "포인트 :" + point;
-                    PointSaver();
-                    checkbuttonClick = false;
-                }
-                break;
+            //        point = point - 1;
+            //        Point_Check.text = "포인트 :" + point;
+            //        PointSaver();
+            //        checkbuttonClick = false;
+            //    }
+            //    break;
 
-            case 12:
-                if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[4].gameObject.activeSelf == true && Unlock_B_Icon[5].gameObject.activeSelf == true)
-                {
-                    Small_Icon[2].gameObject.SetActive(false);
-                    Unlock_Small_Icon[2].gameObject.SetActive(true);
+            //case 12:
+            //    if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[4].gameObject.activeSelf == true && Unlock_B_Icon[5].gameObject.activeSelf == true)
+            //    {
+            //        //Small_Icon[2].gameObject.SetActive(false);
+            //        //Unlock_Small_Icon[2].gameObject.SetActive(true);
 
-                    PlayerData.GetComponent<SaveDataManager>()._Gene_Between3 = true;
+            //        PlayerData.GetComponent<SaveDataManager>()._Gene_Between3 = true;
 
-                    point = point - 1;
-                    Point_Check.text = "포인트 :" + point;
-                    PointSaver();
-                    checkbuttonClick = false;
-                }
-                break;
+            //        point = point - 1;
+            //        Point_Check.text = "포인트 :" + point;
+            //        PointSaver();
+            //        checkbuttonClick = false;
+            //    }
+            //    break;
 
-            case 13:
-                if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[5].gameObject.activeSelf == true)
-                {
-                    Small_Icon[3].gameObject.SetActive(false);
-                    Unlock_Small_Icon[3].gameObject.SetActive(true);
+            //case 13:
+            //    if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[5].gameObject.activeSelf == true)
+            //    {
+            //        //Small_Icon[3].gameObject.SetActive(false);
+            //        //Unlock_Small_Icon[3].gameObject.SetActive(true);
 
-                    PlayerData.GetComponent<SaveDataManager>()._Gene_Between4 = true;
+            //        PlayerData.GetComponent<SaveDataManager>()._Gene_Between4 = true;
 
-                    point = point - 1;
-                    Point_Check.text = "포인트 :" + point;
-                    PointSaver();
-                    checkbuttonClick = false;
-                }
-                break;
+            //        point = point - 1;
+            //        Point_Check.text = "포인트 :" + point;
+            //        PointSaver();
+            //        checkbuttonClick = false;
+            //    }
+            //    break;
 
-            case 14:
-                if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[6].gameObject.activeSelf == true)
-                {
-                    Small_Icon[4].gameObject.SetActive(false);
-                    Unlock_Small_Icon[4].gameObject.SetActive(true);
+            //case 14:
+            //    if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[6].gameObject.activeSelf == true)
+            //    {
+            //        //Small_Icon[4].gameObject.SetActive(false);
+            //        //Unlock_Small_Icon[4].gameObject.SetActive(true);
 
-                    PlayerData.GetComponent<SaveDataManager>()._Gene_Between5 = true;
+            //        PlayerData.GetComponent<SaveDataManager>()._Gene_Between5 = true;
 
-                    point = point - 1;
-                    Point_Check.text = "포인트 :" + point;
-                    PointSaver();
-                    checkbuttonClick = false;
-                }
-                break;
-
-
-            case 15:
-                if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[6].gameObject.activeSelf == true && Unlock_B_Icon[7].gameObject.activeSelf == true)
-                {
-                    Small_Icon[5].gameObject.SetActive(false);
-                    Unlock_Small_Icon[5].gameObject.SetActive(true);
-
-                    PlayerData.GetComponent<SaveDataManager>()._Gene_Between6 = true;
-
-                    point = point - 1;
-                    Point_Check.text = "포인트 :" + point;
-                    PointSaver();
-                    checkbuttonClick = false;
-                }
-                break;
+            //        point = point - 1;
+            //        Point_Check.text = "포인트 :" + point;
+            //        PointSaver();
+            //        checkbuttonClick = false;
+            //    }
+            //    break;
 
 
-            case 16:
-                if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[7].gameObject.activeSelf == true && Unlock_B_Icon[8].gameObject.activeSelf == true)
-                {
-                    Small_Icon[6].gameObject.SetActive(false);
-                    Unlock_Small_Icon[6].gameObject.SetActive(true);
+            //case 15:
+            //    if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[6].gameObject.activeSelf == true && Unlock_B_Icon[7].gameObject.activeSelf == true)
+            //    {
+            //        //Small_Icon[5].gameObject.SetActive(false);
+            //        //Unlock_Small_Icon[5].gameObject.SetActive(true);
 
-                    PlayerData.GetComponent<SaveDataManager>()._Gene_Between7 = true;
+            //        PlayerData.GetComponent<SaveDataManager>()._Gene_Between6 = true;
 
-                    point = point - 1;
-                    Point_Check.text = "포인트 :" + point;
-                    PointSaver();
-                    checkbuttonClick = false;
-                }
-                break;
+            //        point = point - 1;
+            //        Point_Check.text = "포인트 :" + point;
+            //        PointSaver();
+            //        checkbuttonClick = false;
+            //    }
+            //    break;
 
-            case 17:
-                if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[8].gameObject.activeSelf == true)
-                {
-                    Small_Icon[7].gameObject.SetActive(false);
-                    Unlock_Small_Icon[7].gameObject.SetActive(true);
 
-                    PlayerData.GetComponent<SaveDataManager>()._Gene_Between8 = true;
+            //case 16:
+            //    if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[7].gameObject.activeSelf == true && Unlock_B_Icon[8].gameObject.activeSelf == true)
+            //    {
+            //        //Small_Icon[6].gameObject.SetActive(false);
+            //        //Unlock_Small_Icon[6].gameObject.SetActive(true);
 
-                    point = point - 1;
-                    Point_Check.text = "포인트 :" + point;
-                    PointSaver();
-                    checkbuttonClick = false;
-                }
-                break;
+            //        PlayerData.GetComponent<SaveDataManager>()._Gene_Between7 = true;
+
+            //        point = point - 1;
+            //        Point_Check.text = "포인트 :" + point;
+            //        PointSaver();
+            //        checkbuttonClick = false;
+            //    }
+            //    break;
+
+            //case 17:
+            //    if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[8].gameObject.activeSelf == true)
+            //    {
+            //        //Small_Icon[7].gameObject.SetActive(false);
+            //        //Unlock_Small_Icon[7].gameObject.SetActive(true);
+
+            //        PlayerData.GetComponent<SaveDataManager>()._Gene_Between8 = true;
+
+            //        point = point - 1;
+            //        Point_Check.text = "포인트 :" + point;
+            //        PointSaver();
+            //        checkbuttonClick = false;
+            //    }
+            //    break;
 
         }
 
@@ -1301,156 +1327,151 @@ public class Map_Icon_button : MonoBehaviour
     //--------------------------------------작은 아이콘 해금 버튼----------------------//
 
 
-    public void Small_Unlocker1()
-    {
-        if (Small_Icon[0].isOn)
-        {
-            checkbuttonClick = true;
-            Icon_discernment = 10;
-            Debug.Log("S_1");
+    //public void Small_Unlocker1()
+    //{
+    //    if (Small_Icon[0].isOn)
+    //    {
+    //        checkbuttonClick = true;
+    //        Icon_discernment = 10;
+    //        Debug.Log("S_1");
 
 
-        }
-        else
-        {
-            checkbuttonClick = false;
-            Icon_discernment = 0;
-            Debug.Log("S0_1");
+    //    }
+    //    else
+    //    {
+    //        checkbuttonClick = false;
+    //        Icon_discernment = 0;
+    //        Debug.Log("S0_1");
 
-        }
-    }
-    public void Small_Unlocker2()
-    {
-        if (Small_Icon[1].isOn)
-        {
-            checkbuttonClick = true;
-            Icon_discernment = 11;
-            Debug.Log("S_2");
-
-
-
-        }
-        else
-        {
-            checkbuttonClick = false;
-            Icon_discernment = 0;
-            Debug.Log("S0_2");
-
-        }
-    }
-    public void Small_Unlocker3()
-    {
-        if (Small_Icon[2].isOn)
-        {
-            checkbuttonClick = true;
-            Icon_discernment = 12;
-            Debug.Log("S_3");
-
-
-        }
-        else
-        {
-            checkbuttonClick = false;
-            Icon_discernment = 0;
-            Debug.Log("S0_3");
-
-        }
-    }
-
-    public void Small_Unlocker4()
-    {
-        if (Small_Icon[3].isOn)
-        {
-            checkbuttonClick = true;
-            Icon_discernment = 13;
-            Debug.Log("S_4");
-
-
-        }
-        else
-        {
-            checkbuttonClick = false;
-            Icon_discernment = 0;
-            Debug.Log("S0_4");
-
-        }
-    }
-    public void Small_Unlocker5()
-    {
-        if (Small_Icon[4].isOn)
-        {
-            checkbuttonClick = true;
-            Icon_discernment = 14;
-            Debug.Log("S_5");
-
-
-        }
-        else
-        {
-            checkbuttonClick = false;
-            Icon_discernment = 0;
-            Debug.Log("S0_5");
-
-        }
-    }
-
-    public void Small_Unlocker6()
-    {
-        if (Small_Icon[5].isOn)
-        {
-            checkbuttonClick = true;
-            Icon_discernment = 15;
-            Debug.Log("S_6");
+    //    }
+    //}
+    //public void Small_Unlocker2()
+    //{
+    //    if (Small_Icon[1].isOn)
+    //    {
+    //        checkbuttonClick = true;
+    //        Icon_discernment = 11;
+    //        Debug.Log("S_2");
 
 
 
-        }
-        else
-        {
-            checkbuttonClick = false;
-            Icon_discernment = 0;
-            Debug.Log("S0_6");
+    //    }
+    //    else
+    //    {
+    //        checkbuttonClick = false;
+    //        Icon_discernment = 0;
+    //        Debug.Log("S0_2");
 
-        }
-    }
+    //    }
+    //}
+    //public void Small_Unlocker3()
+    //{
+    //    if (Small_Icon[2].isOn)
+    //    {
+    //        checkbuttonClick = true;
+    //        Icon_discernment = 12;
+    //        Debug.Log("S_3");
 
 
-    public void Small_Unlocker7()
-    {
-        if (Small_Icon[6].isOn)
-        {
-            checkbuttonClick = true;
-            Icon_discernment = 16;
-            Debug.Log("S_7");
+    //    }
+    //    else
+    //    {
+    //        checkbuttonClick = false;
+    //        Icon_discernment = 0;
+    //        Debug.Log("S0_3");
+
+    //    }
+    //}
+    //public void Small_Unlocker4()
+    //{
+    //    if (Small_Icon[3].isOn)
+    //    {
+    //        checkbuttonClick = true;
+    //        Icon_discernment = 13;
+    //        Debug.Log("S_4");
+
+
+    //    }
+    //    else
+    //    {
+    //        checkbuttonClick = false;
+    //        Icon_discernment = 0;
+    //        Debug.Log("S0_4");
+
+    //    }
+    //}
+    //public void Small_Unlocker5()
+    //{
+    //    if (Small_Icon[4].isOn)
+    //    {
+    //        checkbuttonClick = true;
+    //        Icon_discernment = 14;
+    //        Debug.Log("S_5");
+
+
+    //    }
+    //    else
+    //    {
+    //        checkbuttonClick = false;
+    //        Icon_discernment = 0;
+    //        Debug.Log("S0_5");
+
+    //    }
+    //}
+    //public void Small_Unlocker6()
+    //{
+    //    if (Small_Icon[5].isOn)
+    //    {
+    //        checkbuttonClick = true;
+    //        Icon_discernment = 15;
+    //        Debug.Log("S_6");
+
+
+
+    //    }
+    //    else
+    //    {
+    //        checkbuttonClick = false;
+    //        Icon_discernment = 0;
+    //        Debug.Log("S0_6");
+
+    //    }
+    //}
+    //public void Small_Unlocker7()
+    //{
+    //    if (Small_Icon[6].isOn)
+    //    {
+    //        checkbuttonClick = true;
+    //        Icon_discernment = 16;
+    //        Debug.Log("S_7");
 
   
 
-        }
-        else
-        {
-            checkbuttonClick = false;
-            Icon_discernment = 0;
-            Debug.Log("S0_7");
+    //    }
+    //    else
+    //    {
+    //        checkbuttonClick = false;
+    //        Icon_discernment = 0;
+    //        Debug.Log("S0_7");
 
-        }
-    }
+    //    }
+    //}
+    //public void Small_Unlocker8()
+    //{
+    //    if (Small_Icon[7].isOn)
+    //    {
+    //        checkbuttonClick = true;
+    //        Icon_discernment = 17;
+    //        Debug.Log("S_8");
 
-    public void Small_Unlocker8()
-    {
-        if (Small_Icon[7].isOn)
-        {
-            checkbuttonClick = true;
-            Icon_discernment = 17;
-            Debug.Log("S_8");
 
+    //    }
+    //    else
+    //    {
+    //        checkbuttonClick = false;
+    //        Icon_discernment = 0;
+    //        Debug.Log("S0_8");
 
-        }
-        else
-        {
-            checkbuttonClick = false;
-            Icon_discernment = 0;
-            Debug.Log("S0_8");
-
-        }
-    }
+    //    }
+    //}
 }

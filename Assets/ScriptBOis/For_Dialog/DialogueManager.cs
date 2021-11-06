@@ -3,82 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogueManager : MonoBehaviour
-{
+public class DialogueManager : MonoBehaviour{
 
-	public Text nameText;
-	public Text dialogueText;
-	public Button dialogueBox_1;
-	public GameObject BlackScrean;
-	public GameObject Arrow_for_Click;
-	public Button dialogueBox_2;
+    [SerializeField] GameObject go_Dialogue_Bar;        //퍼블릭 다이얼로그바
+    [SerializeField] Text txt_Dialogue_name;            //이름
+    [SerializeField] Text txt_Dialogue_string;          //대화 창
+    Dialogue[] dialogues;
 
-	private Queue<string> sentences;
+    //bool isDailogue = false;
 
-	// Use this for initialization
-	void Start()
-	{
-		sentences = new Queue<string>();
-	}
+    public void ShowDialogue()
+    {
+        //Dialogue[] p_dialogues
+        txt_Dialogue_string.text = "";
+        txt_Dialogue_name.text = "";
+        //dialogues = p_dialogues;
+        //SettingUI(true);
+    }
 
-	public void StartDialogue(Dialogue dialogue)
-	{
-
-		nameText.text = dialogue.name;
-
-		sentences.Clear();
-
-		foreach (string sentence in dialogue.sentences)
-		{
-			sentences.Enqueue(sentence);
-		}
-
-		DisplayNextSentence();
-	}
-
-	public void DisplayNextSentence()
-	{
-		Debug.Log(sentences.Count);
-		if (sentences.Count == 0)
-		{
-			EndDialogue();
-
-			return;
-		}
-
-		string sentence = sentences.Dequeue();
-		StopAllCoroutines();
-		StartCoroutine(TypeSentence(sentence));
-
-
-		if (sentences.Count == 0 && nameText.text == "마리아")		//메인메뉴창
-		{
-			dialogueBox_2.gameObject.SetActive(false);
-			Arrow_for_Click.gameObject.SetActive(true);
-			BlackScrean.gameObject.SetActive(true);
-
-			return;
-		}
-		StopAllCoroutines();
-		StartCoroutine(TypeSentence(sentence));
-
-
-	}
-
-	IEnumerator TypeSentence(string sentence)
-	{
-		dialogueText.text = "";
-		foreach (char letter in sentence.ToCharArray())
-		{
-			dialogueText.text += letter;
-			yield return null;
-		}
-	}
-
-	void EndDialogue()
-	{
-		dialogueBox_1.gameObject.SetActive(false);
-		dialogueText.text = "";
-	}
+    //void SettingUI(bool p_flag)
+    //{
+    //    go_Dialogue_Bar.SetActive(p_flag);
+    //}
 
 }
