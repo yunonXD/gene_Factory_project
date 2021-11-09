@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using DG.Tweening;
 
 public class For_Stroy_1_1 : MonoBehaviour
 {
     public GameObject ScreenLock;       //버튼 못누르게 락 걸기
 
-    private int CountClick = 3;
+    private int CountClick = 0;
     public Text _index;                 //대화 내용
     public Text _name;                  //이름
     public GameObject Secretary;        //비서 스프라이트
@@ -131,7 +132,7 @@ public class For_Stroy_1_1 : MonoBehaviour
                 break;
 
             default:
-                _index.text = "대화 마무리. 여기서 창 종료";
+                _index.text = "대화 마무리. 여기서 창 종료 여기서 씬 변경.";
                 break;
 
 
