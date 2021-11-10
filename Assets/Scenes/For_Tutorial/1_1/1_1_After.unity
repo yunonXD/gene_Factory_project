@@ -2890,9 +2890,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: For_Stroy_1_1, Assembly-CSharp
-        m_MethodName: ForStory_1_1
+      - m_Target: {fileID: 4511312972866556466}
+        m_TargetAssemblyTypeName: For_Stroy_1_1_After, Assembly-CSharp
+        m_MethodName: ForStory_1_1_After
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3772,9 +3772,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: For_Stroy_1_1, Assembly-CSharp
-        m_MethodName: ForStory_1_1
+      - m_Target: {fileID: 4511312972866556466}
+        m_TargetAssemblyTypeName: For_Stroy_1_1_After, Assembly-CSharp
+        m_MethodName: SelectQ_1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4200,9 +4200,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: For_Stroy_1_1, Assembly-CSharp
-        m_MethodName: ForStory_1_1
+      - m_Target: {fileID: 4511312972866556466}
+        m_TargetAssemblyTypeName: For_Stroy_1_1_After, Assembly-CSharp
+        m_MethodName: SelectQ_2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
