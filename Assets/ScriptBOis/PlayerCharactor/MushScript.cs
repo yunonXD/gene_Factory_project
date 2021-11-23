@@ -49,7 +49,7 @@ public class MushScript : MonoBehaviour
     {
         var skeletonAnimation = GetComponent<SkeletonAnimation>();
         skeletonAnimation.AnimationState.SetAnimation(0, "wait_2", true);
-        skeletonAnimation.AnimationState.AddAnimation(0, "wait_1", true, 1f);
+        skeletonAnimation.AnimationState.AddAnimation(0, "wait_1", true, 2f);
     }
 
     public void walk()
