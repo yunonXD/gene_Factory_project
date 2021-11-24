@@ -92,9 +92,9 @@ public class Gene_Memory_Store : MonoBehaviour
             PlayFModUI.instance.NKeypadMouse();
             IntelPage.gameObject.SetActive(true);
 
-            Top_Title.text = "토끼가 많은 날";
+            Top_Title.text = "예상치 못한 기습 A-1";
             Day_Log.text = "정보 기록 시일 2210.00.24";
-            Cut_SceneText.text = "야 토껴! ";
+            Cut_SceneText.text = " 예상치 못한 기습 A-1 ";
 
             Gene_click_checker = 1;
             Debug.Log("클리커 :" + Gene_click_checker);
@@ -114,8 +114,9 @@ public class Gene_Memory_Store : MonoBehaviour
             IntelPage.gameObject.SetActive(true);
 
             //스프라이트 변경
-            Top_Title.text = "버섯이 많은날";
+            Top_Title.text = "예상치 못한 기습 A-2";
             Day_Log.text = "정보 기록 시일 2210.00.23";
+            Cut_SceneText.text = " 예상치 못한 기습 A-2 ";
 
             Gene_click_checker = 2;
             Debug.Log("클리커 :" + Gene_click_checker);
@@ -140,9 +141,9 @@ public class Gene_Memory_Store : MonoBehaviour
             PlayFModUI.instance.NKeypadMouse();
             IntelPage.gameObject.SetActive(true);
 
-            Top_Title.text = "프랑이 많은 날";
+            Top_Title.text = "모의 훈련 B-1";
             Day_Log.text = "정보 기록 시일 2210.00.25";
-            Cut_SceneText.text = "프랑프랑프랑프랑 ";
+            Cut_SceneText.text = " 모의 훈련 B-1 ";
 
             Gene_click_checker = 3;
             Debug.Log("클리커 :" + Gene_click_checker);
@@ -162,9 +163,9 @@ public class Gene_Memory_Store : MonoBehaviour
             PlayFModUI.instance.NKeypadMouse();
             IntelPage.gameObject.SetActive(true);
 
-            Top_Title.text = "님프가 많은 날";
+            Top_Title.text = " 모의 훈련 B-2 ";
             Day_Log.text = "정보 기록 시일 2210.00.26";
-            Cut_SceneText.text = "님? 프?? ";
+            Cut_SceneText.text = " 모의 훈련 B-2 ";
 
             Gene_click_checker = 4;
             Debug.Log("클리커 :" + Gene_click_checker);
@@ -184,9 +185,9 @@ public class Gene_Memory_Store : MonoBehaviour
             PlayFModUI.instance.NKeypadMouse();
             IntelPage.gameObject.SetActive(true);
 
-            Top_Title.text = "거신이 많은 날";
+            Top_Title.text = " 거점 수호 C-1 ";
             Day_Log.text = "정보 기록 시일 2210.00.27";
-            Cut_SceneText.text = "안녕 난 멘티코어야 ";
+            Cut_SceneText.text = " 거점 수호 C-1 ";
 
             Gene_click_checker = 5;
             Debug.Log("클리커 :" + Gene_click_checker);
@@ -206,9 +207,9 @@ public class Gene_Memory_Store : MonoBehaviour
             PlayFModUI.instance.NKeypadMouse();
             IntelPage.gameObject.SetActive(true);
 
-            Top_Title.text = "이름 미정????";
+            Top_Title.text = " 거점 수호 C-2 ";
             Day_Log.text = "정보 기록 시일 2210.00.28";
-            Cut_SceneText.text = " 안녕 난 아직 미정이야 나에게 이름을 주세요 ";
+            Cut_SceneText.text = " 거점 수호 C-2 ";
             Gene_click_checker = 6;
             Debug.Log("클리커 :" + Gene_click_checker);
             PlayerData.GetComponent<SaveDataManager>()._Gene_Between1 = true;
@@ -227,9 +228,9 @@ public class Gene_Memory_Store : MonoBehaviour
             PlayFModUI.instance.NKeypadMouse();
             IntelPage.gameObject.SetActive(true);
 
-            Top_Title.text = "모디빅이 많은 날";
+            Top_Title.text = " 하이리스크 하이리턴 D-1";
             Day_Log.text = "정보 기록 시일 2210.00.29";
-            Cut_SceneText.text = " 모디빅? 디빅? De BIg?  ";
+            Cut_SceneText.text = " 하이리스크 하이리턴 D-1 ";
 
             Gene_click_checker = 7;
             Debug.Log("클리커 :" + Gene_click_checker);
@@ -249,9 +250,9 @@ public class Gene_Memory_Store : MonoBehaviour
             PlayFModUI.instance.NKeypadMouse();
             IntelPage.gameObject.SetActive(true);
 
-            Top_Title.text = "탕드리드가 많은 날";
+            Top_Title.text = " 하이리스크 하이리턴 D-2 ";
             Day_Log.text = "정보 기록 시일 2210.00.30";
-            Cut_SceneText.text = " 탕! 악 그리드 ㅠㅠ ";
+            Cut_SceneText.text = " 하이리스크 하이리턴 D-2 ";
 
             Gene_click_checker = 8;
             Debug.Log("클리커 :" + Gene_click_checker);
@@ -271,9 +272,9 @@ public class Gene_Memory_Store : MonoBehaviour
             PlayFModUI.instance.NKeypadMouse();
             IntelPage.gameObject.SetActive(true);
 
-            Top_Title.text = "이름 미정2";
+            Top_Title.text = " 구조신호 E-1 ";
             Day_Log.text = "정보 기록 시일 2210.00.31";
-            Cut_SceneText.text = "저는 이름 강도에요. 이름을 주세요. ";
+            Cut_SceneText.text = " 구조신호 E-1 ";
 
             Gene_click_checker = 9;
             Debug.Log("클리커 :" + Gene_click_checker);
@@ -293,9 +294,9 @@ public class Gene_Memory_Store : MonoBehaviour
             PlayFModUI.instance.NKeypadMouse();
             IntelPage.gameObject.SetActive(true);
 
-            Top_Title.text = "이름 미정2";
+            Top_Title.text = " 구조신호 E-2 ";
             Day_Log.text = "정보 기록 시일 2210.00.31";
-            Cut_SceneText.text = "저는 이름 강도에요. 이름을 주세요. ";
+            Cut_SceneText.text = " 구조신호 E-2 ";
 
             Gene_click_checker = 10;
             Debug.Log("클리커 :" + Gene_click_checker);
@@ -413,6 +414,12 @@ public class Gene_Memory_Store : MonoBehaviour
         }
 
 
+    }
+
+
+    public void ResetMemorySelect()
+    {
+        PlayerData.GetComponent<SaveDataManager>()._Gene_Between1 = false;
     }
 
 }
