@@ -235,7 +235,7 @@ public class Stage1_1 : MonoBehaviour
     {
         Skilleffect.SetActive(false);
         player.GetComponent<MushScript>().damage();
-        enemy.GetComponent<EnemyMush>().attack();
+        enemy.GetComponent<EnemyMush>().attack_1();
         player.GetComponent<MushScript>().HP = player.GetComponent<MushScript>().HP - enemyDamage; //피격시 대미지 계산후 아군 캐릭터 HP 감소
         EnemyDamageText.GetComponent<DamageScript>().damage(0, enemyDamage);
         Invoke("CameraReset", 1f);

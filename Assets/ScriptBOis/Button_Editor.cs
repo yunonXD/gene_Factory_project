@@ -17,13 +17,13 @@ public class Button_Editor : MonoBehaviour{
         SceneManager.LoadScene("inGameScene");
     }
 
-    //public void SceneChange_gene(){         //유전자 지도창
-    //    SceneManager.LoadScene("geneMap");
-    //}
+    public void SceneChange_gene(){         //유전자 지도창
+        SceneManager.LoadScene("geneMap");
+    }
 
-   // public void SceneChange_BattleSelect(){ //배틀 선택창
-   //     SceneManager.LoadScene("BattleSelectScene");
-   // }
+    public void SceneChange_BattleSelect(){ //배틀 선택창
+        SceneManager.LoadScene("BattleSelectScene");
+    }
 
     public void SceneChange_BattleStart()   //배틀 시작창
     { //배틀 선택창
@@ -35,10 +35,10 @@ public class Button_Editor : MonoBehaviour{
         SceneManager.LoadScene("FirstScene");
     }
 
-    //public void SceneChange_Memor_gene()    //기억 저장소
-    //{
-    //    SceneManager.LoadScene("RecordMemoryScene");
-    //}
+    public void SceneChange_Memor_gene()    //기억 저장소
+    {
+        SceneManager.LoadScene("RecordMemoryScene");
+    }
 
 
 
