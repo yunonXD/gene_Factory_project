@@ -14,6 +14,7 @@ public class For_Stroy_1_3_After : MonoBehaviour
     public Text _name;                  //이름
     public GameObject Secretary;        //비서 스프라이트
     public GameObject NPC_1;            //NPC1
+    public GameObject PlayerData;
     public GameObject SelectQ;          //선택창
     public Button SelectQ_B_1;          //선택창에 있는 상호작용 버튼
     public Button SelectQ_B_2;          //선택창에 있는 상호작용 버튼
@@ -280,15 +281,23 @@ public class For_Stroy_1_3_After : MonoBehaviour
 
 
             default:
-                //_index.DOText("", 1);
-                _index.text = "대화 마무리. 여기서 창 종료 여기서 씬 변경.";
+                if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between1 == true)
+                {
+                    SceneManager.LoadScene("RecordMemoryScene");
+                }
                 break;
 
 
         }
     }
 
-
+    public void QuitButtonBoi()
+    {
+        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between1 == true)
+        {
+            SceneManager.LoadScene("RecordMemoryScene");
+        }
+    }
 
 
     public void InputCountNum()

@@ -279,7 +279,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 78163250}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4511312972866556466}
+        m_TargetAssemblyTypeName: For_Stroy_2_1, Assembly-CSharp
+        m_MethodName: QuitButtonBoi
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &78163250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2575,6 +2587,7 @@ MonoBehaviour:
   Close_eyes: {fileID: 1809205192}
   Smile_eyes: {fileID: 1983290014}
   Surprise_eyes: {fileID: 604785210}
+  PlayerData: {fileID: 5470410146446751964}
   NPC_1: {fileID: 1202287093}
   SelectQ: {fileID: 628412771}
   SelectQ_B_1: {fileID: 2050305695}
