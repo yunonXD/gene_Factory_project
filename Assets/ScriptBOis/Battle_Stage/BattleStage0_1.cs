@@ -415,6 +415,7 @@ public class BattleStage0_1 : MonoBehaviour
     void Clearsave()
     {
         SaveData.GetComponent<SaveDataManager>()._ResearchPoint = SaveData.GetComponent<SaveDataManager>()._ResearchPoint + 3; //클리어 보상 +3
+        SaveData.GetComponent<SaveDataManager>()._Stage1_1 = true;
         SaveData.GetComponent<SaveDataManager>().Save();
         SceneManager.LoadScene("inGameScene");
     }
@@ -563,7 +564,7 @@ public class BattleStage0_1 : MonoBehaviour
         if (Boss.GetComponent<EnemyMush>().HP <= 0)
         {
             Enemy_HPbar.fillAmount = Boss.GetComponent<EnemyMush>().HP / Boss_HPMax;
-            Invoke("EnemyReset", 0.6f);
+            //Invoke("EnemyReset", 0.6f);
             Invoke("StageClear", 2.0f);
             _GameOver = true;
         }

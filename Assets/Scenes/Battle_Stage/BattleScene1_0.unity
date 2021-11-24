@@ -8867,7 +8867,7 @@ MonoBehaviour:
     materialsInsideMask: []
     materialsOutsideMask: []
   disableRenderingOnOverride: 1
-  _animationName: skil
+  _animationName: wait_1
   loop: 0
   timeScale: 1
 --- !u!222 &1999593411
