@@ -24,7 +24,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Cutoff: 0.1
+    - _Cutoff: 0.083
     - _DarkColorAlphaAdditive: 0
     - _OutlineMipLevel: 0
     - _OutlineReferenceTexWidth: 1024
@@ -38,5 +38,5 @@ Material:
     m_Colors:
     - _Black: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 0, g: 0, b: 0, a: 0}
-    - _OutlineColor: {r: 1, g: 1, b: 0, a: 1}
+    - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
