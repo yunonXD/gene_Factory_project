@@ -27,7 +27,7 @@ public class EnemyMush : MonoBehaviour
     public void attack()
     {
         var skeletonAnimation = GetComponent<SkeletonAnimation>();
-        skeletonAnimation.AnimationState.SetAnimation(0, "attack", true);
+        skeletonAnimation.AnimationState.SetAnimation(0, "attack_1", true);
         skeletonAnimation.AnimationState.AddAnimation(0, "wait_1", true, 1f);
     }
 
@@ -35,13 +35,14 @@ public class EnemyMush : MonoBehaviour
     {
         var skeletonAnimation = GetComponent<SkeletonAnimation>();
         skeletonAnimation.AnimationState.SetAnimation(0, "damage", true);
+        //»ç¿îµå
         skeletonAnimation.AnimationState.AddAnimation(0, "wait_1", true, 1f);
     }
 
     public void skill()
     {
         var skeletonAnimation = GetComponent<SkeletonAnimation>();
-        skeletonAnimation.AnimationState.SetAnimation(0, "skil", true);
+        skeletonAnimation.AnimationState.SetAnimation(0, "skil2", true);
         skeletonAnimation.AnimationState.AddAnimation(0, "wait_1", true, 1f);
     }
 

@@ -1,0 +1,17 @@
+Slime.png
+size:904,651
+filter:Linear,Linear
+pma:true
+L_eye
+bounds:702,326,98,105
+offsets:1,1,100,107
+R_eye
+bounds:702,225,97,99
+offsets:1,1,99,101
+Skull
+bounds:702,433,200,216
+offsets:1,1,202,219
+body
+bounds:2,2,647,698
+offsets:108,0,755,802
+rotate:90
