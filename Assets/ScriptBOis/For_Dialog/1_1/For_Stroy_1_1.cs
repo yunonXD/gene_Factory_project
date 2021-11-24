@@ -17,7 +17,7 @@ public class For_Stroy_1_1 : MonoBehaviour
     public GameObject Close_eyes;       //´ÝÀº ´«
     public GameObject Smile_eyes;       //¿ô´Â ´«
     public GameObject Surprise_eyes;    //³î¶õ ´«
-
+    public GameObject PlayerData;
 
     public GameObject NPC_1;            //NPC1
     public GameObject SelectQ;          //¼±ÅÃÃ¢
@@ -152,12 +152,25 @@ public class For_Stroy_1_1 : MonoBehaviour
                 break;
 
             default:
-                _name.text = "";
-                _index.text = "´ëÈ­ ¸¶¹«¸®. ¿©±â¼­ Ã¢ Á¾·á ¿©±â¼­ ¾À º¯°æ.";
+
+                if(PlayerData.GetComponent<SaveDataManager>()._Gene_Between1 == true)
+                {
+                    SceneManager.LoadScene("RecordMemoryScene");
+                }
+
                 break;
         }
     }
 
+
+
+    public void QuitButtonBoi()
+    {
+        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between1 == true)
+        {
+            SceneManager.LoadScene("RecordMemoryScene");
+        }
+    }
 
 
 

@@ -17,6 +17,7 @@ public class For_Stroy_1_2 : MonoBehaviour
     public GameObject Close_eyes;       //닫은 눈
     public GameObject Smile_eyes;       //웃는 눈
     public GameObject Surprise_eyes;    //놀란 눈
+    public GameObject PlayerData;
     public GameObject NPC_1;            //NPC1
     public GameObject SelectQ;          //선택창
     public Button SelectQ_B_1;          //선택창에 있는 상호작용 버튼
@@ -139,14 +140,22 @@ public class For_Stroy_1_2 : MonoBehaviour
                 break;
 
             default:
-                //_index.DOText("", 1);
-                _index.text = "대화 마무리. 여기서 창 종료 여기서 씬 변경.";
+                if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between1 == true)
+                {
+                    SceneManager.LoadScene("RecordMemoryScene");
+                }
                 break;
 
 
         }
     }
-
+    public void QuitButtonBoi()
+    {
+        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between1 == true)
+        {
+            SceneManager.LoadScene("RecordMemoryScene");
+        }
+    }
 
 
 

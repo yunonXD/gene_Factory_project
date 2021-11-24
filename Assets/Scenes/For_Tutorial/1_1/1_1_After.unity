@@ -1826,6 +1826,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 152882753}
     m_Modifications:
+    - target: {fileID: 2073393774315720928, guid: 5d20bef5b26d63c4cab919fa43445669, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073393774315720928, guid: 5d20bef5b26d63c4cab919fa43445669, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073393774315720928, guid: 5d20bef5b26d63c4cab919fa43445669, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4511312972866556466}
+    - target: {fileID: 2073393774315720928, guid: 5d20bef5b26d63c4cab919fa43445669, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073393774315720928, guid: 5d20bef5b26d63c4cab919fa43445669, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitButtonBoi
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073393774315720928, guid: 5d20bef5b26d63c4cab919fa43445669, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: For_Stroy_1_1_After, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073393774315720928, guid: 5d20bef5b26d63c4cab919fa43445669, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2073393775239731920, guid: 5d20bef5b26d63c4cab919fa43445669, type: 3}
       propertyPath: m_Name
       value: UI_Dialogue
@@ -1965,6 +1993,7 @@ MonoBehaviour:
   Close_eyes: {fileID: 1461123535}
   Smile_eyes: {fileID: 926264584}
   Surprise_eyes: {fileID: 1712646666}
+  PlayerData: {fileID: 5470410146446751964}
   NPC_1: {fileID: 1202287093}
   SelectQ: {fileID: 628412771}
   SelectQ_B_1: {fileID: 2050305695}

@@ -28,16 +28,16 @@ public class inGameScene_FadeIn : MonoBehaviour
     public void GeneRecord()
     {
         PlayFModUI.instance.NPanalClick();
-        transform.DOLocalMoveZ(-20, 1.5f).SetEase(Ease.OutCubic);
-        transform.DOLocalMoveX(-700, 1.0f).SetEase(Ease.OutCubic);
+        transform.DOLocalMoveZ(-900, 0.2f).SetEase(Ease.OutCubic);
+        //transform.DOLocalMoveX(-700, 1.0f).SetEase(Ease.OutCubic);
         StartCoroutine("GeneRecordMoveCor");
     }
 
     public void GeneSelect()
     {
         PlayFModUI.instance.NPanalClick();
-        transform.DOLocalMoveZ(-20, 1.5f).SetEase(Ease.OutCubic);
-        transform.DOLocalMoveX(700, 1.0f).SetEase(Ease.OutCubic);
+        transform.DOLocalMoveZ(-900, 0.2f).SetEase(Ease.OutCubic);
+        //transform.DOLocalMoveX(700, 1.0f).SetEase(Ease.OutCubic);
         StartCoroutine("GeneSelectMoveCor");
     }
 
@@ -57,7 +57,7 @@ public class inGameScene_FadeIn : MonoBehaviour
     IEnumerator GeneRecordMoveCor()
     {
 
-        yield return new WaitForSeconds(0.9f);
+        yield return new WaitForSeconds(0.5f);
         FadeIn.gameObject.SetActive(true);
         yield return new WaitForSeconds(1.0f);
         SceneManager.LoadScene("RecordMemoryScene");
@@ -66,7 +66,7 @@ public class inGameScene_FadeIn : MonoBehaviour
     IEnumerator GeneSelectMoveCor()
     {
 
-        yield return new WaitForSeconds(0.9f);
+        yield return new WaitForSeconds(0.5f);
         FadeIn.gameObject.SetActive(true);
         yield return new WaitForSeconds(1.0f);
         SceneManager.LoadScene("geneMap");

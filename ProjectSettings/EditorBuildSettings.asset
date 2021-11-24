@@ -5,25 +5,58 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/mainScene.unity
     guid: 8ef7c05d54c06044486f5b5126688b9f
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/FirstScene.unity
     guid: 858d3c491fdfdc54b8e19ef03a8be7b7
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/inGameScene.unity
     guid: 0bb9955f24c057142a4c830186e03a5e
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/RecordMemoryScene.unity
     guid: c768b70209ed0d14fadd6970a67e35ee
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/BattleSelectScene.unity
     guid: f52a0ac562d412e4c8439e8e8e3f6ae4
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/geneMap.unity
     guid: 6c337bcf6f8d05b4d9b0fbeff8a13e34
   - enabled: 1
-    path: Assets/Scenes/Battle_Stage/BattleScene1_0.unity
-    guid: d86ff9486fae157429b76b028d59e53c
+    path: Assets/Scenes/For_Tutorial/1_1/1_1_After.unity
+    guid: 54425b44acff70f4a9fad22c8a5ee343
+  - enabled: 1
+    path: Assets/Scenes/For_Tutorial/1_1/1_1_Before.unity
+    guid: 0608c47497de0f44bb0d200505fa61e1
+  - enabled: 1
+    path: Assets/Scenes/For_Tutorial/1_2/1_2_After.unity
+    guid: b80870b36892446438685e647c4eeffb
+  - enabled: 1
+    path: Assets/Scenes/For_Tutorial/1_2/1_2_Before.unity
+    guid: 4f931f0c575ea2846b3672245505e580
+  - enabled: 1
+    path: Assets/Scenes/For_Tutorial/1_3/1_3_After.unity
+    guid: fcaa24e624e103f4faeaf62b95a7a151
+  - enabled: 1
+    path: Assets/Scenes/For_Tutorial/1_3/1_3_Before.unity
+    guid: 99adde24b95abda4d8afa2a059ca2ea7
+  - enabled: 1
+    path: Assets/Scenes/For_Tutorial/2_1/2_1_After.unity
+    guid: 9275e0111c84f6440b82e082df1bb680
+  - enabled: 1
+    path: Assets/Scenes/For_Tutorial/2_1/2_1_Before.unity
+    guid: 1317a4fa2070fef47b0ba16c61c0afcd
+  - enabled: 1
+    path: Assets/Scenes/For_Tutorial/2_2/2_2_After.unity
+    guid: eb1f6e526bf5aef44844e64aa27559ce
+  - enabled: 1
+    path: Assets/Scenes/For_Tutorial/2_2/2_2_Before.unity
+    guid: 16c2af527782a8d448100da923a51e8a
+  - enabled: 1
+    path: Assets/Scenes/For_Tutorial/2_3/2_3_After.unity
+    guid: 92dbffd1089bf764c917f8aae9aca988
+  - enabled: 1
+    path: Assets/Scenes/For_Tutorial/2_3/2_3_Before.unity
+    guid: b8a0eb6887bb74949a2e68cef542946b
   m_configObjects: {}

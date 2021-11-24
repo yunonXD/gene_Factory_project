@@ -20,6 +20,7 @@ public class For_Stroy_2_2_After : MonoBehaviour
     public GameObject Close_eyes;       //´ÝÀº ´«
     public GameObject Smile_eyes;       //¿ô´Â ´«
     public GameObject Surprise_eyes;    //³î¶õ ´«
+    public GameObject PlayerData;
     public GameObject NPC_1;            //NPC1
     public GameObject NPC_2;            //NPC2
     public GameObject SelectQ;          //¼±ÅÃÃ¢
@@ -33,7 +34,6 @@ public class For_Stroy_2_2_After : MonoBehaviour
     private Animator animator;
     private bool Alpha_Secretary = false;
     private bool Alpha_NPC_1 = false;
-    private float Timer = 0;
 
     bool select1 = false;
     bool select2 = false;
@@ -343,15 +343,23 @@ public class For_Stroy_2_2_After : MonoBehaviour
                 break;
 
             default:
-                //_index.DOText("", 1);
-                _index.text = "´ëÈ­ ¸¶¹«¸®. ¿©±â¼­ Ã¢ Á¾·á ¿©±â¼­ ¾À º¯°æ.";
+                if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between1 == true)
+                {
+                    SceneManager.LoadScene("RecordMemoryScene");
+                }
                 break;
 
 
         }
     }
 
-
+    public void QuitButtonBoi()
+    {
+        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between1 == true)
+        {
+            SceneManager.LoadScene("RecordMemoryScene");
+        }
+    }
 
 
     public void InputCountNum()
@@ -368,11 +376,13 @@ public class For_Stroy_2_2_After : MonoBehaviour
         if(Alpha_Secretary == true)
         {
             Secretary.GetComponent<Image>().color = new Color(0.6f, 0.6f, 0.6f);
+            Normal_eyes.GetComponent<Image>().color = new Color(0.6f, 0.6f, 0.6f);
         }
 
         if(Alpha_Secretary == false)
         {
             Secretary.GetComponent<Image>().color = new Color(1, 1, 1);
+            Normal_eyes.GetComponent<Image>().color = new Color(1, 1, 1);
         }
 
 
@@ -400,13 +410,13 @@ public class For_Stroy_2_2_After : MonoBehaviour
         if(Alpha_NPC_1 == true)
         {
             NPC_1.GetComponent<Image>().color = new Color(0.6f, 0.6f, 0.6f);
-            Normal_eyes.GetComponent<Image>().color = new Color(1, 1, 1);
+
         }
 
         if(Alpha_NPC_1 == false)
         {
             NPC_1.GetComponent<Image>().color = new Color(1, 1, 1);
-            Normal_eyes.GetComponent<Image>().color = new Color(0.6f, 0.6f, 0.6f);
+
         }
     }
 
