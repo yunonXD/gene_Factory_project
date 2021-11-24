@@ -506,6 +506,7 @@ MonoBehaviour:
   - Dialogue_EN
   - Dialogue_JP
   - SFX
+  - Story
   - UI
   BanksToLoad: []
   LiveUpdatePort: 9264
