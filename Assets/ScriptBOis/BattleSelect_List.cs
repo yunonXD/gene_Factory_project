@@ -26,7 +26,7 @@ public class BattleSelect_List : MonoBehaviour
 
     public void moveRight()
     {
-        if(pos <= -1760)
+        if(pos <= -1714)
         {
 
         }
@@ -41,7 +41,7 @@ public class BattleSelect_List : MonoBehaviour
 
     public void moveLeft()
     {
-        if (pos >= 0)
+        if (pos >= -57)
         {
 
         }

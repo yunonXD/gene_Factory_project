@@ -29,6 +29,7 @@ public class inGameScene_FadeIn : MonoBehaviour
     {
         PlayFModUI.instance.NPanalClick();
         transform.DOLocalMoveZ(-900, 0.2f).SetEase(Ease.OutCubic);
+        transform.DOLocalMoveX(-25, 1.5f).SetEase(Ease.InOutCubic);
         //transform.DOLocalMoveX(-700, 1.0f).SetEase(Ease.OutCubic);
         StartCoroutine("GeneRecordMoveCor");
     }
@@ -37,6 +38,7 @@ public class inGameScene_FadeIn : MonoBehaviour
     {
         PlayFModUI.instance.NPanalClick();
         transform.DOLocalMoveZ(-900, 0.2f).SetEase(Ease.OutCubic);
+        transform.DOLocalMoveX(25, 1.5f).SetEase(Ease.InOutCubic);
         //transform.DOLocalMoveX(700, 1.0f).SetEase(Ease.OutCubic);
         StartCoroutine("GeneSelectMoveCor");
     }

@@ -4,14 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using FMODUnity;
-//using UnityEditor;
 
 public class Map_Icon_button : MonoBehaviour
 {
-
-
-
-
     public GameObject PlayerData; //플레이어 데이터
 
     [Header("==언락 이펙트==")]
@@ -22,13 +17,9 @@ public class Map_Icon_button : MonoBehaviour
     public GameObject[] Unlock_Screen;
 
 
-
-    public Text Gene_Name, Gene_Intel, Point_Check;
-    [Space]
-    public GameObject Gene_Intel_Text;
-
-    //Gene_Intel_Text부분 유전자 이름,정보, 세부사항 
-    //포인트 ( 화면에 표시할 포인트 : 창 불러오기) 
+    public Text Point_Check;
+    public Sprite[] Gene_List_Sprite;           //리스트 언락되면 바뀔 스프라이트
+    public GameObject Gene_Info_for;
 
 
     
@@ -55,31 +46,19 @@ public class Map_Icon_button : MonoBehaviour
     [Header("==언락 안되어있을시 나오는 작은 인텔창==")]
     public GameObject[] BiconNoneIntel;
 
+    [Header("인디케이터창")]
+    public GameObject Indicate;
 
-    //[Header("==작은 유전자==")]
-    //public Toggle[] Small_Icon;
-
-    //[Header("==언락된 작은 유전자==")]
-    //public GameObject[] Unlock_Small_Icon;
-
-    //Sprite[] sprites = Resources.LoadAll<Sprite>("Sprites/Gene_Resource/GMAP_mini_1");
 
     private bool checkbuttonClick = false;      //유전자 지도 우측 하단 해금 버튼을 위한 각 유전자 버튼 누른지 아닌지 확인 유무
     private int Icon_discernment = 0;           //아이콘을 누르면 해당 아이콘에 숫자가 배정됨. 숫자&&포인트 맞으면 언락 이런식으로 구현
 
 
-    private int LeftgeneChecker = 0;            //왼쪽줄 유전자 언락 유무(아래부터 차근차근 언락
-    private int MiddlegeneChecker = 0;          //가운데줄 유전자 언락 유무(아래부터 차근차근 언락
-    private int RightgeneChecker = 0;           //오른쪽줄 유전자 언락 유무(아래부터 차근차근 언락
-
 
     public void Start()
     {
-        //Vector3 NoneIntelVector = BiconNoneIntel.transform.localPosition;
-        //Debug.Log(NoneIntelVector);
-        //string str2 = File.ReadAllText(Application.dataPath + "/SaveData.json");
-        //Data playerData = JsonUtility.FromJson<Data>(str2);
-        //PlayFModUI.instance.PlayBGM_Static();
+
+
 
     }
 
@@ -87,140 +66,184 @@ public class Map_Icon_button : MonoBehaviour
     {
 
         point = PlayerData.GetComponent<SaveDataManager>()._ResearchPoint;
-        Point_Check.text = "포인트 :" + point;    //화면 우측 상단에 포인트창(임시)
+        Point_Check.text = "포인트 :" + point;    //화면 우측 상단에 포인트창
 
-        if (PlayerData.GetComponent<SaveDataManager>()._Creature_Mush == true)        //머쉬 불러오기
-        {
-            BiconNoneIntel[6].gameObject.SetActive(false);
-            No_Unlock_B_Icon[6].gameObject.SetActive(false);
-            Unlock_B_Icon[6].gameObject.SetActive(true);
-            LeftgeneChecker = 1;
-        }
+        ConRabbit_Load();
+        Mush_Load();
+        Fran_Load();
+        Nymph_Load();
+        Manticore_Load();
+        unknown1_Load();
+        Mobidic_Load();
+        TangGreece_Load();
+        unknow2_Load();
+    }
 
-        if (PlayerData.GetComponent<SaveDataManager>()._Creature_ConRabbit == true)       //콘래빗 불러오기
+
+    private void ConRabbit_Load()
+    {
+        if (PlayerData.GetComponent<SaveDataManager>()._Creature_ConRabbit == true)       
+            //콘래빗 불러오기
         {
+            Indicate.gameObject.SetActive(true);
             BiconNoneIntel[7].gameObject.SetActive(false);
             No_Unlock_B_Icon[7].gameObject.SetActive(false);
             Unlock_B_Icon[7].gameObject.SetActive(true);
-            MiddlegeneChecker = 1;
         }
+    }
 
-        if (PlayerData.GetComponent<SaveDataManager>()._Creature_Fran == true)        //프랑 쿨러오기
+    private void Mush_Load()
+    {
+        if (PlayerData.GetComponent<SaveDataManager>()._Creature_Mush == true &&
+    PlayerData.GetComponent<SaveDataManager>()._Creature_ConRabbit == true)        
+    //머쉬 불러오기
         {
+            Indicate.gameObject.transform.localPosition = new Vector3(245, -400, 0);
+            BiconNoneIntel[6].gameObject.SetActive(false);
+            No_Unlock_B_Icon[6].gameObject.SetActive(false);
+            Unlock_B_Icon[6].gameObject.SetActive(true);
+        }
+    }
+
+    private void Fran_Load()
+    {
+        if (PlayerData.GetComponent<SaveDataManager>()._Creature_Fran == true && 
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Mush == true &&
+    PlayerData.GetComponent<SaveDataManager>()._Creature_ConRabbit == true)       
+    //프랑 쿨러오기
+        {
+            Indicate.gameObject.transform.localPosition = new Vector3(385, -220, 0);
+            Indicate.gameObject.transform.localRotation = Quaternion.Euler(0, 0, 90);
             BiconNoneIntel[8].gameObject.SetActive(false);
             No_Unlock_B_Icon[8].gameObject.SetActive(false);
             Unlock_B_Icon[8].gameObject.SetActive(true);
-            RightgeneChecker = 1;
         }
+    }
 
+    private void Nymph_Load()
+    {
 
-        if (PlayerData.GetComponent<SaveDataManager>()._Creature_Nymph == true)       //님프 쿨러오기
+        if (PlayerData.GetComponent<SaveDataManager>()._Creature_Nymph == true && 
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Fran == true &&
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Mush == true &&
+    PlayerData.GetComponent<SaveDataManager>()._Creature_ConRabbit == true)       
+    //님프 쿨러오기
         {
+            Indicate.gameObject.transform.localPosition = new Vector3(240, -50, 0);
+            Indicate.gameObject.transform.localRotation = Quaternion.Euler(0, 0, 180);
+
             BiconNoneIntel[3].gameObject.SetActive(false);
             No_Unlock_B_Icon[3].gameObject.SetActive(false);
             Unlock_B_Icon[3].gameObject.SetActive(true);
-            LeftgeneChecker = 2;
         }
+    }
 
-
-        if (PlayerData.GetComponent<SaveDataManager>()._Creature_Manticore == true)       //멘티코어 쿨러오기
+    private void Manticore_Load()
+    {
+        if (PlayerData.GetComponent<SaveDataManager>()._Creature_Manticore == true && 
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Nymph == true &&
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Fran == true &&
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Mush == true &&
+    PlayerData.GetComponent<SaveDataManager>()._Creature_ConRabbit == true)       
+    //멘티코어 쿨러오기
         {
+            Indicate.gameObject.transform.localPosition = new Vector3(-50, -50, 0);
+            Indicate.gameObject.transform.localRotation = Quaternion.Euler(0, 0, 180);
+
             BiconNoneIntel[4].gameObject.SetActive(false);
             No_Unlock_B_Icon[4].gameObject.SetActive(false);
             Unlock_B_Icon[4].gameObject.SetActive(true);
-            MiddlegeneChecker = 2;
         }
+    }
 
-        if (PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_1 == true)      //6번 미정(기획서상 6번)
+    private void unknown1_Load()
+    {
+        if (PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_1 == true && 
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Manticore == true &&
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Nymph == true &&
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Fran == true &&
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Mush == true &&
+    PlayerData.GetComponent<SaveDataManager>()._Creature_ConRabbit == true
+    )      //6번 미정(기획서상 6번)
         {
+            Indicate.gameObject.transform.localPosition = new Vector3(-190, 110, 0);
+            Indicate.gameObject.transform.localRotation = Quaternion.Euler(0, 0, 90);
+
             BiconNoneIntel[5].gameObject.SetActive(false);
             No_Unlock_B_Icon[5].gameObject.SetActive(false);
             Unlock_B_Icon[5].gameObject.SetActive(true);
-            RightgeneChecker = 2;
         }
+    }
 
-        if (PlayerData.GetComponent<SaveDataManager>()._Creature_Mobidic == true)     //모비딕 쿨러오기
+    private void Mobidic_Load()
+    {
+
+        if (PlayerData.GetComponent<SaveDataManager>()._Creature_Mobidic == true && 
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_1 == true && 
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Manticore == true &&
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Nymph == true &&
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Fran == true &&
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Mush == true &&
+    PlayerData.GetComponent<SaveDataManager>()._Creature_ConRabbit == true)    
+    //모비딕 쿨러오기
         {
+            Indicate.gameObject.transform.localPosition = new Vector3(-45, 270, 0);
+            Indicate.gameObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
+
             BiconNoneIntel[0].gameObject.SetActive(false);
             No_Unlock_B_Icon[0].gameObject.SetActive(false);
             Unlock_B_Icon[0].gameObject.SetActive(true);
         }
+    }
 
-        if (PlayerData.GetComponent<SaveDataManager>()._Creature_TangGreece == true)      //탕그리드 쿨러오기
+    private void TangGreece_Load()
+    {
+        if (PlayerData.GetComponent<SaveDataManager>()._Creature_TangGreece == true && 
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Mobidic == true &&
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_1 == true &&
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Manticore == true &&
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Nymph == true &&
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Fran == true &&
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Mush == true &&
+    PlayerData.GetComponent<SaveDataManager>()._Creature_ConRabbit == true)      
+    //탕그리드 쿨러오기
         {
+            Indicate.gameObject.transform.localPosition = new Vector3(240, 270, 0);
+
             BiconNoneIntel[1].gameObject.SetActive(false);
             No_Unlock_B_Icon[1].gameObject.SetActive(false);
             Unlock_B_Icon[1].gameObject.SetActive(true);
         }
+    }
 
-        if (PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_2 == true)           //3번 미정(기획서상 3번)
+    private void unknow2_Load()
+    {
+
+        if (PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_2 == true && 
+            PlayerData.GetComponent<SaveDataManager>()._Creature_TangGreece == true &&
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Mobidic == true &&
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_1 == true &&
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Manticore == true &&
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Nymph == true &&
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Fran == true &&
+            PlayerData.GetComponent<SaveDataManager>()._Creature_Mush == true &&
+    PlayerData.GetComponent<SaveDataManager>()._Creature_ConRabbit == true
+    )           //3번 미정(기획서상 3번)
         {
+            Indicate.gameObject.SetActive(false);
             BiconNoneIntel[2].gameObject.SetActive(false);
             No_Unlock_B_Icon[2].gameObject.SetActive(false);
             Unlock_B_Icon[2].gameObject.SetActive(true);
         }
-
-        //if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between1 == true){         
-        //          //번호 1번 작은 유전자 불러오기
-        //    Small_Icon[0].gameObject.SetActive(false);
-        //    Unlock_Small_Icon[0].gameObject.SetActive(true);
-
-        //}
-
-        //if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 == true)
-        //{         //번호 2번 작은 유전자 불러오기
-        //    Small_Icon[1].gameObject.SetActive(false);
-        //    Unlock_Small_Icon[1].gameObject.SetActive(true);
-
-        //}
-
-        //if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between3 == true)
-        //{         //번호 3번 작은 유전자 불러오기
-        //    Small_Icon[2].gameObject.SetActive(false);
-        //    Unlock_Small_Icon[2].gameObject.SetActive(true);
-
-        //}
-
-
-        //if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between4 == true)
-        //{         //번호 4번 작은 유전자 불러오기
-        //    Small_Icon[3].gameObject.SetActive(false);
-        //    Unlock_Small_Icon[3].gameObject.SetActive(true);
-
-        //}
-
-
-        //if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between5 == true)
-        //{         //번호 5번 작은 유전자 불러오기
-        //    Small_Icon[4].gameObject.SetActive(false);
-        //    Unlock_Small_Icon[4].gameObject.SetActive(true);
-
-        //}
-
-        //if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between6 == true)
-        //{         //번호 6번 작은 유전자 불러오기
-        //    Small_Icon[5].gameObject.SetActive(false);
-        //    Unlock_Small_Icon[5].gameObject.SetActive(true);
-
-        //}
-        //if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between7 == true)
-        //{         //번호 7번 작은 유전자 불러오기
-        //    Small_Icon[6].gameObject.SetActive(false);
-        //    Unlock_Small_Icon[6].gameObject.SetActive(true);
-
-        //}
-        //if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between8 == true)
-        //{         //번호 8번 작은 유전자 불러오기
-        //    Small_Icon[7].gameObject.SetActive(false);
-        //    Unlock_Small_Icon[7].gameObject.SetActive(true);
-
-        //}
-
-
-
-
-
     }
+
+
+
+
+
+
+
+
 
 
     public void PointSaver()
@@ -242,13 +265,6 @@ public class Map_Icon_button : MonoBehaviour
             Debug.Log("1");
 
             BiconNoneIntel[0].gameObject.SetActive(true);
-
-
-            //Vector3 NoneIntelVector = BiconNoneIntel.transform.localPosition;
-            //BiconNoneIntel.gameObject.SetActive(true); //-257.8 , 227.5 , 0.0
-            //NoneIntelVector.x = -257.8f;
-            //NoneIntelVector.y = 227.5f;
-            //BiconNoneIntel.transform.localPosition = NoneIntelVector;
         }
         else
         {
@@ -270,11 +286,6 @@ public class Map_Icon_button : MonoBehaviour
             BiconNoneIntel[1].gameObject.SetActive(true);
 
 
-            //Vector3 NoneIntelVector = BiconNoneIntel.transform.localPosition;
-            //BiconNoneIntel.gameObject.SetActive(true); //150.7 , 227.5 , 0.0
-            //NoneIntelVector.x = 150.7f;
-            //NoneIntelVector.y = 227.5f;
-            //BiconNoneIntel.transform.localPosition = NoneIntelVector;
         }
         else
         {
@@ -295,12 +306,6 @@ public class Map_Icon_button : MonoBehaviour
 
             BiconNoneIntel[2].gameObject.SetActive(true);
 
-
-            //Vector3 NoneIntelVector = BiconNoneIntel.transform.localPosition;
-            //BiconNoneIntel.gameObject.SetActive(true); //565.4 , 227.5 , 0.0
-            //NoneIntelVector.x = 565.4f;
-            //NoneIntelVector.y = 227.5f;
-            //BiconNoneIntel.transform.localPosition = NoneIntelVector;
         }
         else
         {
@@ -321,12 +326,6 @@ public class Map_Icon_button : MonoBehaviour
 
             BiconNoneIntel[3].gameObject.SetActive(true);
 
-
-            //Vector3 NoneIntelVector = BiconNoneIntel.transform.localPosition;
-            //BiconNoneIntel.gameObject.SetActive(true); //-267.8 , -86.9 , 0.0
-            //NoneIntelVector.x = -267.8f;
-            //NoneIntelVector.y = -86.9f;
-            //BiconNoneIntel.transform.localPosition = NoneIntelVector;
         }
         else
         {
@@ -347,12 +346,6 @@ public class Map_Icon_button : MonoBehaviour
 
             BiconNoneIntel[4].gameObject.SetActive(true);
 
-
-            //Vector3 NoneIntelVector = BiconNoneIntel.transform.localPosition;
-            //BiconNoneIntel.gameObject.SetActive(true); //150.7 , -86.9 , 0.0
-            //NoneIntelVector.x = 150.7f;
-            //NoneIntelVector.y = -86.9f;
-            //BiconNoneIntel.transform.localPosition = NoneIntelVector;
         }
         else
         {
@@ -373,12 +366,6 @@ public class Map_Icon_button : MonoBehaviour
 
             BiconNoneIntel[5].gameObject.SetActive(true);
 
-
-            //Vector3 NoneIntelVector = BiconNoneIntel.transform.localPosition;
-            //BiconNoneIntel.gameObject.SetActive(true); //565.4 , -86.9 , 0.0
-            //NoneIntelVector.x = 565.4f;
-            //NoneIntelVector.y = -86.9f;
-            //BiconNoneIntel.transform.localPosition = NoneIntelVector;
         }
         else
         {
@@ -402,11 +389,6 @@ public class Map_Icon_button : MonoBehaviour
 
             BiconNoneIntel[6].gameObject.SetActive(true);
 
-            //BiconNoneIntel.gameObject.SetActive(true); // -267.8 , -374.6, 0.0
-            //Vector3 NoneIntelVector = BiconNoneIntel.transform.localPosition;
-            //NoneIntelVector.x = -267.8f;
-            //NoneIntelVector.y = -374.6f;
-            //BiconNoneIntel.transform.localPosition = NoneIntelVector;
         }
         else
         {
@@ -428,11 +410,6 @@ public class Map_Icon_button : MonoBehaviour
             BiconNoneIntel[7].gameObject.SetActive(true);
 
 
-            //Vector3 NoneIntelVector = BiconNoneIntel.transform.localPosition;
-            //BiconNoneIntel.gameObject.SetActive(true); //150.7 , -374.6 , 0.0
-            //NoneIntelVector.x = 150.7f;
-            //NoneIntelVector.y = -374.6f;
-            //BiconNoneIntel.transform.localPosition = NoneIntelVector;
         }
         else
         {
@@ -453,12 +430,6 @@ public class Map_Icon_button : MonoBehaviour
 
             BiconNoneIntel[8].gameObject.SetActive(true);
 
-
-            //Vector3 NoneIntelVector = BiconNoneIntel.transform.localPosition;
-            //BiconNoneIntel.gameObject.SetActive(true); //565.4 , -374.6 , 0.0
-            //NoneIntelVector.x = 565.4f;
-            //NoneIntelVector.y = -374.6f;
-            //BiconNoneIntel.transform.localPosition = NoneIntelVector;
         }
         else
         {
@@ -480,9 +451,12 @@ public class Map_Icon_button : MonoBehaviour
 
             // 1~3번 맨 윗줄 1 2 3
             case 1:     //모디빅
-                if (checkbuttonClick == true && point > 3 && LeftgeneChecker == 2)
+                if (checkbuttonClick == true && point > 3 && PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_1 == true)
                 //해금버튼 On 그리고 왼쪽 유전자 체크버튼(그니까... 중간단계까지 언락 했으면)으로 숫저2라면
                 {
+                    Indicate.gameObject.transform.localPosition = new Vector3(-45, 270, 0);
+                    Indicate.gameObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
+
                     PlayFModUI.instance.Play_Unlock_Effect();
                     PlayFModUI.instance.GeneDocument();
 
@@ -503,8 +477,9 @@ public class Map_Icon_button : MonoBehaviour
                 }
                 break;
             case 2:     //탕그리스
-                if (checkbuttonClick == true && point > 3 && MiddlegeneChecker == 2)
+                if (checkbuttonClick == true && point > 3 && PlayerData.GetComponent<SaveDataManager>()._Creature_Mobidic == true)
                 {
+                    Indicate.gameObject.transform.localPosition = new Vector3(240, 270, 0);
 
                     PlayFModUI.instance.Play_Unlock_Effect();
                     PlayFModUI.instance.GeneDocument();
@@ -526,8 +501,9 @@ public class Map_Icon_button : MonoBehaviour
                 }
                 break;
             case 3:     //??
-                if (checkbuttonClick == true && point > 3 && RightgeneChecker == 2)
+                if (checkbuttonClick == true && point > 3 && PlayerData.GetComponent<SaveDataManager>()._Creature_TangGreece == true)
                 {
+                    Indicate.gameObject.SetActive(false);
 
                     PlayFModUI.instance.Play_Unlock_Effect();
                     PlayFModUI.instance.GeneDocument();
@@ -551,8 +527,11 @@ public class Map_Icon_button : MonoBehaviour
 
             //4~5번 가운대줄 4 5 6
             case 4:     //님프
-                if (checkbuttonClick == true && point > 3 && LeftgeneChecker == 1)
+                if (checkbuttonClick == true && point > 3 && PlayerData.GetComponent<SaveDataManager>()._Creature_Fran == true)
                 {
+                    Indicate.gameObject.transform.localPosition = new Vector3(240, -50, 0);
+                    Indicate.gameObject.transform.localRotation = Quaternion.Euler(0, 0, 180);
+
                     PlayFModUI.instance.Play_Unlock_Effect();
                     PlayFModUI.instance.GeneDocument();
                     BiconNoneIntel[3].gameObject.SetActive(false);
@@ -565,8 +544,6 @@ public class Map_Icon_button : MonoBehaviour
 
                     StartCoroutine(WaitForUnlock_Screen(3));
 
-                    LeftgeneChecker = 2;
-
                     point = point - 3;
                     Point_Check.text = "포인트 :" + point;
                     PointSaver();
@@ -575,8 +552,11 @@ public class Map_Icon_button : MonoBehaviour
                 break;
 
             case 5:     //만티코어
-                if (checkbuttonClick == true && point > 3 && MiddlegeneChecker == 1)
+                if (checkbuttonClick == true && point > 3 && PlayerData.GetComponent<SaveDataManager>()._Creature_Nymph == true)
                 {
+                    Indicate.gameObject.transform.localPosition = new Vector3(-50, -50, 0);
+                    Indicate.gameObject.transform.localRotation = Quaternion.Euler(0, 0, 180);
+
                     PlayFModUI.instance.Play_Unlock_Effect();
                     PlayFModUI.instance.GeneDocument();
                     BiconNoneIntel[4].gameObject.SetActive(false);
@@ -589,7 +569,6 @@ public class Map_Icon_button : MonoBehaviour
 
                     StartCoroutine(WaitForUnlock_Screen(4));
 
-                    MiddlegeneChecker = 2;
 
                     point = point - 3;
                     Point_Check.text = "포인트 :" + point;
@@ -597,9 +576,13 @@ public class Map_Icon_button : MonoBehaviour
                     checkbuttonClick = false;
                 }
                 break;
+
             case 6:     //??
-                if (checkbuttonClick == true && point > 3 && RightgeneChecker == 1)
+                if (checkbuttonClick == true && point > 3 && PlayerData.GetComponent<SaveDataManager>()._Creature_Manticore == true)
                 {
+                    Indicate.gameObject.transform.localPosition = new Vector3(-190, 110, 0);
+                    Indicate.gameObject.transform.localRotation = Quaternion.Euler(0, 0, 90);
+
                     PlayFModUI.instance.Play_Unlock_Effect();
                     PlayFModUI.instance.GeneDocument();
                     BiconNoneIntel[5].gameObject.SetActive(false);
@@ -612,7 +595,6 @@ public class Map_Icon_button : MonoBehaviour
 
                     StartCoroutine(WaitForUnlock_Screen(5));
 
-                    RightgeneChecker = 2;
 
                     point = point - 3;
                     Point_Check.text = "포인트 :" + point;
@@ -623,8 +605,11 @@ public class Map_Icon_button : MonoBehaviour
 
             // 7~ 9번 맨 아래줄  7 8 9
             case 7:     //머쉬
-                if (checkbuttonClick == true && point > 3)
+                if (checkbuttonClick == true && point > 3 && PlayerData.GetComponent<SaveDataManager>()._Creature_ConRabbit == true)
                 {
+
+                    Indicate.gameObject.transform.localPosition = new Vector3(245, -400, 0);
+
                     PlayFModUI.instance.Play_Unlock_Effect();
                     PlayFModUI.instance.GeneDocument();
                     BiconNoneIntel[6].gameObject.SetActive(false);
@@ -637,10 +622,6 @@ public class Map_Icon_button : MonoBehaviour
 
                     StartCoroutine(WaitForUnlock_Screen(6));
 
-
-
-                    LeftgeneChecker = 1;
-
                     point = point - 2;
                     Point_Check.text = "포인트 :" + point;
                     PointSaver();
@@ -651,6 +632,8 @@ public class Map_Icon_button : MonoBehaviour
             case 8:     //콘래빗
                 if (checkbuttonClick == true && point > 3)
                 {
+                    Indicate.gameObject.SetActive(true);
+
                     PlayFModUI.instance.Play_Unlock_Effect();
                     PlayFModUI.instance.GeneDocument();
                     BiconNoneIntel[7].gameObject.SetActive(false);
@@ -663,8 +646,6 @@ public class Map_Icon_button : MonoBehaviour
 
                     StartCoroutine(WaitForUnlock_Screen(7));
 
-                    MiddlegeneChecker = 1;
-
                     point = point - 2;
                     Point_Check.text = "포인트 :" + point;
                     PointSaver();
@@ -673,8 +654,11 @@ public class Map_Icon_button : MonoBehaviour
                 break;
 
             case 9:     //프랑
-                if (checkbuttonClick == true && point > 3)
+                if (checkbuttonClick == true && point > 3 && PlayerData.GetComponent<SaveDataManager>()._Creature_Mush == true)
                 {
+                    Indicate.gameObject.transform.localPosition = new Vector3(385, -220, 0);
+                    Indicate.gameObject.transform.localRotation = Quaternion.Euler(0, 0, 90);
+
                     PlayFModUI.instance.Play_Unlock_Effect();
                     PlayFModUI.instance.GeneDocument();
                     BiconNoneIntel[8].gameObject.SetActive(false);
@@ -687,7 +671,6 @@ public class Map_Icon_button : MonoBehaviour
 
                     StartCoroutine(WaitForUnlock_Screen(8));
 
-                    RightgeneChecker = 1;
 
                     point = point - 2;
                     Point_Check.text = "포인트 :" + point;
@@ -695,128 +678,6 @@ public class Map_Icon_button : MonoBehaviour
                     checkbuttonClick = false;
                 }
                 break;
-
-            //case 10:
-            //    if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[3].gameObject.activeSelf == true)
-            //    {
-            //        //Small_Icon[0].gameObject.SetActive(false);
-            //        //Unlock_Small_Icon[0].gameObject.SetActive(true);
-
-            //        PlayerData.GetComponent<SaveDataManager>()._Gene_Between1 = true;
-
-            //        point = point - 1;
-            //        Point_Check.text = "포인트 :" + point;
-            //        PointSaver();
-            //        checkbuttonClick = false;
-            //    }
-            //    break;
-
-            //case 11:
-            //    if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[3].gameObject.activeSelf == true && Unlock_B_Icon[4].gameObject.activeSelf == true)
-            //    {
-            //        //Small_Icon[1].gameObject.SetActive(false);
-            //        //Unlock_Small_Icon[1].gameObject.SetActive(true);
-
-            //        PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 = true;
-
-            //        point = point - 1;
-            //        Point_Check.text = "포인트 :" + point;
-            //        PointSaver();
-            //        checkbuttonClick = false;
-            //    }
-            //    break;
-
-            //case 12:
-            //    if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[4].gameObject.activeSelf == true && Unlock_B_Icon[5].gameObject.activeSelf == true)
-            //    {
-            //        //Small_Icon[2].gameObject.SetActive(false);
-            //        //Unlock_Small_Icon[2].gameObject.SetActive(true);
-
-            //        PlayerData.GetComponent<SaveDataManager>()._Gene_Between3 = true;
-
-            //        point = point - 1;
-            //        Point_Check.text = "포인트 :" + point;
-            //        PointSaver();
-            //        checkbuttonClick = false;
-            //    }
-            //    break;
-
-            //case 13:
-            //    if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[5].gameObject.activeSelf == true)
-            //    {
-            //        //Small_Icon[3].gameObject.SetActive(false);
-            //        //Unlock_Small_Icon[3].gameObject.SetActive(true);
-
-            //        PlayerData.GetComponent<SaveDataManager>()._Gene_Between4 = true;
-
-            //        point = point - 1;
-            //        Point_Check.text = "포인트 :" + point;
-            //        PointSaver();
-            //        checkbuttonClick = false;
-            //    }
-            //    break;
-
-            //case 14:
-            //    if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[6].gameObject.activeSelf == true)
-            //    {
-            //        //Small_Icon[4].gameObject.SetActive(false);
-            //        //Unlock_Small_Icon[4].gameObject.SetActive(true);
-
-            //        PlayerData.GetComponent<SaveDataManager>()._Gene_Between5 = true;
-
-            //        point = point - 1;
-            //        Point_Check.text = "포인트 :" + point;
-            //        PointSaver();
-            //        checkbuttonClick = false;
-            //    }
-            //    break;
-
-
-            //case 15:
-            //    if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[6].gameObject.activeSelf == true && Unlock_B_Icon[7].gameObject.activeSelf == true)
-            //    {
-            //        //Small_Icon[5].gameObject.SetActive(false);
-            //        //Unlock_Small_Icon[5].gameObject.SetActive(true);
-
-            //        PlayerData.GetComponent<SaveDataManager>()._Gene_Between6 = true;
-
-            //        point = point - 1;
-            //        Point_Check.text = "포인트 :" + point;
-            //        PointSaver();
-            //        checkbuttonClick = false;
-            //    }
-            //    break;
-
-
-            //case 16:
-            //    if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[7].gameObject.activeSelf == true && Unlock_B_Icon[8].gameObject.activeSelf == true)
-            //    {
-            //        //Small_Icon[6].gameObject.SetActive(false);
-            //        //Unlock_Small_Icon[6].gameObject.SetActive(true);
-
-            //        PlayerData.GetComponent<SaveDataManager>()._Gene_Between7 = true;
-
-            //        point = point - 1;
-            //        Point_Check.text = "포인트 :" + point;
-            //        PointSaver();
-            //        checkbuttonClick = false;
-            //    }
-            //    break;
-
-            //case 17:
-            //    if (checkbuttonClick == true && point > 1 && Unlock_B_Icon[8].gameObject.activeSelf == true)
-            //    {
-            //        //Small_Icon[7].gameObject.SetActive(false);
-            //        //Unlock_Small_Icon[7].gameObject.SetActive(true);
-
-            //        PlayerData.GetComponent<SaveDataManager>()._Gene_Between8 = true;
-
-            //        point = point - 1;
-            //        Point_Check.text = "포인트 :" + point;
-            //        PointSaver();
-            //        checkbuttonClick = false;
-            //    }
-            //    break;
 
         }
 
@@ -1129,18 +990,15 @@ public class Map_Icon_button : MonoBehaviour
         {
             BiconIntelSus_L[0].gameObject.SetActive(true);
 
-            Gene_Intel_Text.gameObject.SetActive(true);
-
-            Gene_Name.text = "모비딕";
-
-            Gene_Intel.text = "1번 정보";
+            Gene_Info_for.gameObject.SetActive(true);
+            Gene_Info_for.gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[5];
 
 
         }
         else
         {
             BiconIntelSus_L[0].gameObject.SetActive(false);
-            Gene_Intel_Text.gameObject.SetActive(false);
+            Gene_Info_for.gameObject.SetActive(false);
 
         }
     }
@@ -1151,18 +1009,17 @@ public class Map_Icon_button : MonoBehaviour
         {
             BiconIntelSus_L[1].gameObject.SetActive(true);
 
-            Gene_Intel_Text.gameObject.SetActive(true);
+            Gene_Info_for.gameObject.SetActive(true);
+            Gene_Info_for.gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[6];
 
-            Gene_Name.text = "탕그리스";
 
-            Gene_Intel.text = "2번 정보";
 
 
         }
         else
         {
             BiconIntelSus_L[1].gameObject.SetActive(false);
-            Gene_Intel_Text.gameObject.SetActive(false);
+            Gene_Info_for.gameObject.SetActive(false);
 
         }
     }
@@ -1173,18 +1030,15 @@ public class Map_Icon_button : MonoBehaviour
         {
             BiconIntelSus_L[2].gameObject.SetActive(true);
 
-            Gene_Intel_Text.gameObject.SetActive(true);
+            //Gene_Info_for.gameObject.SetActive(true);
 
-            Gene_Name.text = "3번";
-
-            Gene_Intel.text = "3번 정보";
 
 
         }
         else
         {
             BiconIntelSus_L[2].gameObject.SetActive(false);
-            Gene_Intel_Text.gameObject.SetActive(false);
+            //Gene_Info_for.gameObject.SetActive(false);
 
         }
     }
@@ -1195,18 +1049,16 @@ public class Map_Icon_button : MonoBehaviour
         {
             BiconIntelSus_L[3].gameObject.SetActive(true);
 
-            Gene_Intel_Text.gameObject.SetActive(true);
+            Gene_Info_for.gameObject.SetActive(true);
+            Gene_Info_for.gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[3];
 
-            Gene_Name.text = "님프";
-
-            Gene_Intel.text = "4번 정보";
 
 
         }
         else
         {
             BiconIntelSus_L[3].gameObject.SetActive(false);
-            Gene_Intel_Text.gameObject.SetActive(false);
+            Gene_Info_for.gameObject.SetActive(false);
 
         }
     }
@@ -1217,18 +1069,15 @@ public class Map_Icon_button : MonoBehaviour
         {
             BiconIntelSus_L[4].gameObject.SetActive(true);
 
-            Gene_Intel_Text.gameObject.SetActive(true);
-
-            Gene_Name.text = "만티코어";
-
-            Gene_Intel.text = "5번 정보";
+            Gene_Info_for.gameObject.SetActive(true);
+            Gene_Info_for.gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[4];
 
 
         }
         else
         {
             BiconIntelSus_L[4].gameObject.SetActive(false);
-            Gene_Intel_Text.gameObject.SetActive(false);
+            Gene_Info_for.gameObject.SetActive(false);
 
         }
     }
@@ -1239,18 +1088,15 @@ public class Map_Icon_button : MonoBehaviour
         {
             BiconIntelSus_L[5].gameObject.SetActive(true);
 
-            Gene_Intel_Text.gameObject.SetActive(true);
+            //Gene_Info_for.gameObject.SetActive(true);
 
-            Gene_Name.text = "6번";
-
-            Gene_Intel.text = "6번 정보";
 
 
         }
         else
         {
             BiconIntelSus_L[5].gameObject.SetActive(false);
-            Gene_Intel_Text.gameObject.SetActive(false);
+            //Gene_Info_for.gameObject.SetActive(false);
 
         }
     }
@@ -1261,18 +1107,16 @@ public class Map_Icon_button : MonoBehaviour
         {
             BiconIntelSus_L[6].gameObject.SetActive(true);
 
-            Gene_Intel_Text.gameObject.SetActive(true);
+            Gene_Info_for.gameObject.SetActive(true);
+            Gene_Info_for.gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[1];
 
-            Gene_Name.text = "머시";
-
-            Gene_Intel.text = "7번 정보";
 
 
         }
         else
         {
             BiconIntelSus_L[6].gameObject.SetActive(false);
-            Gene_Intel_Text.gameObject.SetActive(false);
+            Gene_Info_for.gameObject.SetActive(false);
 
         }
     }
@@ -1283,18 +1127,15 @@ public class Map_Icon_button : MonoBehaviour
         {
             BiconIntelSus_L[7].gameObject.SetActive(true);
 
-            Gene_Intel_Text.gameObject.SetActive(true);
-
-            Gene_Name.text = "콘래빗";
-
-            Gene_Intel.text = "8번 정보";
+            Gene_Info_for.gameObject.SetActive(true);
+            Gene_Info_for.gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[0];
 
 
         }
         else
         {
             BiconIntelSus_L[7].gameObject.SetActive(false);
-            Gene_Intel_Text.gameObject.SetActive(false);
+            Gene_Info_for.gameObject.SetActive(false);
 
         }
     }
@@ -1305,173 +1146,19 @@ public class Map_Icon_button : MonoBehaviour
         {
             BiconIntelSus_L[8].gameObject.SetActive(true);
 
-            Gene_Intel_Text.gameObject.SetActive(true);
-
-            Gene_Name.text = "프랑";
-
-            Gene_Intel.text = "9번 정보";
+            Gene_Info_for.gameObject.SetActive(true);
+            Gene_Info_for.gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[2];
 
 
         }
         else
         {
             BiconIntelSus_L[8].gameObject.SetActive(false);
-            Gene_Intel_Text.gameObject.SetActive(false);
+            Gene_Info_for.gameObject.SetActive(false);
 
         }
     }
 
 
 
-
-    //--------------------------------------작은 아이콘 해금 버튼----------------------//
-
-
-    //public void Small_Unlocker1()
-    //{
-    //    if (Small_Icon[0].isOn)
-    //    {
-    //        checkbuttonClick = true;
-    //        Icon_discernment = 10;
-    //        Debug.Log("S_1");
-
-
-    //    }
-    //    else
-    //    {
-    //        checkbuttonClick = false;
-    //        Icon_discernment = 0;
-    //        Debug.Log("S0_1");
-
-    //    }
-    //}
-    //public void Small_Unlocker2()
-    //{
-    //    if (Small_Icon[1].isOn)
-    //    {
-    //        checkbuttonClick = true;
-    //        Icon_discernment = 11;
-    //        Debug.Log("S_2");
-
-
-
-    //    }
-    //    else
-    //    {
-    //        checkbuttonClick = false;
-    //        Icon_discernment = 0;
-    //        Debug.Log("S0_2");
-
-    //    }
-    //}
-    //public void Small_Unlocker3()
-    //{
-    //    if (Small_Icon[2].isOn)
-    //    {
-    //        checkbuttonClick = true;
-    //        Icon_discernment = 12;
-    //        Debug.Log("S_3");
-
-
-    //    }
-    //    else
-    //    {
-    //        checkbuttonClick = false;
-    //        Icon_discernment = 0;
-    //        Debug.Log("S0_3");
-
-    //    }
-    //}
-    //public void Small_Unlocker4()
-    //{
-    //    if (Small_Icon[3].isOn)
-    //    {
-    //        checkbuttonClick = true;
-    //        Icon_discernment = 13;
-    //        Debug.Log("S_4");
-
-
-    //    }
-    //    else
-    //    {
-    //        checkbuttonClick = false;
-    //        Icon_discernment = 0;
-    //        Debug.Log("S0_4");
-
-    //    }
-    //}
-    //public void Small_Unlocker5()
-    //{
-    //    if (Small_Icon[4].isOn)
-    //    {
-    //        checkbuttonClick = true;
-    //        Icon_discernment = 14;
-    //        Debug.Log("S_5");
-
-
-    //    }
-    //    else
-    //    {
-    //        checkbuttonClick = false;
-    //        Icon_discernment = 0;
-    //        Debug.Log("S0_5");
-
-    //    }
-    //}
-    //public void Small_Unlocker6()
-    //{
-    //    if (Small_Icon[5].isOn)
-    //    {
-    //        checkbuttonClick = true;
-    //        Icon_discernment = 15;
-    //        Debug.Log("S_6");
-
-
-
-    //    }
-    //    else
-    //    {
-    //        checkbuttonClick = false;
-    //        Icon_discernment = 0;
-    //        Debug.Log("S0_6");
-
-    //    }
-    //}
-    //public void Small_Unlocker7()
-    //{
-    //    if (Small_Icon[6].isOn)
-    //    {
-    //        checkbuttonClick = true;
-    //        Icon_discernment = 16;
-    //        Debug.Log("S_7");
-
-  
-
-    //    }
-    //    else
-    //    {
-    //        checkbuttonClick = false;
-    //        Icon_discernment = 0;
-    //        Debug.Log("S0_7");
-
-    //    }
-    //}
-    //public void Small_Unlocker8()
-    //{
-    //    if (Small_Icon[7].isOn)
-    //    {
-    //        checkbuttonClick = true;
-    //        Icon_discernment = 17;
-    //        Debug.Log("S_8");
-
-
-    //    }
-    //    else
-    //    {
-    //        checkbuttonClick = false;
-    //        Icon_discernment = 0;
-    //        Debug.Log("S0_8");
-
-    //    }
-    //}
 }

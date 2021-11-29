@@ -494,8 +494,20 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
-  Banks: []
+  MasterBanks:
+  - Master
+  Banks:
+  - ABM
+  - ABM Story
+  - Bank B
+  - Bank C
+  - BGM
+  - Dialogue_CN
+  - Dialogue_EN
+  - Dialogue_JP
+  - SFX
+  - Story
+  - UI
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
