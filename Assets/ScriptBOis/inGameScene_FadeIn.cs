@@ -10,12 +10,6 @@ public class inGameScene_FadeIn : MonoBehaviour
     public GameObject CameraBoi;
     public GameObject FadeIn;
 
-    //private void FixedUpdate()
-    //{
-    //    Vector3 TargetPos = new Vector3(Target.transform.position.x, Target.transform.position.y, Target.transform.position.z);
-    //    transform.position = Vector3.Lerp(transform.position, TargetPos, Time.deltaTime * 2f);
-    //}
-
     public void BattleSelect()
     {
         PlayFModUI.instance.NPanalClick();
@@ -42,6 +36,15 @@ public class inGameScene_FadeIn : MonoBehaviour
         //transform.DOLocalMoveX(700, 1.0f).SetEase(Ease.OutCubic);
         StartCoroutine("GeneSelectMoveCor");
     }
+
+    public void inGameScene()
+    {
+        PlayFModUI.instance.NPanalClick();
+        transform.DOLocalMoveZ(-900, 0.2f).SetEase(Ease.OutCubic);
+        //transform.DOLocalMoveX(25, 1.5f).SetEase(Ease.InOutCubic);
+        StartCoroutine("GeneinGametMoveCor");
+    }
+
 
 
 
@@ -74,7 +77,14 @@ public class inGameScene_FadeIn : MonoBehaviour
         SceneManager.LoadScene("geneMap");
     }
 
+    IEnumerator GeneinGametMoveCor()
+    {
 
+        yield return new WaitForSeconds(0.5f);
+        FadeIn.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene("inGameScene");
+    }
 
 
 

@@ -13,16 +13,16 @@ public class NewSaveDataManager : MonoBehaviour
         Data data = new Data();
 
         data.Name = "ÀÌ¼±µ¿";
-        data.Stage1_1 = false ;
-        data.Stage1_2 = false;
-        data.Stage1_3 = false;
-        data.Stage1_4 = false;
-        data.Stage2_1 = false;
-        data.Stage2_2 = false;
-        data.Stage2_3 = false;
-        data.Stage2_4 = false;
-        data.Creature_Mush = false;
-        data.Creature_ConRabbit = false;
+        data.Stage1_1 = true;
+        data.Stage1_2 = true;
+        data.Stage1_3 = true;
+        data.Stage1_4 = true;
+        data.Stage2_1 = true;
+        data.Stage2_2 = true;
+        data.Stage2_3 = true;
+        data.Stage2_4 = true;
+        data.Creature_Mush = true;
+        data.Creature_ConRabbit = true;
         data.Creature_Fran = false;
         data.Creature_Nymph = false;
         data.Creature_Manticore = false;
@@ -30,7 +30,7 @@ public class NewSaveDataManager : MonoBehaviour
         data.Creature_Mobidic = false;
         data.Creature_TangGreece = false;
         data.Creature_Temp_2 = false;
-        data.Gene_Between_1 = false;
+        data.Gene_Between_1 = true;
         data.Gene_Between_2 = false;
         data.Gene_Between_3 = false;
         data.Gene_Between_4 = false;
