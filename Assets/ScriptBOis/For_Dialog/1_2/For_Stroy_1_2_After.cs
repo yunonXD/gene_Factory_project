@@ -18,6 +18,8 @@ public class For_Stroy_1_2_After : MonoBehaviour
     public GameObject Smile_eyes;       //웃는 눈
     public GameObject Surprise_eyes;    //놀란 눈
     public GameObject PlayerData;
+    public GameObject MainBG_2;
+    public GameObject FadeBoi;          //페이드 인 아웃 시킬 검은 화면
     public GameObject NPC_1;            //NPC1
     public GameObject SelectQ;          //선택창
     public Button SelectQ_B_1;          //선택창에 있는 상호작용 버튼
@@ -27,6 +29,14 @@ public class For_Stroy_1_2_After : MonoBehaviour
 
     bool select1 = false;
     bool select2 = false;
+
+
+    private Animator animator;
+
+    private void Awake()
+    {
+        animator = FadeBoi.GetComponent<Animator>();
+    }
 
     void Start()
     {
@@ -55,25 +65,6 @@ public class For_Stroy_1_2_After : MonoBehaviour
 
     //제목 모의훈련 후
 
-    //.setDelay(?);
-
-
-    //ScreenLock.gameObject.SetActive(true);
-    //SelectQ.gameObject.SetActive(true);
-    //_Select_text1.text = "변경이요?";
-    //_Select_text2.text = "긴급 상황인가요?";
-
-    //if (CountClick == 5 && select1 == true || select2 == true)
-    //{
-    //    Debug.Log("넘어옴");
-    //    select1 = false;
-    //    select2 = false;
-    //    CountClick += 1;
-    //} 
-
-    //    SelectQ.gameObject.SetActive(false);
-
-    //    ScreenLock.gameObject.SetActive(false);
 
     public void ForStory_2_1()
     {
@@ -136,15 +127,35 @@ public class For_Stroy_1_2_After : MonoBehaviour
                 _index.DOText("그럼 다음 훈련에 뵙도록 하겠습니다.", 1);
                 break;
 
-
             case 8:
+
+                FadeBoi.gameObject.SetActive(true);
+
+                break;
+
+
+            case 9:
+
                 Secretary.gameObject.SetActive(false);
+                _name.text = "";
+                _index.DOText("", 1);
+                animator.SetBool("FadeIn", true);
+                animator.SetBool("FadeOff", false);
+
+                MainBG_2.gameObject.SetActive(true);
+
+                break;
+
+
+
+            case 10:
+                
                 _name.text = "";
                 _index.DOText("", 1);
                 _index.DOText("ETI 제조 공단 관리 구역 밖", 1);
                 break;
 
-            case 9:
+            case 11:
 
                 NPC_1.gameObject.SetActive(true);
                 _name.text = "";
@@ -153,7 +164,7 @@ public class For_Stroy_1_2_After : MonoBehaviour
                 _index.DOText("간사한 술수를 부리는군요, ETI 제조 공단.", 1);
                 break;
 
-            case 10:
+            case 12:
 
                 _name.text = "";
                 _index.DOText("???", 1);
@@ -161,7 +172,7 @@ public class For_Stroy_1_2_After : MonoBehaviour
                 _index.DOText("그러나, 당신들의 행동은 당신들의 멸망의 순간을 늦추기만 할 뿐입니다.", 1);
                 break;
 
-            case 11:
+            case 13:
 
                 _name.text = "";
                 _index.DOText("???", 1);
@@ -169,7 +180,7 @@ public class For_Stroy_1_2_After : MonoBehaviour
                 _index.DOText("얌전히 멸망을 기다리면 그분께 편히 보내 드리는 것을…", 1);
                 break;
 
-            case 12:
+            case 14:
 
                 _name.text = "";
                 _index.DOText("???", 1);
@@ -178,7 +189,7 @@ public class For_Stroy_1_2_After : MonoBehaviour
                 break;
 
 
-            case 13:
+            case 15:
 
                 _name.text = "";
                 _index.DOText("???", 1);
@@ -186,13 +197,19 @@ public class For_Stroy_1_2_After : MonoBehaviour
                 _index.DOText("어떠한 작전을 세우더라도 당신들의 멸망은 필연적입니다.", 1);
                 break;
 
-            case 14:
+            case 16:
 
                 _name.text = "";
                 _index.DOText("???", 1);
                 _index.DOText("", 1);
                 _index.DOText("최대한 발버둥을 해보십시오 ETI 제조 공단..", 1);
                 break;
+
+            case 17:
+                animator.SetBool("FadeIn", false);
+                animator.SetBool("FadeOff", true);
+                break;
+
 
 
             default:

@@ -353,24 +353,6 @@ public class For_Stroy_2_1_After : MonoBehaviour
             Normal_eyes.GetComponent<Image>().color = new Color(1, 1, 1);
         }
 
-
-        //if (Alpha_Secretary == true) {      //알파 온
-        //    Color color_Secretary = Secretary_image.color;
-        //    for (float i = 1.0f; i >= 0.6f; i -= 0.01f)
-        //    {
-        //        color_Secretary.r = i;
-        //        Secretary_image.color = color_Secretary;
-        //    }
-        //}
-
-        //else if(Alpha_Secretary == false){  //알파 오프
-        //    Color color_Secretary = Secretary_image.color;
-        //    for (float i = 0.6f; i >= 1.0f; i += 0.01f)
-        //    {
-        //        color_Secretary.a = i;
-        //        Secretary_image.color = color_Secretary;
-        //    }
-        //}
     }
 
     private void Change_Alpha_SNPC_1(bool Alpha_NPC_1)
