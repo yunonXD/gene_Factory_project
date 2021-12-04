@@ -90,6 +90,8 @@ public class For_Stroy_1_3 : MonoBehaviour
                 break;
 
             case 4:
+                ForStory_FMod.instance.Monitor_On();
+                //[모니터를 킬 때 발생하는 효과음] 컷신 텍스트가 출력이 끝날 때 들리도록 설정
 
                 NPC_1.gameObject.SetActive(true);
 
@@ -102,7 +104,7 @@ public class For_Stroy_1_3 : MonoBehaviour
                 _index.DOText("이 괴물의 정보를 잘 기억해두십시오.", 1);
                 break;
 
-            //[모니터를 킬 때 발생하는 효과음] 컷신 텍스트가 출력이 끝날 때 들리도록 설정
+
 
             case 5:
                 _name.text = "마리아";

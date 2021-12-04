@@ -21,7 +21,7 @@ MonoBehaviour:
     data2: 0
   Type: 0
   IsGlobal: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-9125295944266911351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 3500
 --- !u!114 &-8948520337616416646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
   Path: event:/SFX/UI/For Story/Story_monster4
   guid: cea165ac56d4634993cd9cfc7325a62e
   Banks:
-  - {fileID: 1468646708396789155}
+  - {fileID: 8776407946173250353}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -134,7 +134,7 @@ MonoBehaviour:
     data2: 0
   Type: 0
   IsGlobal: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-8737383489147821592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +179,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 906
 --- !u!114 &-8453356329988216985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +221,7 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 482
-  Exists: 1
+  Exists: 0
 --- !u!114 &-8415628228953310723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,6 +266,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &-8349024573254975974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht1/ForStory
+  m_EditorClassIdentifier: 
+  Name: ForStory
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &-8193840524514288987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,7 +325,7 @@ MonoBehaviour:
   Path: ../../Gene_Project/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 637730561450720452
+  lastModified: 637742261397860552
   FileSizes:
   - Name: Desktop
     Value: 35360
@@ -501,7 +523,7 @@ MonoBehaviour:
   Path: event:/SFX/UI/For Story/Story_monster3
   guid: 746fe7bed531b2409b9ec28300a36f03
   Banks:
-  - {fileID: 1468646708396789155}
+  - {fileID: 8776407946173250353}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -524,7 +546,7 @@ MonoBehaviour:
   Path: ../../Gene_Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637730561449644772
+  lastModified: 637742261396622247
   FileSizes:
   - Name: Desktop
     Value: 15258
@@ -632,7 +654,7 @@ MonoBehaviour:
   Path: ../../Gene_Project/Build/Desktop/Dialogue_CN.bank
   Name: Dialogue_CN
   StudioPath: bank:/Dialogue_CN
-  lastModified: 637730561449064773
+  lastModified: 637742261396035426
   FileSizes:
   - Name: Desktop
     Value: 52416
@@ -658,7 +680,7 @@ MonoBehaviour:
     data2: 0
   Type: 0
   IsGlobal: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-5869270181672160344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,12 +740,12 @@ MonoBehaviour:
   Path: event:/AMB/For Story/Story_Inside_daytime1
   guid: a726cd0a34c4ce4496efc1c06280aa45
   Banks:
-  - {fileID: 1468646708396789155}
+  - {fileID: 8776407946173250353}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 7964417261042842699}
+  - {fileID: -1119943656418845507}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -749,7 +771,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 577
 --- !u!114 &-4934756408564260561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,7 +787,7 @@ MonoBehaviour:
   Path: event:/SFX/UI/For Story/Story_windnoice
   guid: b19fdc1dcb8a5c41bc1deadf6d6cd4f9
   Banks:
-  - {fileID: 1468646708396789155}
+  - {fileID: 8776407946173250353}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -792,7 +814,7 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 482
-  Exists: 1
+  Exists: 0
 --- !u!114 &-4677165336385767376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -808,7 +830,7 @@ MonoBehaviour:
   Path: event:/SFX/UI/For Story/Story_PhoneClick
   guid: d4576e302dc41a4c99800222954c2435
   Banks:
-  - {fileID: 1468646708396789155}
+  - {fileID: 8776407946173250353}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -816,6 +838,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-4322682915398808660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht2/outside_night3
+  m_EditorClassIdentifier: 
+  Name: outside_night3
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &-3848564570044747206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -854,7 +898,7 @@ MonoBehaviour:
   Path: event:/SFX/UI/For Story/Story_monster1
   guid: 35fd40d86cda1844931876929bbe6104
   Banks:
-  - {fileID: 1468646708396789155}
+  - {fileID: 8776407946173250353}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -862,6 +906,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-3428046555334773032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht2/outside_night2
+  m_EditorClassIdentifier: 
+  Name: outside_night2
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &-3259808409888813266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -906,7 +972,29 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 2081
+--- !u!114 &-3085521003998795159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_Inside_daytime1/Inside_daytime_1
+  m_EditorClassIdentifier: 
+  Name: Inside_daytime_1
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &-3065694184052033932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -944,8 +1032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/SFX/UI/For Story/Story_Signal 2
   guid: d80eec51c93be14ab1115ca06a40a3d1
-  Banks:
-  - {fileID: 96133959420920549}
+  Banks: []
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -975,7 +1062,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 3627
 --- !u!114 &-2827670808005302590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1088,6 +1175,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &-2484707015986878647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BG_Story_Recog/ForStory
+  m_EditorClassIdentifier: 
+  Name: ForStory
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &-2350197947503771143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1148,7 +1257,7 @@ MonoBehaviour:
   Path: event:/SFX/UI/For Story/Story_PhoneCall
   guid: ca622b58cbecaf4aa8c095680f457a75
   Banks:
-  - {fileID: 1468646708396789155}
+  - {fileID: 8776407946173250353}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1156,6 +1265,52 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 837
+--- !u!114 &-2166492711776884756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/For Story/Story_Signal_off
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/For Story/Story_Signal_off
+  guid: 8d2537c8dbf46d4db86a8f17ab9f935b
+  Banks:
+  - {fileID: 96133959420920549}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 414
+--- !u!114 &-2128821894045716980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/For Story/Story_Door_knock
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/For Story/Story_Door_knock
+  guid: 5b10f913e4e10346aa6d58c521d463ac
+  Banks:
+  - {fileID: 8776407946173250353}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 875
 --- !u!114 &-2093227774775078093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1214,8 +1369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/SFX/UI/For Story/Story_Signal
   guid: 8d2537c8dbf46d4db86a8f17ab9f935b
-  Banks:
-  - {fileID: 96133959420920549}
+  Banks: []
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1267,6 +1421,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &-1119943656418845507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_Inside_daytime1/Inside_daytime_1
+  m_EditorClassIdentifier: 
+  Name: Inside_daytime_1
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &-1090776674144123742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1282,7 +1458,7 @@ MonoBehaviour:
   Path: event:/SFX/UI/For Story/Story_Inside_DoorOpenClose
   guid: 4ab1895a5e2d5b4f9d2f958df185dc1d
   Banks:
-  - {fileID: 1468646708396789155}
+  - {fileID: 8776407946173250353}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1334,7 +1510,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 3574
 --- !u!114 &-984620338254266012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1350,7 +1526,7 @@ MonoBehaviour:
   Path: ../../Gene_Project/Build/Desktop/Dialogue_JP.bank
   Name: Dialogue_JP
   StudioPath: bank:/Dialogue_JP
-  lastModified: 637730561449454777
+  lastModified: 637742261396413995
   FileSizes:
   - Name: Desktop
     Value: 66560
@@ -1398,7 +1574,7 @@ MonoBehaviour:
     data2: 0
   Type: 0
   IsGlobal: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-882525734278762185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1479,10 +1655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 6045843244934299644}
-  - {fileID: 1468646708396789155}
   - {fileID: 4869510798721192565}
-  - {fileID: -8424039089746400805}
-  - {fileID: -4874021377284188973}
   - {fileID: 3972739370614965086}
   - {fileID: -6205703432042936481}
   - {fileID: 8917814569154019907}
@@ -1491,6 +1664,7 @@ MonoBehaviour:
   - {fileID: 8572438630843249316}
   - {fileID: -8019726410898964379}
   - {fileID: 96133959420920549}
+  - {fileID: 8776407946173250353}
   EditorEvents:
   - {fileID: 2380764919979932807}
   - {fileID: -3705934239034889625}
@@ -1528,16 +1702,39 @@ MonoBehaviour:
   - {fileID: -3252274301993630192}
   - {fileID: -9044631105014075664}
   - {fileID: -8586909193745164424}
-  - {fileID: -1577406130377741800}
-  - {fileID: -2858808452960545778}
   - {fileID: -5275222546131900311}
+  - {fileID: -2128821894045716980}
+  - {fileID: 7884975426329774915}
+  - {fileID: -2166492711776884756}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6451709755633788679}
   StringsBanks:
   - {fileID: 6045843244934299644}
-  stringsBankWriteTime: 637730561449684771
+  stringsBankWriteTime: 637742261396662257
   cacheVersion: 8
+--- !u!114 &43597557514872627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_Inside_daytime2/Inside_daytime_2
+  m_EditorClassIdentifier: 
+  Name: Inside_daytime_2
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &96133959420920549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1553,10 +1750,10 @@ MonoBehaviour:
   Path: ../../Gene_Project/Build/Desktop/Story.bank
   Name: Story
   StudioPath: bank:/Story
-  lastModified: 637730561450024766
+  lastModified: 637742261397162215
   FileSizes:
   - Name: Desktop
-    Value: 7628
+    Value: 178336
   Exists: 1
 --- !u!114 &117420502620688653
 MonoBehaviour:
@@ -1732,7 +1929,7 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 1235552
-  Exists: 1
+  Exists: 0
 --- !u!114 &1690842787035585784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1793,7 +1990,7 @@ MonoBehaviour:
   Path: event:/SFX/UI/For Story/Story_Document
   guid: f1429964e332e543b5a812888995cd09
   Banks:
-  - {fileID: 1468646708396789155}
+  - {fileID: 8776407946173250353}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1816,13 +2013,13 @@ MonoBehaviour:
   Path: event:/AMB/For Story/Story_outside_Nigiht2
   guid: 0dc81765590f154c91076ed22578d9b6
   Banks:
-  - {fileID: 1468646708396789155}
+  - {fileID: 8776407946173250353}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -6181160368128547226}
-  - {fileID: -9206979202948062953}
+  - {fileID: 4312871029254988347}
+  - {fileID: 5508529113962145973}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -1848,6 +2045,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &2577818586568305107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht1/outside_night1
+  m_EditorClassIdentifier: 
+  Name: outside_night1
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &2870115200531114806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1891,7 +2110,7 @@ MonoBehaviour:
     data2: 0
   Type: 0
   IsGlobal: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &3133198927695087086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1905,6 +2124,28 @@ MonoBehaviour:
   m_Name: parameter:/Story_Inside_daytime1/Inside_daytime_1
   m_EditorClassIdentifier: 
   Name: Inside_daytime_1
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
+--- !u!114 &3171292144413126527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht1/outside_night1
+  m_EditorClassIdentifier: 
+  Name: outside_night1
   Min: 0
   Max: 1
   Default: 0
@@ -1934,7 +2175,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 3097968574288861482}
+  - {fileID: -2484707015986878647}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -1997,7 +2238,7 @@ MonoBehaviour:
   Path: event:/SFX/UI/For Story/Story_monster2
   guid: 81fcda4d88323c4cac8cb23fa91f92c3
   Banks:
-  - {fileID: 1468646708396789155}
+  - {fileID: 8776407946173250353}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2005,6 +2246,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &3915551787148479470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_Inside_daytime2/Inside_daytime_2
+  m_EditorClassIdentifier: 
+  Name: Inside_daytime_2
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &3922188807193193321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2020,7 +2283,7 @@ MonoBehaviour:
   Path: event:/SFX/UI/For Story/Story_warning
   guid: a00506a67c4e83419ba61e2e78eb692b
   Banks:
-  - {fileID: 1468646708396789155}
+  - {fileID: 8776407946173250353}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2043,7 +2306,7 @@ MonoBehaviour:
   Path: ../../Gene_Project/Build/Desktop/BGM.bank
   Name: BGM
   StudioPath: bank:/BGM
-  lastModified: 637730561448864784
+  lastModified: 637742261395839069
   FileSizes:
   - Name: Desktop
     Value: 4368768
@@ -2071,6 +2334,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &4312871029254988347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht2/outside_night2
+  m_EditorClassIdentifier: 
+  Name: outside_night2
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &4767813034193438655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2152,7 +2437,7 @@ MonoBehaviour:
   Path: ../../Gene_Project/Build/Desktop/ABM.bank
   Name: ABM
   StudioPath: bank:/ABM
-  lastModified: 637730561448224773
+  lastModified: 637742261395388493
   FileSizes:
   - Name: Desktop
     Value: 20192
@@ -2179,6 +2464,50 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &5423186993191073115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht1/ForStory
+  m_EditorClassIdentifier: 
+  Name: ForStory
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
+--- !u!114 &5508529113962145973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht2/outside_night3
+  m_EditorClassIdentifier: 
+  Name: outside_night3
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &5705362835150341829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2194,7 +2523,7 @@ MonoBehaviour:
   Path: event:/SFX/UI/For Story/Story_footstep
   guid: 6e1365277d08be46b3552c6bccf4a699
   Banks:
-  - {fileID: 1468646708396789155}
+  - {fileID: 8776407946173250353}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2202,6 +2531,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2755
+--- !u!114 &5852468773692909423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BG_Story_Recog/ForStory
+  m_EditorClassIdentifier: 
+  Name: ForStory
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &5860246592190635309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2217,12 +2568,12 @@ MonoBehaviour:
   Path: event:/AMB/For Story/Story_Inside_daytime2
   guid: b92ae42cd81052489de2c08c5bbe198a
   Banks:
-  - {fileID: 1468646708396789155}
+  - {fileID: 8776407946173250353}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -8798188254376958998}
+  - {fileID: 3915551787148479470}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -2241,10 +2592,10 @@ MonoBehaviour:
   Path: ../../Gene_Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637730561449684771
+  lastModified: 637742261396662257
   FileSizes:
   - Name: Desktop
-    Value: 3764
+    Value: 3744
   Exists: 1
 --- !u!114 &6187242916509144648
 MonoBehaviour:
@@ -2290,7 +2641,7 @@ MonoBehaviour:
     data2: 0
   Type: 0
   IsGlobal: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &6644892142265179999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2306,13 +2657,13 @@ MonoBehaviour:
   Path: event:/AMB/For Story/Story_outside_Nigiht1
   guid: d7c34de7dd28ac47927989497dc0b8e4
   Banks:
-  - {fileID: 1468646708396789155}
+  - {fileID: 8776407946173250353}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -893263887863567994}
-  - {fileID: 6229178663227306162}
+  - {fileID: 2577818586568305107}
+  - {fileID: 5423186993191073115}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -2494,6 +2845,29 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &7884975426329774915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/For Story/Story_Stab_Sound
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/For Story/Story_Stab_Sound
+  guid: be3b1aa51f153b4484c45c221c18b794
+  Banks:
+  - {fileID: 8776407946173250353}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1157
 --- !u!114 &7948632274476690854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2516,7 +2890,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1127
+  Length: 4266
 --- !u!114 &7964417261042842699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2538,7 +2912,7 @@ MonoBehaviour:
     data2: 0
   Type: 0
   IsGlobal: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &8572438630843249316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2554,10 +2928,30 @@ MonoBehaviour:
   Path: ../../Gene_Project/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637730561449924779
+  lastModified: 637742261396872278
   FileSizes:
   - Name: Desktop
-    Value: 11200
+    Value: 55232
+  Exists: 1
+--- !u!114 &8776407946173250353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX Story.bank
+  m_EditorClassIdentifier: 
+  Path: ../../Gene_Project/Build/Desktop/SFX Story.bank
+  Name: SFX Story
+  StudioPath: bank:/SFX Story
+  lastModified: 637742261395172432
+  FileSizes:
+  - Name: Desktop
+    Value: 1269888
   Exists: 1
 --- !u!114 &8794053204201232641
 MonoBehaviour:
@@ -2596,7 +2990,7 @@ MonoBehaviour:
   Path: ../../Gene_Project/Build/Desktop/Dialogue_EN.bank
   Name: Dialogue_EN
   StudioPath: bank:/Dialogue_EN
-  lastModified: 637730561449254785
+  lastModified: 637742261396224529
   FileSizes:
   - Name: Desktop
     Value: 61120

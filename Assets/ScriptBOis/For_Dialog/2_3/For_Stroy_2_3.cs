@@ -117,7 +117,7 @@ public class For_Stroy_2_3 : MonoBehaviour
 
 
             case 5:
-
+                ForStory_FMod.instance.Pen_Sound();
                 //[펜으로 글씨를 적을 때 발생하는 효과음] 컷신 텍스트가 출력이 끝날 때 들리도록 설정
 
                 break;
@@ -209,7 +209,7 @@ public class For_Stroy_2_3 : MonoBehaviour
 
 
             case 16:
-
+                PlayFModUI.instance.GeneDocument();
                 //[종이로 된 서류를 넘기는 효과음] 컷신 텍스트가 출력과 동시에 들리도록 설정
                 break;
 
@@ -294,6 +294,7 @@ public class For_Stroy_2_3 : MonoBehaviour
 
 
             case 26:
+                ForStory_FMod.instance.Signal_connect();
                 //[통신이 연결되는 효과음] 컷신 텍스트가 출력과 동시에 들리도록 설정
                 break;
 

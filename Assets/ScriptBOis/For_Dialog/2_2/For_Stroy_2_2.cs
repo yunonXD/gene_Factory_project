@@ -74,6 +74,7 @@ public class For_Stroy_2_2 : MonoBehaviour
 
 
             case 2:
+                ForStory_FMod.instance.Monitor_On();
                 //[모니터를 킬 때 발생하는 효과음] 컷신 텍스트가 출력이 끝날 때 들리도록 설정
                 break;
 

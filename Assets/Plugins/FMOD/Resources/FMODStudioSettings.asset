@@ -498,14 +498,12 @@ MonoBehaviour:
   - Master
   Banks:
   - ABM
-  - ABM Story
-  - Bank B
-  - Bank C
   - BGM
   - Dialogue_CN
   - Dialogue_EN
   - Dialogue_JP
   - SFX
+  - SFX Story
   - Story
   - UI
   BanksToLoad: []

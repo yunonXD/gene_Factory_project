@@ -83,9 +83,11 @@ public class For_Stroy_1_2_After : MonoBehaviour
                 _name.text = "";
                 _index.DOText("", 1);
                 _index.DOText("본부로부터의 분석 결과를 기다리는 중, 잠시 후…", 1);
+                ForStory_FMod.instance.Printer();
+
+                //[인쇄기에서 종이가 출력될 때 발생하는 효과음] 컷신 텍스트가 출력과 동시에 들리도록 설정
                 break;
 
-            //[인쇄기에서 종이가 출력될 때 발생하는 효과음] 컷신 텍스트가 출력과 동시에 들리도록 설정
             case 3:
                 Secretary.gameObject.SetActive(true);
                 _name.text = "마리아";

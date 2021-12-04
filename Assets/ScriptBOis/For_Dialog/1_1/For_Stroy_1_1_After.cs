@@ -132,6 +132,10 @@ public class For_Stroy_1_1_After : MonoBehaviour
                 break;
 
             case 8:
+
+                //[모니터를 킬 때 발생하는 효과음] 컷신 텍스트가 출력과 동시에 들리도록 설정
+                ForStory_FMod.instance.Monitor_On();
+
                 MoveBlackScreen.GetComponent<MoveBlackScreen>().MoveR_TO_L_Num2();
                 SpookyBG.gameObject.SetActive(true);
                 _name.text = "마리아";
@@ -139,7 +143,6 @@ public class For_Stroy_1_1_After : MonoBehaviour
                 _index.text="현재 저희가 싸우고 있는 괴물들은 조합 기술 입자에 노출된 생명체를 말합니다.";
                 break;
 
-            //[모니터를 킬 때 발생하는 효과음] 컷신 텍스트가 출력과 동시에 들리도록 설정
 
             case 9:
                 MoveBlackScreen_1.gameObject.SetActive(true);
@@ -149,7 +152,6 @@ public class For_Stroy_1_1_After : MonoBehaviour
             case 10:
                 MoveBlackScreen_1.GetComponent<MoveBlackScreen>().MoveR_TO_L_Num2();
                 _name.text = "마리아";
-                //_index.DOText("", 1);
                 _index.text="그중에서도 생명체가 조합되면서 강력한 힘을 가진 생명체는 개인 능력치가 매우 뛰어났습니다.";
 
                 break;
@@ -224,9 +226,12 @@ public class For_Stroy_1_1_After : MonoBehaviour
                 break;
 
             case 20:
+                
+
                 _name.text = "";
                 _index.DOText("", 1);
                 _index.DOText("삑…", 1);
+                ForStory_FMod.instance.Signal_off();
                 break;
 
 
@@ -257,7 +262,7 @@ public class For_Stroy_1_1_After : MonoBehaviour
 
 
                 //[시계 초침이 움직일 때 발생하는 효과음] 컷신 텍스트가 출력이 끝날 때 들리도록 설정
-
+                ForStory_FMod.instance.Clock_Sound(); 
 
                 break;
 

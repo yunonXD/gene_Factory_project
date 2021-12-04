@@ -82,7 +82,7 @@ public class For_Stroy_2_3_After : MonoBehaviour
 
             case 1:
                 //‘똑똑똑’이라는 컷신 텍스트가 나올 때 문을 두드려서 발생하는 효과음이 나온다.
-
+                ForStory_FMod.instance.Door_knock();
                 _name.text = "";
                 _index.DOText("", 1);
                 _index.DOText("똑똑똑", 1);

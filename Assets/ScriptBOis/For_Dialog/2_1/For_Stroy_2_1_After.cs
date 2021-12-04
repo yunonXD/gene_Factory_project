@@ -107,6 +107,7 @@ public class For_Stroy_2_1_After : MonoBehaviour
                 break;
 
             case 6:
+                ForStory_FMod.instance.DoorOpen();
                 //[문을 열 때 들리는 효과음] 컷신 텍스트가 출력과 동시에 들리도록 설정
                 break;
 

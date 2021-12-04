@@ -120,6 +120,9 @@ public class For_Stroy_1_1 : MonoBehaviour
                 break;
 
             case 8:
+
+                ForStory_FMod.instance.Monitor_On();
+
                 _name.text = "마리아";
                 _index.DOText("", 1);
                 _index.DOText("이러한 습격으로 공단의 높으신 분들이 예의주시하고 있는 상황입니다.", 1);

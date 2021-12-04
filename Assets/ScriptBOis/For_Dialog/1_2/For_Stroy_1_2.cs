@@ -55,26 +55,6 @@ public class For_Stroy_1_2 : MonoBehaviour
 
     //제목 모의훈련 전
 
-    //.setDelay(?);
-
-
-    //ScreenLock.gameObject.SetActive(true);
-    //SelectQ.gameObject.SetActive(true);
-    //_Select_text1.text = "변경이요?";
-    //_Select_text2.text = "긴급 상황인가요?";
-
-    //if (CountClick == 5 && select1 == true || select2 == true)
-    //{
-    //    Debug.Log("넘어옴");
-    //    select1 = false;
-    //    select2 = false;
-    //    CountClick += 1;
-    //} 
-
-    //    SelectQ.gameObject.SetActive(false);
-
-    //    ScreenLock.gameObject.SetActive(false);
-
     public void ForStory_1_2()
     {
         CountClick += 1;

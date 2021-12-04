@@ -194,13 +194,8 @@ public class For_Stroy_1_3_After : MonoBehaviour
                 _index.DOText("저의 역할은 그저 당신들의 시선을 돌리기 위한 미끼 역할일 뿐입니다.", 1);
                 break;
 
-
-            //점차 어두워지는 파트
-
             case 17:
                 FadeBoi.gameObject.SetActive(true);
-                //animator.SetBool("FadeIn", false);
-                //animator.SetBool("FadeOff", true);
 
                 break;
 
@@ -239,8 +234,10 @@ public class For_Stroy_1_3_After : MonoBehaviour
 
 
             case 23:
+                _name.text = "";
+                _index.DOText("", 1);
 
-                //[통신이 꺼질 때 들리는 효과음] 컷신 텍스트가 출력과 동시에 들리도록 설정
+                ForStory_FMod.instance.Signal_off();
 
                 break;
 
