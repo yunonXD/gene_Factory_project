@@ -14,11 +14,11 @@ public class BattleStage0_1 : MonoBehaviour
     public GameObject enemy;        //Mob
     public GameObject Boss;         //Boss
     public GameObject enemy_blood_1;      //피격 피이펙트1
-    public GameObject enemy_blood_2;      //피격 피이펙트2
     public GameObject player_blood_1;
-    public GameObject player_blood_2;
+    public GameObject Boss_blood_1;
     public GameObject Mob_Name_Bar;
     public GameObject Boss_Name_Bar;
+    public GameObject UICanvas;
     public Image MoveCloud;
     private MeshRenderer renderer;
     private MaterialPropertyBlock _block;
@@ -43,6 +43,7 @@ public class BattleStage0_1 : MonoBehaviour
     public GameObject EnemyDamageText;
     public GameObject PlayerDamageText;
     public ParticleSystem Skilleffect;
+    public ParticleSystem Skuilleffect;
     public GameObject MissionFail;
     public GameObject MissionClear;
     public GameObject SaveData;
@@ -51,7 +52,10 @@ public class BattleStage0_1 : MonoBehaviour
     private bool MobClear = false;
     public Image Battle_Cut_Back;
     public Image Battle_Cut_Face;
-    public Image Battle_Cut_Front;
+    public Image Battle_Cut_Front_1;
+    public Image Battle_Cut_Front_2;
+    public Image Battle_Cut_Emblem;
+    public Image Battle_Cut_TextCase;
     public Text Battle_Cut_Text;
     public bool _SkillAttack = false;
     private bool BossUI = false;
@@ -62,29 +66,30 @@ public class BattleStage0_1 : MonoBehaviour
 
     void Start()
     {
-        MoveCloud.transform.DOLocalMoveX(2000, 100.0f);
+        Color color = new Color(1f, 1f, 1f, 1f);
+        player.GetComponent<Renderer>().sharedMaterials[0].DOColor(color, "_Color", 1);
+        color = new Color(0f, 0f, 0f, 0f);
+        Boss.GetComponent<Renderer>().sharedMaterials[0].DOColor(color, "_Color", 1);
+        OrderAttack = true;
+      
+
+        MoveCloud.transform.DOLocalMoveX(2000, 100.0f);                      //구름이동 
         Skilleffect.Stop();
-        //MainCamera.GetComponent<CameraShake>().AttackCameraShake(1.5f, 5);
-        //기본셋팅
-        EnemyReset();
-        enemyDamage = enemy.GetComponent<Enemy_Silme>().Power - player.GetComponent<RabbitScript>().Defense;
-        playerDamage = player.GetComponent<RabbitScript>().Power - enemy.GetComponent<Enemy_Silme>().Defense;
+        Skuilleffect.Stop();
+        //EnemyReset();                                                       //적 위치 및 
+        enemyDamage = enemy.GetComponent<Enemy_Silme>().Power - player.GetComponent<RabbitScript>().Defense;            //적  공격대미지
+        playerDamage = player.GetComponent<RabbitScript>().Power - enemy.GetComponent<Enemy_Silme>().Defense;           //플레이어 공격대미지
         Player_HPMax = player.GetComponent<RabbitScript>().HP;
         Enemy_HPMax = enemy.GetComponent<Enemy_Silme>().HP;
         Boss_HPMax = Boss.GetComponent<EnemyMush>().HP;
         renderer = enemy.GetComponent<MeshRenderer>();
         _block = new MaterialPropertyBlock();
         renderer.SetPropertyBlock(_block);
-        
         int id = Shader.PropertyToID("_Block");
         _block.SetColor(id, new Color(100, 100, 100, 0));
-
-        
-
         
         BlackPanel.DOFade(0, 2.0f);  //검은색 패널 2초동안 페이드 아웃
         MissionStartImage.DOFade(0, 2.0f);  //검은색 패널 2초동안 페이드 아웃
-        //Warning_Image.DOFade(1, 1.0f);
 
         Invoke("MoveBackGround_Mob", 3.0f);
         Invoke("MovePlayer_Mob", 2.8f);
@@ -92,41 +97,36 @@ public class BattleStage0_1 : MonoBehaviour
         Invoke("Characterstartmove", 4.5f);
     }
 
-    void MovePlayer_Mob()
+    void MovePlayer_Mob()     //잡몹 스테이지 시작시 플레이어 활성화,이동모션 및 이동
     {
         player.SetActive(true);
         player.GetComponent<RabbitScript>().walk_2();
         player.transform.DOLocalMoveX(-660, 1);
     }
-    void MovePlayer_Boss()
+    void MovePlayer_Boss()  //보스 스테이지 시작시 플레이어 이동모션 및 이동
     {
         player.GetComponent<RabbitScript>().walk_2();
     }
-    void MoveBackGround_Mob()
+    void MoveBackGround_Mob() //잡몹 스테이지 시작시 뒷배경 이동
     {
         BackGround.transform.DOLocalMoveX(1270, 1);
     }
-
-    void MoveBackGround_Boss()
+    void MoveBackGround_Boss() //보스 스테이지 시작시 뒷배경 이동
     {
         BackGround.transform.DOLocalMoveX(-940, 1);
     }
-    void Characterstartmove()
+    void Characterstartmove_Boss()  //체크 1번
     {
-        //player.GetComponent<RabbitScript>().walk_2();
+        Debug.Log("사용여부 체크 1번");
+      player.GetComponent<RabbitScript>().walk_3();
     }
-    void Characterstartmove_Boss()
-    {
-        player.GetComponent<RabbitScript>().walk_3();
-    }
-    void EnemyFadeIn()
-    {
-        Debug.Log("적 페이드인");
+    void EnemyFadeIn() //적 캐릭터 페이드인 
+    {   
         Color color = new Color(1f, 1f, 1f, 1f);
         enemy.GetComponent<Renderer>().sharedMaterials[0].DOColor(color, "_Color", 1);
         enemy.GetComponent<Renderer>().sharedMaterials[1].DOColor(color, "_Color", 1);
     }
-    void EnemyReset()
+    void EnemyReset()  //적 캐릭터(잡몹, 보스 페이드 아웃)
     {
         Color color = new Color(0f, 0f, 0f, 0f);
         enemy.GetComponent<Renderer>().sharedMaterials[0].DOColor(color, "_Color", 0.2f);
@@ -137,8 +137,7 @@ public class BattleStage0_1 : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(time);
-        if (MobClear == false && _GameOver == false)
+        if (MobClear == false && _GameOver == false)  //잡몹 전투
         {
             Player_Hpbar.fillAmount = player.GetComponent<RabbitScript>().HP / Player_HPMax;
             Enemy_HPbar.fillAmount = enemy.GetComponent<Enemy_Silme>().HP / Enemy_HPMax;
@@ -179,27 +178,27 @@ public class BattleStage0_1 : MonoBehaviour
                     SkillIcon.SetActive(false);     //미충전시 비활성화
                 }
 
-                if (OrderAttack == true)
+                if (OrderAttack == true)            
                 {
 
                     if (SkillAttack == true)
                     {
                         
-                        //Time.timeScale = 0.0f;
-                        time = -8.0f;
+                        time = -7.0f;
                         Debug.Log("페이드인");
-                        Battle_Cut_Back.DOFade(1, 2.0f);
+                        Battle_Cut_Back.DOFade(0.7f, 2.0f);
 
                         Invoke("_Battle_Cut_Front", 3.0f);
                         Invoke("_Battle_Cut_Face", 3.0f);
                         Invoke("_Battle_Cut_Text", 3.0f);
+                        Invoke("_Battle_Cut_Emblem",3.2f);
+                        
                         Invoke("SkiilAttack_Mob",4.0f);
                         Invoke("ResetDamageText", 5.5f);
                         SkillAttack = false;
                     }
                     else
                     {
-                        //player.transform.DOLocalMoveX(-950, 0.1f).SetEase(Ease.Linear);
                         Invoke("PlayerAttack_Mob",0.3f);
                         Invoke("CameraR", 0.1f);
                         Invoke("ResetDamageText", 0.7f);
@@ -223,9 +222,9 @@ public class BattleStage0_1 : MonoBehaviour
 
         }
 
-        else if (MobClear == true && _GameOver == false)
+        else if (MobClear == true && _GameOver == false)        //보스 전투
         {
-            if(BossUI == true)
+            if(BossUI == true)  //보스 체력바 이름 표시
             {
                 Player_Hpbar.fillAmount = player.GetComponent<RabbitScript>().HP / Player_HPMax;
                 Enemy_HPbar.fillAmount = Boss.GetComponent<EnemyMush>().HP / Boss_HPMax;
@@ -275,8 +274,6 @@ public class BattleStage0_1 : MonoBehaviour
                     {
                         _SkillAttack = true;
                         SkillAttack = false;
-
-
                     }
                     else
                     {
@@ -307,11 +304,12 @@ public class BattleStage0_1 : MonoBehaviour
             Debug.Log("보스 공격 스킬 이펙트 ");
             Boss.SetActive(false);
             player.SetActive(false);
-            Battle_Cut_Back.DOFade(1, 1.0f);
+            Battle_Cut_Back.DOFade(0.7f, 1.0f);
             Invoke("_Battle_Cut_Front", 1.0f);
             Invoke("_Battle_Cut_Face", 2.0f);
-            Invoke("_Battle_Cut_Text", 2.0f);
-            Invoke("_Battle_Cut_Reset", 3.0f);
+            Invoke("_Battle_Cut_Text", 2.5f);
+            Invoke("_Battle_Cut_Emblem", 2.3f);
+            Invoke("_Battle_Cut_Reset", 3.5f);
             Invoke("SkiilAttack_Boss", 4.0f);
             Invoke("ResetDamageText", 5.5f);
             _SkillAttack = false;
@@ -328,6 +326,10 @@ public class BattleStage0_1 : MonoBehaviour
         if (enemy.GetComponent<Enemy_Silme>().HP <= 0 && MobClear == false)  //적 사망
         {
             MobClear = true;
+            OrderAttack = true;
+          
+
+            MobClear = true;
             Invoke("EnemyReset", 0.6f);
             Invoke("FadeInMoveBoss", 2.0f);
             Invoke("FadeOutMoveBoss", 5.0f);
@@ -342,43 +344,42 @@ public class BattleStage0_1 : MonoBehaviour
 
 
 
-        if (player.GetComponent<RabbitScript>().HP <= 0) //아군 캐릭터 사망
+        if (player.GetComponent<RabbitScript>().HP <= 0) //아군 캐릭터 사망Characterstartmove_Boss
         {
-            GameOver();
+            Invoke("GameOver",2.0f);
         }
 
     }
     void CharactorFadeOut()
     {
+        Debug.Log("사용여부 체크 2");
         BossFadeIn();
-
     }
-    void CameraR()
+    void CameraR()  //카메라 회전R
     {
+        Debug.Log("사용여부 체크 3");
         CameraRoundR = true;
     }
-    void CameraL()
+    void CameraL() //카메라 회전L
     {
+        Debug.Log("사용여부 체크 3");
         CameraRoundL = true;
     }
-    void BossFadeIn()
+    void BossFadeIn() //보스 페이드인 UI 변경
     {
         Color color = new Color(1f, 1f, 1f, 1f);
         Boss.GetComponent<Renderer>().sharedMaterials[0].DOColor(color, "_Color", 1);
         BossUI = true;
         Mob_Name_Bar.SetActive(false);
         Boss_Name_Bar.SetActive(true);
-
-
     }
 
-    void BossStageResetPosition()
+    void BossStageResetPosition() //보스스테이지 위치값 리셋   위치값 변경위치#1
     {
         BackGround.transform.DOLocalMoveX(-700, 0.5f);
         player.transform.DOLocalMoveX(-1248,0.5f);
-        
     }
-    void FadeInMoveBoss()
+    void FadeInMoveBoss()    //보스스테이지 경고 화면 연출 
     {
         Debug.Log("보스 페이드 검정화면");
         BlackPanel.DOFade(1, 1.0f); //검정화면화
@@ -388,31 +389,47 @@ public class BattleStage0_1 : MonoBehaviour
         Invoke("WarningFadeIn", 1.5f);
         Invoke("WarningFadeOut", 2.25f);
     }
-    void WarningFadeIn()
+    void WarningFadeIn()  //워닝 페이드인
     {
         Warning_Image.DOFade(1, 0.75f);
     }
-    void WarningFadeOut()
+    void WarningFadeOut() //워닝 페이드 아웃
     {
         Warning_Image.DOFade(0, 0.75f);
     }
 
-    void FadeOutMoveBoss()
+    void FadeOutMoveBoss()   //보스 페이드 아웃
     { 
         BlackPanel.DOFade(0, 3.0f);   //투명화
         //Warning_Image.DOFade(0, 2.0f);
     }
 
-    void StageClear()
+    void StageClear()  //스테이지 승리 연출
     {
         ResetDamageText();
         time = 0;
         enemy.SetActive(false);
         Invoke("Clearsave", 5f);
+        Invoke("ClearMotion", 1); 
+    }
+
+    void ClearMotion() //스테이지 클리어 모션연출      위치값 변경 위치#2
+    {
+        Debug.Log("클리어모션");
+        UICanvas.SetActive(false);
+        player.transform.DOLocalMoveX(-680, 0.8f);
+        MainCamera.transform.DOLocalMoveX(-65, 0.8f);
+        MainCamera.transform.DOLocalMoveZ(15, 0.8f);
+        player.GetComponent<RabbitScript>().wait_2();
+        Invoke("_MissionClear", 2);
+    }
+    void _MissionClear()   //미션 클리어 화면 활성화
+    {
+        Debug.Log("미션클리어");
         MissionClear.SetActive(true);
     }
 
-    void Clearsave()
+    void Clearsave()   //클리어후 세이브 데이터 입력 스테이지 클리어 체크 변경 #3
     {
         SaveData.GetComponent<SaveDataManager>()._ResearchPoint = SaveData.GetComponent<SaveDataManager>()._ResearchPoint + 3; //클리어 보상 +3
         SaveData.GetComponent<SaveDataManager>()._Stage1_1 = true;
@@ -420,12 +437,12 @@ public class BattleStage0_1 : MonoBehaviour
         SceneManager.LoadScene("inGameScene");
     }
 
-    void failsave()
+    void failsave()     //미션 실패 인게임으로 이동
     {
         SceneManager.LoadScene("inGameScene");
     }
 
-    void GameOver()
+    void GameOver()  //게임 패배 연출
     {
         if (time < 1.0f)
         {
@@ -433,6 +450,8 @@ public class BattleStage0_1 : MonoBehaviour
         }
         else
         {
+            Color color = new Color(0f, 0f, 0f, 0f);
+            player.GetComponent<Renderer>().sharedMaterials[0].DOColor(color, "_Color", 1);
             time = 0;
             player.SetActive(false);
             Invoke("failsave", 5f);
@@ -446,35 +465,13 @@ public class BattleStage0_1 : MonoBehaviour
     void PlayerAttack_Mob()
     {
         PlayerDamageText.GetComponent<DamageScript>().Reset();
-        player.transform.DOLocalMoveX(100, 0.3f).SetEase(Ease.OutBack); //이동 속도 관련 //공격이동 0.3
-        player.transform.DOLocalMoveY(-150, 0.3f).SetEase(Ease.OutBack); //이동 속도 관련 //공격이동 0.3
+        player.transform.DOLocalMoveX(100, 0.3f).SetEase(Ease.OutBack); //이동 속도 관련 //공격이동 0.3    //플레이어 공격이동 #5 x위치값
+        player.transform.DOLocalMoveY(-150, 0.3f).SetEase(Ease.OutBack); //이동 속도 관련 //공격이동 0.3   //플레이어 공격이동 #6 y위치값
         player.GetComponent<RabbitScript>().attack();
         enemy.GetComponent<Enemy_Silme>().damage(); //피격모션
-        float randomdataX = Random.Range(0, 10);
-        float randomdataY= Random.Range(0, 10);
-        float randomdataX_2 = Random.Range(0, 10);
-        float randomdataY_2 = Random.Range(0, 10);
-        randomdataX = randomdataX / 10;
-        randomdataY = randomdataY / 10;
-        randomdataX_2 = randomdataX_2 / 10;
-        randomdataY_2 = randomdataY_2 / 10;
-
-        Debug.Log(randomdataX);
-        Debug.Log(randomdataY);
-        Debug.Log(randomdataX_2);
-        Debug.Log(randomdataY_2);
-
-#pragma warning disable format
-        enemy_blood_1.transform.localPosition = new Vector3(enemy_blood_1.transform.localPosition.x + randomdataX,
-#pragma warning restore format
-            enemy_blood_1.transform.localPosition.y+ randomdataX, enemy_blood_1.transform.localPosition.z);
-        enemy_blood_2.transform.localPosition = new Vector3(enemy_blood_2.transform.localPosition.x + randomdataX_2,
-            enemy_blood_2.transform.localPosition.y - randomdataY_2, enemy_blood_2.transform.localPosition.z);
 
         enemy_blood_1.SetActive(true);
-        enemy_blood_2.SetActive(true);
         player_blood_1.SetActive(false);
-        player_blood_2.SetActive(false);
 
         Invoke("Mob_Blood_1_Fadein", 0.1f);
         Invoke("Mob_Blood_2_Fadein", 0.2f);
@@ -482,38 +479,38 @@ public class BattleStage0_1 : MonoBehaviour
         Invoke("Mob_Blood_2_FadeOut", 0.8f);
         Invoke("_camera", 0.2f);
         Invoke("BloodReset",1f);
-        enemy.transform.DOLocalMoveX(435, 0.8f);
+        enemy.transform.DOLocalMoveX(705, 0.8f);    //적 피격 위치값 이동 #7
         enemy.GetComponent<Enemy_Silme>().HP = enemy.GetComponent<Enemy_Silme>().HP - playerDamage; //공격시 대미지 계산 후 적군 캐릭터 HP 감소
         PlayerDamageText.GetComponent<DamageScript>().damage(0, 4);
         Invoke("resetposition",1.0f); // 1.0초 뒤에 원위치 진행    
         Invoke("CameraReset",1f);
     }
 
-    void BloodReset()
+    void BloodReset()   //피 위치 리셋 #8
     {
-        enemy_blood_1.transform.localPosition = new Vector3(6.5f, -3.64f, 0.1f);
-        enemy_blood_2.transform.localPosition = new Vector3(2.7f, -1.4f, 0.1f);
-
+        enemy_blood_1.transform.localPosition = new Vector3(0f, 3.6f, 0.1f);  //피 리셋 위치
     }
     void Mob_Blood_1_Fadein()
     {
         Color color = new Color(1f, 1f, 1f, 1f);
         enemy_blood_1.GetComponent<Renderer>().sharedMaterials[0].DOColor(color, "_Color", 0.2f);
+
+    }
+    void Boss_Blood_1_Fadein()
+    {
+        Color color = new Color(1f, 1f, 1f, 1f);
+        Boss_blood_1.GetComponent<Renderer>().sharedMaterials[0].DOColor(color, "_Color", 0.2f);
+    }
+    void Boss_Blood_1_FadeOut()
+    {
+        Color color = new Color(0f, 0f, 0f, 0f);
+        Boss_blood_1.GetComponent<Renderer>().sharedMaterials[0].DOColor(color, "_Color", 0.2f);
     }
     void Mob_Blood_1_FadeOut()
     {
+        Debug.Log("적 피 페이드아웃");
         Color color = new Color(0f,0f, 0f, 0f);
         enemy_blood_1.GetComponent<Renderer>().sharedMaterials[0].DOColor(color, "_Color", 0.2f);
-    }
-    void Mob_Blood_2_Fadein()
-    {
-        Color color = new Color(1f, 1f, 1f, 1f);
-        enemy_blood_2.GetComponent<Renderer>().sharedMaterials[0].DOColor(color, "_Color", 0.2f);
-    }
-    void Mob_Blood_2_FadeOut()
-    {
-        Color color = new Color(0f, 0f, 0f, 0f);
-        enemy_blood_2.GetComponent<Renderer>().sharedMaterials[0].DOColor(color, "_Color", 0.2f);
     }
     void Player_Blood_1_Fadein()
     {
@@ -525,193 +522,165 @@ public class BattleStage0_1 : MonoBehaviour
         Color color = new Color(0f, 0f, 0f, 0f);
         player_blood_1.GetComponent<Renderer>().sharedMaterials[0].DOColor(color, "_Color", 0.2f);
     }
-    void Player_Blood_2_Fadein()
-    {
-        Color color = new Color(1f, 1f, 1f, 1f);
-        player_blood_2.GetComponent<Renderer>().sharedMaterials[0].DOColor(color, "_Color", 0.2f);
-    }
-    void Player_Blood_2_FadeOut()
-    {
-        Color color = new Color(0f, 0f, 0f, 0f);
-        player_blood_2.GetComponent<Renderer>().sharedMaterials[0].DOColor(color, "_Color", 0.2f);
-    }
+
     void PlayerAttack_Boss()
     {
-        enemy_blood_1.SetActive(true);
-        enemy_blood_2.SetActive(true);
+        Boss_blood_1.SetActive(true);
         player_blood_1.SetActive(false);
-        player_blood_2.SetActive(false);
-        
+        enemy_blood_1.SetActive(false);
         PlayerDamageText.GetComponent<DamageScript>().Reset();
         player.GetComponent<RabbitScript>().attack();
-        player.transform.DOLocalMoveX(100, 0.3f).SetEase(Ease.OutBack); //이동 속도 관련 //공격이동 0.3
-        player.transform.DOLocalMoveY(-150, 0.3f).SetEase(Ease.OutBack); //이동 속도 관련 //공격이동 0.3
+        player.transform.DOLocalMoveX(100, 0.3f).SetEase(Ease.OutBack); //이동 속도 관련 //공격이동 0.3    #8
+        player.transform.DOLocalMoveY(-150, 0.3f).SetEase(Ease.OutBack); //이동 속도 관련 //공격이동 0.3   #9
         Boss.GetComponent<EnemyMush>().damage(); //피격모션
-        //사운드
-        //Boss.transform.DOLocalMoveX(575, 0.8f);
         Boss.GetComponent<EnemyMush>().HP = Boss.GetComponent<EnemyMush>().HP - playerDamage; //공격시 대미지 계산 후 적군 캐릭터 HP 감소
         PlayerDamageText.GetComponent<DamageScript>().damage(0, 4);
-        Invoke("Mob_Blood_1_Fadein", 0.1f);
-        Invoke("Mob_Blood_2_Fadein", 0.2f);
-        Invoke("Mob_Blood_1_FadeOut", 0.6f);
-        Invoke("Mob_Blood_2_FadeOut", 0.8f);
+        Invoke("Boss_Blood_1_Fadein", 0.1f);
+        Invoke("Boss_Blood_1_FadeOut", 0.6f);
         Invoke("_camera", 0.2f);
         Invoke("BloodReset", 1f);
-        Boss.transform.DOLocalMoveX(915, 0.8f);
+        Boss.transform.DOLocalMoveX(725, 0.8f);                 //#10
+        //enemy.transform.DOLocalMoveX(705, 0.8f);                //#11
         Invoke("resetposition", 1.0f); // 1.0초 뒤에 원위치 진행    
         Invoke("CameraReset", 1f);
 
         if (Boss.GetComponent<EnemyMush>().HP <= 0)
         {
             Enemy_HPbar.fillAmount = Boss.GetComponent<EnemyMush>().HP / Boss_HPMax;
-            //Invoke("EnemyReset", 0.6f);
+            Invoke("EnemyReset", 0.6f);
+            Invoke("skeletonMark", 0.6f);
             Invoke("StageClear", 2.0f);
             _GameOver = true;
         }
     }
 
-    void resetposition()
+    void resetposition() //#12 전체 위치값 초기화용
     {
+
         player.transform.DOLocalMoveX(-660, 0.5f).SetEase(Ease.OutQuad);
         player.transform.DOLocalMoveY(-250, 0.5f).SetEase(Ease.OutQuad);
-        enemy.transform.DOLocalMoveX(360, 0.5f).SetEase(Ease.OutQuad);
-        Boss.transform.DOLocalMoveX(840, 0.5f).SetEase(Ease.OutQuad);
+        enemy.transform.DOLocalMoveX(630, 0.5f).SetEase(Ease.OutQuad);
+        Boss.transform.DOLocalMoveX(600, 0.5f).SetEase(Ease.OutQuad);
     }
-
-    void SkiilAttack_Mob()
+    public void skeletonMark()
     {
-        //스킬 이펙트시간 부여후 스킬 연출 함수 작성필요
-        player.GetComponent<RabbitScript>().skill();
-        enemy.GetComponent<Enemy_Silme>().damage();
-        Skilleffect.Play();
-        enemy.GetComponent<Enemy_Silme>().HP = enemy.GetComponent<Enemy_Silme>().HP - playerDamage; //공격시 대미지 계산 후 적군 캐릭터 HP 감소
-        PlayerDamageText.GetComponent<DamageScript>().damage(1, 0); // 스킬계수
-        Invoke("damegetest", 1.1f);
-        Invoke("CameraReset", 1f);
+        Debug.Log("해골이펙트 플레이");
+        Skuilleffect.Play();
     }
-
     void _Battle_Cut_Front()
     {
         Debug.Log("앞배경");
-        Battle_Cut_Front.transform.DOLocalMoveX(40.3f, 1f);
+        Battle_Cut_Front_1.transform.DOLocalMoveX(40.4f, 1f);
+        Battle_Cut_Front_2.transform.DOLocalMoveX(40.4f, 1f);
     }
     void _Battle_Cut_Face()
     {
         Debug.Log("페이스");
         Battle_Cut_Face.transform.DOLocalMoveX(-11.8f , 1f);
+        Battle_Cut_Emblem.transform.DOLocalMoveX(90f, 1f);
     }
     void _Battle_Cut_Reset()
     {
         Battle_Cut_Back.DOFade(0, 1.0f);
         Battle_Cut_Face.DOFade(0, 1.0f);
-        Battle_Cut_Front.DOFade(0, 1.0f);
+        Battle_Cut_Front_1.DOFade(0, 1.0f);
+        Battle_Cut_Front_2.DOFade(0, 1.0f);
+        Battle_Cut_Front_2.transform.DOLocalMoveX(40.3f, 1f);
+        Battle_Cut_Emblem.DOFade(0, 1.0f);
         Battle_Cut_Text.DOFade(0, 1.0f);
+        Battle_Cut_TextCase.DOFade(0, 1.0f);
     }
-
     void _Battle_Cut_Text()
     {
         Debug.Log("텍스트");
         Battle_Cut_Text.DOFade(1, 1f);
+        Battle_Cut_TextCase.DOFade(1, 1.0f);
+        //Battle_Cut_Emblem.DOFade(1, 0.7f);
+    }
+    void _Battle_Cut_Emblem()
+    {
+        Battle_Cut_Emblem.DOFade(1, 1.0f);
     }
 
     void SkiilAttack_Boss()
     {
-        enemy_blood_1.SetActive(true);
-        enemy_blood_2.SetActive(true);
+        Boss_blood_1.SetActive(true);
         player_blood_1.SetActive(false);
-        player_blood_2.SetActive(false);
-        //스킬 이펙트시간 부여후 스킬 연출 함수 작성필요
         Boss.SetActive(true);
         player.SetActive(true);
         player.GetComponent<RabbitScript>().skill();
-        //Boss.GetComponent<EnemyMush>().damage();
         Skilleffect.Play();
         Boss.GetComponent<EnemyMush>().HP = Boss.GetComponent<EnemyMush>().HP - playerDamage; //공격시 대미지 계산 후 적군 캐릭터 HP 감소
         PlayerDamageText.GetComponent<DamageScript>().damage(1, 0); // 스킬계수
-
-        Invoke("Mob_Blood_1_Fadein", 1.2f);
-        Invoke("Mob_Blood_2_Fadein", 1.3f);
-        Invoke("Mob_Blood_1_FadeOut", 1.7f);
-        Invoke("Mob_Blood_2_FadeOut", 1.8f);
-        Invoke("_camera", 1.2f);
+        Invoke("Boss_Blood_1_Fadein", 1.2f);
+        Invoke("Boss_Blood_1_FadeOut", 1.7f);
+        Invoke("_camera", 1.2f);                        
         Invoke("damegeBossSkill", 1.2f);
         Invoke("CameraReset", 1f);
         Invoke("SkilleffectOut",2.0f);
         _SkillAttack = false;
-
         if (Boss.GetComponent<EnemyMush>().HP <= 0)
         {
             Enemy_HPbar.fillAmount = Boss.GetComponent<EnemyMush>().HP / Boss_HPMax;
             Invoke("EnemyReset", 3.6f);
+            Invoke("CameraReset_Boss", 3.6f);
             Invoke("StageClear", 5.0f);
             _GameOver = true;
         }
     }
-    void damegeBossSkill()
+    void damegeBossSkill() //보스 스킬연출
     {
         MainCamera.transform.DOLocalMoveX(24, 0.8f);
         MainCamera.transform.DOLocalMoveZ(11,0.8f);
-        Boss.transform.DOLocalMoveX(915, 0.8f);
+        Boss.transform.DOLocalMoveX(725, 0.8f);
+        enemy.transform.DOLocalMoveX(705, 0.8f);
         Boss.GetComponent<EnemyMush>().damage();
         PlayerDamageText.GetComponent<DamageScript>().damage(1, 0); // 스킬계수
         Invoke("CameraReset_Boss", 1f);
     }
-    void CameraReset_Boss()
+    void CameraReset_Boss() //보스 스테이지 카메라 리셋
     {
-        Boss.transform.DOLocalMoveX(840, 0.8f);
+        Boss.transform.DOLocalMoveX(600, 0.8f);
         MainCamera.transform.DOLocalMoveX(-0.8f, 0.8f);
         MainCamera.transform.DOLocalMoveZ(-13.3f, 0.8f);
     }
-    void SkilleffectOut()
+    void SkilleffectOut() //스킬이펙트 종료
     {
         Skilleffect.Stop();
         player.GetComponent<RabbitScript>().ResetWait_1();
     }
-    void EnemyAttack_Mob()
+    void EnemyAttack_Mob()  //#14
     {
         enemy_blood_1.SetActive(false);
-        enemy_blood_2.SetActive(false);
         player_blood_1.SetActive(true);
-        player_blood_2.SetActive(true);
-        Skilleffect.Stop();
+       
         enemy.GetComponent<Enemy_Silme>().attack();
-        enemy.transform.DOLocalMoveX(-400, 0.3f).SetEase(Ease.OutBack); //이동 속도 관련 //공격이동 0.3
+        enemy.transform.DOLocalMoveX(-250, 0.3f).SetEase(Ease.OutBack); //이동 속도 관련 //공격이동 0.3  
         Invoke("_camera", 0.2f);
         player.GetComponent<RabbitScript>().damage();
         player.GetComponent<RabbitScript>().HP = player.GetComponent<RabbitScript>().HP - enemyDamage; //피격시 대미지 계산후 아군 캐릭터 HP 감소
         player.transform.DOLocalMoveX(-735, 0.8f);
-        float randomdataX = Random.Range(0, 10);
-        float randomdataY = Random.Range(0, 10);
-        float randomdataX_2 = Random.Range(0, 10);
-        float randomdataY_2 = Random.Range(0, 10);
-        randomdataX = randomdataX / 10;
-        randomdataY = randomdataY / 10;
-        randomdataX_2 = randomdataX_2 / 10;
-        randomdataY_2 = randomdataY_2 / 10;
 
-        player_blood_1.transform.localPosition = new Vector3(player_blood_1.transform.localPosition.x - randomdataX,
-            player_blood_1.transform.localPosition.y - randomdataX, player_blood_1.transform.localPosition.z);
-        player_blood_2.transform.localPosition = new Vector3(player_blood_2.transform.localPosition.x - randomdataX_2,
-            player_blood_2.transform.localPosition.y + randomdataY_2, player_blood_2.transform.localPosition.z);
         EnemyDamageText.GetComponent<DamageScript>().damage(0, enemyDamage);
         PlayerDamageText.GetComponent<DamageScript>().damage(0, 1);
-        Invoke("Mob_Blood_1_Fadein", 0.1f);
-        Invoke("Mob_Blood_2_Fadein", 0.2f);
-        Invoke("Mob_Blood_1_FadeOut", 0.6f);
-        Invoke("Mob_Blood_2_FadeOut", 0.8f);
+        Debug.Log("Mob공격 ");
+        Invoke("Player_Blood_1_Fadein", 0.1f);
+        Invoke("Player_Blood_2_Fadein", 0.2f);
+        Invoke("Player_Blood_1_FadeOut", 0.6f);
+        Invoke("Player_Blood_2_FadeOut", 0.8f);
         Invoke("damegetest", 1.1f);
         Invoke("resetposition", 1.0f); // 1.0초 뒤에 원위치 진행    
         Invoke("CameraReset", 1f);
     }
     void EnemyAttack_Boss()
     {
-        enemy_blood_1.SetActive(false);
-        enemy_blood_2.SetActive(false);
+        Boss_blood_1.SetActive(false);
         player_blood_1.SetActive(true);
-        player_blood_2.SetActive(true);
+        enemy_blood_1.SetActive(false);
+
         Skilleffect.Stop();
         Boss.GetComponent<EnemyMush>().attack_1();
-        Boss.transform.DOLocalMoveX(0, 0.3f).SetEase(Ease.OutBack); //이동 속도 관련 //공격이동 0.3
+        Boss.transform.DOLocalMoveX(-340, 0.3f).SetEase(Ease.OutBack); //이동 속도 관련 //공격이동 0.3
         Invoke("_camera", 0.2f);
         player.GetComponent<RabbitScript>().damage();
         player.GetComponent<RabbitScript>().HP = player.GetComponent<RabbitScript>().HP - enemyDamage; //피격시 대미지 계산후 아군 캐릭터 HP 감소
@@ -727,16 +696,14 @@ public class BattleStage0_1 : MonoBehaviour
 
         player_blood_1.transform.localPosition = new Vector3(player_blood_1.transform.localPosition.x - randomdataX,
             player_blood_1.transform.localPosition.y - randomdataX, player_blood_1.transform.localPosition.z);
-        player_blood_2.transform.localPosition = new Vector3(player_blood_2.transform.localPosition.x - randomdataX_2,
-            player_blood_2.transform.localPosition.y + randomdataY_2, player_blood_2.transform.localPosition.z);
         EnemyDamageText.GetComponent<DamageScript>().damage(0, enemyDamage);
         PlayerDamageText.GetComponent<DamageScript>().damage(0, 1);
 
 
-        Invoke("Mob_Blood_1_Fadein", 0.1f);
-        Invoke("Mob_Blood_2_Fadein", 0.2f);
-        Invoke("Mob_Blood_1_FadeOut", 0.6f);
-        Invoke("Mob_Blood_2_FadeOut", 0.8f);
+        Invoke("Player_Blood_1_Fadein", 0.1f);
+        Invoke("Player_Blood_2_Fadein", 0.2f);
+        Invoke("Player_Blood_1_FadeOut", 0.6f);
+        Invoke("Player_Blood_2_FadeOut", 0.8f);
         Invoke("damegetest", 1.1f);
         Invoke("resetposition", 1.0f); // 1.0초 뒤에 원위치 진행    
         Invoke("CameraReset", 1f);
@@ -745,6 +712,7 @@ public class BattleStage0_1 : MonoBehaviour
         {
             Enemy_HPbar.fillAmount = Boss.GetComponent<EnemyMush>().HP / Boss_HPMax;
             Invoke("EnemyReset", 0.6f);
+            Invoke("skeletonMark", 0.6f);
             Invoke("StageClear", 2.0f);
         }
     }

@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/For_Tutorial/1_1/1_1_After.unity
     guid: 54425b44acff70f4a9fad22c8a5ee343
   - enabled: 1
-    path: Assets/Scenes/For_Tutorial/1_1/1_1_Before.unity
+    path: Assets/Scenes/For_Tutorial/1_1/1_1_before.unity
     guid: 0608c47497de0f44bb0d200505fa61e1
   - enabled: 1
     path: Assets/Scenes/For_Tutorial/1_2/1_2_After.unity
@@ -59,4 +59,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/For_Tutorial/2_3/2_3_Before.unity
     guid: b8a0eb6887bb74949a2e68cef542946b
+  - enabled: 1
+    path: Assets/Scenes/Battle_Stage/BattleScene1_0.unity
+    guid: 034abfc38b95c3e4fb8bd486306a1fa6
+  - enabled: 1
+    path: Assets/Scenes/Battle_Stage/BattleScene1_1.unity
+    guid: d0db363989a2bf74191e2ec137ecc42a
+  - enabled: 1
+    path: Assets/Scenes/Battle_Stage/BattleScene1_2.unity
+    guid: 9e439bb4b28d0cf49b7296edd514e837
+  - enabled: 1
+    path: Assets/Scenes/Battle_Stage/BattleScene1_3.unity
+    guid: ac678eb6967ff0a479fdc6f869f79b2b
+  - enabled: 1
+    path: Assets/Scenes/Battle_Stage/BattleScene2_1.unity
+    guid: 29b515fff5c7bb24dbc4543ac2643408
+  - enabled: 1
+    path: Assets/Scenes/Battle_Stage/BattleScene2_2.unity
+    guid: 89aa0e5bce881da499ef47f5a38dd17a
+  - enabled: 1
+    path: Assets/Scenes/Battle_Stage/BattleScene2_3.unity
+    guid: cc121937177b6244e981214d3a639497
   m_configObjects: {}

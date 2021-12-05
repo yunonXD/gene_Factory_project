@@ -43,6 +43,6 @@ Material:
     m_Colors:
     - <noninit>: {r: 0, g: 2.018574, b: 1e-45, a: 0.000007110106}
     - _Black: {r: 0, g: 0, b: 0, a: 1}
-    - _Color: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 1, g: 1, b: 0, a: 1}
   m_BuildTextureStacks: []

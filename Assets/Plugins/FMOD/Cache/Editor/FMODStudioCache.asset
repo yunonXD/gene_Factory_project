@@ -44,6 +44,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 837
+--- !u!114 &-9068664054788087138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_Inside_daytime2/Inside_daytime_2
+  m_EditorClassIdentifier: 
+  Name: Inside_daytime_2
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &-9044631105014075664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,7 +81,7 @@ MonoBehaviour:
   Path: event:/SFX/UI/For Story/Story_monitor_On
   guid: 642e6496cc7a2b47b90333a685f683ad
   Banks:
-  - {fileID: 96133959420920549}
+  - {fileID: 8776407946173250353}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -82,7 +104,7 @@ MonoBehaviour:
   Path: event:/SFX/UI/Gene_UI/Map_Unkown_Click
   guid: ffd5aa3f0e658e4f951f61b218ac9ec1
   Banks:
-  - {fileID: -8019726410898964379}
+  - {fileID: 8572438630843249316}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -172,7 +194,7 @@ MonoBehaviour:
   Path: event:/SFX/UI/For Story/Story_Printer
   guid: 753e553991d00140aeab619b4e8ebbcd
   Banks:
-  - {fileID: 96133959420920549}
+  - {fileID: 8776407946173250353}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -288,6 +310,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &-8198386034268297472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BG_Story_Recog_End/ForStory
+  m_EditorClassIdentifier: 
+  Name: ForStory
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &-8193840524514288987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -463,6 +507,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &-7130074732738804532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht2/outside_night2
+  m_EditorClassIdentifier: 
+  Name: outside_night2
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &-7114845072214708217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,7 +544,7 @@ MonoBehaviour:
   Path: event:/SFX/UI/Normal_Keypad_Mouse_On
   guid: 1bba0fffff31c045ab003cc834595e1d
   Banks:
-  - {fileID: -8019726410898964379}
+  - {fileID: 8572438630843249316}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -508,6 +574,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &-6939105347528977093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_Inside_daytime2/Inside_daytime_2
+  m_EditorClassIdentifier: 
+  Name: Inside_daytime_2
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &-6642178733407048564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -546,10 +634,10 @@ MonoBehaviour:
   Path: ../../Gene_Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637742261396622247
+  lastModified: 637742998430116262
   FileSizes:
   - Name: Desktop
-    Value: 15258
+    Value: 8564
   Exists: 1
 --- !u!114 &-6342423407448969597
 MonoBehaviour:
@@ -681,6 +769,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &-5898780269188858232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BG_Story_Recog/ForStory
+  m_EditorClassIdentifier: 
+  Name: ForStory
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &-5869270181672160344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -703,6 +813,50 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &-5722692046910068936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht2/outside_night2
+  m_EditorClassIdentifier: 
+  Name: outside_night2
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
+--- !u!114 &-5650665347232503843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht1/outside_night1
+  m_EditorClassIdentifier: 
+  Name: outside_night1
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &-5533547483272784504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -725,6 +879,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &-5381083120972428706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht2/outside_night3
+  m_EditorClassIdentifier: 
+  Name: outside_night3
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &-5351968541239101434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -740,15 +916,37 @@ MonoBehaviour:
   Path: event:/AMB/For Story/Story_Inside_daytime1
   guid: a726cd0a34c4ce4496efc1c06280aa45
   Banks:
-  - {fileID: 8776407946173250353}
+  - {fileID: 8432943044406720705}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -1119943656418845507}
+  - {fileID: 8839259258071355731}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-5329694816300500894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BG_Story_Recog_End/ForStory
+  m_EditorClassIdentifier: 
+  Name: ForStory
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &-5275222546131900311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -764,7 +962,7 @@ MonoBehaviour:
   Path: event:/SFX/UI/For Story/Story_Signal_connect
   guid: f2a29722c8d4fb4fbfbfd1b15f5b5944
   Banks:
-  - {fileID: 96133959420920549}
+  - {fileID: 8776407946173250353}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -772,6 +970,50 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 577
+--- !u!114 &-5220619737575436517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht2/outside_night3
+  m_EditorClassIdentifier: 
+  Name: outside_night3
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
+--- !u!114 &-4990384388636139914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BG_Story_Recog_End/ForStory
+  m_EditorClassIdentifier: 
+  Name: ForStory
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &-4934756408564260561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -815,6 +1057,28 @@ MonoBehaviour:
   - Name: Desktop
     Value: 482
   Exists: 0
+--- !u!114 &-4841592372146289880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht1/ForStory
+  m_EditorClassIdentifier: 
+  Name: ForStory
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &-4677165336385767376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -906,6 +1170,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-3584597050453784545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht2/outside_night3
+  m_EditorClassIdentifier: 
+  Name: outside_night3
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &-3428046555334773032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -965,7 +1251,7 @@ MonoBehaviour:
   Path: event:/SFX/UI/For Story/Story_Pen_Sound
   guid: 4b292b00e915254ea415a2b8954989d6
   Banks:
-  - {fileID: 96133959420920549}
+  - {fileID: 8776407946173250353}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1010,7 +1296,7 @@ MonoBehaviour:
   Path: event:/SFX/UI/Intel_Document
   guid: a472a9b2522cc84290060ddea8dac617
   Banks:
-  - {fileID: 4869510798721192565}
+  - {fileID: 8572438630843249316}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1055,7 +1341,7 @@ MonoBehaviour:
   Path: event:/SFX/UI/For Story/Story_Clock_Sound
   guid: 1ff49d07ab4e6e4c950a7ecabb03c860
   Banks:
-  - {fileID: 96133959420920549}
+  - {fileID: 8776407946173250353}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1145,7 +1431,7 @@ MonoBehaviour:
   Path: event:/SFX/UI/Normal_Panal_Click
   guid: c610985392877d4080e362b987e8b01b
   Banks:
-  - {fileID: -8019726410898964379}
+  - {fileID: 8572438630843249316}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1280,7 +1566,7 @@ MonoBehaviour:
   Path: event:/SFX/UI/For Story/Story_Signal_off
   guid: 8d2537c8dbf46d4db86a8f17ab9f935b
   Banks:
-  - {fileID: 96133959420920549}
+  - {fileID: 8776407946173250353}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1377,6 +1663,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-1413021852672802558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_Inside_daytime1/Inside_daytime_1
+  m_EditorClassIdentifier: 
+  Name: Inside_daytime_1
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &-1405656771216068586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1412,6 +1720,28 @@ MonoBehaviour:
   m_Name: parameter:/Story_Inside_daytime2/Inside_daytime_2
   m_EditorClassIdentifier: 
   Name: Inside_daytime_2
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
+--- !u!114 &-1123797853066802262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht1/ForStory
+  m_EditorClassIdentifier: 
+  Name: ForStory
   Min: 0
   Max: 1
   Default: 0
@@ -1503,7 +1833,7 @@ MonoBehaviour:
   Path: event:/SFX/UI/For Story/Story_DoorOpen
   guid: 3f8f349da56f2f4789b124a0008c857d
   Banks:
-  - {fileID: 96133959420920549}
+  - {fileID: 8776407946173250353}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1597,6 +1927,50 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &-694542240915301233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht2/outside_night2
+  m_EditorClassIdentifier: 
+  Name: outside_night2
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
+--- !u!114 &-591851691854000953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht1/ForStory
+  m_EditorClassIdentifier: 
+  Name: ForStory
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &-525600780942722895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1655,16 +2029,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 6045843244934299644}
-  - {fileID: 4869510798721192565}
   - {fileID: 3972739370614965086}
-  - {fileID: -6205703432042936481}
-  - {fileID: 8917814569154019907}
-  - {fileID: -984620338254266012}
   - {fileID: -6451709755633788679}
   - {fileID: 8572438630843249316}
-  - {fileID: -8019726410898964379}
-  - {fileID: 96133959420920549}
   - {fileID: 8776407946173250353}
+  - {fileID: 8432943044406720705}
   EditorEvents:
   - {fileID: 2380764919979932807}
   - {fileID: -3705934239034889625}
@@ -1706,12 +2075,13 @@ MonoBehaviour:
   - {fileID: -2128821894045716980}
   - {fileID: 7884975426329774915}
   - {fileID: -2166492711776884756}
+  - {fileID: 8822528531534819318}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6451709755633788679}
   StringsBanks:
   - {fileID: 6045843244934299644}
-  stringsBankWriteTime: 637742261396662257
+  stringsBankWriteTime: 637742998430156365
   cacheVersion: 8
 --- !u!114 &43597557514872627
 MonoBehaviour:
@@ -1778,6 +2148,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &169595977710635301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_Inside_daytime2/Inside_daytime_2
+  m_EditorClassIdentifier: 
+  Name: Inside_daytime_2
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &540573835861430955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1930,6 +2322,28 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1235552
   Exists: 0
+--- !u!114 &1616927071911171366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht2/outside_night2
+  m_EditorClassIdentifier: 
+  Name: outside_night2
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &1690842787035585784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1975,6 +2389,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &1887212876874994045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht1/outside_night1
+  m_EditorClassIdentifier: 
+  Name: outside_night1
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &2227715990978015061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2013,13 +2449,13 @@ MonoBehaviour:
   Path: event:/AMB/For Story/Story_outside_Nigiht2
   guid: 0dc81765590f154c91076ed22578d9b6
   Banks:
-  - {fileID: 8776407946173250353}
+  - {fileID: 8432943044406720705}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 4312871029254988347}
-  - {fileID: 5508529113962145973}
+  - {fileID: 8796238728453928284}
+  - {fileID: 3437364761025127645}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -2045,6 +2481,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &2537857184294777312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_Inside_daytime1/Inside_daytime_1
+  m_EditorClassIdentifier: 
+  Name: Inside_daytime_1
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &2577818586568305107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2175,7 +2633,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -2484707015986878647}
+  - {fileID: -5898780269188858232}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -2201,6 +2659,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &3437364761025127645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht2/outside_night3
+  m_EditorClassIdentifier: 
+  Name: outside_night3
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &3570340848131023983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2246,6 +2726,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &3808451199450451581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_Inside_daytime1/Inside_daytime_1
+  m_EditorClassIdentifier: 
+  Name: Inside_daytime_1
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &3915551787148479470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2306,10 +2808,10 @@ MonoBehaviour:
   Path: ../../Gene_Project/Build/Desktop/BGM.bank
   Name: BGM
   StudioPath: bank:/BGM
-  lastModified: 637742261395839069
+  lastModified: 637742998430016165
   FileSizes:
   - Name: Desktop
-    Value: 4368768
+    Value: 4370464
   Exists: 1
 --- !u!114 &3992157073463342575
 MonoBehaviour:
@@ -2334,6 +2836,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &4098191039974261150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BG_Story_Recog_End/ForStory
+  m_EditorClassIdentifier: 
+  Name: ForStory
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &4312871029254988347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2356,6 +2880,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &4577336170046112770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht1/ForStory
+  m_EditorClassIdentifier: 
+  Name: ForStory
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &4767813034193438655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2464,6 +3010,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &4998581168608683284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_Inside_daytime2/Inside_daytime_2
+  m_EditorClassIdentifier: 
+  Name: Inside_daytime_2
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &5423186993191073115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2475,6 +3043,28 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Story_outside_Nigiht1/ForStory
+  m_EditorClassIdentifier: 
+  Name: ForStory
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
+--- !u!114 &5496341641525503601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BG_Story_Recog/ForStory
   m_EditorClassIdentifier: 
   Name: ForStory
   Min: 0
@@ -2508,6 +3098,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &5629298417845727177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht1/outside_night1
+  m_EditorClassIdentifier: 
+  Name: outside_night1
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &5705362835150341829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2568,15 +3180,37 @@ MonoBehaviour:
   Path: event:/AMB/For Story/Story_Inside_daytime2
   guid: b92ae42cd81052489de2c08c5bbe198a
   Banks:
-  - {fileID: 8776407946173250353}
+  - {fileID: 8432943044406720705}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 3915551787148479470}
+  - {fileID: -6939105347528977093}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &5981456016733261714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht1/outside_night1
+  m_EditorClassIdentifier: 
+  Name: outside_night1
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &6045843244934299644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2592,10 +3226,10 @@ MonoBehaviour:
   Path: ../../Gene_Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637742261396662257
+  lastModified: 637742998430156365
   FileSizes:
   - Name: Desktop
-    Value: 3744
+    Value: 3414
   Exists: 1
 --- !u!114 &6187242916509144648
 MonoBehaviour:
@@ -2612,7 +3246,7 @@ MonoBehaviour:
   Path: event:/SFX/UI/Normal_Button_Click
   guid: 1a84d573eb25384cbe3a35107624f8ff
   Banks:
-  - {fileID: -8019726410898964379}
+  - {fileID: 8572438630843249316}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2657,13 +3291,13 @@ MonoBehaviour:
   Path: event:/AMB/For Story/Story_outside_Nigiht1
   guid: d7c34de7dd28ac47927989497dc0b8e4
   Banks:
-  - {fileID: 8776407946173250353}
+  - {fileID: 8432943044406720705}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 2577818586568305107}
-  - {fileID: 5423186993191073115}
+  - {fileID: 1887212876874994045}
+  - {fileID: -1123797853066802262}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -2801,6 +3435,72 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &7496966873839358795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BG_Story_Recog/ForStory
+  m_EditorClassIdentifier: 
+  Name: ForStory
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
+--- !u!114 &7523892876986242401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BG_Story_Recog/ForStory
+  m_EditorClassIdentifier: 
+  Name: ForStory
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
+--- !u!114 &7539473310833851339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_Inside_daytime2/Inside_daytime_2
+  m_EditorClassIdentifier: 
+  Name: Inside_daytime_2
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &7580870457702406192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2836,6 +3536,28 @@ MonoBehaviour:
   m_Name: parameter:/BG_Story_Recog/ForStory
   m_EditorClassIdentifier: 
   Name: ForStory
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
+--- !u!114 &7670077024547631789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_Inside_daytime1/Inside_daytime_1
+  m_EditorClassIdentifier: 
+  Name: Inside_daytime_1
   Min: 0
   Max: 1
   Default: 0
@@ -2913,6 +3635,48 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &8130393313917449709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht1/ForStory
+  m_EditorClassIdentifier: 
+  Name: ForStory
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
+--- !u!114 &8432943044406720705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/AMB.bank
+  m_EditorClassIdentifier: 
+  Path: ../../Gene_Project/Build/Desktop/AMB.bank
+  Name: AMB
+  StudioPath: bank:/AMB
+  lastModified: 637742998429406779
+  FileSizes:
+  - Name: Desktop
+    Value: 1164096
+  Exists: 1
 --- !u!114 &8572438630843249316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2928,10 +3692,10 @@ MonoBehaviour:
   Path: ../../Gene_Project/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637742261396872278
+  lastModified: 637742998430905383
   FileSizes:
   - Name: Desktop
-    Value: 55232
+    Value: 109376
   Exists: 1
 --- !u!114 &8776407946173250353
 MonoBehaviour:
@@ -2948,10 +3712,10 @@ MonoBehaviour:
   Path: ../../Gene_Project/Build/Desktop/SFX Story.bank
   Name: SFX Story
   StudioPath: bank:/SFX Story
-  lastModified: 637742261395172432
+  lastModified: 637742998430605838
   FileSizes:
   - Name: Desktop
-    Value: 1269888
+    Value: 284192
   Exists: 1
 --- !u!114 &8794053204201232641
 MonoBehaviour:
@@ -2975,6 +3739,118 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &8796238728453928284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht2/outside_night2
+  m_EditorClassIdentifier: 
+  Name: outside_night2
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
+--- !u!114 &8797788836603550123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht2/outside_night3
+  m_EditorClassIdentifier: 
+  Name: outside_night3
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
+--- !u!114 &8822528531534819318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BGM/BG_Story_Recog_End
+  m_EditorClassIdentifier: 
+  Path: event:/BGM/BG_Story_Recog_End
+  guid: 2d6c0eaa8d83c44c92cc8d1b7cdd93e4
+  Banks:
+  - {fileID: 3972739370614965086}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -4990384388636139914}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8839259258071355731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_Inside_daytime1/Inside_daytime_1
+  m_EditorClassIdentifier: 
+  Name: Inside_daytime_1
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
+--- !u!114 &8902824453028489325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BG_Story_Recog/ForStory
+  m_EditorClassIdentifier: 
+  Name: ForStory
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &8917814569154019907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2994,6 +3870,28 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 61120
+  Exists: 1
+--- !u!114 &8921435112121095966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Story_outside_Nigiht1/outside_night1
+  m_EditorClassIdentifier: 
+  Name: outside_night1
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
   Exists: 1
 --- !u!114 &8955469458617940322
 MonoBehaviour:

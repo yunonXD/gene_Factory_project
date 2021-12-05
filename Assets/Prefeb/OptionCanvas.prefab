@@ -158,14 +158,14 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7892986929181895569}
-        m_TargetAssemblyTypeName: Option_Slider, Assembly-CSharp
-        m_MethodName: SFXVolumeLevel
-        m_Mode: 4
+      - m_Target: {fileID: 4302925763429936113}
+        m_TargetAssemblyTypeName: VCAcontroll, Assembly-CSharp
+        m_MethodName: SetVolume_SFX
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -410,14 +410,14 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7892986929181895569}
-        m_TargetAssemblyTypeName: Option_Slider, Assembly-CSharp
-        m_MethodName: BGMVolumeLevel
-        m_Mode: 4
+      - m_Target: {fileID: 4302925763429936113}
+        m_TargetAssemblyTypeName: VCAcontroll, Assembly-CSharp
+        m_MethodName: SetVolume_BGM
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -513,8 +513,9 @@ GameObject:
   - component: {fileID: 2565005287500807740}
   - component: {fileID: 2565005287500807741}
   - component: {fileID: 2565005287500807742}
-  - component: {fileID: 7892986929181895569}
   - component: {fileID: 6254508809331004796}
+  - component: {fileID: 6373031376983517319}
+  - component: {fileID: 4302925763429936113}
   m_Layer: 5
   m_Name: OptionCanvas
   m_TagString: Untagged
@@ -612,18 +613,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &7892986929181895569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2565005287500807743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e66e188964a7da49930ed1daadaeb52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6254508809331004796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -636,6 +625,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b73af72b5c82771408a9326978e91864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6373031376983517319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2565005287500807743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1
+--- !u!114 &4302925763429936113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2565005287500807743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aec802a99897adc4bbfd972c133c93e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VCANAME_Master: Master
+  VCANAME_BGM: BGM
+  VCANAME_SFX: SFX
 --- !u!1 &2565005287682056533
 GameObject:
   m_ObjectHideFlags: 0

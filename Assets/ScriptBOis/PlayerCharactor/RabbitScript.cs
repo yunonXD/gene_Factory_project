@@ -6,7 +6,7 @@ using Spine.Unity;
 public class RabbitScript : MonoBehaviour
 {
     public int grade = 1;
-    public int HP = 26;
+    public int HP = 20;
     public int Power = 6;
     public int Defense = 2;
     public int Agility = 3;
@@ -67,7 +67,6 @@ public class RabbitScript : MonoBehaviour
         Debug.Log("°È±â3¹ø");
         var skeletonAnimation = GetComponent<SkeletonAnimation>();
         skeletonAnimation.AnimationState.SetAnimation(0, "walk_2", true);
-        //skeletonAnimation.AnimationState.AddAnimation(0, "wait_1", true, 3f);
     }
 
     public void ResetWait_1()

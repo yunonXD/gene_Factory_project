@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class B_Select_anime_1_3 : MonoBehaviour
 {
@@ -23,6 +24,14 @@ public class B_Select_anime_1_3 : MonoBehaviour
             PlayerData.GetComponent<SaveDataManager>()._Stage1_3 == false)        //1_4 ∞° ∆©≈Ù∏ÆæÛ¿”!!
         {
             B_select_Animator.SetBool("Check_Stage", true);
+            B_select_Animator.SetBool("Disable", false);
+        }
+
+        if (PlayerData.GetComponent<SaveDataManager>()._Stage1_3 == true)
+        {
+            B_select_Animator.SetBool("Check_Stage", false);
+            B_select_Animator.SetBool("Disable", true);
+            this.GetComponent<Button>().interactable = false;
         }
     }
 

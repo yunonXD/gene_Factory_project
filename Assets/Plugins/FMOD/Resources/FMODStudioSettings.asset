@@ -497,15 +497,10 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
-  - ABM
+  - AMB
   - BGM
-  - Dialogue_CN
-  - Dialogue_EN
-  - Dialogue_JP
   - SFX
   - SFX Story
-  - Story
-  - UI
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0

@@ -17,13 +17,21 @@ public class Battle_Select_For_List : MonoBehaviour
     public GameObject SelectVictim;             //스테이지 누르면 나오는 캐릭터 선택창
     public Button[] Stage;                      //스테이지 버튼
     public Toggle[] Gene_Select;                //캐릭터 선택 리스트
+
     public Sprite[] Gene_List_Sprite;           //리스트 언락되면 바뀔 스프라이트
     public Sprite[] Gene_Select_Sprite;           //리스트 선택되면 바뀔 스프라이트
 
 
+    private void Awake()
+    {
+        //애니메이터 체크
+
+    }
+
+
     void Start()
     {
-        //해당 씬에 들어올때 한먼만 체크
+        //해당 씬에 들어올때 한번만 체크
         if (PlayerData.GetComponent<SaveDataManager>()._Creature_ConRabbit == true)
         {
             Gene_Select[1].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[1];
@@ -67,37 +75,34 @@ public class Battle_Select_For_List : MonoBehaviour
     void Update()
     {
 
-        if(PlayerData.GetComponent<SaveDataManager>()._Stage1_4 == true)        //1_4 가 튜툐리얼임!!
+        if(PlayerData.GetComponent<SaveDataManager>()._Stage1_4 == true)
         {
-            Stage[0].gameObject.SetActive(false);
+
         }
         if (PlayerData.GetComponent<SaveDataManager>()._Stage1_1 == true)
         {
-            Stage[1].gameObject.SetActive(false);
+
         }
         if (PlayerData.GetComponent<SaveDataManager>()._Stage1_2 == true)
         {
-            Stage[2].gameObject.SetActive(false);
+
         }
         if (PlayerData.GetComponent<SaveDataManager>()._Stage1_3 == true)
         {
-            Stage[3].gameObject.SetActive(false);
+
         }
         if (PlayerData.GetComponent<SaveDataManager>()._Stage2_1 == true)
         {
-            Stage[4].gameObject.SetActive(false);
+
         }
         if (PlayerData.GetComponent<SaveDataManager>()._Stage2_2 == true)
         {
-            Stage[5].gameObject.SetActive(false);
+
         }
         if (PlayerData.GetComponent<SaveDataManager>()._Stage2_3 == true)
         {
-            Stage[6].gameObject.SetActive(false);
+
         }
-
-
-
 
     }
 
@@ -117,21 +122,21 @@ public class Battle_Select_For_List : MonoBehaviour
             case 1:
                 if (PlayerData.GetComponent<SaveDataManager>()._Creature_Mush == true)
                 {
-                    SceneManager.LoadScene("BattleScene1_1");
+                    SceneManager.LoadScene("1_1_before");
                 }
                 break;
 
             case 2:
                 if (PlayerData.GetComponent<SaveDataManager>()._Stage1_2 == true)
                 {
-                    SceneManager.LoadScene("BattleScene1_2");
+                    SceneManager.LoadScene("1_2_before");
                 }
                 break;
 
             case 3:
                 if (PlayerData.GetComponent<SaveDataManager>()._Stage1_3 == true)
                 {
-                    SceneManager.LoadScene("BattleScene1_3");
+                    SceneManager.LoadScene("1_3_before");
 
                 }
                 break;
@@ -140,7 +145,7 @@ public class Battle_Select_For_List : MonoBehaviour
             case 4:
                 if (PlayerData.GetComponent<SaveDataManager>()._Stage2_1 == true)
                 {
-                    SceneManager.LoadScene("BattleScene2_1");
+                    SceneManager.LoadScene("2_1_before");
 
                 }
                 break;
@@ -148,14 +153,14 @@ public class Battle_Select_For_List : MonoBehaviour
             case 5:
                 if (PlayerData.GetComponent<SaveDataManager>()._Stage2_2 == true)
                 {
-                    SceneManager.LoadScene("BattleScene2_2");
+                    SceneManager.LoadScene("2_2_before");
                 }
                 break;
 
             case 6:
                 if (PlayerData.GetComponent<SaveDataManager>()._Stage2_3 == true)
                 {
-                    SceneManager.LoadScene("BattleScene2_3");
+                    SceneManager.LoadScene("2_3_before");
                 }
                 break;
 
