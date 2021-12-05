@@ -37,6 +37,6 @@ Material:
     - _Use8Neighbourhood: 1
     m_Colors:
     - _Black: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 0.6767998, g: 0.6767998, b: 0.6767998, a: 0.6767998}
     - _OutlineColor: {r: 1, g: 1, b: 0, a: 1}
   m_BuildTextureStacks: []

@@ -61,6 +61,8 @@ public class BattleStage1_1 : MonoBehaviour
     public bool _SkillAttack = false;
     private bool BossUI = false;
     private bool _GameOver = false;
+    private bool GameOverTrigger = true;
+
 
 
     // public GameObject boss;
@@ -68,7 +70,6 @@ public class BattleStage1_1 : MonoBehaviour
     void Start()
     {
         ForBattle_FMod.instance.BattleReady();       //전투 시작 사운드
-        time = -4;
 
 
         Color color = new Color(1f, 1f, 1f, 1f);
@@ -104,19 +105,13 @@ public class BattleStage1_1 : MonoBehaviour
         BlackPanel.DOFade(0, 2.0f);  //검은색 패널 2초동안 페이드 아웃
         MissionStartImage.DOFade(0, 2.0f);  //검은색 패널 2초동안 페이드 아웃
 
-        Invoke("PanelFade", 4.0f);
-        Invoke("MoveBackGround_Mob", 4.5f);
-        Invoke("MovePlayer_Mob", 5.3f);
-        Invoke("EnemyFadeIn", 6.5f); //그리고 1초뒤에 적 모브 페이드 인
-        Invoke("Characterstartmove", 7.5f);
+
+        Invoke("MoveBackGround_Mob", 3.5f);
+        Invoke("MovePlayer_Mob", 2.8f);
+        Invoke("EnemyFadeIn", 4.0f); //그리고 1초뒤에 적 모브 페이드 인
+        Invoke("Characterstartmove", 4.5f);
     }
 
-    void PanelFade()
-    {
-        Debug.Log("판넬 페이드");
-        BlackPanel.DOFade(0, 2.0f);  //검은색 패널 2초동안 페이드 아웃
-        MissionStartImage.DOFade(0, 2.0f);  //검은색 패널 2초동안 페이드 아웃
-    }
 
     void MovePlayer_Mob()     //잡몹 스테이지 시작시 플레이어 활성화,이동모션 및 이동
     {
@@ -374,10 +369,20 @@ public class BattleStage1_1 : MonoBehaviour
 
         if (player.GetComponent<MushScript>().HP <= 0) //아군 캐릭터 사망Characterstartmove_Boss
         {
+            Invoke("OverSound", 2.0f);
             Invoke("GameOver", 2.0f);
         }
 
     }
+
+    void OverSound()
+    {
+        if(GameOverTrigger == true)
+        {
+            ForBattle_FMod.instance.BattleFailed();  //전투 실패
+            GameOverTrigger = false;        }
+    }
+
     void CharactorFadeOut()
     {
         Debug.Log("사용여부 체크 2");
@@ -473,8 +478,6 @@ public class BattleStage1_1 : MonoBehaviour
 
     void GameOver()  //게임 패배 연출
     {
-        Debug.Log("확인");
-        //ForBattle_FMod.instance.BattleFailed();       //전투실패
         if (time < 1.0f)
         {
 

@@ -2894,7 +2894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3934,6 +3934,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727162914}
   m_CullTransparentMesh: 1
+--- !u!1001 &728150903
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1500678042558349138, guid: d2aacd0e7efbf71449a521aaf058797a, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500678042558349138, guid: d2aacd0e7efbf71449a521aaf058797a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 32.008865
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500678042558349138, guid: d2aacd0e7efbf71449a521aaf058797a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.729902
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500678042558349138, guid: d2aacd0e7efbf71449a521aaf058797a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 85.42795
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500678042558349138, guid: d2aacd0e7efbf71449a521aaf058797a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500678042558349138, guid: d2aacd0e7efbf71449a521aaf058797a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500678042558349138, guid: d2aacd0e7efbf71449a521aaf058797a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500678042558349138, guid: d2aacd0e7efbf71449a521aaf058797a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500678042558349138, guid: d2aacd0e7efbf71449a521aaf058797a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500678042558349138, guid: d2aacd0e7efbf71449a521aaf058797a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500678042558349138, guid: d2aacd0e7efbf71449a521aaf058797a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615029020187010783, guid: d2aacd0e7efbf71449a521aaf058797a, type: 3}
+      propertyPath: m_Name
+      value: ====Audio Battle====
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d2aacd0e7efbf71449a521aaf058797a, type: 3}
 --- !u!1 &734165243
 GameObject:
   m_ObjectHideFlags: 0
@@ -4439,7 +4496,6 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
-  - component: {fileID: 963194226}
   - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
@@ -4448,14 +4504,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &963194226
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0

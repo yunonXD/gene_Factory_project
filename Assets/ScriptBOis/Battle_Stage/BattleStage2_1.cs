@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+//만티 VS 프랑
 
 public class BattleStage2_1 : MonoBehaviour
 {
@@ -61,7 +62,7 @@ public class BattleStage2_1 : MonoBehaviour
     public bool _SkillAttack = false;
     private bool BossUI = false;
     private bool _GameOver = false;
-
+    private bool GameOverTrigger = true;
 
     // public GameObject boss;
 
@@ -365,10 +366,21 @@ public class BattleStage2_1 : MonoBehaviour
 
         if (player.GetComponent<MantiScript>().HP <= 0) //아군 캐릭터 사망Characterstartmove_Boss
         {
+            Invoke("OverSound", 2.0f);
             Invoke("GameOver", 2.0f);
         }
 
     }
+
+    void OverSound()
+    {
+        if (GameOverTrigger == true)
+        {
+            ForBattle_FMod.instance.BattleFailed();  //전투 실패
+            GameOverTrigger = false;
+        }
+    }
+
     void CharactorFadeOut()
     {
         Debug.Log("사용여부 체크 2");
@@ -453,7 +465,7 @@ public class BattleStage2_1 : MonoBehaviour
     {
         SaveData.GetComponent<SaveDataManager>()._ResearchPoint = SaveData.GetComponent<SaveDataManager>()._ResearchPoint + 3; //클리어 보상 +3
         SaveData.GetComponent<SaveDataManager>()._Gene_Between2 = false; //이녀석이 스토리 재생 후 전투창으로 이어주는 역할이라 사용후 꺼줘야함.
-        SaveData.GetComponent<SaveDataManager>()._Stage1_1 = true;
+        SaveData.GetComponent<SaveDataManager>()._Stage2_1 = true;
         SaveData.GetComponent<SaveDataManager>().Save();
         SceneManager.LoadScene("2_1_After");
     }
@@ -472,7 +484,6 @@ public class BattleStage2_1 : MonoBehaviour
         }
         else
         {
-            ForBattle_FMod.instance.BattleFailed();  //전투 실패
             Color color = new Color(0f, 0f, 0f, 0f);
             player.GetComponent<Renderer>().sharedMaterials[0].DOColor(color, "_Color", 1);
             time = 0;
@@ -496,7 +507,7 @@ public class BattleStage2_1 : MonoBehaviour
         enemy_blood_1.SetActive(true);
         player_blood_1.SetActive(false);
 
-        ForBattle_FMod.instance.Nattack_Lev_2();  //레벨2공격
+        ForBattle_FMod.instance.Nattack_Lev_2();  //레벨2공격 사운드
 
         Invoke("Mob_Blood_1_Fadein", 0.1f);
         Invoke("SkillSecondEffect", 0.1f);
@@ -561,6 +572,9 @@ public class BattleStage2_1 : MonoBehaviour
         Boss.GetComponent<FrancScript>().damage(); //피격모션
         Boss.GetComponent<FrancScript>().HP = Boss.GetComponent<FrancScript>().HP - _playerDamage; //공격시 대미지 계산 후 적군 캐릭터 HP 감소
         PlayerDamageText.GetComponent<DamageScript>().damage(0, 4);
+
+        ForBattle_FMod.instance.Nattack_Lev_2();  //레벨2공격
+
         Invoke("Boss_Blood_1_Fadein", 0.1f);
         Invoke("SkillSecondEffect", 0.1f);
         Invoke("Boss_Blood_1_FadeOut", 0.6f);
@@ -634,6 +648,9 @@ public class BattleStage2_1 : MonoBehaviour
         Skilleffect_1.Play();
         Boss.GetComponent<FrancScript>().HP = Boss.GetComponent<FrancScript>().HP - (_playerDamage * 2); //공격시 대미지 계산 후 적군 캐릭터 HP 감소
         PlayerDamageText.GetComponent<DamageScript>().damage(1, 0); // 스킬계수
+
+        ForBattle_FMod.instance.SA_Manticore();  // 만티코어 스킬 공격 사운드
+
         Invoke("Boss_Blood_1_Fadein", 1.2f);
         Invoke("Boss_Blood_1_FadeOut", 1.7f);
         Invoke("_camera", 1.2f);
@@ -675,6 +692,7 @@ public class BattleStage2_1 : MonoBehaviour
         enemy.transform.DOLocalMoveX(705, 0.8f);
         Boss.GetComponent<FrancScript>().damage();
         PlayerDamageText.GetComponent<DamageScript>().damage(1, 0); // 스킬계수
+        ForBattle_FMod.instance.normalHitEffect();  // 스킬로 인한 힛 사운드
         Invoke("CameraReset_Boss", 1f);
     }
     void CameraReset_Boss() //보스 스테이지 카메라 리셋
@@ -736,6 +754,8 @@ public class BattleStage2_1 : MonoBehaviour
 
         EnemyDamageText.GetComponent<DamageScript>().damage(0, enemyDamage);
         PlayerDamageText.GetComponent<DamageScript>().damage(0, 1);
+
+        ForBattle_FMod.instance.Nattack_Lev_1();  //보스 프랑 레벨1 공격 사운드
 
 
         Invoke("Player_Blood_1_Fadein", 0.1f);

@@ -60,7 +60,7 @@ public class BattleStage0_1 : MonoBehaviour
     public bool _SkillAttack = false;
     private bool BossUI = false;
     private bool _GameOver = false;
-
+    private bool GameOverTrigger = true;
 
     // public GameObject boss;
 
@@ -368,11 +368,23 @@ public class BattleStage0_1 : MonoBehaviour
 
         if (player.GetComponent<RabbitScript>().HP <= 0) //아군 캐릭터 사망Characterstartmove_Boss
         {
-            ForBattle_FMod.instance.BattleFailed();  //전투 실패
+
+            Invoke("OverSound", 2.0f);
             Invoke("GameOver",2.0f);
+
         }
 
     }
+    void OverSound()
+    {
+        if (GameOverTrigger == true)
+        {
+            ForBattle_FMod.instance.BattleFailed();  //전투 실패
+            GameOverTrigger = false;
+        }
+    }
+
+
     void CharactorFadeOut()
     {
         Debug.Log("사용여부 체크 2");

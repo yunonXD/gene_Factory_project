@@ -174,7 +174,6 @@ public class ForBattle_FMod : MonoBehaviour
         if (Skill_Attack_Nymph != null)
         {
 
-
             RuntimeManager.PlayOneShot(Skill_Attack_Nymph);
         }
 

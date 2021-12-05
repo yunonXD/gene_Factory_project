@@ -7,6 +7,7 @@ using DG.Tweening;
 
 public class BattleStage2_3 : MonoBehaviour
 {
+    //탕그리스 vs 모디비우스
 
     public GameObject player;       //플레이어 캐릭터
     public GameObject enemy;        //Mob
@@ -63,7 +64,7 @@ public class BattleStage2_3 : MonoBehaviour
     public bool _SkillAttack = false;
     private bool BossUI = false;
     private bool _GameOver = false;
-
+    private bool GameOverTrigger = true;
 
     // public GameObject boss;
 
@@ -370,9 +371,19 @@ public class BattleStage2_3 : MonoBehaviour
 
         if (player.GetComponent<TanngrisScript>().HP <= 0) //아군 캐릭터 사망Characterstartmove_Boss
         {
+            Invoke("OverSound", 2.0f);
             Invoke("GameOver", 2.0f);
         }
 
+    }
+
+    void OverSound()
+    {
+        if (GameOverTrigger == true)
+        {
+            ForBattle_FMod.instance.BattleFailed();  //전투 실패
+            GameOverTrigger = false;
+        }
     }
     void CharactorFadeOut()
     {
@@ -459,7 +470,7 @@ public class BattleStage2_3 : MonoBehaviour
     {
         SaveData.GetComponent<SaveDataManager>()._ResearchPoint = SaveData.GetComponent<SaveDataManager>()._ResearchPoint + 3; //클리어 보상 +3
         SaveData.GetComponent<SaveDataManager>()._Gene_Between2 = false; //이녀석이 스토리 재생 후 전투창으로 이어주는 역할이라 사용후 꺼줘야함.
-        SaveData.GetComponent<SaveDataManager>()._Stage1_1 = true;
+        SaveData.GetComponent<SaveDataManager>()._Stage2_3 = true;
         SaveData.GetComponent<SaveDataManager>().Save();
         SceneManager.LoadScene("2_3_After");
     }
@@ -478,7 +489,6 @@ public class BattleStage2_3 : MonoBehaviour
         }
         else
         {
-            ForBattle_FMod.instance.BattleFailed();  //전투 실패
             Color color = new Color(0f, 0f, 0f, 0f);
             player.GetComponent<Renderer>().sharedMaterials[0].DOColor(color, "_Color", 1);
             time = 0;
@@ -503,7 +513,7 @@ public class BattleStage2_3 : MonoBehaviour
         enemy_blood_1.SetActive(true);
         player_blood_1.SetActive(false);
 
-        ForBattle_FMod.instance.Normal_Attack_tangri();
+        ForBattle_FMod.instance.Normal_Attack_tangri();     //탕그리스 공격 사운드
 
 
         Invoke("Mob_Blood_1_Fadein", 0.1f);
@@ -576,6 +586,9 @@ public class BattleStage2_3 : MonoBehaviour
         Boss.GetComponent<MobydickScript>().damage(); //피격모션
         Boss.GetComponent<MobydickScript>().HP = Boss.GetComponent<MobydickScript>().HP - _playerDamage; //공격시 대미지 계산 후 적군 캐릭터 HP 감소
         PlayerDamageText.GetComponent<DamageScript>().damage(0, 4);
+
+        ForBattle_FMod.instance.Normal_Attack_tangri();     //탕그리스 공격 사운드
+
         Invoke("Boss_Blood_1_Fadein", 0.1f);
         Invoke("Boss_Blood_1_FadeOut", 0.6f);
         Invoke("_camera", 0.2f);
@@ -651,6 +664,9 @@ public class BattleStage2_3 : MonoBehaviour
         //player.transform.DOLocalMoveY(90, 0.6f); //스킬공격 모션Y
         Boss.GetComponent<MobydickScript>().HP = Boss.GetComponent<MobydickScript>().HP - (_playerDamage * 2); //공격시 대미지 계산 후 적군 캐릭터 HP 감소
         PlayerDamageText.GetComponent<DamageScript>().damage(1, 0); // 스킬계수
+
+        ForBattle_FMod.instance.Normal_Attack_tangri();     //탕그리스 공격 사운드
+
         //Invoke("SkillSecondMove", 0.6f);
         Invoke("SkillSecondMotion", 1.0f);
         Invoke("SkillSecondEffect", 1.2f);
@@ -702,6 +718,7 @@ public class BattleStage2_3 : MonoBehaviour
         enemy.transform.DOLocalMoveX(705, 0.8f);
         Boss.GetComponent<MobydickScript>().damage();
         PlayerDamageText.GetComponent<DamageScript>().damage(1, 0); // 스킬계수
+        ForBattle_FMod.instance.normalHitEffect();  // 스킬로 인한 힛 사운드
         Invoke("CameraReset_Boss", 1f);
     }
     void CameraReset_Boss() //보스 스테이지 카메라 리셋
@@ -767,6 +784,7 @@ public class BattleStage2_3 : MonoBehaviour
         EnemyDamageText.GetComponent<DamageScript>().damage(0, enemyDamage);
         PlayerDamageText.GetComponent<DamageScript>().damage(0, 1);
 
+        ForBattle_FMod.instance.Normal_Attack_modibic();  //보스 모디비우스 레벨 3 공격 사운드
 
         Invoke("Player_Blood_1_Fadein", 0.1f);
         Invoke("Player_Blood_2_Fadein", 0.2f);
