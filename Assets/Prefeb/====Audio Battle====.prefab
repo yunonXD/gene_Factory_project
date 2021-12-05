@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8615029020187010783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1500678042558349138}
+  - component: {fileID: 1314551035168407285}
+  m_Layer: 0
+  m_Name: ====Audio Battle====
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1500678042558349138
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8615029020187010783}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 32.008865, y: 11.729902, z: 85.42795}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1314551035168407285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8615029020187010783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c66263f8b01e8584ea9e99ac980d011c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Normal_Attack_Hit_Effect: event:/SFX/For Battle Monster/Normal_Attack_Hit_Effect
+  Normal_Attack_Level_1: event:/SFX/For Battle Monster/Normal_Attack_Level_1
+  Normal_Attack_Level_2: event:/SFX/For Battle Monster/Normal_Attack_Level_2
+  Normal_Attack_Level_3_modibic: event:/SFX/For Battle Monster/Normal_Attack_Level_3(modibic)
+  Normal_Attack_Level_4_tangri: event:/SFX/For Battle Monster/Normal_Attack_Level_4(tangri)
+  Skill_Attack_ConRabbit: event:/SFX/For Battle Monster/Skill_Attack_ConRabbit
+  Skill_Attack_Mush: event:/SFX/For Battle Monster/Skill_Attack_Mush
+  Skill_Attack_Fran: event:/SFX/For Battle Monster/Skill_Attack_Fran
+  Skill_Attack_Nymph: event:/SFX/For Battle Monster/Skill_Attack_Nymph
+  Skill_Attack_Manticore: event:/SFX/For Battle Monster/Skill_Attack_Manticore
+  Skill_Attack_Modibic: event:/SFX/For Battle Monster/Skill_Attack_Modibic
+  Skill_Attack_TangGreece: event:/SFX/For Battle Monster/Skill_Attack_TangGreece
+  Batte_Failed: event:/SFX/UI/Battle_UI/Batte_Failed
+  Battle_Ready: event:/SFX/UI/Battle_UI/Battle_Ready
+  Battle_Skill_CutScene: event:/SFX/UI/Battle_UI/Battle_Skill_CutScene
+  Skill_Turn_Ready: event:/SFX/UI/Battle_UI/Skill_Turn_Ready
+  Skill_TurnON: event:/SFX/UI/Battle_UI/Skill_TurnON

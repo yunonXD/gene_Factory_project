@@ -19,7 +19,7 @@ public class BattleStage1_1 : MonoBehaviour
     public GameObject UICanvas;
     public Image MoveCloud;
     public Image Skull;
-    private MeshRenderer renderer;
+    private new MeshRenderer renderer;
     private MaterialPropertyBlock _block;
     private int enemyDamage;        //적이 아군에게 주는 피해량
     private int _enemyDamage;        //적이 아군에게 주는 피해량
@@ -67,12 +67,17 @@ public class BattleStage1_1 : MonoBehaviour
 
     void Start()
     {
+        ForBattle_FMod.instance.BattleReady();       //전투 시작 사운드
+        time = -4;
+
 
         Color color = new Color(1f, 1f, 1f, 1f);
         player.GetComponent<Renderer>().sharedMaterials[0].DOColor(color, "_Color", 1);
         color = new Color(0f, 0f, 0f, 0f);
         Boss.GetComponent<Renderer>().sharedMaterials[0].DOColor(color, "_Color", 1);
-
+        color = new Color(0f, 0f, 0f, 0f);
+        enemy.GetComponent<Renderer>().sharedMaterials[0].DOColor(color, "_Color", 1);
+        enemy.GetComponent<Renderer>().sharedMaterials[1].DOColor(color, "_Color", 1);
         if (player.GetComponent<MushScript>().Agility > enemy.GetComponent<Enemy_Silme>().Agility)
             OrderAttack = true;
         else
@@ -99,10 +104,18 @@ public class BattleStage1_1 : MonoBehaviour
         BlackPanel.DOFade(0, 2.0f);  //검은색 패널 2초동안 페이드 아웃
         MissionStartImage.DOFade(0, 2.0f);  //검은색 패널 2초동안 페이드 아웃
 
-        Invoke("MoveBackGround_Mob", 3.0f);
-        Invoke("MovePlayer_Mob", 2.8f);
-        Invoke("EnemyFadeIn", 4.0f); //그리고 1초뒤에 적 모브 페이드 인
-        Invoke("Characterstartmove", 4.5f);
+        Invoke("PanelFade", 4.0f);
+        Invoke("MoveBackGround_Mob", 4.5f);
+        Invoke("MovePlayer_Mob", 5.3f);
+        Invoke("EnemyFadeIn", 6.5f); //그리고 1초뒤에 적 모브 페이드 인
+        Invoke("Characterstartmove", 7.5f);
+    }
+
+    void PanelFade()
+    {
+        Debug.Log("판넬 페이드");
+        BlackPanel.DOFade(0, 2.0f);  //검은색 패널 2초동안 페이드 아웃
+        MissionStartImage.DOFade(0, 2.0f);  //검은색 패널 2초동안 페이드 아웃
     }
 
     void MovePlayer_Mob()     //잡몹 스테이지 시작시 플레이어 활성화,이동모션 및 이동
@@ -180,6 +193,7 @@ public class BattleStage1_1 : MonoBehaviour
             {
                 if (skill == 1.0f) //스킬게이지 체크 1.0 == 스킬충전완료
                 {
+                    ForBattle_FMod.instance.SkillReady();       //스킬 준비 완료 사운드
                     SkillIcon.SetActive(true);      //스킬 충전완료시 활성화
                 }
                 else
@@ -196,6 +210,8 @@ public class BattleStage1_1 : MonoBehaviour
                         time = -7.0f;
                         Debug.Log("페이드인");
                         Battle_Cut_Back.DOFade(0.7f, 2.0f);
+
+                        ForBattle_FMod.instance.BattleCutScene();  //스킬 사용시 나오는 컷신
 
                         Invoke("_Battle_Cut_Front", 3.0f);
                         Invoke("_Battle_Cut_Face", 3.0f);
@@ -269,6 +285,7 @@ public class BattleStage1_1 : MonoBehaviour
             {
                 if (skill == 1.0f) //스킬게이지 체크 1.0 == 스킬충전완료
                 {
+                    ForBattle_FMod.instance.SkillReady();  //스킬 충전 완료 사운드
                     SkillIcon.SetActive(true);      //스킬 충전완료시 활성화
                 }
                 else
@@ -310,6 +327,7 @@ public class BattleStage1_1 : MonoBehaviour
         if (_SkillAttack == true)
         {
             time = -6.5f;
+            ForBattle_FMod.instance.BattleCutScene();  //스킬 사용시 나오는 컷신
             Debug.Log("보스 공격 스킬 이펙트 ");
             Boss.SetActive(false);
             player.SetActive(false);
@@ -442,9 +460,10 @@ public class BattleStage1_1 : MonoBehaviour
     void Clearsave()   //클리어후 세이브 데이터 입력 스테이지 클리어 체크 변경 #3
     {
         SaveData.GetComponent<SaveDataManager>()._ResearchPoint = SaveData.GetComponent<SaveDataManager>()._ResearchPoint + 3; //클리어 보상 +3
+        SaveData.GetComponent<SaveDataManager>()._Gene_Between2 = false; //이녀석이 스토리 재생 후 전투창으로 이어주는 역할이라 사용후 꺼줘야함.
         SaveData.GetComponent<SaveDataManager>()._Stage1_1 = true;
         SaveData.GetComponent<SaveDataManager>().Save();
-        SceneManager.LoadScene("inGameScene");
+        SceneManager.LoadScene("1_1_After");
     }
 
     void failsave()     //미션 실패 인게임으로 이동
@@ -454,8 +473,11 @@ public class BattleStage1_1 : MonoBehaviour
 
     void GameOver()  //게임 패배 연출
     {
+        Debug.Log("확인");
+        //ForBattle_FMod.instance.BattleFailed();       //전투실패
         if (time < 1.0f)
         {
+
             time += Time.deltaTime;
         }
         else
@@ -482,6 +504,8 @@ public class BattleStage1_1 : MonoBehaviour
 
         enemy_blood_1.SetActive(true);
         player_blood_1.SetActive(false);
+
+        ForBattle_FMod.instance.Nattack_Lev_1();  //레벨1공격
 
         Invoke("Mob_Blood_1_Fadein", 0.1f);
         Invoke("Mob_Blood_2_Fadein", 0.2f);
@@ -545,6 +569,9 @@ public class BattleStage1_1 : MonoBehaviour
         Boss.GetComponent<RabbitScript>().damage(); //피격모션
         Boss.GetComponent<RabbitScript>().HP = Boss.GetComponent<RabbitScript>().HP - _playerDamage; //공격시 대미지 계산 후 적군 캐릭터 HP 감소
         PlayerDamageText.GetComponent<DamageScript>().damage(0, 4);
+
+        ForBattle_FMod.instance.Nattack_Lev_1();  //레벨1공격
+
         Invoke("Boss_Blood_1_Fadein", 0.1f);
         Invoke("Boss_Blood_1_FadeOut", 0.6f);
         Invoke("_camera", 0.2f);
@@ -553,6 +580,8 @@ public class BattleStage1_1 : MonoBehaviour
         //enemy.transform.DOLocalMoveX(705, 0.8f);                //#11
         Invoke("resetposition", 1.0f); // 1.0초 뒤에 원위치 진행    
         Invoke("CameraReset", 1f);
+
+
 
         if (Boss.GetComponent<RabbitScript>().HP <= 0)
         {
@@ -618,6 +647,9 @@ public class BattleStage1_1 : MonoBehaviour
         Skilleffect.Play();
         Boss.GetComponent<RabbitScript>().HP = Boss.GetComponent<RabbitScript>().HP - (_playerDamage * 2); //공격시 대미지 계산 후 적군 캐릭터 HP 감소
         PlayerDamageText.GetComponent<DamageScript>().damage(1, 0); // 스킬계수
+
+        ForBattle_FMod.instance.SA_Mush();  //머쉬 스킬 공격 사운드
+
         Invoke("Boss_Blood_1_Fadein", 1.2f);
         Invoke("Boss_Blood_1_FadeOut", 1.7f);
         Invoke("_camera", 1.2f);
@@ -643,6 +675,7 @@ public class BattleStage1_1 : MonoBehaviour
         enemy.transform.DOLocalMoveX(705, 0.8f);
         Boss.GetComponent<RabbitScript>().damage();
         PlayerDamageText.GetComponent<DamageScript>().damage(1, 0); // 스킬계수
+        ForBattle_FMod.instance.normalHitEffect();  // 스킬로 인한 힛 사운드
         Invoke("CameraReset_Boss", 1f);
     }
     void CameraReset_Boss() //보스 스테이지 카메라 리셋
@@ -670,6 +703,9 @@ public class BattleStage1_1 : MonoBehaviour
 
         EnemyDamageText.GetComponent<DamageScript>().damage(0, enemyDamage);
         PlayerDamageText.GetComponent<DamageScript>().damage(0, 1);
+
+        ForBattle_FMod.instance.normalHitEffect();  //레벨1공격
+
         Debug.Log("Mob공격 ");
         Invoke("Player_Blood_1_Fadein", 0.1f);
         Invoke("Player_Blood_2_Fadein", 0.2f);
@@ -698,6 +734,7 @@ public class BattleStage1_1 : MonoBehaviour
         EnemyDamageText.GetComponent<DamageScript>().damage(0, enemyDamage);
         PlayerDamageText.GetComponent<DamageScript>().damage(0, 1);
 
+        ForBattle_FMod.instance.normalHitEffect();  //보스 콘레빗 레벨1 공격 사운드
 
         Invoke("Player_Blood_1_Fadein", 0.1f);
         Invoke("Player_Blood_2_Fadein", 0.2f);
@@ -727,6 +764,7 @@ public class BattleStage1_1 : MonoBehaviour
     }
     public void usedSkill()
     {
+        ForBattle_FMod.instance.SkillTurnON();      //스킬 아이콘 클릭
         Debug.Log("usedSkill");
         skill = 0f;
         SkillAttack = true;

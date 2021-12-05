@@ -179,7 +179,7 @@ public class For_Stroy_1_1_After : MonoBehaviour
             case 14:
                 _name.text = "마리아";
                 _index.DOText("", 1);
-                _index.DOText(" 저희 eti 제조 공단은 조합 기술을 연구해 실험체를 만들어 대항하기 시작했고" +
+                _index.DOText(" 저희 ETI 제조 공단은 조합 기술을 연구해 실험체를 만들어 대항하기 시작했고" +
                     " 점차 안정되어 가고 있었습니다.", 1);
                 break;
 
@@ -292,6 +292,12 @@ public class For_Stroy_1_1_After : MonoBehaviour
 
 
             default:
+
+                if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 == false)
+                {
+                    SceneManager.LoadScene("inGameScene");
+                }
+
                 if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between1 == true)
                 {
                     SceneManager.LoadScene("RecordMemoryScene");

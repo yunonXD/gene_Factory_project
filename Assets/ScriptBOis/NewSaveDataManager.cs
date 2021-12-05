@@ -21,8 +21,8 @@ public class NewSaveDataManager : MonoBehaviour
         data.Stage2_2 = false;
         data.Stage2_3 = false;
         data.Stage2_4 = false;
-        data.Creature_Mush = true;
-        data.Creature_ConRabbit = true;
+        data.Creature_Mush = false;
+        data.Creature_ConRabbit = false;
         data.Creature_Fran = false;
         data.Creature_Nymph = false;
         data.Creature_Manticore = false;
@@ -38,7 +38,7 @@ public class NewSaveDataManager : MonoBehaviour
         data.Gene_Between_6 = false;
         data.Gene_Between_7 = false;
         data.Gene_Between_8 = false;
-        data.ResearchPoint = 10;            //새로운 세이브 파일 포인트 잠시 10으로 늘릴게요! by 윤종우
+        data.ResearchPoint = 10;
 
 
         File.WriteAllText(Application.dataPath + "/SaveData.json", JsonUtility.ToJson(data));

@@ -212,9 +212,14 @@ public class For_Stroy_1_2_After : MonoBehaviour
                 animator.SetBool("FadeOff", true);
                 break;
 
-
-
             default:
+
+
+                if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 == false)
+                {
+                    SceneManager.LoadScene("inGameScene");
+                }
+
                 if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between1 == true)
                 {
                     SceneManager.LoadScene("RecordMemoryScene");

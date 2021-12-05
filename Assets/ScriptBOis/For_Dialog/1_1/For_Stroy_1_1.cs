@@ -156,6 +156,12 @@ public class For_Stroy_1_1 : MonoBehaviour
 
             default:
 
+
+                if(PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 == true)
+                {
+                    SceneManager.LoadScene("BattleScene1_1");
+                }
+
                 if(PlayerData.GetComponent<SaveDataManager>()._Gene_Between1 == true)
                 {
                     SceneManager.LoadScene("RecordMemoryScene");

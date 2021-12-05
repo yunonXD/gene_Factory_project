@@ -19,7 +19,7 @@ public class BattleStage2_3 : MonoBehaviour
     public GameObject UICanvas;
     public GameObject BossEffect;
     public Image MoveCloud;
-    private MeshRenderer renderer;
+    private new MeshRenderer renderer;
     private MaterialPropertyBlock _block;
     private int enemyDamage;        //적이 아군에게 주는 피해량
     private int _enemyDamage;        //적이 아군에게 주는 피해량
@@ -69,7 +69,7 @@ public class BattleStage2_3 : MonoBehaviour
 
     void Start()
     {
-
+        ForBattle_FMod.instance.BattleReady();       //전투 시작 사운드
 
         Color color = new Color(1f, 1f, 1f, 1f);
         player.GetComponent<Renderer>().sharedMaterials[0].DOColor(color, "_Color", 1);
@@ -189,6 +189,7 @@ public class BattleStage2_3 : MonoBehaviour
             {
                 if (skill == 1.0f) //스킬게이지 체크 1.0 == 스킬충전완료
                 {
+                    ForBattle_FMod.instance.SkillReady();  //스킬 충전 완료 사운드
                     SkillIcon.SetActive(true);      //스킬 충전완료시 활성화
                 }
                 else
@@ -205,6 +206,8 @@ public class BattleStage2_3 : MonoBehaviour
                         time = -7.0f;
                         Debug.Log("페이드인");
                         Battle_Cut_Back.DOFade(0.7f, 2.0f);
+
+                        ForBattle_FMod.instance.BattleCutScene();  //스킬 사용시 나오는 컷신
 
                         Invoke("_Battle_Cut_Front", 3.0f);
                         Invoke("_Battle_Cut_Face", 3.0f);
@@ -278,6 +281,7 @@ public class BattleStage2_3 : MonoBehaviour
             {
                 if (skill == 1.0f) //스킬게이지 체크 1.0 == 스킬충전완료
                 {
+                    ForBattle_FMod.instance.SkillReady();  //스킬 충전 완료 사운드
                     SkillIcon.SetActive(true);      //스킬 충전완료시 활성화
                 }
                 else
@@ -319,6 +323,7 @@ public class BattleStage2_3 : MonoBehaviour
         if (_SkillAttack == true)
         {
             time = -11.5f;
+            ForBattle_FMod.instance.BattleCutScene();  //스킬 사용시 나오는 컷신
             Debug.Log("보스 공격 스킬 이펙트 ");
             Boss.SetActive(false);
             player.SetActive(false);
@@ -453,9 +458,10 @@ public class BattleStage2_3 : MonoBehaviour
     void Clearsave()   //클리어후 세이브 데이터 입력 스테이지 클리어 체크 변경 #3
     {
         SaveData.GetComponent<SaveDataManager>()._ResearchPoint = SaveData.GetComponent<SaveDataManager>()._ResearchPoint + 3; //클리어 보상 +3
+        SaveData.GetComponent<SaveDataManager>()._Gene_Between2 = false; //이녀석이 스토리 재생 후 전투창으로 이어주는 역할이라 사용후 꺼줘야함.
         SaveData.GetComponent<SaveDataManager>()._Stage1_1 = true;
         SaveData.GetComponent<SaveDataManager>().Save();
-        SceneManager.LoadScene("inGameScene");
+        SceneManager.LoadScene("2_3_After");
     }
 
     void failsave()     //미션 실패 인게임으로 이동
@@ -467,10 +473,12 @@ public class BattleStage2_3 : MonoBehaviour
     {
         if (time < 1.0f)
         {
+
             time += Time.deltaTime;
         }
         else
         {
+            ForBattle_FMod.instance.BattleFailed();  //전투 실패
             Color color = new Color(0f, 0f, 0f, 0f);
             player.GetComponent<Renderer>().sharedMaterials[0].DOColor(color, "_Color", 1);
             time = 0;
@@ -494,6 +502,9 @@ public class BattleStage2_3 : MonoBehaviour
 
         enemy_blood_1.SetActive(true);
         player_blood_1.SetActive(false);
+
+        ForBattle_FMod.instance.Normal_Attack_tangri();
+
 
         Invoke("Mob_Blood_1_Fadein", 0.1f);
         Invoke("Mob_Blood_2_Fadein", 0.2f);
@@ -722,6 +733,9 @@ public class BattleStage2_3 : MonoBehaviour
 
         EnemyDamageText.GetComponent<DamageScript>().damage(0, enemyDamage);
         PlayerDamageText.GetComponent<DamageScript>().damage(0, 1);
+
+        ForBattle_FMod.instance.normalHitEffect();  //레벨1공격
+
         Debug.Log("Mob공격 ");
         Invoke("Player_Blood_1_Fadein", 0.1f);
         Invoke("Player_Blood_2_Fadein", 0.2f);
@@ -782,6 +796,7 @@ public class BattleStage2_3 : MonoBehaviour
     }
     public void usedSkill()
     {
+        ForBattle_FMod.instance.SkillTurnON();      //스킬 아이콘 클릭
         Debug.Log("usedSkill");
         skill = 0f;
         SkillAttack = true;

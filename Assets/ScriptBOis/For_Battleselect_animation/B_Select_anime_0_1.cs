@@ -12,7 +12,8 @@ public class B_Select_anime_0_1 : MonoBehaviour
 
     void Update()
     {
-        if (PlayerData.GetComponent<SaveDataManager>()._Stage1_4 == false)        //1_4 ∞° ∆©≈Ù∏ÆæÛ¿”!!
+        if (PlayerData.GetComponent<SaveDataManager>()._Stage1_4 == false &&
+            PlayerData.GetComponent<SaveDataManager>()._Creature_ConRabbit == true)        //1_4 ∞° ∆©≈Ù∏ÆæÛ¿”!!
         {
             B_select_Animator.SetBool("Check_Stage", true);
             B_select_Animator.SetBool("Disable", false);

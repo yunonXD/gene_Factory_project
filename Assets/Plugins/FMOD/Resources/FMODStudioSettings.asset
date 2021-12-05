@@ -475,7 +475,7 @@ MonoBehaviour:
   sourceProjectPath: ../../Gene_Project/Gene_Project.fspro
   sourceBankPath: ../../Gene_Project/Build
   SourceBankPathUnformatted: 
-  BankRefreshCooldown: 5
+  BankRefreshCooldown: 1
   ShowBankRefreshWindow: 1
   AutomaticEventLoading: 1
   BankLoadType: 0
@@ -500,6 +500,7 @@ MonoBehaviour:
   - AMB
   - BGM
   - SFX
+  - SFX Battle
   - SFX Story
   BanksToLoad: []
   LiveUpdatePort: 9264
