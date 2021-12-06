@@ -56,18 +56,16 @@ public class Button_Editor : MonoBehaviour{
         isPause = true;
     }
 
-
-
-
     public void OnApplicationQuit(){        //게임종료
         Application.Quit();
     }
 
 
-    void Update()       //ESC 누를시 옵션창 활성화 / 비활성화
-    {
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+
+
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape))       //ESC 버튼으로 옵션창 제어
         {
             if (isPause == false)
             {
@@ -86,6 +84,8 @@ public class Button_Editor : MonoBehaviour{
             }
         }
 
+
     }
+
 
 }

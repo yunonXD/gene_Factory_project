@@ -38,7 +38,8 @@ public class NewSaveDataManager : MonoBehaviour
         data.Gene_Between_6 = false;
         data.Gene_Between_7 = false;
         data.Gene_Between_8 = false;
-        data.ResearchPoint = 10;
+        data.ResearchPoint = 3;
+        data.DialgueCounter = 0;
 
 
         File.WriteAllText(Application.dataPath + "/SaveData.json", JsonUtility.ToJson(data));

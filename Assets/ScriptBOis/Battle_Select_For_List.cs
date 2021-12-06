@@ -51,7 +51,7 @@ public class Battle_Select_For_List : MonoBehaviour
                 break;
 
             case 2:
-                if (PlayerData.GetComponent<SaveDataManager>()._Stage1_2 == true)
+                if (PlayerData.GetComponent<SaveDataManager>()._Stage1_1 == true)
                 {
                     PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 = true;
                     SceneManager.LoadScene("1_2_before");
@@ -59,7 +59,7 @@ public class Battle_Select_For_List : MonoBehaviour
                 break;
 
             case 3:
-                if (PlayerData.GetComponent<SaveDataManager>()._Stage1_3 == true)
+                if (PlayerData.GetComponent<SaveDataManager>()._Stage1_2 == true)
                 {
                     PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 = true;
                     SceneManager.LoadScene("1_3_before");
@@ -69,7 +69,7 @@ public class Battle_Select_For_List : MonoBehaviour
 
 
             case 4:
-                if (PlayerData.GetComponent<SaveDataManager>()._Stage2_1 == true)
+                if (PlayerData.GetComponent<SaveDataManager>()._Stage1_3 == true)
                 {
                     PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 = true;
                     SceneManager.LoadScene("2_1_before");
@@ -78,7 +78,7 @@ public class Battle_Select_For_List : MonoBehaviour
                 break;
 
             case 5:
-                if (PlayerData.GetComponent<SaveDataManager>()._Stage2_2 == true)
+                if (PlayerData.GetComponent<SaveDataManager>()._Stage2_1 == true)
                 {
                     PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 = true;
                     SceneManager.LoadScene("2_2_before");
@@ -86,7 +86,7 @@ public class Battle_Select_For_List : MonoBehaviour
                 break;
 
             case 6:
-                if (PlayerData.GetComponent<SaveDataManager>()._Stage2_3 == true)
+                if (PlayerData.GetComponent<SaveDataManager>()._Stage2_2 == true)
                 {
                     PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 = true;
                     SceneManager.LoadScene("2_3_before");

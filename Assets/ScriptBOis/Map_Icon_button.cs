@@ -451,7 +451,7 @@ public class Map_Icon_button : MonoBehaviour
 
             // 1~3번 맨 윗줄 1 2 3
             case 1:     //모디빅
-                if (checkbuttonClick == true && point > 3 && PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_1 == true)
+                if (checkbuttonClick == true && point >= 3 && PlayerData.GetComponent<SaveDataManager>()._Creature_Temp_1 == true)
                 //해금버튼 On 그리고 왼쪽 유전자 체크버튼(그니까... 중간단계까지 언락 했으면)으로 숫저2라면
                 {
                     Indicate.gameObject.transform.localPosition = new Vector3(-45, 270, 0);
@@ -470,14 +470,14 @@ public class Map_Icon_button : MonoBehaviour
 
                     StartCoroutine(WaitForUnlock_Screen(0));                //언락시 나오는 언락했어요! 스크린. 코루틴 
 
-                    point = point - 5;
+                    point = point - 3;
                     Point_Check.text = "포인트 :" + point;
                     PointSaver();
                     checkbuttonClick = false;
                 }
                 break;
             case 2:     //탕그리스
-                if (checkbuttonClick == true && point > 3 && PlayerData.GetComponent<SaveDataManager>()._Creature_Mobidic == true)
+                if (checkbuttonClick == true && point >= 3 && PlayerData.GetComponent<SaveDataManager>()._Creature_Mobidic == true)
                 {
                     Indicate.gameObject.transform.localPosition = new Vector3(240, 270, 0);
 
@@ -494,14 +494,14 @@ public class Map_Icon_button : MonoBehaviour
 
                     StartCoroutine(WaitForUnlock_Screen(1));
 
-                    point = point - 5;
+                    point = point - 3;
                     Point_Check.text = "포인트 :"+ point;
                     PointSaver();
                     checkbuttonClick = false;
                 }
                 break;
             case 3:     //??
-                if (checkbuttonClick == true && point > 3 && PlayerData.GetComponent<SaveDataManager>()._Creature_TangGreece == true)
+                if (checkbuttonClick == true && point >= 3 && PlayerData.GetComponent<SaveDataManager>()._Creature_TangGreece == true)
                 {
                     Indicate.gameObject.SetActive(false);
 
@@ -517,7 +517,7 @@ public class Map_Icon_button : MonoBehaviour
 
                     StartCoroutine(WaitForUnlock_Screen(2));
 
-                    point = point - 5;
+                    point = point - 3;
                     Point_Check.text = "포인트 :" + point;
                     PointSaver();
                     checkbuttonClick = false;
@@ -527,7 +527,7 @@ public class Map_Icon_button : MonoBehaviour
 
             //4~5번 가운대줄 4 5 6
             case 4:     //님프
-                if (checkbuttonClick == true && point > 3 && PlayerData.GetComponent<SaveDataManager>()._Creature_Fran == true)
+                if (checkbuttonClick == true && point >= 3 && PlayerData.GetComponent<SaveDataManager>()._Creature_Fran == true)
                 {
                     Indicate.gameObject.transform.localPosition = new Vector3(240, -50, 0);
                     Indicate.gameObject.transform.localRotation = Quaternion.Euler(0, 0, 180);
@@ -552,7 +552,7 @@ public class Map_Icon_button : MonoBehaviour
                 break;
 
             case 5:     //만티코어
-                if (checkbuttonClick == true && point > 3 && PlayerData.GetComponent<SaveDataManager>()._Creature_Nymph == true)
+                if (checkbuttonClick == true && point >= 3 && PlayerData.GetComponent<SaveDataManager>()._Creature_Nymph == true)
                 {
                     Indicate.gameObject.transform.localPosition = new Vector3(-50, -50, 0);
                     Indicate.gameObject.transform.localRotation = Quaternion.Euler(0, 0, 180);
@@ -578,7 +578,7 @@ public class Map_Icon_button : MonoBehaviour
                 break;
 
             case 6:     //??
-                if (checkbuttonClick == true && point > 3 && PlayerData.GetComponent<SaveDataManager>()._Creature_Manticore == true)
+                if (checkbuttonClick == true && point >= 3 && PlayerData.GetComponent<SaveDataManager>()._Creature_Manticore == true)
                 {
                     Indicate.gameObject.transform.localPosition = new Vector3(-190, 110, 0);
                     Indicate.gameObject.transform.localRotation = Quaternion.Euler(0, 0, 90);
@@ -605,7 +605,7 @@ public class Map_Icon_button : MonoBehaviour
 
             // 7~ 9번 맨 아래줄  7 8 9
             case 7:     //머쉬
-                if (checkbuttonClick == true && point > 3 && PlayerData.GetComponent<SaveDataManager>()._Creature_ConRabbit == true)
+                if (checkbuttonClick == true && point >= 3 && PlayerData.GetComponent<SaveDataManager>()._Creature_ConRabbit == true)
                 {
 
                     Indicate.gameObject.transform.localPosition = new Vector3(245, -400, 0);
@@ -622,7 +622,7 @@ public class Map_Icon_button : MonoBehaviour
 
                     StartCoroutine(WaitForUnlock_Screen(6));
 
-                    point = point - 2;
+                    point = point - 3;
                     Point_Check.text = "포인트 :" + point;
                     PointSaver();
                     checkbuttonClick = false;
@@ -630,7 +630,7 @@ public class Map_Icon_button : MonoBehaviour
                 break;
 
             case 8:     //콘래빗
-                if (checkbuttonClick == true && point > 3)
+                if (checkbuttonClick == true && point >= 3)
                 {
                     Indicate.gameObject.SetActive(true);
 
@@ -646,7 +646,7 @@ public class Map_Icon_button : MonoBehaviour
 
                     StartCoroutine(WaitForUnlock_Screen(7));
 
-                    point = point - 2;
+                    point = point - 3;
                     Point_Check.text = "포인트 :" + point;
                     PointSaver();
                     checkbuttonClick = false;
@@ -654,7 +654,7 @@ public class Map_Icon_button : MonoBehaviour
                 break;
 
             case 9:     //프랑
-                if (checkbuttonClick == true && point > 3 && PlayerData.GetComponent<SaveDataManager>()._Creature_Mush == true)
+                if (checkbuttonClick == true && point >= 3 && PlayerData.GetComponent<SaveDataManager>()._Creature_Mush == true)
                 {
                     Indicate.gameObject.transform.localPosition = new Vector3(385, -220, 0);
                     Indicate.gameObject.transform.localRotation = Quaternion.Euler(0, 0, 90);
@@ -672,7 +672,7 @@ public class Map_Icon_button : MonoBehaviour
                     StartCoroutine(WaitForUnlock_Screen(8));
 
 
-                    point = point - 2;
+                    point = point - 3;
                     Point_Check.text = "포인트 :" + point;
                     PointSaver();
                     checkbuttonClick = false;

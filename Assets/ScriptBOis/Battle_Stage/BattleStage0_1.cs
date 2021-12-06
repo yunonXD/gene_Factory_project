@@ -776,6 +776,7 @@ public class BattleStage0_1 : MonoBehaviour
     }
     public void usedSkill()
     {
+        Time.timeScale = 1.0f;
         ForBattle_FMod.instance.SkillTurnON();      //스킬 아이콘 클릭
         Debug.Log("usedSkill");
         skill = 0f;
