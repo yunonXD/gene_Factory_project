@@ -68,11 +68,14 @@ public class BattleStage1_2 : MonoBehaviour
     void Start()
     {
         ForBattle_FMod.instance.BattleReady();       //전투 시작 사운드
+        time = -4;
 
         Color color = new Color(1f, 1f, 1f, 1f);
         player.GetComponent<Renderer>().sharedMaterials[0].DOColor(color, "_Color", 1);
         color = new Color(0f, 0f, 0f, 0f);
         Boss.GetComponent<Renderer>().sharedMaterials[0].DOColor(color, "_Color", 1);
+        enemy.GetComponent<Renderer>().sharedMaterials[0].DOColor(color, "_Color", 1);
+        enemy.GetComponent<Renderer>().sharedMaterials[1].DOColor(color, "_Color", 1);
 
         if (player.GetComponent<FrancScript>().Agility > enemy.GetComponent<Enemy_Silme>().Agility)
             OrderAttack = true;
@@ -99,15 +102,18 @@ public class BattleStage1_2 : MonoBehaviour
         int id = Shader.PropertyToID("_Block");
         _block.SetColor(id, new Color(100, 100, 100, 0));
 
+        Invoke("PanelFade", 2.5f);
+        Invoke("MoveBackGround_Mob", 3.0f);
+        Invoke("MovePlayer_Mob", 3.8f);
+        Invoke("EnemyFadeIn", 5.0f); //그리고 1초뒤에 적 모브 페이드 인
+        Invoke("Characterstartmove", 6.0f);
+    }
+    void PanelFade()
+    {
+        Debug.Log("판넬 페이드");
         BlackPanel.DOFade(0, 2.0f);  //검은색 패널 2초동안 페이드 아웃
         MissionStartImage.DOFade(0, 2.0f);  //검은색 패널 2초동안 페이드 아웃
-
-        Invoke("MoveBackGround_Mob", 3.0f);
-        Invoke("MovePlayer_Mob", 2.8f);
-        Invoke("EnemyFadeIn", 4.0f); //그리고 1초뒤에 적 모브 페이드 인
-        Invoke("Characterstartmove", 4.5f);
     }
-
     void MovePlayer_Mob()     //잡몹 스테이지 시작시 플레이어 활성화,이동모션 및 이동
     {
         player.SetActive(true);

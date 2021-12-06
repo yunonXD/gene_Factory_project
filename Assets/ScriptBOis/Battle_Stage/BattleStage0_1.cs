@@ -96,14 +96,12 @@ public class BattleStage0_1 : MonoBehaviour
         int id = Shader.PropertyToID("_Block");
         _block.SetColor(id, new Color(100, 100, 100, 0));
         
-        BlackPanel.DOFade(0, 2.0f);  //검은색 패널 2초동안 페이드 아웃
-        MissionStartImage.DOFade(0, 2.0f);  //검은색 패널 2초동안 페이드 아웃
 
-        Invoke("PanelFade", 4.0f);
-        Invoke("MoveBackGround_Mob", 4.5f);
-        Invoke("MovePlayer_Mob", 5.3f);
-        Invoke("EnemyFadeIn", 6.5f); //그리고 1초뒤에 적 모브 페이드 인
-        Invoke("Characterstartmove", 7.5f);
+        Invoke("PanelFade", 2.5f);
+        Invoke("MoveBackGround_Mob", 3.0f);
+        Invoke("MovePlayer_Mob", 3.8f);
+        Invoke("EnemyFadeIn", 5.0f); //그리고 1초뒤에 적 모브 페이드 인
+        Invoke("Characterstartmove", 6.0f);
     }
 
     void PanelFade()
@@ -153,6 +151,7 @@ public class BattleStage0_1 : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(time);
         if (MobClear == false && _GameOver == false)  //잡몹 전투
         {
             Player_Hpbar.fillAmount = player.GetComponent<RabbitScript>().HP / Player_HPMax;
