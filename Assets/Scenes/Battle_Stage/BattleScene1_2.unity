@@ -5988,6 +5988,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bb00b3d241019741bd30e92c3f108e7, type: 3}
+--- !u!1 &1313238381 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5769150155240134701, guid: 6bb00b3d241019741bd30e92c3f108e7, type: 3}
+  m_PrefabInstance: {fileID: 1313238380}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1317639335
 GameObject:
   m_ObjectHideFlags: 0
@@ -9590,6 +9595,7 @@ MonoBehaviour:
   Battle_Cut_TextCase: {fileID: 1312028950}
   Battle_Cut_Text: {fileID: 1763226336}
   _SkillAttack: 0
+  BGM: {fileID: 1313238381}
 --- !u!114 &2093611738
 MonoBehaviour:
   m_ObjectHideFlags: 0

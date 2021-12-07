@@ -9645,6 +9645,7 @@ MonoBehaviour:
   Battle_Cut_TextCase: {fileID: 1312028950}
   Battle_Cut_Text: {fileID: 1763226336}
   _SkillAttack: 0
+  BGM: {fileID: 5769150155285783620}
 --- !u!114 &2093611738
 MonoBehaviour:
   m_ObjectHideFlags: 0

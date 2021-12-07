@@ -9535,6 +9535,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003709963}
   m_CullTransparentMesh: 1
+--- !u!1 &2051230226 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5769150155240134701, guid: 6bb00b3d241019741bd30e92c3f108e7, type: 3}
+  m_PrefabInstance: {fileID: 5769150154661510178}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2093611733
 GameObject:
   m_ObjectHideFlags: 0
@@ -9645,6 +9650,7 @@ MonoBehaviour:
   Battle_Cut_TextCase: {fileID: 1312028950}
   Battle_Cut_Text: {fileID: 1763226336}
   _SkillAttack: 0
+  BGM: {fileID: 2051230226}
 --- !u!114 &2093611738
 MonoBehaviour:
   m_ObjectHideFlags: 0

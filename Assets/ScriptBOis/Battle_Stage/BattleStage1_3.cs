@@ -64,6 +64,7 @@ public class BattleStage1_3 : MonoBehaviour
     private bool _GameOver = false;
     private bool GameOverTrigger = true;
 
+    public GameObject BGM;
     // public GameObject boss;
 
     void Start()
@@ -378,6 +379,7 @@ public class BattleStage1_3 : MonoBehaviour
     {
         if (GameOverTrigger == true)
         {
+            BGM.gameObject.SetActive(false);
             ForBattle_FMod.instance.BattleFailed();  //전투 실패
             GameOverTrigger = false;
         }
@@ -447,6 +449,7 @@ public class BattleStage1_3 : MonoBehaviour
 
     void ClearMotion() //스테이지 클리어 모션연출      위치값 변경 위치#2
     {
+        BGM.gameObject.SetActive(false);
         Debug.Log("클리어모션");
         UICanvas.SetActive(false);
         player.transform.DOLocalMoveX(-740, 0.8f);
