@@ -1068,9 +1068,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1388164146}
         m_TargetAssemblyTypeName: PlayFModUI, Assembly-CSharp
-        m_MethodName: PlaySoundEvent
+        m_MethodName: NPanalClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3569,9 +3569,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1388164146}
         m_TargetAssemblyTypeName: PlayFModUI, Assembly-CSharp
-        m_MethodName: PlaySoundEvent
+        m_MethodName: NUnknownClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4810,9 +4810,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1388164146}
         m_TargetAssemblyTypeName: PlayFModUI, Assembly-CSharp
-        m_MethodName: PlaySoundEvent
+        m_MethodName: NPanalClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7244,7 +7244,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1388164146}
         m_TargetAssemblyTypeName: PlayFModUI, Assembly-CSharp
-        m_MethodName: NUnknownClick
+        m_MethodName: NPanalClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8547,9 +8547,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1388164146}
         m_TargetAssemblyTypeName: PlayFModUI, Assembly-CSharp
-        m_MethodName: PlaySoundEvent
+        m_MethodName: NPanalClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9099,7 +9099,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1388164146}
         m_TargetAssemblyTypeName: PlayFModUI, Assembly-CSharp
-        m_MethodName: NUnknownClick
+        m_MethodName: NPanalClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10252,7 +10252,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 61c33f12a7a39ee49b9855b6b75b67f6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2137f6895e954814586a4b64b7a17f5f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12336,9 +12336,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1388164146}
         m_TargetAssemblyTypeName: PlayFModUI, Assembly-CSharp
-        m_MethodName: PlaySoundEvent
+        m_MethodName: NPanalClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12702,7 +12702,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1388164146}
         m_TargetAssemblyTypeName: PlayFModUI, Assembly-CSharp
-        m_MethodName: NUnknownClick
+        m_MethodName: NPanalClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15028,7 +15028,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1388164146}
         m_TargetAssemblyTypeName: PlayFModUI, Assembly-CSharp
-        m_MethodName: NUnknownClick
+        m_MethodName: NPanalClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15568,9 +15568,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1388164146}
         m_TargetAssemblyTypeName: PlayFModUI, Assembly-CSharp
-        m_MethodName: PlaySoundEvent
+        m_MethodName: NUnknownClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16552,9 +16552,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1388164146}
         m_TargetAssemblyTypeName: PlayFModUI, Assembly-CSharp
-        m_MethodName: PlaySoundEvent
+        m_MethodName: NPanalClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20825,9 +20825,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1388164146}
         m_TargetAssemblyTypeName: PlayFModUI, Assembly-CSharp
-        m_MethodName: PlaySoundEvent
+        m_MethodName: NPanalClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21462,9 +21462,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1388164146}
         m_TargetAssemblyTypeName: PlayFModUI, Assembly-CSharp
-        m_MethodName: PlaySoundEvent
+        m_MethodName: NPanalClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22580,7 +22580,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1388164146}
         m_TargetAssemblyTypeName: PlayFModUI, Assembly-CSharp
-        m_MethodName: NUnknownClick
+        m_MethodName: NPanalClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25366,7 +25366,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1388164146}
         m_TargetAssemblyTypeName: PlayFModUI, Assembly-CSharp
-        m_MethodName: NUnknownClick
+        m_MethodName: NPanalClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26027,7 +26027,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1388164146}
         m_TargetAssemblyTypeName: PlayFModUI, Assembly-CSharp
-        m_MethodName: NUnknownClick
+        m_MethodName: NPanalClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
