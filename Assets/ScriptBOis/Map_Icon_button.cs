@@ -501,7 +501,7 @@ public class Map_Icon_button : MonoBehaviour
                 }
                 break;
             case 3:     //??
-                if (checkbuttonClick == true && point >= 3 && PlayerData.GetComponent<SaveDataManager>()._Creature_TangGreece == true)
+                if (checkbuttonClick == true && PlayerData.GetComponent<SaveDataManager>()._Creature_TangGreece == true)
                 {
                     Indicate.gameObject.SetActive(false);
 
@@ -517,7 +517,6 @@ public class Map_Icon_button : MonoBehaviour
 
                     StartCoroutine(WaitForUnlock_Screen(2));
 
-                    point = point - 3;
                     Point_Check.text = "포인트 :" + point;
                     PointSaver();
                     checkbuttonClick = false;
@@ -578,7 +577,7 @@ public class Map_Icon_button : MonoBehaviour
                 break;
 
             case 6:     //??
-                if (checkbuttonClick == true && point >= 3 && PlayerData.GetComponent<SaveDataManager>()._Creature_Manticore == true)
+                if (checkbuttonClick == true && PlayerData.GetComponent<SaveDataManager>()._Creature_Manticore == true)
                 {
                     Indicate.gameObject.transform.localPosition = new Vector3(-190, 110, 0);
                     Indicate.gameObject.transform.localRotation = Quaternion.Euler(0, 0, 90);
@@ -595,8 +594,6 @@ public class Map_Icon_button : MonoBehaviour
 
                     StartCoroutine(WaitForUnlock_Screen(5));
 
-
-                    point = point - 3;
                     Point_Check.text = "포인트 :" + point;
                     PointSaver();
                     checkbuttonClick = false;

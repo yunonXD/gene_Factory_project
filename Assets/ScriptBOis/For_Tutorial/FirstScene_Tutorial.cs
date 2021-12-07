@@ -23,6 +23,19 @@ public class FirstScene_Tutorial : MonoBehaviour
 
     private void Start()
     {
+
+    }
+
+
+    void Update()
+    {
+        CheckTutorial();
+    }
+
+
+
+    void CheckTutorial()
+    {
         if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between3 == false)
         {
             option_Bitton.GetComponent<Button>().interactable = false;
@@ -32,7 +45,7 @@ public class FirstScene_Tutorial : MonoBehaviour
             B1_animator.SetTrigger("Disabled");
 
         }
-        else
+        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between3 == true)
         {
             option_Bitton.GetComponent<Button>().interactable = true;
             B0_animator.SetTrigger("Normal");
@@ -42,11 +55,4 @@ public class FirstScene_Tutorial : MonoBehaviour
             Destroy(this);
         }
     }
-
-    //튜토리얼 진행을 위한 _Gene_Between3 판별
-    void Update()
-    {
-
-    }
-
 }
