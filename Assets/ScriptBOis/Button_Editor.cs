@@ -17,14 +17,6 @@ public class Button_Editor : MonoBehaviour{
         SceneManager.LoadScene("inGameScene");
     }
 
-    //public void SceneChange_gene(){         //유전자 지도창
-    //    SceneManager.LoadScene("geneMap");
-    //}
-
-   // public void SceneChange_BattleSelect(){ //배틀 선택창
-   //     SceneManager.LoadScene("BattleSelectScene");
-   // }
-
     public void SceneChange_BattleStart()   //배틀 시작창
     { //배틀 선택창
         SceneManager.LoadScene("BattleScene");
@@ -34,11 +26,6 @@ public class Button_Editor : MonoBehaviour{
     {
         SceneManager.LoadScene("FirstScene");
     }
-
-    //public void SceneChange_Memor_gene()    //기억 저장소
-    //{
-    //    SceneManager.LoadScene("RecordMemoryScene");
-    //}
 
 
 
@@ -91,5 +78,116 @@ public class Button_Editor : MonoBehaviour{
 
     }
 
+
+
+    public void QuitButton1_1B()
+    {
+        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 == true)
+        {
+            SceneManager.LoadScene("BattleScene1_1");
+        }
+    }
+    public void QuitButton1_1A()
+    {
+        if (PlayerData.GetComponent<SaveDataManager>()._Stage1_1 == true)
+        {
+            SceneManager.LoadScene("inGameScene");
+        }
+    }
+
+
+    //=======================================================================//
+
+
+    public void QuitButton1_2B()
+    {
+        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 == true)
+        {
+            SceneManager.LoadScene("BattleScene1_2");
+        }
+    }
+    public void QuitButton1_2A()
+    {
+        if (PlayerData.GetComponent<SaveDataManager>()._Stage1_2 == true)
+        {
+            SceneManager.LoadScene("inGameScene");
+        }
+    }
+
+
+    //=======================================================================//
+
+
+    public void QuitButton1_3B()
+    {
+        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 == true)
+        {
+            SceneManager.LoadScene("BattleScene1_3");
+        }
+    }
+    public void QuitButton1_3A()
+    {
+        if (PlayerData.GetComponent<SaveDataManager>()._Stage1_3 == true)
+        {
+            SceneManager.LoadScene("inGameScene");
+        }
+    }
+
+
+    //=======================================================================//
+
+
+    public void QuitButton2_1B()
+    {
+        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 == true)
+        {
+            SceneManager.LoadScene("BattleScene2_1");
+        }
+    }
+    public void QuitButton2_1A()
+    {
+        if (PlayerData.GetComponent<SaveDataManager>()._Stage2_1 == true)
+        {
+            SceneManager.LoadScene("inGameScene");
+        }
+    }
+
+
+    //=======================================================================//
+
+
+    public void QuitButton2_2B()
+    {
+        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 == true)
+        {
+            SceneManager.LoadScene("BattleScene2_2");
+        }
+    }
+    public void QuitButton2_2A()
+    {
+        if (PlayerData.GetComponent<SaveDataManager>()._Stage2_2 == true)
+        {
+            SceneManager.LoadScene("inGameScene");
+        }
+    }
+
+
+    //=======================================================================//
+
+
+    public void QuitButton2_3B()
+    {
+        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 == true)
+        {
+            SceneManager.LoadScene("BattleScene2_3");
+        }
+    }
+    public void QuitButton2_3A()
+    {
+        if (PlayerData.GetComponent<SaveDataManager>()._Stage2_3 == true)
+        {
+            SceneManager.LoadScene("inGameScene");
+        }
+    }
 
 }

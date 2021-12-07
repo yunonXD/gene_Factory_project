@@ -60,3 +60,4 @@ MonoBehaviour:
   Battle_Skill_CutScene: event:/SFX/UI/Battle_UI/Battle_Skill_CutScene
   Skill_Turn_Ready: event:/SFX/UI/Battle_UI/Skill_Turn_Ready
   Skill_TurnON: event:/SFX/UI/Battle_UI/Skill_TurnON
+  Battle_Good_End: event:/SFX/UI/Battle_UI/Battle_Good_End

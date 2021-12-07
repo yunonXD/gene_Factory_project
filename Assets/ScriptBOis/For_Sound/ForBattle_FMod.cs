@@ -76,6 +76,10 @@ public class ForBattle_FMod : MonoBehaviour
     [EventRef]
     public string Skill_TurnON = null;
 
+    [SerializeField]
+    [EventRef]
+    public string Battle_Good_End = null;
+
 
     //FMOD.Studio.EventInstance MUClick = RuntimeManager.CreateInstance(Map_Unkown_Click);
     //MUClick.start();
@@ -260,7 +264,20 @@ public class ForBattle_FMod : MonoBehaviour
         }
     }
 
+    public void BattleEndGood()       //스킬 아이콘 클릭
+    {
+        if (Battle_Good_End != null)
+        {
 
+            RuntimeManager.PlayOneShot(Battle_Good_End);
+
+        }
+    }
+
+
+
+
+    
     public void StopMusic_all()
     {
         //BG_Main_Static.Stop();

@@ -455,11 +455,13 @@ public class BattleStage0_1 : MonoBehaviour
         MainCamera.transform.DOLocalMoveX(-65, 0.8f);
         MainCamera.transform.DOLocalMoveZ(15, 0.8f);
         player.GetComponent<RabbitScript>().wait_2();
+        ForBattle_FMod.instance.BattleEndGood();  //미션 클리어 사운드
         Invoke("_MissionClear", 2);
     }
     void _MissionClear()   //미션 클리어 화면 활성화
     {
         Debug.Log("미션클리어");
+
         MissionClear.SetActive(true);
     }
 

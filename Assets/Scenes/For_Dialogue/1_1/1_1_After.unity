@@ -1900,10 +1900,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2073393774315720928, guid: 5d20bef5b26d63c4cab919fa43445669, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2073393774315720928, guid: 5d20bef5b26d63c4cab919fa43445669, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073393774315720928, guid: 5d20bef5b26d63c4cab919fa43445669, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2073393774315720928, guid: 5d20bef5b26d63c4cab919fa43445669, type: 3}
@@ -1911,7 +1915,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4511312972866556466}
     - target: {fileID: 2073393774315720928, guid: 5d20bef5b26d63c4cab919fa43445669, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2093611736}
+    - target: {fileID: 2073393774315720928, guid: 5d20bef5b26d63c4cab919fa43445669, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073393774315720928, guid: 5d20bef5b26d63c4cab919fa43445669, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2073393774315720928, guid: 5d20bef5b26d63c4cab919fa43445669, type: 3}
@@ -1919,11 +1931,23 @@ PrefabInstance:
       value: QuitButtonBoi
       objectReference: {fileID: 0}
     - target: {fileID: 2073393774315720928, guid: 5d20bef5b26d63c4cab919fa43445669, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: QuitButton1_1A
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073393774315720928, guid: 5d20bef5b26d63c4cab919fa43445669, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: For_Stroy_1_1_After, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2073393774315720928, guid: 5d20bef5b26d63c4cab919fa43445669, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Button_Editor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073393774315720928, guid: 5d20bef5b26d63c4cab919fa43445669, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073393774315720928, guid: 5d20bef5b26d63c4cab919fa43445669, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2073393774890494034, guid: 5d20bef5b26d63c4cab919fa43445669, type: 3}

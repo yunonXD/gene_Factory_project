@@ -98,13 +98,6 @@ public class geneMap_Tutorial : MonoBehaviour
                 C_Dialogue.DOText("", 1);
                 C_Dialogue.DOText("먼저 큰 지도를 클릭", 1);
 
-                //obj = GameObject.Find("BigIcon8_ForCheck"); 
-                
-                //if (obj.GetComponent<Toggle>().isOn == true)
-                //{
-                //    Yeeter = Yeeter + 1;
-                //}
-
                 break;
 
 

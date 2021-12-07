@@ -462,6 +462,7 @@ public class BattleStage2_3 : MonoBehaviour
         MainCamera.transform.DOLocalMoveX(-75, 0.8f); //#003
         MainCamera.transform.DOLocalMoveZ(15, 0.8f);
         player.GetComponent<TanngrisScript>().wait_2();
+        ForBattle_FMod.instance.BattleEndGood();  //미션 클리어 사운드
         Invoke("_MissionClear", 2);
     }
     void _MissionClear()   //미션 클리어 화면 활성화

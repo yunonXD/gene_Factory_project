@@ -31,7 +31,7 @@ public class Gene_Memory_Store : MonoBehaviour
         
         if (Gene_Memory_noUnlock[0] == true && PlayerData.GetComponent<SaveDataManager>()._Stage1_1 == true)
         {
-            PlayFModUI.instance.NKeypadMouse();
+            PlayFModUI.instance.NPanalClick();
             IntelPage.gameObject.SetActive(true);
 
             Top_Title.text = "예상치 못한 기습 A-1";
@@ -52,7 +52,7 @@ public class Gene_Memory_Store : MonoBehaviour
     {
         if (Gene_Memory_noUnlock[1] == true && PlayerData.GetComponent<SaveDataManager>()._Stage1_1 == true)
         {
-            PlayFModUI.instance.NKeypadMouse();
+            PlayFModUI.instance.NPanalClick();
             IntelPage.gameObject.SetActive(true);
 
             //스프라이트 변경
@@ -80,7 +80,7 @@ public class Gene_Memory_Store : MonoBehaviour
 
         if (Gene_Memory_noUnlock[2] == true && PlayerData.GetComponent<SaveDataManager>()._Stage1_2 == true)
         {
-            PlayFModUI.instance.NKeypadMouse();
+            PlayFModUI.instance.NPanalClick();
             IntelPage.gameObject.SetActive(true);
 
             Top_Title.text = "모의 훈련 B-1";
@@ -102,7 +102,7 @@ public class Gene_Memory_Store : MonoBehaviour
         
         if (Gene_Memory_noUnlock[3] == true && PlayerData.GetComponent<SaveDataManager>()._Stage1_2 == true)
         {
-            PlayFModUI.instance.NKeypadMouse();
+            PlayFModUI.instance.NPanalClick();
             IntelPage.gameObject.SetActive(true);
 
             Top_Title.text = " 모의 훈련 B-2 ";
@@ -124,7 +124,7 @@ public class Gene_Memory_Store : MonoBehaviour
 
         if (Gene_Memory_noUnlock[4] == true && PlayerData.GetComponent<SaveDataManager>()._Stage1_3 == true)
         {
-            PlayFModUI.instance.NKeypadMouse();
+            PlayFModUI.instance.NPanalClick();
             IntelPage.gameObject.SetActive(true);
 
             Top_Title.text = " 거점 수호 C-1 ";
@@ -146,7 +146,7 @@ public class Gene_Memory_Store : MonoBehaviour
 
         if (Gene_Memory_noUnlock[5] == true && PlayerData.GetComponent<SaveDataManager>()._Stage1_3 == true)
         {
-            PlayFModUI.instance.NKeypadMouse();
+            PlayFModUI.instance.NPanalClick();
             IntelPage.gameObject.SetActive(true);
 
             Top_Title.text = " 거점 수호 C-2 ";
@@ -167,7 +167,7 @@ public class Gene_Memory_Store : MonoBehaviour
 
         if (Gene_Memory_noUnlock[6] == true && PlayerData.GetComponent<SaveDataManager>()._Stage2_1 == true)
         {
-            PlayFModUI.instance.NKeypadMouse();
+            PlayFModUI.instance.NPanalClick();
             IntelPage.gameObject.SetActive(true);
 
             Top_Title.text = " 하이리스크 하이리턴 D-1";
@@ -190,7 +190,7 @@ public class Gene_Memory_Store : MonoBehaviour
 
         if (Gene_Memory_noUnlock[7] == true && PlayerData.GetComponent<SaveDataManager>()._Stage2_1 == true)
         {
-            PlayFModUI.instance.NKeypadMouse();
+            PlayFModUI.instance.NPanalClick();
             IntelPage.gameObject.SetActive(true);
 
             Top_Title.text = " 하이리스크 하이리턴 D-2 ";
@@ -212,7 +212,7 @@ public class Gene_Memory_Store : MonoBehaviour
 
         if (Gene_Memory_noUnlock[8] == true && PlayerData.GetComponent<SaveDataManager>()._Stage2_2 == true)
         {
-            PlayFModUI.instance.NKeypadMouse();
+            PlayFModUI.instance.NPanalClick();
             IntelPage.gameObject.SetActive(true);
 
             Top_Title.text = " 구조신호 E-1 ";
@@ -237,7 +237,7 @@ public class Gene_Memory_Store : MonoBehaviour
 
         if (Gene_Memory_noUnlock[9] == true && PlayerData.GetComponent<SaveDataManager>()._Stage2_2 == true)
         {
-            PlayFModUI.instance.NKeypadMouse();
+            PlayFModUI.instance.NPanalClick();
             IntelPage.gameObject.SetActive(true);
 
             Top_Title.text = " 구조신호 E-2 ";
@@ -262,7 +262,7 @@ public class Gene_Memory_Store : MonoBehaviour
 
         if (Gene_Memory_noUnlock[10] == true && PlayerData.GetComponent<SaveDataManager>()._Stage2_3 == true)
         {
-            PlayFModUI.instance.NKeypadMouse();
+            PlayFModUI.instance.NPanalClick();
             IntelPage.gameObject.SetActive(true);
 
             Top_Title.text = "물러날 곳은 없다 F-1";
@@ -286,7 +286,7 @@ public class Gene_Memory_Store : MonoBehaviour
 
         if (Gene_Memory_noUnlock[11] == true && PlayerData.GetComponent<SaveDataManager>()._Stage2_3 == true)
         {
-            PlayFModUI.instance.NKeypadMouse();
+            PlayFModUI.instance.NPanalClick();
             IntelPage.gameObject.SetActive(true);
 
             Top_Title.text = "물러날 곳은 없다 F-2";

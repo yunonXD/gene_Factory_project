@@ -14,6 +14,7 @@ public class B_Select_Tutorial : MonoBehaviour
     public GameObject ScreenBlack;
     public GameObject ScreenBlack_2;
     public GameObject ScreenBlack_3;
+    public GameObject ScreenBlack_4;
 
     public Button[] Stage;
 
@@ -124,6 +125,7 @@ public class B_Select_Tutorial : MonoBehaviour
 
             case 29:
 
+                ScreenBlack_4.gameObject.SetActive(true);
                 ScreenBlack_2.gameObject.SetActive(false);
                 ScreenBlack.gameObject.SetActive(false);
 

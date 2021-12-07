@@ -1,0 +1,7 @@
+button.png
+size:51,39
+filter:Linear,Linear
+pma:true
+01
+bounds:2,2,47,35
+offsets:1727,55,1920,1080
