@@ -6,6 +6,7 @@ using DG.Tweening;
 
 public class B_Select_Tutorial : MonoBehaviour
 {
+
     public GameObject PlayerData;           //세이브데이터
     public GameObject Tutorial;             //튜토리얼띄워줄부모객체
     public GameObject Dialogue;             //튜토리얼띄워줄부모객체
@@ -27,21 +28,33 @@ public class B_Select_Tutorial : MonoBehaviour
     void Start()
     {
         Option = GameObject.Find("GameManager");
+        Tutorial.gameObject.SetActive(true);
+
+    }
+
+    void Update()
+    {
+        BattleSTutorial();
+        Yeeter = PlayerData.GetComponent<SaveDataManager>()._DialgueCounter;
+    }
+
+    void BattleSTutorial()
+    {
         //튜토리얼 진행을 위한 _Gene_Between3 판별
         if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between3 == false)
         {
-            Tutorial.gameObject.SetActive(true);
+
             //esc 작동 스크립트 DEAD
             Option.GetComponent<Button_Editor>().enabled = false;
 
-            for(int i =0; i < 6; i++)
+            for (int i = 0; i < 6; i++)
             {
                 Stage[i].GetComponent<Button>().interactable = false;
             }
 
 
         }
-        else
+        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between3 == true)
         {
             //esc 작동 스크립트 Alive
             Option.GetComponent<Button_Editor>().enabled = true;
@@ -52,14 +65,7 @@ public class B_Select_Tutorial : MonoBehaviour
             }
             Destroy(this);      //안쓰면 삭제
         }
-
     }
-
-    void Update()
-    {
-        Yeeter = PlayerData.GetComponent<SaveDataManager>()._DialgueCounter;
-    }
-
 
 
     public void PointSaver()
@@ -77,10 +83,13 @@ public class B_Select_Tutorial : MonoBehaviour
         {
 
             case 25:
-                ScreenBlack_3.gameObject.SetActive(true);
-                ScreenBlack.gameObject.SetActive(true);
-                C_name.text = "";
+                C_name.text = "마리아";
                 C_Dialogue.DOText("", 1);
+                C_Dialogue.DOText("어서오십쇼 관리자님.", 1);
+
+                ScreenBlack_3.gameObject.SetActive(true);   //0-1 막기
+                ScreenBlack.gameObject.SetActive(true);     //다이어로그
+
                 break;
 
             case 26:
@@ -91,15 +100,19 @@ public class B_Select_Tutorial : MonoBehaviour
                 break;
 
             case 27:
-                ScreenBlack_3.gameObject.SetActive(false);
+
                 ScreenBlack_2.gameObject.SetActive(true);
+                ScreenBlack_3.gameObject.SetActive(false);
                 C_name.text = "마리아";
                 C_Dialogue.DOText("", 1);
                 C_Dialogue.DOText("스테이지 0 - 1 을 선택하시고, 조금 전 해금하신 실험체를 선택해주세요.", 1);
+
+
+
+
                 break;
 
             case 28:
-                ScreenBlack_2.gameObject.SetActive(false);
                 ScreenBlack.gameObject.SetActive(false);
                 Dialogue.gameObject.SetActive(false);
                 Indicator.gameObject.SetActive(true);
@@ -111,9 +124,13 @@ public class B_Select_Tutorial : MonoBehaviour
 
             case 29:
 
+                ScreenBlack_2.gameObject.SetActive(false);
+                ScreenBlack.gameObject.SetActive(false);
+
                 Indicator.gameObject.SetActive(true);
                 Indicator.gameObject.transform.localPosition = new Vector3(528f, -355f, 0);
                 Indicator.gameObject.transform.localRotation = Quaternion.Euler(0, 0, -30f);
+
 
                 break;
 

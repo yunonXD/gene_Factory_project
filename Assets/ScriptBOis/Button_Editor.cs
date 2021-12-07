@@ -61,7 +61,11 @@ public class Button_Editor : MonoBehaviour{
     }
 
 
-
+    public void Set_NewGame()
+    {
+        PlayerData.GetComponent<SaveDataManager>()._Gene_Between3 = false;
+        PlayerData.GetComponent<SaveDataManager>()._DialgueCounter = 0;
+    }
 
 
     void Update() {

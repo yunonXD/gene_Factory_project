@@ -11,7 +11,6 @@ public class Battle_Select_For_List : MonoBehaviour
 
     //마지막 스테이지 클리어 유무 => 세이브 데이터 활용 필요
     private int StageSelect = 0;                //스테이지 선택 유무
-    private int SelectGene = 0;                 //유전자 선택 유무(전투창과 연동 필요)
     public GameObject PlayerData;
 
     public GameObject SelectVictim;             //스테이지 누르면 나오는 캐릭터 선택창
@@ -51,7 +50,8 @@ public class Battle_Select_For_List : MonoBehaviour
                 break;
 
             case 2:
-                if (PlayerData.GetComponent<SaveDataManager>()._Stage1_1 == true)
+                if (PlayerData.GetComponent<SaveDataManager>()._Stage1_1 == true
+                    && PlayerData.GetComponent<SaveDataManager>()._Creature_Fran == true)
                 {
                     PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 = true;
                     SceneManager.LoadScene("1_2_before");
@@ -59,7 +59,8 @@ public class Battle_Select_For_List : MonoBehaviour
                 break;
 
             case 3:
-                if (PlayerData.GetComponent<SaveDataManager>()._Stage1_2 == true)
+                if (PlayerData.GetComponent<SaveDataManager>()._Stage1_2 == true
+                    && PlayerData.GetComponent<SaveDataManager>()._Creature_Nymph == true)
                 {
                     PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 = true;
                     SceneManager.LoadScene("1_3_before");
@@ -69,7 +70,8 @@ public class Battle_Select_For_List : MonoBehaviour
 
 
             case 4:
-                if (PlayerData.GetComponent<SaveDataManager>()._Stage1_3 == true)
+                if (PlayerData.GetComponent<SaveDataManager>()._Stage1_3 == true
+                    && PlayerData.GetComponent<SaveDataManager>()._Creature_Manticore == true)
                 {
                     PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 = true;
                     SceneManager.LoadScene("2_1_before");
@@ -78,7 +80,8 @@ public class Battle_Select_For_List : MonoBehaviour
                 break;
 
             case 5:
-                if (PlayerData.GetComponent<SaveDataManager>()._Stage2_1 == true)
+                if (PlayerData.GetComponent<SaveDataManager>()._Stage2_1 == true
+                    && PlayerData.GetComponent<SaveDataManager>()._Creature_Mobidic == true)
                 {
                     PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 = true;
                     SceneManager.LoadScene("2_2_before");
@@ -86,7 +89,8 @@ public class Battle_Select_For_List : MonoBehaviour
                 break;
 
             case 6:
-                if (PlayerData.GetComponent<SaveDataManager>()._Stage2_2 == true)
+                if (PlayerData.GetComponent<SaveDataManager>()._Stage2_2 == true
+                    && PlayerData.GetComponent<SaveDataManager>()._Creature_TangGreece == true)
                 {
                     PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 = true;
                     SceneManager.LoadScene("2_3_before");
@@ -153,19 +157,6 @@ public class Battle_Select_For_List : MonoBehaviour
         PlayFModUI.instance.NUnknownClick();
     }
 
-    //public void Stage1_4()
-    //{
-    //    if (Stage[3] == true)
-    //    {
-    //        if (PlayerData.GetComponent<SaveDataManager>()._Stage1_4 == true)
-    //        {
-    //            PlayFModUI.instance.NbuttonClick();
-    //            StageSelect = 4;
-    //            SelectVictim.gameObject.SetActive(true);
-    //        }
-    //    }
-    //    PlayFModUI.instance.NUnknownClick();
-    //}
 
     public void Stage2_1()
     {
@@ -174,7 +165,7 @@ public class Battle_Select_For_List : MonoBehaviour
             if (PlayerData.GetComponent<SaveDataManager>()._Stage1_3 == true)
             {
                 //PlayFModUI.instance.NbuttonClick();
-                StageSelect = 5;
+                StageSelect = 4;
                 SelectVictim.gameObject.SetActive(true);
             }
         }
@@ -189,7 +180,7 @@ public class Battle_Select_For_List : MonoBehaviour
             if (PlayerData.GetComponent<SaveDataManager>()._Stage2_1 == true)
             {
                 //PlayFModUI.instance.NbuttonClick();
-                StageSelect = 6;
+                StageSelect = 5;
                 SelectVictim.gameObject.SetActive(true);
             }
 
@@ -203,25 +194,13 @@ public class Battle_Select_For_List : MonoBehaviour
         {
             if (PlayerData.GetComponent<SaveDataManager>()._Stage2_2 == true)
             {
-                StageSelect = 7;
+                StageSelect = 6;
                 SelectVictim.gameObject.SetActive(true);
             }
         }
         PlayFModUI.instance.NUnknownClick();
     }
 
-    //public void Stage2_4()
-    //{
-    //    if (Stage[7] == true)
-    //    {
-    //        if (PlayerData.GetComponent<SaveDataManager>()._Stage2_4 == true)
-    //        {
-    //            StageSelect = 8;
-    //            SelectVictim.gameObject.SetActive(true);
-    //        }
-    //    }
-
-    //}
 
     public void Gene_List_ConRabbit()
     {
@@ -234,14 +213,12 @@ public class Battle_Select_For_List : MonoBehaviour
                 //그리고 해당 유전자가 활성화 되어있는 것이라면
                 Gene_Select[0].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[0];
                 //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
-                SelectGene = 1;
             }
             else if (Gene_Select[0].isOn == false)
             {
                 PlayFModUI.instance.NKeypadMouse();
                 Gene_Select[0].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[0];
                 //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
-                SelectGene = 0;
             }
         }
         else
@@ -261,14 +238,12 @@ public class Battle_Select_For_List : MonoBehaviour
                 //그리고 해당 유전자가 활성화 되어있는 것이라면
                 Gene_Select[1].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[1];
                 //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
-                SelectGene = 2;
             }
             else if(Gene_Select[1].isOn == false)
             {
                 PlayFModUI.instance.NKeypadMouse();
                 Gene_Select[1].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[1];
                 //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
-                SelectGene = 0;
             }
         }
         else
@@ -290,14 +265,12 @@ public class Battle_Select_For_List : MonoBehaviour
                 //그리고 해당 유전자가 활성화 되어있는 것이라면
                 Gene_Select[2].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[2];
                 //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
-                SelectGene = 3;
             }
             else if (Gene_Select[2].isOn == false)
             {
                 PlayFModUI.instance.NKeypadMouse();
                 Gene_Select[2].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[2];
                 //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
-                SelectGene = 0;
             }
         }
         else
@@ -317,14 +290,12 @@ public class Battle_Select_For_List : MonoBehaviour
                 //그리고 해당 유전자가 활성화 되어있는 것이라면
                 Gene_Select[3].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[3];
                 //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
-                SelectGene = 4;
             }
             else if (Gene_Select[3].isOn == false)
             {
                 PlayFModUI.instance.NKeypadMouse();
                 Gene_Select[3].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[3];
                 //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
-                SelectGene = 0;
             }
         }
         else
@@ -344,14 +315,12 @@ public class Battle_Select_For_List : MonoBehaviour
                 //그리고 해당 유전자가 활성화 되어있는 것이라면
                 Gene_Select[4].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[4];
                 //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
-                SelectGene = 5;
             }
             else if (Gene_Select[4].isOn == false)
             {
                 PlayFModUI.instance.NKeypadMouse();
                 Gene_Select[4].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[4];
                 //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
-                SelectGene = 0;
             }
         }
         else
@@ -372,14 +341,12 @@ public class Battle_Select_For_List : MonoBehaviour
             //        //그리고 해당 유전자가 활성화 되어있는 것이라면
             //        //Gene_Select[5].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[5];
             //        //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
-            //        //SelectGene = 6;
             //    }
             //    else if (Gene_Select[5].isOn == false)
             //    {
             //        PlayFModUI.instance.NUnknownClick();
             //        //Gene_Select[5].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[5];
             //        //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
-            //        //SelectGene = 0;
             //    }
             //}
             //else
@@ -399,14 +366,12 @@ public class Battle_Select_For_List : MonoBehaviour
                 //그리고 해당 유전자가 활성화 되어있는 것이라면
                 Gene_Select[6].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[6];
                 //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
-                SelectGene = 7;
             }
             else if(Gene_Select[6].isOn == false)
             {
                 PlayFModUI.instance.NKeypadMouse();
                 Gene_Select[6].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[6];
                 //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
-                SelectGene = 0;
             }
         }
         else
@@ -427,14 +392,12 @@ public class Battle_Select_For_List : MonoBehaviour
                 //그리고 해당 유전자가 활성화 되어있는 것이라면
                 Gene_Select[7].gameObject.GetComponent<Image>().sprite = Gene_Select_Sprite[7];
                 //선택되었음. 그리고 해당 유전자 스프라이트 (선택된 스프라이트) 를 교체함
-                SelectGene = 8;
             }
             else if(Gene_Select[7].isOn == false)
             {
                 PlayFModUI.instance.NKeypadMouse();
                 Gene_Select[7].gameObject.GetComponent<Image>().sprite = Gene_List_Sprite[7];
                 //선택을 해제할 경우 스프라이트를 원래대로 되돌림.
-                SelectGene = 0;
             }
         }
         else

@@ -28,7 +28,6 @@ public class For_Stroy_2_1_After : MonoBehaviour
     private Animator animator;
     private bool Alpha_Secretary = false;
     private bool Alpha_NPC_1 = false;
-    private float Timer = 0;
 
     bool select1 = false;
     bool select2 = false;

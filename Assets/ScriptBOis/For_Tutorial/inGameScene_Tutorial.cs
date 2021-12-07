@@ -31,11 +31,8 @@ public class inGameScene_Tutorial : MonoBehaviour
 
     //==================================ingameScene==========================================//
 
-
-
     private int Yeeter = 0;               //다이어로그 읽어올 세이브파일 받아올 인트값
 
-    private int CountClick = 0;
     private GameObject Option;
 
 
@@ -43,30 +40,33 @@ public class inGameScene_Tutorial : MonoBehaviour
     {
         Option = GameObject.Find("GameManager");
 
-
         GS_animator = C_GeneSelect.GetComponent<Animator>();
         GM_animator = C_GeneMemory.GetComponent<Animator>();
         MS_animator = C_BattleSelect.GetComponent<Animator>();
 
+        C_GeneSelect.GetComponent<Button>().interactable = false;
+        GS_animator.SetTrigger("Disabled");
+
+        C_GeneMemory.GetComponent<Button>().interactable = false;
+        GM_animator.SetTrigger("Disabled");
+
+        C_BattleSelect.GetComponent<Button>().interactable = false;
+        MS_animator.SetTrigger("Disabled");
+
+    }
+
+
+    private void CheckTutorial()
+    {
         //튜토리얼 진행을 위한 _Gene_Between3 판별
         if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between3 == false)
         {
             Tutorial.gameObject.SetActive(true);
             //esc 작동 스크립트 DEAD
             Option.GetComponent<Button_Editor>().enabled = false;
-            Tutorial.gameObject.SetActive(true);
 
-            C_GeneSelect.GetComponent<Button>().interactable = false;
-            GS_animator.SetTrigger("Disabled");
-
-            C_GeneMemory.GetComponent<Button>().interactable = false;
-            GM_animator.SetTrigger("Disabled");
-
-            C_BattleSelect.GetComponent<Button>().interactable = false;
-            MS_animator.SetTrigger("Disabled");
         }
-
-        else
+        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between3 == true)
         {
             Tutorial.gameObject.SetActive(false);
             //esc 작동 스크립트 Alive
@@ -81,17 +81,16 @@ public class inGameScene_Tutorial : MonoBehaviour
             C_BattleSelect.GetComponent<Button>().interactable = true;
             MS_animator.SetTrigger("Normal");
 
-
-
+            Destroy(Tutorial);
             Destroy(this);      //안쓰면 삭제
         }
     }
 
+
     void Update()
     {
+        CheckTutorial();
         Yeeter = PlayerData.GetComponent<SaveDataManager>()._DialgueCounter;
-
-
     }
 
     public void PointSaver()
@@ -103,8 +102,6 @@ public class inGameScene_Tutorial : MonoBehaviour
 
     public void inGameSceneTutorial()
     {
-        //CountClick += 1;
-        //Yeeter = CountClick;
         Yeeter = Yeeter + 1;
         PointSaver();
         
@@ -205,34 +202,34 @@ public class inGameScene_Tutorial : MonoBehaviour
 
                 Secretary.gameObject.transform.localPosition = new Vector3(730f, 43f, 0);
 
-
-
-
                 Indicator.gameObject.SetActive(true);
                 Indicator.gameObject.transform.localPosition = new Vector3(-2f, 7f, 0);
                 Indicator.gameObject.transform.localRotation = Quaternion.Euler(0, 0, -0f);
+
                 StageBlocker.gameObject.SetActive(true);
+
                 C_BattleSelect.GetComponent<Button>().interactable = true;
                 MS_animator.SetTrigger("Normal");
 
                 break;
 
+                //전투씬 끝나고 33부터 시작
 
-            case 34:
+            case 33:
                 C_name.text = "";
                 C_Dialogue.DOText("", 1);
 
                 break;
 
 
-            case 35:
+            case 34:
                 C_name.text = "마리아";
                 C_Dialogue.DOText("", 1);
                 C_Dialogue.DOText("훈련은 성공적으로 완료했습니다.", 1);
 
                 break;
 
-            case 36:
+            case 35:
                 C_name.text = "마리아";
                 C_Dialogue.DOText("", 1);
                 C_Dialogue.DOText("전투 후 스토리에 대한 정보는 기록 보관소에서 확인이 가능합니다.", 1);
@@ -251,14 +248,14 @@ public class inGameScene_Tutorial : MonoBehaviour
                 break;
 
 
-            case 44:
+            case 40:
                 C_name.text = "마리아";
                 C_Dialogue.DOText("", 1);
                 C_Dialogue.DOText("이번 훈련으로 앞으로의 할 일이 무엇인지 깨달으셨나요?", 1);
 
                 break;
 
-            case 45:
+            case 41:
                 C_name.text = "마리아";
                 C_Dialogue.DOText("", 1);
                 C_Dialogue.DOText("ETI 제조 공단은 세계의 안전을 되찾기 위해 만들어진 제조 회사입니다.", 1);
@@ -266,7 +263,7 @@ public class inGameScene_Tutorial : MonoBehaviour
                 break;
 
 
-            case 46:
+            case 42:
                 C_name.text = "마리아";
                 C_Dialogue.DOText("", 1);
                 C_Dialogue.DOText("현재 ETI 제조 공단에게 가장 큰 위협은 바로 지구상에 존재하는 괴물들입니다.", 1);
@@ -274,27 +271,34 @@ public class inGameScene_Tutorial : MonoBehaviour
                 break;
 
 
-            case 47:
+            case 43:
                 C_name.text = "마리아";
                 C_Dialogue.DOText("", 1);
                 C_Dialogue.DOText("그렇기 때문에 관리자님이 하셔야 되는 업무는 생명체를 관리하고 적대하는 괴물들과 맞서 싸워야 합니다.", 1);
 
                 break;
 
-            case 48:
+            case 44:
                 C_name.text = "마리아";
                 C_Dialogue.DOText("", 1);
                 C_Dialogue.DOText("그러면 이번 작전은 여기서 끝내겠습니다. 수고하셨습니다.", 1);
 
                 break;
 
+            case 45:
+                C_name.text = "마리아";
+                C_Dialogue.DOText("", 1);
+                C_Dialogue.DOText("이곳을 클릭시 첫 화면으로 넘어갑니다.", 1);
+                break;
 
             default:
 
-                if (Yeeter > 48)
+                if (Yeeter >= 45)
                 {
-                    SceneManager.LoadScene("FirstScene");
                     PlayerData.GetComponent<SaveDataManager>()._Gene_Between3 = true;
+                    PlayerData.GetComponent<SaveDataManager>()._DialgueCounter = 0;
+                    SceneManager.LoadScene("FirstScene");
+
                 }
 
                 break;

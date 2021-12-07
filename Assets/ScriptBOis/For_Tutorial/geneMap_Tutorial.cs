@@ -8,6 +8,7 @@ public class geneMap_Tutorial : MonoBehaviour
 {
     public GameObject PlayerData;           //세이브데이터
     public GameObject Tutorial;             //튜토리얼띄워줄부모객체
+    public Button Dialogue;             //디활성화시킬다이어로그
     public GameObject Indicator;            //화살표
     public GameObject[] GenemapBlocker;       //유전자 지도 클릭 가림막
     public Toggle[] geneSelect;
@@ -20,30 +21,38 @@ public class geneMap_Tutorial : MonoBehaviour
     private GameObject obj1;
     private GameObject obj2;
 
-    private int CountClick = 0;
     private GameObject Option;
 
     void Start()
     {
+        Tutorial.gameObject.SetActive(true);
         Option = GameObject.Find("GameManager");
+    }
 
 
+    void Update()
+    {
+        CheckGMPTutorial();
+        Yeeter = PlayerData.GetComponent<SaveDataManager>()._DialgueCounter;
+    }
+
+    void CheckGMPTutorial()
+    {
         //튜토리얼 진행을 위한 _Gene_Between3 판별
         if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between3 == false)
         {
-            Tutorial.gameObject.SetActive(true);
             //esc 작동 스크립트 DEAD
             Option.GetComponent<Button_Editor>().enabled = false;
 
             //콘레빗 제외 모두 비활성화
-            for (int i = 0; i < 8; i++){
+            for (int i = 0; i < 8; i++)
+            {
                 geneSelect[i].GetComponent<Toggle>().interactable = false;
-                Debug.Log(geneSelect[i]);
             }
-    
+
 
         }
-        else
+        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between3 == true)
         {
             //esc 작동 스크립트 Alive
             Option.GetComponent<Button_Editor>().enabled = true;
@@ -52,18 +61,10 @@ public class geneMap_Tutorial : MonoBehaviour
             for (int i = 0; i < 8; i++)
             {
                 geneSelect[i].GetComponent<Toggle>().interactable = true;
-                Debug.Log(geneSelect[i]);
             }
+            Destroy(Tutorial);
             Destroy(this);      //안쓰면 삭제
         }
-
-
-    }
-
-
-    void Update()
-    {
-        Yeeter = PlayerData.GetComponent<SaveDataManager>()._DialgueCounter;
     }
 
     public void PointSaver()
@@ -97,12 +98,12 @@ public class geneMap_Tutorial : MonoBehaviour
                 C_Dialogue.DOText("", 1);
                 C_Dialogue.DOText("먼저 큰 지도를 클릭", 1);
 
-                obj = GameObject.Find("BigIcon8_ForCheck"); 
+                //obj = GameObject.Find("BigIcon8_ForCheck"); 
                 
-                if (obj.GetComponent<Toggle>().isOn == true)
-                {
-                    Yeeter = Yeeter + 1;
-                }
+                //if (obj.GetComponent<Toggle>().isOn == true)
+                //{
+                //    Yeeter = Yeeter + 1;
+                //}
 
                 break;
 
@@ -151,11 +152,11 @@ public class geneMap_Tutorial : MonoBehaviour
 
 
             case 18:
-
+                GenemapBlocker[1].gameObject.SetActive(true);
 
                 StartCoroutine(CountAttackDelay());
 
-
+                GenemapBlocker[1].gameObject.SetActive(false);
                 C_name.text = "마리아";
                 C_Dialogue.DOText("", 1);
                 C_Dialogue.DOText(" 이곳을 클릭해주세요. ", 1);
@@ -185,7 +186,8 @@ public class geneMap_Tutorial : MonoBehaviour
 
 
             case 20:
-                GenemapBlocker[0].gameObject.SetActive(true);
+                GenemapBlocker[0].gameObject.SetActive(false);
+                GenemapBlocker[6].gameObject.SetActive(true);
 
 
                 Indicator.gameObject.transform.localPosition = new Vector3(-413, -291, 0);
@@ -198,16 +200,14 @@ public class geneMap_Tutorial : MonoBehaviour
 
                 obj2 = GameObject.Find("unlocked_8_Intel");
 
-                if (obj2.GetComponent<Toggle>().isOn == true)
-                {
-                    Yeeter = Yeeter + 1;
-                }
                 break;
 
 
             case 21:
-                GenemapBlocker[0].gameObject.SetActive(false);
+                GenemapBlocker[6].gameObject.SetActive(false);
                 GenemapBlocker[3].gameObject.SetActive(true);
+
+                Dialogue.GetComponent<Button>().interactable = false;
 
                 Indicator.gameObject.transform.localPosition = new Vector3(-632, -5, 0);
                 Indicator.gameObject.transform.localRotation = Quaternion.Euler(0, 0, 130);
@@ -234,7 +234,6 @@ public class geneMap_Tutorial : MonoBehaviour
                 GenemapBlocker[5].gameObject.SetActive(true);
 
                 Tutorial.gameObject.SetActive(true);
-                GenemapBlocker[3].gameObject.SetActive(false);
 
                 Indicator.gameObject.transform.localPosition = new Vector3(-706, -444, 0);
                 Indicator.gameObject.transform.localRotation = Quaternion.Euler(0, 0, 180);
@@ -258,7 +257,7 @@ public class geneMap_Tutorial : MonoBehaviour
         Debug.Log("18으로 넘어옴");
         Tutorial.gameObject.SetActive(false);
         Debug.Log("코루틴시작");
-        yield return new WaitForSeconds(7.5f);
+        yield return new WaitForSeconds(8.0f);
         Tutorial.gameObject.SetActive(true);
 
     }

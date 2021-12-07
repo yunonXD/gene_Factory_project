@@ -21,30 +21,40 @@ public class GeneMemory_Tutorial : MonoBehaviour
 
     void Start()
     {
+        Tutorial.gameObject.SetActive(true);
+
         Option = GameObject.Find("GameManager");
 
-        //튜토리얼 진행을 위한 _Gene_Between3 판별
-        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between3 == false)
-        {
-            Tutorial.gameObject.SetActive(true);
-            //esc 작동 스크립트 DEAD
-            Option.GetComponent<Button_Editor>().enabled = false;
-
-        }
-        else
-        {
-            //esc 작동 스크립트 Alive
-            Option.GetComponent<Button_Editor>().enabled = true;
-            Tutorial.gameObject.SetActive(false);
-
-            Destroy(this);      //안쓰면 삭제
-        }
+        
     }
 
 
     void Update()
     {
+        CheckGMTutorial();
         Yeeter = PlayerData.GetComponent<SaveDataManager>()._DialgueCounter;
+    }
+
+
+    void CheckGMTutorial()
+    {
+        //튜토리얼 진행을 위한 _Gene_Between3 판별
+        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between3 == false)
+        {
+
+            //esc 작동 스크립트 DEAD
+            Option.GetComponent<Button_Editor>().enabled = false;
+
+        }
+        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between3 == true)
+        {
+            //esc 작동 스크립트 Alive
+            Option.GetComponent<Button_Editor>().enabled = true;
+            Tutorial.gameObject.SetActive(false);
+
+            Destroy(Tutorial);
+            Destroy(this);      //안쓰면 삭제
+        }
     }
 
     public void PointSaver()
@@ -61,26 +71,26 @@ public class GeneMemory_Tutorial : MonoBehaviour
 
         switch (Yeeter)
         {
-            case 38:
+            case 36:
                 C_name.text = "마리아";
                 C_Dialogue.DOText("", 1);
                 C_Dialogue.DOText("이후 전투에서 승리하고 보신 스토리를 선택하시고 우측의 영상을 클릭하시면," +
                     " 여태까지의 기록을 확인할 수 있습니다.", 1);
                 break;
 
-            case 39:
+            case 37:
                 C_name.text = "마리아";
                 C_Dialogue.DOText("", 1);
                 C_Dialogue.DOText("스토리를 다시 감상하고 싶으시다면 이곳으로 와주시면 됩니다.", 1);
                 break;
 
-            case 40:
+            case 38:
                 C_name.text = "마리아";
                 C_Dialogue.DOText("", 1);
                 C_Dialogue.DOText("그럼 다시 사무실로 이동하겠습니다.", 1);
                 break;
 
-            case 41:
+            case 39:
                 SceneManager.LoadScene("inGameScene");
                 break;
 

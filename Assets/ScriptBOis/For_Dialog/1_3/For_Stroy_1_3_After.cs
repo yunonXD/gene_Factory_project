@@ -28,8 +28,6 @@ public class For_Stroy_1_3_After : MonoBehaviour
 
     private Animator animator;
     private Animator animatorAll;
-    private bool Alpha_Secretary = false;
-    private bool Alpha_NPC_1 = false;
     private float Timer = 0;
 
     bool select1 = false;
@@ -273,13 +271,7 @@ public class For_Stroy_1_3_After : MonoBehaviour
                 _name.text = "";
                 _index.DOText("", 1);
 
-
-                Timer += Time.deltaTime;
-                if(Timer > 3)
-                {
-                    //æ¿ √º¿Œ¡ˆ
-                }
-
+                StartCoroutine(CountingameSceneScene());
 
                 break;
 
@@ -300,6 +292,24 @@ public class For_Stroy_1_3_After : MonoBehaviour
 
 
         }
+    }
+
+
+    IEnumerator CountingameSceneScene()
+    {
+
+        yield return new WaitForSeconds(3.0f);
+
+        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between2 == false)
+        {
+            SceneManager.LoadScene("inGameScene");
+        }
+
+        if (PlayerData.GetComponent<SaveDataManager>()._Gene_Between1 == true)
+        {
+            SceneManager.LoadScene("RecordMemoryScene");
+        }
+
     }
 
     public void QuitButtonBoi()

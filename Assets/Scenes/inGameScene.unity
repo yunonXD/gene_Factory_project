@@ -4860,6 +4860,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7101779168220371240, guid: c7ba1c588c3e2ae49a5742e5ad5dc1bb, type: 3}
+      propertyPath: m_Text
+      value: "\uD074\uB9AD\uD574\uC8FC\uC138\uC694"
+      objectReference: {fileID: 0}
     - target: {fileID: 7101779168634756391, guid: c7ba1c588c3e2ae49a5742e5ad5dc1bb, type: 3}
       propertyPath: m_IsActive
       value: 1
